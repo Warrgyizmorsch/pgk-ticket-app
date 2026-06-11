@@ -15,6 +15,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get subtitle => 'A Tribute to the Braveheart of Udaipur';
 
   @override
+  String get chooseYourLanguage => 'Choose Your Language';
+
+  @override
+  String get continueButton => 'Continue';
+
+  @override
   String get bookTicket => 'Book Ticket';
 
   @override

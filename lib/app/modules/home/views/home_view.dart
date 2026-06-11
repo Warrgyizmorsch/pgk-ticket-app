@@ -5,7 +5,6 @@ import '../controllers/home_controller.dart';
 
 import 'package:pgk_ticket_app/l10n/app_localizations.dart';
 
-import '../widget/language_dropdown.dart';
 
 
 
@@ -22,13 +21,7 @@ class HomeView extends GetView<HomeController> {
         // Using the localized 'Home' string
         title: Text(l10n.home),
         centerTitle: true,
-        actions: const [
-          // Adding the dropdown to the app bar
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16.0),
-            child: Center(child: LanguageDropdownWidget()),
-          ),
-        ],
+
       ),
       body: Center(
         child: Column(

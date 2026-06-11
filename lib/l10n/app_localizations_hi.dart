@@ -15,6 +15,12 @@ class AppLocalizationsHi extends AppLocalizations {
   String get subtitle => 'उदयपुर के शूरवीर को श्रद्धांजलि';
 
   @override
+  String get chooseYourLanguage => 'अपनी भाषा चुनें';
+
+  @override
+  String get continueButton => 'जारी रखें';
+
+  @override
   String get bookTicket => 'टिकट बुक करें';
 
   @override

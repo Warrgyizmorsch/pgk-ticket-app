@@ -3,7 +3,7 @@ class ImageConstant {
 
   // Images
   static const String imagesPath = 'assets/images/';
-  static const String onboardingPath = 'assets/images/onboarding/';
+
 
 
 
@@ -11,23 +11,13 @@ class ImageConstant {
   static const String iconPath = 'assets/icons/';
 
   // App Logos
-  static const String appLogo = '${iconPath}app_icon.png';
+  static const String appLogo = '${iconPath}app_logo.png';
   static const String splashLogo = '${iconPath}assignment_logo.png';
 
 
-  // Onboarding Images
-  static const String onboarding1 =
-      '${onboardingPath}onboarding1.png';
+   static const String otp = '${imagesPath}otp.png';
 
-  static const String onboarding2 =
-      '${onboardingPath}onboarding2.png';
-
-  static const String onboarding3 =
-      '${onboardingPath}onboarding3.png';
-  static const String loginBackground = '${imagesPath}login_background.png';
-  static const String signupBackground = '${imagesPath}signup_background.png';
-  static const String facebookIcon = '${iconPath}facebook_icon.png';
-  static const String googleIcon = '${iconPath}google_icon.png';
+  static const String googleIcon = '${iconPath}google.png';
   static const String appleIcon = '${iconPath}apple_icon.png';
   static const String homeIcon = '${iconPath}home_icon.png';
   static const String profileIcon = '${iconPath}profile_icon.png';
