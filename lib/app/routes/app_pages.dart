@@ -4,8 +4,9 @@ import '../modules/history/bindings/history_binding.dart';
 import '../modules/history/views/history_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
-import '../modules/language/bindings/language_binding.dart';
-import '../modules/language/views/language_view.dart';
+import '../modules/home/widget/about_pgk.dart';
+import '../modules/home/widget/bhakti_dham_view.dart';
+import '../modules/home/widget/pratap_history_view.dart';
 import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
 import '../modules/nav_bar/bindings/nav_bar_binding.dart';
@@ -30,7 +31,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.SPLASH;
+  static const INITIAL = Routes.NAV_BAR;
 
   static final routes = [
     GetPage(
@@ -38,6 +39,9 @@ class AppPages {
       page: () => const HomeView(),
       binding: HomeBinding(),
     ),
+    GetPage(name: _Paths.PRATAPHISTORY, page: () => PratapHistoryView()),
+    GetPage(name: _Paths.ABOUTPGK, page: () => AboutPgkView()),
+    GetPage(name: _Paths.BHAKTIDHAM, page: () => BhaktiDhamView()),
     GetPage(
       name: _Paths.NAV_BAR,
       page: () => const NavBarView(),
@@ -68,14 +72,10 @@ class AppPages {
       page: () => const OtpView(),
       binding: OtpBinding(),
     ),
-    GetPage(
-      name: _Paths.LANGUAGE,
-      page: () => const LanguageView(),
-      binding: LanguageBinding(),
-    ),
+
     GetPage(
       name: _Paths.SHOW_VIEW,
-      page: () => const ShowViewView(),
+      page: () => const ShowView(),
       binding: ShowViewBinding(),
     ),
     GetPage(

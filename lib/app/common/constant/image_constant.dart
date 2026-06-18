@@ -10,12 +10,20 @@ class ImageConstant {
   // Icons
   static const String iconPath = 'assets/icons/';
 
+
   // App Logos
   static const String appLogo = '${iconPath}app_logo.png';
   static const String splashLogo = '${iconPath}assignment_logo.png';
 
 
-   static const String otp = '${imagesPath}otp.png';
+   static const String otp = '${imagesPath}maharana-pratap-hd-image.png';
+   static const String mewar = '${imagesPath}mewar-ke-mahapursh.jpg';
+   static const String homePGK = '${imagesPath}1-1.jpg';
+   static const String bhaktiDham = '${imagesPath}bhakti-dham.jpg';
+   static const String pgkFullImage = '${imagesPath}pgk_full_image.png';
+   static const String pgkFullImageNight = '${imagesPath}pgk_full_image_night.jpg';
+   static const String pgkFullNight = '${imagesPath}pgk_image_night.jpg';
+   static const String maharanaImage = '${imagesPath}maharana-pratap.jpg';
 
   static const String googleIcon = '${iconPath}google.png';
   static const String appleIcon = '${iconPath}apple_icon.png';

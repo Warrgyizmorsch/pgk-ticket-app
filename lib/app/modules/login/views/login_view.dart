@@ -33,21 +33,10 @@ class LoginView extends GetView<LoginController> {
                     ),
                     Positioned(
                       bottom: 40,
-                      child: Container(
+                      child: SizedBox(
                         width: 180,
                         height: 180,
-                        decoration: BoxDecoration(
-                          color: AppColors.white,
-                          shape: BoxShape.circle,
-                          boxShadow: [
-                            BoxShadow(
-                              color: AppColors.lightShadow,
-                              blurRadius: 15,
-                              offset: const Offset(0, 8),
-                            ),
-                          ],
-                        ),
-                        padding: const EdgeInsets.all(4),
+
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(90),
                           child: Image.asset(

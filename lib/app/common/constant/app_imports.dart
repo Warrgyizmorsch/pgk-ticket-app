@@ -11,7 +11,7 @@ export '../../common/widget/text_field/custom_text_field.dart';
 export '../../common/widget/text_field/text_form_field_custom.dart';
 export '../../common/widget/dropdown/custom_dropdown.dart';
 export 'package:flutter/services.dart';
-
+export 'package:pgk_ticket_app/l10n/app_localizations.dart';
 
 export '../../common/constant/app_colors.dart';
 export '../../routes/app_pages.dart';

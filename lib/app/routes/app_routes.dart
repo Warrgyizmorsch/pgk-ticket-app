@@ -15,6 +15,9 @@ abstract class Routes {
   static const SCANNER = _Paths.SCANNER;
   static const TICKETS = _Paths.TICKETS;
   static const HISTORY = _Paths.HISTORY;
+  static const BHAKTIDHAM = _Paths.BHAKTIDHAM;
+  static const PRATAPHISTORY = _Paths.PRATAPHISTORY;
+  static const ABOUTPGK = _Paths.ABOUTPGK;
 }
 
 abstract class _Paths {
@@ -31,4 +34,7 @@ abstract class _Paths {
   static const SCANNER = '/scanner';
   static const TICKETS = '/tickets';
   static const HISTORY = '/history';
+  static const BHAKTIDHAM = '/bhaktidham';
+  static const PRATAPHISTORY = '/prataphistory';
+  static const ABOUTPGK = '/aboutPGK';
 }

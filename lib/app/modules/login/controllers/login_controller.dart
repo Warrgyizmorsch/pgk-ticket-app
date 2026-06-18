@@ -74,7 +74,7 @@ class LoginController extends GetxController {
       Get.snackbar(
         'Invalid Input',
         'Please enter a valid 10-digit phone number.',
-        snackPosition: SnackPosition.BOTTOM,
+        snackPosition: SnackPosition.TOP,
         backgroundColor: Colors.redAccent,
         colorText: Colors.white,
       );

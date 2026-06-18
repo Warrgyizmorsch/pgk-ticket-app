@@ -1,23 +1,134 @@
-import 'package:flutter/material.dart';
-
-import 'package:get/get.dart';
-
+import '../../../common/constant/app_imports.dart';
 import '../controllers/nav_bar_controller.dart';
+
 
 class NavBarView extends GetView<NavBarController> {
   const NavBarView({super.key});
+
   @override
   Widget build(BuildContext context) {
+    Get.put(NavBarController());
+
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('NavBarView'),
-        centerTitle: true,
-      ),
-      body: const Center(
-        child: Text(
-          'NavBarView is working',
-          style: TextStyle(fontSize: 20),
+      backgroundColor: AppColors.background,
+      body: Obx(() => controller.pages[controller.selectedIndex.value]),
+
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: Container(
+        margin: const EdgeInsets.only(top: 20),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            GestureDetector(
+              // Switch tab using your route string constant
+              onTap: () => controller.changeTabByRoute(Routes.SCANNER),
+              child: Container(
+                width: 64,
+                height: 64,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  gradient: AppColors.primaryGradient,
+                  boxShadow: [
+                    BoxShadow(
+                      color: AppColors.primary.withOpacity(0.4),
+                      blurRadius: 10,
+                      offset: const Offset(0, 4),
+                    ),
+                  ],
+                ),
+                child: const Icon(
+                  Icons.qr_code_scanner_rounded,
+                  color: Colors.white,
+                  size: 32,
+                ),
+              ),
+            ),
+            const SizedBox(height: 4),
+            Text(
+              'QR Scan',
+              style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: AppColors.primary),
+            ),
+          ],
         ),
+      ),
+
+      bottomNavigationBar: Container(
+        height: 84,
+        decoration: BoxDecoration(
+          color: AppColors.white,
+          borderRadius: const BorderRadius.only(topLeft: Radius.circular(24), topRight: Radius.circular(24)),
+          boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 10, offset: const Offset(0, -4))],
+        ),
+        child: ClipRRect(
+          borderRadius: const BorderRadius.only(topLeft: Radius.circular(24), topRight: Radius.circular(24)),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            child: Obx(() => Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                _buildNavItem(
+                  route: Routes.HOME,
+                  icon: Icons.home_rounded,
+                  label: 'Home',
+                  isActive: controller.currentRoute == Routes.HOME,
+                ),
+                _buildNavItem(
+                  route: Routes.SHOW_VIEW,
+                  icon: Icons.star_rounded,
+                  label: 'Shows',
+                  isActive: controller.currentRoute == Routes.SHOW_VIEW,
+                ),
+
+                const SizedBox(width: 64), // FAB spacing gap block
+
+                _buildNavItem(
+                  route: Routes.TICKETS,
+                  icon: Icons.confirmation_number_rounded,
+                  label: 'Tickets',
+                  isActive: controller.currentRoute == Routes.TICKETS,
+                ),
+                _buildNavItem(
+                  route: Routes.HISTORY,
+                  icon: Icons.description_rounded,
+                  label: 'History',
+                  isActive: controller.currentRoute == Routes.HISTORY,
+                ),
+              ],
+            )),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildNavItem({
+    required String route,
+    required IconData icon,
+    required String label,
+    required bool isActive,
+  }) {
+    return GestureDetector(
+      onTap: () => controller.changeTabByRoute(route), // Pass route constant straight to controller
+      behavior: HitTestBehavior.opaque,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          AnimatedContainer(
+            duration: const Duration(milliseconds: 200),
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
+            decoration: BoxDecoration(
+              color: isActive ? AppColors.tagBg : Colors.transparent,
+              borderRadius: BorderRadius.circular(12),
+              border: Border.all(color: isActive ? AppColors.priceDivider : Colors.transparent, width: 1),
+            ),
+            child: Icon(icon, color: isActive ? AppColors.primary : AppColors.lightTextDisabled, size: 24),
+          ),
+          const SizedBox(height: 4),
+          Text(
+            label,
+            style: TextStyle(fontSize: 10, fontWeight: FontWeight.w300, color: isActive ? AppColors.primary : AppColors.textSecondary),
+          ),
+        ],
       ),
     );
   }

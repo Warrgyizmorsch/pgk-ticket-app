@@ -12,19 +12,20 @@ class LanguageSelectionView extends GetView<OtpController> {
 
     return Scaffold(
       backgroundColor: AppColors.white,
+      // ─── AppBar Stylings Matching Mockup ───
       appBar: AppBar(
-        backgroundColor: AppColors.primary,
-        elevation: 4,
+        backgroundColor: AppColors.white,
+        elevation: 0,
         automaticallyImplyLeading: false,
-        // Wrapped with Obx so the title string updates dynamically when a locale changes
         title: Obx(() {
           // Accessing the observable variable here registers it with this Obx scope
           final _ = controller.selectedLanguageId.value;
           return Text(
             localizations.chooseYourLanguage,
             style: AppTextStyles.titleLarge.copyWith(
-              color: Colors.white,
+              color: AppColors.textPrimary,
               fontFamily: FontFamily.bold,
+              fontWeight: FontWeight.w700,
             ),
           );
         }),
@@ -32,61 +33,67 @@ class LanguageSelectionView extends GetView<OtpController> {
       ),
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 32.0),
+          padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 24.0),
           child: Column(
             children: [
-              // ─── Grid Option Array ───
+              // ─── 2-Column Grid Option Layout Array ───
               Expanded(
                 child: GridView.builder(
                   itemCount: controller.supportedLanguages.length,
+                  physics: const BouncingScrollPhysics(),
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 3,
-                    crossAxisSpacing: 12,
-                    mainAxisSpacing: 12,
-                    childAspectRatio: 2.3,
+                    crossAxisCount: 2,          // Changed from 3 to 2 columns to match image layout
+                    crossAxisSpacing: 14,       // Clean side-by-side item gaps
+                    mainAxisSpacing: 14,
+                    childAspectRatio: 2.4,      // Maintained balanced rectangular card dimensions
                   ),
                   itemBuilder: (context, index) {
                     final lang = controller.supportedLanguages[index];
 
-                    // Individual item Obx block for instant rendering states
                     return Obx(() {
                       final bool isSelected = controller.selectedLanguageId.value == lang.id;
 
+                      // Dynamically build language text format structure e.g., "हिंदी (Hindi)"
+                      final String displayLanguageText = lang.id == 'en'
+                          ? lang.name
+                          : "${lang.nativeName} (${lang.name})";
+
                       return GestureDetector(
-                        onTap: () => controller.selectLanguage(lang.id,lang.languageCode),
+                        onTap: () => controller.selectLanguage(lang.id, lang.languageCode),
                         child: AnimatedContainer(
-                          duration: const Duration(milliseconds: 200),
+                          duration: const Duration(milliseconds: 180),
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
                             color: isSelected ? AppColors.primary : AppColors.white,
-                            borderRadius: BorderRadius.circular(30),
+                            borderRadius: BorderRadius.circular(12), // Clean rectangle card corners matching design
                             border: Border.all(
-                              color: isSelected ? AppColors.primary : AppColors.lightDisabled,
-                              width: 2,
+                              color: isSelected ? AppColors.primary : const Color(0xFF9CA3AF),
+                              width: 1.5,
                             ),
                           ),
-                          padding: const EdgeInsets.symmetric(horizontal: 12),
+                          padding: const EdgeInsets.symmetric(horizontal: 16),
                           child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text(
-                                lang.name,
-                                style: TextStyle(
-                                  fontSize: 14,
-                                  fontFamily: FontFamily.medium,
-                                  fontWeight: FontWeight.w600,
-                                  color: isSelected ? AppColors.white : AppColors.textSecondary,
+                              Expanded(
+                                child: Text(
+                                  displayLanguageText,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: TextStyle(
+                                    fontSize: 15,
+                                    fontFamily: FontFamily.medium,
+                                    fontWeight: FontWeight.w500,
+                                    color: isSelected ? AppColors.white : AppColors.textPrimary,
+                                  ),
                                 ),
                               ),
-                              const SizedBox(width: 4),
-                              Text(
-                                isSelected ? '✓' : '+',
-                                style: TextStyle(
-                                  fontSize: 12,
-                                  fontFamily: FontFamily.regular,
-                                  color: isSelected ? AppColors.white : AppColors.lightTextDisabled,
+                              // Renders the trailing validation checkmark safely on selected indices
+                              if (isSelected)
+                                const Icon(
+                                  Icons.check,
+                                  color: AppColors.white,
+                                  size: 18,
                                 ),
-                              ),
                             ],
                           ),
                         ),
@@ -96,7 +103,7 @@ class LanguageSelectionView extends GetView<OtpController> {
                 ),
               ),
 
-              // ─── Action Button Footer ───
+              // ─── Wide Action Button Footer ───
               Obx(() {
                 return controller.isLoading.value
                     ? const SizedBox(
@@ -109,7 +116,6 @@ class LanguageSelectionView extends GetView<OtpController> {
                   ),
                 )
                     : AppButton(
-                  // Dynamic translated title string from ARB
                   title: localizations.continueButton,
                   onTap: () => controller.confirmLanguageSelection(),
                 );

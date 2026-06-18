@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "1028857718377",
+    "project_id": "pgk-ticket-app",
+    "storage_bucket": "pgk-ticket-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1028857718377:android:76af53955fc738800c24f8",
+        "android_client_info": {
+          "package_name": "com.pratapgauravkendra.pgk_ticket_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1028857718377-ei7ipdq5nsa2pvp7r5f32f3bkbl8v4qv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pratapgauravkendra.pgk_ticket_app",
+            "certificate_hash": "16c7f3f9fa35890f91cbef34d3288d45706dc46f"
+          }
+        },
+        {
+          "client_id": "1028857718377-m735ggie7e6k14gda31bdonfttbq7dp6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBt_QryU65VyzCi1V6YXaqdTdzD0nuxy5Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1028857718377-m735ggie7e6k14gda31bdonfttbq7dp6.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1028857718377-h141n1rdqj718rmt5kbpgt4mom5vqg1n.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.pgkTicketApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

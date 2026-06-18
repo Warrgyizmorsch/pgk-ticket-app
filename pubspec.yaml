@@ -23,6 +23,11 @@ dependencies:
   http: ^1.4.0
   shared_preferences: ^2.5.5
   country_code_picker: ^3.4.1
+  flutter_tts: ^4.2.5
+  firebase_core: ^4.7.0
+  firebase_messaging: ^16.2.0
+  google_sign_in: ^6.2.1
+  firebase_auth: ^6.1.0
 
 dev_dependencies:
   flutter_test:

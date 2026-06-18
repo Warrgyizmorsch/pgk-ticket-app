@@ -1,4 +1,4 @@
-package com.example.pgk_ticket_app
+package com.pratapgauravkendra.pgk_ticket_app
 
 import io.flutter.embedding.android.FlutterActivity
 
