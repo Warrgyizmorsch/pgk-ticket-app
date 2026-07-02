@@ -1,4 +1,4 @@
-import '../../../../l10n/app_localizations.dart';
+
 import '../../../common/constant/app_imports.dart';
 import '../controllers/otp_controller.dart';
 
@@ -12,21 +12,25 @@ class LanguageSelectionView extends GetView<OtpController> {
 
     return Scaffold(
       backgroundColor: AppColors.white,
-      // ─── AppBar Stylings Matching Mockup ───
       appBar: AppBar(
-        backgroundColor: AppColors.white,
+        backgroundColor: AppColors.primary,
         elevation: 0,
         automaticallyImplyLeading: false,
+        leading: IconButton(
+          icon: const Icon(
+            Icons.arrow_back, // You can also use Icons.arrow_back_ios for an iOS style arrow
+            color: AppColors.white, // Matches your title color
+          ),
+          onPressed: () {
+            Get.back(); // GetX navigation to go back
+          },
+        ),
         title: Obx(() {
           // Accessing the observable variable here registers it with this Obx scope
           final _ = controller.selectedLanguageId.value;
           return Text(
             localizations.chooseYourLanguage,
-            style: AppTextStyles.titleLarge.copyWith(
-              color: AppColors.textPrimary,
-              fontFamily: FontFamily.bold,
-              fontWeight: FontWeight.w700,
-            ),
+            style: AppTextStyles.appBarTitle,
           );
         }),
         centerTitle: true,

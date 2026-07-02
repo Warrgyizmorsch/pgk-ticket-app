@@ -66,7 +66,7 @@ class AboutPgkView extends GetView<HomeController> {
                       begin: Alignment.bottomCenter,
                       end: Alignment.topCenter,
                       colors: [
-                        Colors.black.withOpacity(0.85),
+                        Colors.black.withValues(alpha:0.85),
                         Colors.transparent,
                       ],
                     ),
@@ -102,7 +102,7 @@ class AboutPgkView extends GetView<HomeController> {
                       borderRadius: BorderRadius.circular(16),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black.withOpacity(0.05),
+                          color: Colors.black.withValues(alpha:0.05),
                           blurRadius: 10,
                           offset: const Offset(0, 4),
                         ),
@@ -257,10 +257,10 @@ class AboutPgkView extends GetView<HomeController> {
                   Container(
                     padding: const EdgeInsets.all(16),
                     decoration: BoxDecoration(
-                      color: const Color(0xFFD36526).withOpacity(0.1),
+                      color: const Color(0xFFD36526).withValues(alpha:0.1),
                       borderRadius: BorderRadius.circular(12),
                       border: Border.all(
-                        color: const Color(0xFFD36526).withOpacity(0.3),
+                        color: const Color(0xFFD36526).withValues(alpha:0.3),
                       ),
                     ),
                     child: Column(
@@ -297,104 +297,7 @@ class AboutPgkView extends GetView<HomeController> {
     );
   }
 
-  // --- Helper Methods ---
-
-  Widget _buildVideoThumbnailCard({
-    required String imagePath,
-    required String title,
-  }) {
-    return Container(
-      width: 160,
-      margin: const EdgeInsets.only(right: 16),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Stack(
-            alignment: Alignment.center,
-            children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(12),
-                child: Image.asset(
-                  imagePath,
-                  width: 160,
-                  height: 90,
-                  fit: BoxFit.cover,
-                  errorBuilder: (context, error, stackTrace) => Container(
-                    width: 160,
-                    height: 90,
-                    color: Colors.grey[400],
-                    child: const Icon(Icons.image, color: Colors.white),
-                  ),
-                ),
-              ),
-              Positioned(
-                bottom: 0,
-                left: 0,
-                right: 0,
-                child: Container(
-                  height: 40,
-                  decoration: BoxDecoration(
-                    borderRadius: const BorderRadius.only(
-                      bottomLeft: Radius.circular(12),
-                      bottomRight: Radius.circular(12),
-                    ),
-                    gradient: LinearGradient(
-                      begin: Alignment.bottomCenter,
-                      end: Alignment.topCenter,
-                      colors: [
-                        Colors.black.withOpacity(0.8),
-                        Colors.transparent,
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              Container(
-                width: 32,
-                height: 32,
-                decoration: BoxDecoration(
-                  color: Colors.black.withOpacity(0.6),
-                  shape: BoxShape.circle,
-                  border: Border.all(color: Colors.white, width: 1.5),
-                ),
-                child: const Icon(
-                  Icons.play_arrow,
-                  color: Colors.white,
-                  size: 18,
-                ),
-              ),
-              Positioned(
-                bottom: 6,
-                left: 8,
-                right: 8,
-                child: Text(
-                  title.replaceAll('\n', ' '),
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 10,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 8),
-          Text(
-            title,
-            maxLines: 2,
-            style: const TextStyle(
-              fontSize: 13,
-              fontWeight: FontWeight.w600,
-              color: Colors.black87,
-              height: 1.2,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
+ 
 
   Widget _buildMainHeader(String text) {
     return Padding(

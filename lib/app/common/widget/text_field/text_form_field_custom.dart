@@ -56,7 +56,7 @@ class TextFormFieldCustom extends StatelessWidget {
                 Text(
                   title,
                   style: TextStyle(
-                    fontSize: hintTextSize ?? 14,
+                    fontSize: hintTextSize ?? 12,
                     color: hintTextColor ?? AppColors.textPrimary,
                     fontFamily: hintTextStyle ?? FontFamily.regular,
                   ),
@@ -65,7 +65,7 @@ class TextFormFieldCustom extends StatelessWidget {
                 Text(
                   "*",
                   style: TextStyle(
-                    fontSize: hintTextSize ?? 14,
+                    fontSize: hintTextSize ?? 12,
                     color:  AppColors.error,
                     fontFamily: FontFamily.regular,
                   ),

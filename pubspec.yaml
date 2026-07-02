@@ -28,6 +28,10 @@ dependencies:
   firebase_messaging: ^16.2.0
   google_sign_in: ^6.2.1
   firebase_auth: ^6.1.0
+  fluttertoast: ^8.2.12
+  url_launcher: ^6.3.0
+  flutter_blue_plus: ^1.31.0 # (Use the latest version)
+  permission_handler: ^11.3.0
 
 dev_dependencies:
   flutter_test:

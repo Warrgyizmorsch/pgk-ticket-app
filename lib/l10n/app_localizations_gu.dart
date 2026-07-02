@@ -12,19 +12,19 @@ class AppLocalizationsGu extends AppLocalizations {
   String get appTitle => 'મહારાણા પ્રતાપ ગૌરવ કેન્દ્ર';
 
   @override
-  String get subtitle => 'ઉદયપુરના શૂરવીરને સમર્પિત શ્રદ્ધાંજલિ';
+  String get subtitle => 'ઉદયપુરના વીર શિરોમણીને શ્રદ્ધાંજલિ';
 
   @override
   String get chooseYourLanguage => 'તમારી ભાષા પસંદ કરો';
 
   @override
-  String get continueButton => 'ચાલુ રાખો';
+  String get continueButton => 'આગળ વધો';
 
   @override
   String get bookTicket => 'ટિકિટ બુક કરો';
 
   @override
-  String get home => 'મુખ્ય પૃષ્ઠ';
+  String get home => 'હોમ';
 
   @override
   String get aboutUs => 'અમારા વિશે';
@@ -36,10 +36,10 @@ class AppLocalizationsGu extends AppLocalizations {
   String get historyOfPratap => 'મહારાણા પ્રતાપનો ઇતિહાસ';
 
   @override
-  String get bhaktiDhamVisit => 'ભક્તિ ધામ મુલાકાત';
+  String get bhaktiDhamVisit => 'ભક્તિ ધામ દર્શન';
 
   @override
-  String get variousShows => 'વિવિધ કાર્યક્રમો';
+  String get variousShows => 'વિવિધ શો';
 
   @override
   String get events => 'કાર્યક્રમો';
@@ -48,16 +48,16 @@ class AppLocalizationsGu extends AppLocalizations {
   String get media => 'મીડિયા';
 
   @override
-  String get contactUs => 'અમારો સંપર્ક કરો';
+  String get contactUs => 'સંપર્ક કરો';
 
   @override
-  String get login => 'લૉગિન';
+  String get login => 'લોગિન';
 
   @override
-  String get register => 'નોંધણી કરો';
+  String get register => 'રજીસ્ટર';
 
   @override
-  String get statueOfPride => 'ગૌરવની પ્રતિમા';
+  String get statueOfPride => 'સ્ટેચ્યુ ઓફ પ્રાઇડ';
 
   @override
   String get majorAttractions => 'મુખ્ય આકર્ષણો';
@@ -69,10 +69,10 @@ class AppLocalizationsGu extends AppLocalizations {
   String get testimonials => 'લોકો અમારા વિશે શું કહે છે';
 
   @override
-  String get tagline => 'જ્યાં ઇતિહાસ બોલે છે અને હૃદયો પ્રેરિત થાય છે!';
+  String get tagline => 'જ્યાં ઇતિહાસ બોલે છે અને હૃદય પ્રેરિત થાય છે !';
 
   @override
-  String get address => 'ટાઈગર હિલ્સ, મનોહરપુરા, બડગાંવ નજીક, ઉદયપુર';
+  String get address => 'ટાઇગર હિલ્સ, મનોહરપુરા, બડગાંવ પાસે, ઉદયપુર';
 
   @override
   String get readMore => 'વધુ વાંચો';
@@ -82,18 +82,18 @@ class AppLocalizationsGu extends AppLocalizations {
 
   @override
   String get majorAttractionsDescription =>
-      'ભારત માતા મંદિર, ભારત દર્શન દીર્ઘા, મહારાણા પ્રતાપના ચિત્રોની આર્ટ ગેલેરી, યાંત્રિક ગેલેરીઓ, જળાશય, ક્લોક રૂમ, મહારાણા પ્રતાપની 57 ફૂટ ઊંચી પ્રતિમા, સ્વામીભક્ત ચેતકની ભવ્ય પ્રતિમા, મીરાબાઈ અને મેવાડના ઇતિહાસ પર આધારિત ડોક્યુમેન્ટરી ફિલ્મ. ઉપરાંત કૅફેટેરિયા, બજાર, પીવાનું પાણી અને પાર્કિંગની સુવિધાઓ પણ ઉપલબ્ધ છે.';
+      'ભારત માતા મંદિર, ભારત દર્શન દીર્ઘા, મહારાણા પ્રતાપના ચિત્રોની આર્ટ ગેલેરીઓ, મિકેનાઇઝ્ડ ગેલેરીઓ, વોટર પોન્ડ, ક્લોક રૂમ, મહારાણા પ્રતાપની 57 ફૂટની પ્રતિમા, સ્વામીભક્ત ચેતકની અદભુત પ્રતિમા, મીરા બાઈ અને મેવાડના ઇતિહાસ પર ડોક્યુમેન્ટ્રી ફિલ્મ. કેફેટેરિયા, માર્કેટ, પીવાનું પાણી અને પાર્કિંગ પણ ઉપલબ્ધ છે.';
 
   @override
   String get historyOfPratapDescription =>
-      'સ્વતંત્રતાના ઉપાસક અને સંત સ્વભાવના રાજા મહારાણા પ્રતાપ આપણામાં દેશભક્તિની ભાવના જગાવે છે અને ધર્મ, સંસ્કૃતિ તથા સમાજની રક્ષા માટે પ્રેરણા આપે છે. રાણી જયવંતી દેવીના ગર્ભમાંથી પ્રતાપનો જન્મ 9 મે 1540 (જ્યેષ્ઠ શુક્લ 3, વિક્રમ સંવત 1597) ના રોજ થયો હતો.';
+      'મહારાણા પ્રતાપ, સ્વતંત્રતા પ્રેમી, સંત રાજા, આપણામાં દેશભક્તિ જગાડવામાં સફળ થાય અને આપણને ધર્મ, સંસ્કૃતિ અને સમાજની રક્ષા માટે પ્રયત્ન કરવા પ્રેરિત કરે. મહારાણી જયવંતી દેવીના ગર્ભમાંથી પ્રતાપનો જન્મ 9 મે, 1540 (જ્યેષ્ઠ શુક્લ 3, વિ.સં. 1597) ના રોજ થયો હતો.';
 
   @override
-  String get haldighatiEventTitle => 'HaldiGhati Vijay 450 Years Celebration';
+  String get haldighatiEventTitle => 'હલ્દીઘાટી વિજય 450 વર્ષ મહોત્સવ';
 
   @override
   String get haldighatiEventDescription =>
-      'Welcome to the grand celebration organized on the completion of 450 years of Haldighati victory of Veer Shiromani Maharana Pratap.';
+      'વીર શિરોમણી મહારાણા પ્રતાપના હલ્દીઘાટી વિજયના 450 વર્ષ પૂર્ણ થવા પર આયોજિત ભવ્ય મહોત્સવમાં આપનું સ્વાગત છે.';
 
   @override
   String get eventDate => '17 જૂન 2026';
@@ -108,71 +108,71 @@ class AppLocalizationsGu extends AppLocalizations {
   String get tentCamping => 'ટેન્ટ કેમ્પિંગ';
 
   @override
-  String get adventureTravel => 'સાહસિક પ્રવાસ';
+  String get adventureTravel => 'એડવેન્ચર ટ્રાવેલ';
 
   @override
-  String get mountainBiking => 'માઉન્ટેન બાઈકિંગ';
+  String get mountainBiking => 'માઉન્ટેન બાઇકિંગ';
 
   @override
-  String get swimmingFishing => 'માછીમારી અને તરવું';
+  String get swimmingFishing => 'માછલી પકડવી અને સ્વિમિંગ';
 
   @override
-  String get gymYoga => 'જિમ અને યોગ';
+  String get gymYoga => 'જિમ અને યોગા';
 
   @override
-  String get legacyTitle => 'સાહસ અને સંઘર્ષનો વારસો';
+  String get legacyTitle => 'સાહસ અને સ્થિતિસ્થાપકતાનો વારસો';
 
   @override
   String get historyIntroP1 =>
-      'મહારાણા પ્રતાપનો ઇતિહાસ સાહસ, દ્રઢ સંકલ્પ અને અતૂટ દેશભક્તિની વાર્તા છે. તેઓ મેવાડના વીર રાજપૂત શાસક હતા જેમણે મુઘલ સામ્રાજ્ય સામે ઝૂકવાનો ઇનકાર કર્યો હતો. તેમના અદમ્ય સાહસ માટે જાણીતા, તેમણે પોતાનું જીવન પોતાના રાજ્યના રક્ષણ અને રાજપૂત સન્માન જાળવવામાં સમર્પિત કર્યું. મહારાણા પ્રતાપનો ઇતિહાસ સમ્રાટ અકબર સામેના તેમના અથાક સંઘર્ષ અને તેમની વ્યૂહાત્મક યુદ્ધની રણનીતિ દ્વારા ચિહ્નિત થયેલ છે, જે તેમને ભારતીય ઇતિહાસમાં એક મહાન વ્યક્તિ બનાવે છે.';
+      'મહારાણા પ્રતાપનો ઇતિહાસ સાહસ, દ્રઢતા અને અડગ દેશભક્તિની વાર્તા છે. તેઓ મેવાડના એક પરાક્રમી રાજપૂત શાસક હતા જેમણે મુગલ સામ્રાજ્ય સામે ઝૂકવાનો ઇનકાર કર્યો હતો. પોતાની અદમ્ય ભાવના માટે જાણીતા, તેમણે પોતાનું જીવન પોતાના રાજ્યની રક્ષા કરવા અને રાજપૂતી સન્માન જાળવવા માટે સમર્પિત કરી દીધું હતું. સમ્રાટ અકબર સામેનો તેમનો અવિરત સંઘર્ષ અને તેમની વ્યૂહાત્મક યુદ્ધ નીતિઓએ તેમને ભારતીય ઇતિહાસમાં એક મહાન વ્યક્તિત્વ બનાવ્યા છે.';
 
   @override
   String get historyIntroP2 =>
-      'મહારાણા પ્રતાપ મેવાડના શાસક, રાજપૂતોના સિસોદિયા વંશના મહારાણા ઉદયસિંહના પુત્ર હતા. પ્રતાપ તેમના પિતાની ઇચ્છા વિરુદ્ધ મેવાડના શાસક બન્યા, જેમણે તેમના પ્રિય પુત્ર જગમાલને પોતાનો ઉત્તરાધિકારી બનાવ્યો હતો. જો કે, મેવાડના વરિષ્ઠ ઉમરાવોએ નક્કી કર્યું કે પ્રતાપ, જે સૌથી મોટા પુત્ર અને સાચા ઉત્તરાધિકારી છે, તેમને રાજા બનાવવા જોઈએ. વધુમાં, મહારાણા પ્રતાપ મજબૂત રાજપૂત ચરિત્રના માણસ કહેવાતા, તેઓ વધુ બહાદુર અને વીર હતા. તેમની દયા અને ન્યાયી નિર્ણય લેવાની ક્ષમતાએ તેમના દુશ્મનોના પણ દિલ જીતી લીધા. તેઓ ભારતના એકમાત્ર એવા શાસક છે જેમણે મુઘલ શાસન સામે આત્મસમર્પણ ન કર્યું, અને તેના માટે તેઓ આજે પણ દેશના સૌથી પ્રખ્યાત શાસક છે.';
+      'મહારાણા પ્રતાપ મેવાડના શાસક, રાજપૂતોના સિસોદિયા વંશના મહારાણા ઉદય સિંહના પુત્ર હતા. પ્રતાપ તેમના પિતાની ઈચ્છા વિરુદ્ધ મેવાડના શાસક બન્યા, જેમણે તેમના મનપસંદ પુત્ર જગમલને પોતાના ઉત્તરાધિકારી તરીકે નિયુક્ત કર્યા હતા. જો કે, મેવાડના વરિષ્ઠ સામંતોએ નિર્ણય કર્યો કે પ્રતાપ, જેઓ પ્રથમ પુત્ર અને સાચા ઉત્તરાધિકારી છે, તેમને રાજા તરીકે તાજ પહેરાવવો જોઈએ. મહારાણા પ્રતાપ મજબૂત રાજપૂત ચારિત્ર્ય ધરાવતા વ્યક્તિ હતા, તેઓ ખૂબ જ બહાદુર અને પરાક્રમી હતા. તેમની દયાળુતા અને ન્યાયી નિર્ણય લેવાની ક્ષમતાએ તેમના દુશ્મનોના દિલ પણ જીતી લીધા હતા. તેઓ ભારતના એકમાત્ર એવા શાસક છે જેમણે મુગલ શાસન સામે હાર ન માની, અને તેના કારણે તેઓ આજે પણ દેશના સૌથી આદરણીય શાસક છે.';
 
   @override
   String get historyIntroP3 =>
-      'હલ્દીઘાટીના પ્રખ્યાત યુદ્ધ પછી, મહારાણા પ્રતાપના સગા ભાઈ શક્તિસિંહ, જે મુઘલો સાથે જોડાયા હતા, તેમણે તેમને યુદ્ધના મેદાનમાંથી ભાગવામાં મદદ કરી, કારણ કે તેમનો પ્રિય અને વિશ્વાસુ ઘોડો ચેતક તેના પાછળના પગમાં ઘાયલ થયો હતો અને ઝાલા માન નામના ઉમરાવે મહારાણાનો મુગટ પહેર્યો હતો. મહારાણા પ્રતાપના વિશ્વાસુ ઘોડા ચેતકે અંતિમ શ્વાસ લેતા પહેલા તેમને સુરક્ષિત સ્થાને પહોંચાડ્યા. પ્રતાપને અરવલ્લીની ટેકરીઓમાં આશરો લેવો પડ્યો. અરવલ્લીના ભીલ આદિવાસીઓએ યુદ્ધ સમયે મહારાણાને ટેકો આપ્યો અને શાંતિના સમયે જંગલોમાં રહેવામાં મદદ કરી. દેશનિકાલમાં, પ્રતાપે ગેરિલા યુદ્ધ, દુશ્મનને હેરાન કરવા અને હળવી કેવેલરીની યુક્તિઓ જેવી યુદ્ધની રણનીતિઓને પૂર્ણ કરવામાં ઘણો સમય પસાર કર્યો, જેનાથી તેમને મેવાડ પાછું જીતવામાં મદદ મળી.';
+      'હલ્દીઘાટીના પ્રખ્યાત યુદ્ધ પછી, મહારાણા પ્રતાપના પોતાના ભાઈ શક્તિ સિંહે, જેઓ મુગલો સાથે જોડાઈ ગયા હતા, તેમણે યુદ્ધના મેદાનમાંથી સુરક્ષિત નીકળવામાં મદદ કરી હતી, કારણ કે તેમનો પ્રિય અને વિશ્વાસુ ઘોડો ચેતક પાછળના પગમાં ઘાયલ થયો હતો અને ઝાલા માને દુશ્મનોને ભ્રમિત કરવા મહારાણાનો મુકટ પહેર્યો હતો. ચેતકે અંતિમ શ્વાસ લેતા પહેલા તેમને સુરક્ષિત સ્થાને પહોંચાડ્યા હતા. પ્રતાપે અરવલ્લીની પહાડીઓમાં આશ્રય લેવો પડ્યો હતો. અરવલ્લીના ભીલ આદિવાસીઓએ યુદ્ધ દરમિયાન મહારાણાને સાથ આપ્યો હતો, અને શાંતિના સમયમાં જંગલોમાં રહેવામાં તેમની મદદ કરી હતી. દેશનિકાલ દરમિયાન, પ્રતાપે ગેરિલા યુદ્ધ (છૂપો હુમલો), દુશ્મનને પરેશાન કરવા અને હળવી અશ્વદળ જેવી યુદ્ધ રણનીતિઓ વિકસાવવામાં ઘણો સમય વિતાવ્યો, જેણે તેમને મેવાડ પાછું જીતવામાં મદદ કરી.';
 
   @override
   String get historyIntroP4 =>
-      'પ્રખ્યાત બ્રિટિશ ઇતિહાસકાર કર્નલ ટૉડે પ્રતાપને \'રાજસ્થાનના લિયોનીદાસ\' નું બિરુદ આપ્યું હતું. પ્રતાપ પરના તેમના એક લખાણમાં, ટૉડે ઉલ્લેખ કર્યો છે કે, \'આલ્પાઇન અરવલ્લીમાં એવો કોઈ પાસ નથી જે મહારાણા પ્રતાપના કોઈને કોઈ કાર્ય - કોઈ શાનદાર જીત, અથવા વધુ વખત, ગૌરવપૂર્ણ હારથી પવિત્ર ન હોય.\' એવું માનવામાં આવે છે કે તેમના દેશનિકાલ દરમિયાન, મહારાણા પ્રતાપ તૂટી પડવાની અણી પર હતા. અકબરના દરબારમાં રહેલા બિકાનેરના રાજપૂત કવિ અને યોદ્ધા પૃથ્વીરાજે મહારાણાને એક પત્ર મોકલીને શક્તિ આપી, અને તેમને તેમના યુદ્ધના પ્રયત્નો ચાલુ રાખવા પ્રેરણા આપી.';
+      'પ્રખ્યાત બ્રિટિશ ઇતિહાસકાર કर्नल ટૉડે પ્રતાપને \'રાજસ્થાનના લિયોનીડાસ\'નું બિરુદ આપ્યું હતું. પ્રતાપ પરના પોતાના એક લખાણમાં ટૉડે ઉલ્લેખ કર્યો છે કે, “અરવલ્લીની પહાડીઓમાં એવો કોઈ ઘાટ નથી જે મહારાણા પ્રતાપના કોઈને કોઈ પરાક્રમ - કોઈ ભવ્ય વિજય અથવા વારંવાર, વધુ ગૌરવશાળી હારથી પવિત્ર ન થયો હોય.” એવું માનવામાં આવે છે કે તેમના દેશનિકાલ દરમિયાન, મહારાણા પ્રતાપ ખૂબ જ મુશ્કેલ પરિસ્થિતિમાં હતા. બીકાનેરના એક રાજપૂત કવિ અને યોદ્ધા પૃથ્વીરાજ, જે અકબરના દરબારમાં હતા, તેમણે મહારાણાને એક પત્ર મોકલ્યો જેણે તેમને હિંમત આપી અને પોતાના યુદ્ધના પ્રયાસો ચાલુ રાખવા પ્રેરિત કર્યા.';
 
   @override
   String get historyIntroP5 =>
-      'મહારાણા પ્રતાપનો ઇતિહાસ સાહસ, સન્માન અને પોતાની ભૂમિ અને મૂલ્યો પ્રત્યેના અતૂટ સમર્પણનો કાલાતીત પુરાવો છે. પ્રતાપ ગૌરવ કેન્દ્રના મુલાકાતીઓ માટે, આ વારસો અખંડિતતા અને નેતૃત્વમાં જોવા મળતી શક્તિની એક શક્તિશાળી યાદ અપાવે છે. પછી ભલે તમે બિઝનેસ લીડર હો, ઉદ્યોગસાહસિક હો, કે ઇતિહાસના ઉત્સાહી હો, મહારાણા પ્રતાપનું જીવન સદીઓથી ચાલતા પાઠ શીખવે છે.';
+      'મહારાણા પ્રતાપનો ઇતિહાસ સાહસ, સન્માન અને પોતાની ભૂમિ તેમજ મૂલ્યો પ્રત્યેના અડગ સમર્પણના એક કાલાતીત પ્રમાણ તરીકે ઊભો છે. પ્રતાપ ગૌરવ કેન્દ્રની મુલાકાત લેતા પ્રવાસીઓ માટે, આ વારસો અખંડિતતા અને નેતૃત્વમાં રહેલી શક્તિની એક શક્તિશાળી યાદ અપાવે છે. ભલે તમે બિઝનેસ લીડર હોવ, ઉદ્યોગસાહસિક હોવ કે ઇતિહાસના શોખીન હોવ, મહારાણા પ્રતાપનું જીવન એવા પાઠ આપે છે જે સદીઓથી પર છે.';
 
   @override
   String get challengesTitle =>
-      'પોતાના શાસનકાળ દરમિયાન મહારાણા પ્રતાપને કયા પડકારોનો સામનો કરવો પડ્યો?';
+      'મહારાણા પ્રતાપને તેમના શાસનકાળ દરમિયાન કઈ પડકારોનો સામનો કરવો પડ્યો હતો?';
 
   @override
-  String get nobleLineageTitle => 'ઉચ્ચ વંશ સાથેનો એક ન્યાયી શાસક';
+  String get nobleLineageTitle => 'કુલીન વંશના એક ન્યાયી શાસક';
 
   @override
   String get nobleLineageDesc =>
-      'રાજપૂતોના સિસોદિયા વંશમાં જન્મેલા, મહારાણા પ્રતાપ મેવાડના મહારાણા ઉદયસિંહ દ્વિતીયના સૌથી મોટા પુત્ર હતા. જોકે તેમના પિતાએ જગમાલને પોતાનો ઉત્તરાધિકારી પસંદ કર્યો હતો, પરંતુ મેવાડના ઉમરાવોએ પરંપરાનું પાલન કર્યું અને પ્રતાપને સાચા શાસક તરીકે તાજ પહેરાવ્યો. તેમનું નેતૃત્વ નિષ્પક્ષતા, સન્માન અને પોતાના રાજ્ય પ્રત્યેની જવાબદારીની અતૂટ ભાવના પર આધારિત હતું。\n\nમહારાણા પ્રતાપને માત્ર તેમની સૈન્ય વ્યૂહરચનાઓ માટે જ નહીં, પરંતુ તેમની નમ્રતા, સહાનુભૂતિ અને ઉચ્ચ નૈતિક ધોરણો માટે પણ પ્રશંસા મળે છે — એવા ગુણો જેનાથી તેમને તેમના દુશ્મનોનું પણ સન્માન મળ્યું.';
+      'રાજપૂતોના સિસોદિયા વંશમાં જન્મેલા, મહારાણા પ્રતાપ મેવાડના મહારાણા ઉદય સિંહ II ના સૌથી મોટા પુત્ર હતા. જો કે તેમના પિતાએ જગમલને પોતાના ઉત્તરાધિકારી તરીકે પસંદ કર્યા હતા, પરંતુ મેવાડના સામંતો પરંપરા સાથે ઉભા રહ્યા અને પ્રતાપને સાચા શાસક તરીકે તાજ પહેરાવ્યો. તેમનું નેતૃત્વ નિષ્પક્ષતા, સન્માન અને પોતાના રાજ્ય પ્રત્યેની જવાબદારીની અતૂટ ભાવના પર આધારિત હતું.\n\nમહારાણા પ્રતાપ માત્ર તેમની સૈન્ય વ્યૂહરચનાઓ માટે જ નહીં, પરંતુ તેમની નમ્રતા, સહાનુભૂતિ અને ઉચ્ચ નૈતિક ધોરણો માટે પણ જાણીતા છે - એવા ગુણો જેણે તેમને તેમના દુશ્મનોનું પણ સન્માન અપાવ્યું.';
 
   @override
-  String get refusalMughalTitle => 'મુઘલ શાસન સામે ઝૂકવાનો ઇનકાર';
+  String get refusalMughalTitle => 'મુગલ શાસન સામે ઝૂકવાનો ઇનકાર';
 
   @override
   String get refusalMughalDesc =>
-      'એવા યુગમાં જ્યારે ઘણા રાજપૂત શાસકોએ મુઘલ સામ્રાજ્ય સાથે ગઠબંધન કર્યું, પ્રતાપ વિરોધ કરવાના પોતાના નિર્ણય પર અડગ રહ્યા. મુઘલ સાર્વભૌમત્વ સ્વીકારવાના તેમના ઇનકારે, સમ્રાટ અકબરના દબાણ હેઠળ પણ, તેમને મહારાણા પ્રતાપના ઇતિહાસમાં એક અનોખું વ્યક્તિત્વ બનાવ્યું અને તેમને ભારતીય વારસામાં વિશેષ સ્થાન અપાવ્યું。\n\nમેવાડની સ્વતંત્રતા જાળવી રાખવાનું તેમનું સમર્પણ એક રાજકીય વલણ કરતાં ઘણું વધારે હતું — તે રાજપૂત ગૌરવ અને સંસ્કૃતિનું રક્ષણ કરવાની વ્યક્તિગત પ્રતિજ્ઞા હતી。\n\nમેવાડની વીરતાનો અનુભવ કરવા માટેના સૌથી પ્રતિકાત્મક સ્થળોમાંનું એક મહારાણા પ્રતાપ સ્મારક ઉદયપુર છે, જે ઇતિહાસ પ્રેમીઓ માટે અચૂક મુલાકાત લેવા જેવું સ્થળ છે.';
+      'એવા યુગમાં જ્યારે ઘણા રાજપૂત શાસકોએ મુગલ સામ્રાજ્ય સાથે ગઠબંધન કર્યું હતું, પ્રતાપ વિરોધ કરવાના પોતાના નિર્ણય પર અડગ રહ્યા. સમ્રાટ અકબરના દબાણ હેઠળ પણ, મુગલ સાર્વભૌમત્વ સ્વીકારવાનો ઇનકાર કરીને તેમણે મહારાણા પ્રતાપના ઇતિહાસમાં એક અનોખું સ્થાન મેળવ્યું અને ભારતીય વારસામાં તેમને એક વિશેષ સ્થાન મળ્યું.\n\nમેવાડની સ્વતંત્રતા જાળવી રાખવા પ્રત્યેનું તેમનું સમર્પણ માત્ર એક રાજકીય વલણ નહોતું - તે રાજપૂત ગૌરવ અને સંસ્કૃતિની રક્ષા કરવાનો એક વ્યક્તિગત સંકલ્પ હતો.\n\nમેવાડની વીરતાનો અનુભવ કરવા માટેનું સૌથી પ્રતિષ્ઠિત સ્થળ મહારાણા પ્રતાપ સ્મારક ઉદયપુર છે, જે ઇતિહાસ પ્રેમીઓ માટે મુલાકાત લેવા જેવું અનિવાર્ય સ્થળ છે.';
 
   @override
-  String get haldighatiTitle => 'હલ્દીઘાટીનું યુદ્ધ: એક ટર્નિંગ પોઈન્ટ';
+  String get haldighatiTitle => 'હલ્દીઘાટીનું યુદ્ધ: એક ટર્નિંગ પોઇન્ટ';
 
   @override
   String get haldighatiDesc =>
-      '1576માં, મહારાણા પ્રતાપ અને માનસિંહના નેતૃત્વવાળી મુઘલ સેના વચ્ચે હલ્દીઘાટીનું પ્રખ્યાત યુદ્ધ થયું હતું. જોકે આ યુદ્ધ અનિર્ણિત રહ્યું હતું, પરંતુ તે રાજપૂત વીરતાનું પ્રતીક બની ગયું. ગંભીર ઇજાઓ છતાં, પ્રતાપના બહાદુર ઘોડા ચેતકે તેમને સુરક્ષિત સ્થાને પહોંચાડ્યા. તેમના વફાદાર યોદ્ધા ઝાલા માને દુશ્મનોને ગેરમાર્ગે દોરવા માટે મહારાણાનો મુગટ પહેરીને પોતાના જીવનનું બલિદાન આપ્યું。\n\nઆ ભયંકર મુકાબલા પછી, પ્રતાપે અરવલ્લીની ટેકરીઓમાં આશરો લીધો, અને આત્મસમર્પણના બદલે મુશ્કેલી પસંદ કરી — એક એવો નિર્ણય જે આજે પણ પ્રતાપ ગૌરવ કેન્દ્રની મુલાકાત લેનારાઓને ઊંડી પ્રેરણા આપે છે.';
+      '1576 માં, મહારાણા પ્રતાપ અને માન સિંહના નેતૃત્વવાળી મુગલ સેના વચ્ચે હલ્દીઘાટીનું પ્રખ્યાત યુદ્ધ થયું હતું. જો કે આ યુદ્ધ અનિર્ણાયક રહ્યું હતું, પરંતુ તે રાજપૂતી વીરતાનું પ્રતીક બની ગયું. પ્રતાપના બહાદુર ઘોડા ચેતકે ગંભીર ઈજાઓ છતાં તેમને સુરક્ષિત સ્થાને પહોંચાડ્યા હતા. તેમના વફાદાર યોદ્ધા ઝાલા માને દુશ્મનોને ગભરાવવા મહારાણાનો મુકટ પહેરીને પોતાના જીવનનું બલિદાન આપ્યું હતું.\n\nઆ ભીષણ મુકાબલા પછી, પ્રતાપે અરવલ્લીની પહાડીઓમાં આશ્રય લીધો, અને આત્મસમર્પણને બદલે મુશ્કેલીઓ પસંદ કરી - એક એવો નિર્ણય જે આજે પણ પ્રતાપ ગૌરવ કેન્દ્રની મુલાકાત લેતા લોકોને ઊંડે સુધી પ્રેરિત કરે છે.';
 
   @override
-  String get guerrillaTitle => 'ગેરિલા યુદ્ધ અને વ્યૂહાત્મક કૌશલ્ય';
+  String get guerrillaTitle => 'ગેરિલા યુદ્ધ અને વ્યૂહાત્મક બુદ્ધિમત્તા';
 
   @override
   String get guerrillaDesc =>
-      'મહારાણા પ્રતાપે કૌશલ્ય અને સર્જનાત્મકતા સાથે નવી પરિસ્થિતિઓ અનુસાર પોતાને ઢાળ્યા. સ્થાનિક ભીલ સમુદાયના ટેકાથી, તેમણે મુઘલ સેનાને અસ્થિર રાખવા માટે ગેરિલા યુદ્ધ, રાતના હુમલા અને ઝડપી કેવેલરી રણનીતિનો ઉપયોગ કર્યો. ભૂપ્રદેશની તેમની સમજણ, અથાક ભાવના સાથે મળીને, તેમને મેવાડના મુખ્ય ભાગો પાછા મેળવવામાં મદદ કરી。\n\nઆ વ્યૂહાત્મક લવચીકતા હિન્દી અને પ્રાદેશિક લોકકથાઓમાં મહારાણા પ્રતાપના ઇતિહાસનો સાર દર્શાવે છે, જ્યાં તેમને એક યોદ્ધા અને તેમના લોકોના બુદ્ધિમાન રક્ષક બંને તરીકે યાદ કરવામાં આવે છે.';
+      'મહારાણા પ્રતાપે કૌશલ્ય અને સર્જનાત્મકતા સાથે નવી પરિસ્થિતિઓને અપનાવી હતી. સ્થાનિક ભીલ સમુદાયના સમર્થનથી, તેમણે મુગલ સેનાને અસ્થિર રાખવા માટે ગેરિલા યુદ્ધ, રાત્રિના દરોડા અને ઝડપી અશ્વદળની રણનીતિનો ઉપયોગ કર્યો હતો. આ પ્રદેશની તેમની સમજ, અથાક ભાવના સાથે, તેમને મેવાડના મુખ્ય ભાગો પાછા મેળવવામાં મદદરૂપ બની.\n\nઆ વ્યૂહાત્મક સ્થિતિસ્થાપકતા ગુજરાતી, હિન્દી અને પ્રાદેશિક લોકકથાઓમાં મહારાણા પ્રતાપના ઇતિહાસના સારને દર્શાવે છે, જ્યાં તેમને એક યોદ્ધા અને પોતાના લોકોના બુદ્ધિમાન રક્ષક બંને તરીકે યાદ કરવામાં આવે છે.';
 
   @override
   String get faqTitle => 'વારંવાર પૂછાતા પ્રશ્નો (FAQs)';
@@ -182,29 +182,30 @@ class AppLocalizationsGu extends AppLocalizations {
 
   @override
   String get faqA1 =>
-      'મહારાણા પ્રતાપનો ઇતિહાસ બહાદુરી, પ્રતિકાર અને સ્વાભિમાનનું પ્રતીક છે. મુઘલ વર્ચસ્વ સામેની તેમની અડગ ભાવના અને સન્માનના રાજપૂત કોડ પ્રત્યેની તેમની પ્રતિબદ્ધતાએ તેમને ભારતના સૌથી આદરણીય ઐતિહાસિક વ્યક્તિઓમાંના એક બનાવ્યા છે.';
+      'મહારાણા પ્રતાપનો ઇતિહાસ બહાદુરી, પ્રતિકાર અને સ્વાભિમાનનું પ્રતીક છે. મુગલ આધિપત્ય સામે તેમની અડગ ભાવના અને રાજપૂત સન્માન સંહિતા પ્રત્યેની પ્રતિબદ્ધતાએ તેમને ભારતના સૌથી પૂજનીય ઐતિહાસિક વ્યક્તિત્વોમાંના એક બનાવ્યા છે.';
 
   @override
-  String get faqQ2 => 'હું મહારાણા પ્રતાપના ઇતિહાસ વિશે ક્યાં જાણી શકું?';
+  String get faqQ2 =>
+      'હું ગુજરાતી કે હિન્દીમાં મહારાણા પ્રતાપનો ઇતિહાસ ક્યાં જાણી શકું?';
 
   @override
   String get faqA2 =>
-      'તમે પ્રતાપ ગૌરવ કેન્દ્ર ઉદયપુર ખાતે મહારાણા પ્રતાપના ઇતિહાસ વિશે જાણી શકો છો, જ્યાં પ્રદર્શનો, દ્રશ્યો અને કથન તમામ મુલાકાતીઓ માટે હિન્દી અને અંગ્રેજી બંનેમાં તેમના વારસાને જીવંત કરે છે.';
+      'તમે પ્રતાપ ગૌરવ કેન્દ્ર ઉદયપુરમાં મહારાણા પ્રતાપનો ઇતિહાસ જોઈ શકો છો, જ્યાં પ્રદર્શનો, દ્રશ્યો અને વર્ણન તમામ મુલાકાતીઓ માટે હિન્દી અને અંગ્રેજી બંનેમાં તેમની વિરાસતને જીવંત કરે છે.';
 
   @override
   String get faqQ3 => 'હલ્દીઘાટીના યુદ્ધમાં શું થયું હતું?';
 
   @override
   String get faqA3 =>
-      '1576માં હલ્દીઘાટીનું યુદ્ધ મહારાણા પ્રતાપ અને મુઘલ સેના વચ્ચેનો ભયંકર સંઘર્ષ હતો. જોકે તે અનિર્ણિત હતું, પરંતુ તેણે પ્રતાપના સાહસ અને રણનીતિને ઉજાગર કરી. તેમના ઘોડા ચેતક અને વફાદાર યોદ્ધા ઝાલા માને તેમના ભાગી જવાની ખાતરી કરવામાં વીરતાપૂર્ણ ભૂમિકા ભજવી હતી.';
+      '1576 માં હલ્દીઘાટીનું યુદ્ધ મહારાણા પ્રતાપ અને મુગલ સેના વચ્ચેનો એક ભીષણ સંઘર્ષ હતો. જો કે તે અનિર્ણાયક રહ્યું હતું, છતાં તેણે પ્રતાપના સાહસ અને વ્યૂહરચના પર પ્રકાશ પાડ્યો હતો. તેમના ઘોડા ચેતક અને વફાદાર યોદ્ધા ઝાલા માને તેમના બચાવને સુનિશ્ચિત કરવામાં વીર ભૂમિકા ભજવી હતી.';
 
   @override
   String get faqQ4 =>
-      'હાર પછી પણ મહારાણા પ્રતાપે પોતાની લડાઈ કેવી રીતે ચાલુ રાખી?';
+      'હાર પછી મહારાણા પ્રતાપે પોતાની લડાઈ કેવી રીતે ચાલુ રાખી?';
 
   @override
   String get faqA4 =>
-      'આંચકાઓ પછી પણ, મહારાણા પ્રતાપે પોતાની સેનાનું પુનર્ગઠન કર્યું અને ગુમાવેલા પ્રદેશો પાછા મેળવવા માટે ગેરિલા રણનીતિનો ઉપયોગ કર્યો. તેમની લવચીકતા અને નવીનતાએ તેમને ભારતીય ઇતિહાસના મહાન સૈન્ય દિમાગમાંના એક બનાવ્યા.';
+      'મુશ્કેલીઓ પછી પણ, મહારાણા પ્રતાપે પોતાની સેનાને પુનર્ગઠિત કરી અને ગુમાવેલા પ્રદેશો પાછા મેળવવા માટે ગેરિલા વ્યૂહરચનાનો ઉપયોગ કર્યો. તેમના સ્થિતિસ્થાપકતા અને નવીનતાએ તેમને ભારતીય ઇતિહાસના સૌથી મહાન સૈન્ય મગજમાંના એક બનાવ્યા.';
 
   @override
   String get faqQ5 =>
@@ -212,213 +213,705 @@ class AppLocalizationsGu extends AppLocalizations {
 
   @override
   String get faqA5 =>
-      'મહારાણા પ્રતાપનું જીવન આપણને પ્રામાણિકતા સાથે નેતૃત્વ કરવાનું, આપણા મૂલ્યો પર ટકી રહેવાનું અને વ્યૂહાત્મક વિચારસરણી સાથે પડકારોનો સામનો કરવાનું શીખવે છે — એવા પાઠ જે આજના સાહસિકો અને નિર્ણય લેનારાઓ સાથે ઊંડો પડઘો પાડે છે.';
+      'મહારાણા પ્રતાપનું જીવન આપણને પ્રામાણિકતા સાથે નેતૃત્વ કરવાનું, આપણા મૂલ્યો સાથે અડગ રહેવાનું અને વ્યૂહાત્મક વિચારસરણી સાથે પડકારોનો સામનો કરવાનું શીખવે છે - આ એવા પાઠ છે જે આજના ઉદ્યોગસાહસિકો અને નિર્ણય લેનારાઓ સાથે ઊંડે સુધી ગુંજે છે.';
 
   @override
   String get historyFooter =>
-      'પ્રતાપ ગૌરવ કેન્દ્ર ઉદયપુરમાં, મહારાણા પ્રતાપનો વારસો માત્ર ઐતિહાસિક કલાકૃતિઓ દ્વારા જ નહીં, પરંતુ ઇમર્સિવ વાર્તા કહેવા દ્વારા પણ સચવાયેલો છે જે ભૂતકાળને વર્તમાન સાથે જોડે છે. તેમનું જીવન પ્રેરણાનો સ્ત્રોત છે — તે દર્શાવે છે કે ભારે અવરોધો છતાં, સાચો નેતા હંમેશા અડગ રહે છે。\n\nમેવાડની ટેકરીઓ અને લાખો લોકોના હૃદયમાં આજે પણ ગુંજતા એક નાયકની પ્રેરણાદાયક યાત્રામાંથી પસાર થવા માટે પ્રતાપ ગૌરવ કેન્દ્રની મુલાકાત લો.';
+      'પ્રતાપ ગૌરવ કેન્દ્ર ઉદયપુરમાં, મહારાણા પ્રતાપની વિરાસતને માત્ર ઐતિહાસિક કલાકૃતિઓ દ્વારા જ નહીં પરંતુ ઇમર્સિવ વાર્તા કહેવા દ્વારા સાચવવામાં આવી છે જે ભૂતકાળને વર્તમાન સાથે જોડે છે. તેમનું જીવન પ્રેરણાનો સ્ત્રોત છે - તે દર્શાવે છે કે ભારે અવરોધો છતાં, એક સાચો નેતા અડગ ઊભો રહે છે.\n\nએક એવા નાયકની પ્રેરણાદાયી યાત્રામાંથી પસાર થવા માટે પ્રતાપ ગૌરવ કેન્દ્રની મુલાકાત લો જેનું નામ આજે પણ મેવાડની ટેકરીઓ અને લાખો લોકોના હૃદયમાં ગુંજે છે.';
 
   @override
-  String get museumDashboard => 'Museum Dashboard';
+  String get museumDashboard => 'મ્યુઝિયમ ડેશબોર્ડ';
 
   @override
   String get welcomeBannerText =>
-      'Welcome to Pratap Gaurav Kendra. Explore\nthe Legacy of Maharana Pratap.';
+      'પ્રતાપ ગૌરવ કેન્દ્રમાં આપનું સ્વાગત છે.\nમહારાણા પ્રતાપના વારસાનું અન્વેષણ કરો.';
 
   @override
-  String get bhaktiDham => 'Bhakti Dham';
+  String get bhaktiDham => 'ભક્તિ ધામ';
 
   @override
-  String get waterLaserShow => 'Water Laser Show';
+  String get waterLaserShow => 'વોટર લેઝર શો';
 
   @override
-  String get vijayStambh => 'Vijay Stambh';
+  String get vijayStambh => 'વિજય સ્તંભ';
 
   @override
-  String get museumNews => 'Museum News';
+  String get museumNews => 'મ્યુઝિયમ સમાચાર';
 
   @override
-  String get newsLightSoundShow => 'New Light & Sound Show\nLaunch';
+  String get newsLightSoundShow => 'નવો લાઈટ એન્ડ સાઉન્ડ શો\nલોન્ચ';
 
   @override
-  String get newsSpecialExhibition => 'Special Exhibition on\nHaldighati';
+  String get newsSpecialExhibition => 'હલ્દીઘાટી પર વિશેષ\nપ્રદર્શન';
 
   @override
-  String get eventPratapJayanti =>
-      'Maharana Pratap Jayanti\nCelebration - May 9th';
+  String get eventPratapJayanti => 'મહારાણા પ્રતાપ જયંતી\nઉજવણી - 9 મે';
 
   @override
-  String get eventKidsWorkshop => 'Weekend Workshop for\nKids';
+  String get eventKidsWorkshop => 'બાળકો માટે વીકએન્ડ\nવર્કશોપ';
 
   @override
   String get aboutPratapGauravKendra =>
-      'Pratap Gaurav Kendra, also known as the National Pilgrimage, houses statues depicting qualities like bravery, sacrifice, and valor, such as Mahimahendra, Yavadarya, Kulkamal Divakar, Ravikul Bhushan, Maharaja Adhiraj, Raj Rajeshwar, Shri Ekalinagnath Devan, Hindu Suraj, and Maharana Shri Pratap Singh, narrating the tales of valor and bravery of Mewar and Maharana Pratap through visual displays, exhibits, and audio-visual presentations. The center serves as a means to convey the glory of Mewar and the saga of Maharana Pratap to the masses. Visitors can witness various paintings, mechanical structures, and audio-visual displays that evoke a sense of pride. The museum provides free guides to help visitors understand and view the entire collection.';
+      'પ્રતાપ ગૌરવ કેન્દ્ર, જેને રાષ્ટ્રીય તીર્થ તરીકે પણ ઓળખવામાં આવે છે, તેમાં બહાદુરી, બલિદાન અને વીરતા જેવા ગુણો દર્શાવતી મૂર્તિઓ છે, જેમ કે મહિમાહેન્દ્ર, યાવદાર્ય, કુલકમલ દિવાકર, રવિકુલ ભૂષણ, મહારાજા અધીરાજ, રાજ રાજેશ્વર, શ્રી એકલિંગનાથ દીવાન, હિન્દુ સૂરજ અને મહારાણા શ્રી પ્રતાપ સિંહ, જે દ્રશ્ય પ્રદર્શનો, પ્રદર્શનો અને દ્રશ્ય-શ્રાવ્ય પ્રસ્તુતિઓ દ્વારા મેવાડ અને મહારાણા પ્રતાપની વીરતા અને બહાદુરીની વાર્તાઓ સંભળાવે છે. આ કેન્દ્ર મેવાડના ગૌરવ અને મહારાણા પ્રતાપની ગાથાને જન-જન સુધી પહોંચાડવાના એક સાધન તરીકે કાર્ય કરે છે. મુલાકાતીઓ વિવિધ પેઇન્ટિંગ્સ, યાંત્રિક સંરચનાઓ અને દ્રશ્ય-શ્રાવ્ય ડિસ્પ્લે જોઈ શકે છે જે ગર્વની લાગણી પેદા કરે છે. મ્યુઝિયમ મુલાકાતીઓને સમગ્ર સંગ્રહને સમજવા અને જોવામાં મદદ કરવા માટે મફત માર્ગદર્શિકા (ગાઇડ) પ્રદાન કરે છે.';
 
   @override
-  String get pratapGauravKendra => 'Pratap Gaurav Kendra';
+  String get pratapGauravKendra => 'પ્રતાપ ગૌરવ કેન્દ્ર';
 
   @override
-  String get aboutPgkTitle => 'About PGK';
+  String get aboutPgkTitle => 'PGK વિશે';
 
   @override
-  String get pgkHeroTitle => 'Pratap Gaurav Kendra:\nA National Tribute';
+  String get pgkHeroTitle => 'પ્રતાપ ગૌરવ કેન્દ્ર:\nએક રાષ્ટ્રીય શ્રદ્ધાંજલિ';
 
   @override
-  String get narrationIntroTitle => 'Narration: Introduction to PGK';
+  String get narrationIntroTitle => 'કથન: PGK નો પરિચય';
 
   @override
-  String get completedText => 'Completed';
+  String get completedText => 'પૂર્ણ થયું';
 
   @override
-  String get whoWeAreHeader => 'Who We Are';
+  String get whoWeAreHeader => 'અમે કોણ છીએ';
 
   @override
   String get pgkIntroP1 =>
-      'Pratap Gaurav Kendra is a unique cultural and historical center located in the serene Aravalli hills of Udaipur. Dedicated to the great Rajput warrior Maharana Pratap, it is a tribute to his bravery, sacrifice, and leadership. The center offers visitors a deep insight into the glorious history of Mewar and showcases the legendary Battle of Haldighati through life-size sculptures, engaging audio-visual presentations, and interactive displays. For history lovers, students, and cultural travelers, this is undoubtedly the best tourist place in Udaipur to explore the roots of Rajputana pride.';
+      'પ્રતાપ ગૌરવ કેન્દ્ર એ ઉદયપુરની શાંત અરવલ્લી ટેકરીઓમાં આવેલું એક અનોખું સાંસ્કૃતિક અને ઐતિહાસિક કેન્દ્ર છે. મહાન રાજપૂત યોદ્ધા મહારાણા પ્રતાપને સમર્પિત, આ તેમની બહાદુરી, બલિદાન અને નેતૃત્વને એક શ્રદ્ધાંજલિ છે. આ કેન્દ્ર મુલાકાતીઓને મેવાડના ગૌરવશાળી ઇતિહાસની ઊંડી માહિતી પૂરી પાડે છે અને આદમકદ શિલ્પો, આકર્ષક દ્રશ્ય-શ્રાવ્ય પ્રસ્તુતિઓ અને ઇન્ટરેક્ટિવ ડિસ્પ્લે દ્વારા પ્રખ્યાત હલ્દીઘાટી યુદ્ધ દર્શાવે છે. ઇતિહાસ પ્રેમીઓ, વિદ્યાર્થીઓ અને સાંસ્કૃતિક પ્રવાસીઓ માટે, રાજપૂતાના ગૌરવના મૂળ શોધવા માટે આ ચોક્કસપણે ઉદયપુરમાં શ્રેષ્ઠ પ્રવાસન સ્થળ છે.';
 
   @override
   String get pgkIntroP2 =>
-      'Pratap Gaurav Kendra is one of the best tourist places in Udaipur, dedicated to the great Rajput warrior, Maharana Pratap. Located in the beautiful Aravalli hills, this center shares the history of Mewar through life-sized statues, interesting galleries, and audio-visual shows. Visitors can learn about the famous Battle of Haldighati and the bravery of Maharana Pratap.';
+      'પ્રતાપ ગૌરવ કેન્દ્ર ઉદયપુરના શ્રેષ્ઠ પ્રવાસન સ્થળોમાંનું એક છે, જે મહાન રાજપૂત યોદ્ધા મહારાણા પ્રતાપને સમર્પિત છે. સુંદર અરવલ્લી ટેકરીઓમાં આવેલું આ કેન્દ્ર આદમકદની મૂર્તિઓ, રસપ્રદ ગેલેરીઓ અને દ્રશ્ય-શ્રાવ્ય શો દ્વારા મેવાડનો ઇતિહાસ શેર કરે છે. મુલાકાતીઓ પ્રખ્યાત હલ્દીઘાટી યુદ્ધ અને મહારાણા પ્રતાપની બહાદુરી વિશે જાણી શકે છે.';
 
   @override
   String get pgkIntroP3 =>
-      'As one of the famous tourist places in Udaipur, this center is perfect for history lovers and travelers. Its peaceful surroundings and well-designed exhibits make it an important stop in any Udaipur city tour places plan. Whether you want to learn about history or enjoy the beauty of Udaipur, Pratap Gaurav Kendra is a great place to visit.';
+      'ઉદયપુરમાં પ્રખ્યાત પ્રવાસન સ્થળોમાંના એક તરીકે, આ કેન્દ્ર ઇતિહાસ પ્રેમીઓ અને પ્રવાસીઓ માટે એકદમ યોગ્ય છે. તેનું શાંત વાતાવરણ અને સારી રીતે ડિઝાઇન કરાયેલા પ્રદર્શનો તેને કોઈપણ ઉદયપુર સિટી ટૂર પ્લેસ પ્લાનમાં એક મહત્વપૂર્ણ સ્ટોપ બનાવે છે. ભલે તમે ઇતિહાસ વિશે જાણવા માંગતા હોવ કે ઉદયપુરની સુંદરતાનો આનંદ માણવા માંગતા હોવ, પ્રતાપ ગૌરવ કેન્દ્ર મુલાકાત લેવા માટે એક ઉત્તમ સ્થળ છે.';
 
   @override
-  String get majorAttractionsHeader => 'Major Attractions';
+  String get majorAttractionsHeader => 'મુખ્ય આકર્ષણો';
 
   @override
-  String get haldighatiBattleEpic => 'Haldighati Battle\nEpic';
+  String get haldighatiBattleEpic => 'ஹલ્દીઘાટી યુદ્ધ\nમહાકાવ્ય';
 
   @override
-  String get liveActionTheaters => 'Live Action\nTheaters';
+  String get liveActionTheaters => 'લાઇવ એક્શન\nથિયેટર્સ';
 
   @override
-  String get historicalSculptures => 'Historical\nSculptures';
+  String get historicalSculptures => 'ઐતિહાસિક\nમૂર્તિઓ';
 
   @override
-  String get epicTaleOfHaldighati => 'The Epic Tale of Haldighati';
+  String get epicTaleOfHaldighati => 'હલ્દીઘાટીની મહાકાવ્ય કથા';
 
   @override
   String get epicTaleP1 =>
-      'The saga of Haldighati Victory Battle begins with the Haldighati Victory Battle Epic. Here, through the medium of a model display, the Haldighati War is brought to life. The sculptures of the heroes and martyrs of Haldighati are showcased, along with scenes from the battle. The display prominently features the statues of Jhala Man, Purohit Jannath, Mahasani Jagnnath, Hakeem Khan Sur, Rana Punja, etc., presenting their valorous stories. The epic also highlights the special mention of Ram Prasad, the beloved elephant of Maharana Pratap. A scene depicting Maharana Pratap cutting off the head of Mughal commander Bahlool Khan in a single stroke is showcased, symbolizing the strategic brilliance and martial skill of Maharana Pratap. The courageous act of Jhala Man and Maharana Pratap’s striking a blow with a spear on Raja Man Singh while riding on his horse Chetak adds an interesting dimension to the display. The epic portrays the factual defeat of the powerful Mughal army by Maharana Pratap through his strategic and martial prowess in the Haldighati Victory Battle.';
+      'હલ્દીઘાટી વિજય યુદ્ધની ગાથા હલ્દીઘાટી વિજય યુદ્ધ મહાકાવ્યથી શરૂ થાય છે. અહીં, એક મોડેલ પ્રદર્શનના માધ્યમથી, હલ્દીઘાટી યુદ્ધને જીવંત કરવામાં આવ્યું છે. હલ્દીઘાટીના નાયકો અને શહીદોની મૂર્તિઓને યુદ્ધના દ્રશ્યો સાથે પ્રદર્શિત કરવામાં આવી છે. પ્રદર્શનમાં મુખ્યત્વે ઝાલા માન, પુરોહિત જગન્નાથ, મહાસાની જગન્નાથ, હકીમ ખાન સૂર, રાણા પુંજા વગેરેની મૂર્તિઓને તેમની વીરતાપૂર્ણ વાર્તાઓ સાથે પ્રસ્તુત કરવામાં આવી છે. મહાકાવ્યમાં મહારાણા પ્રતાપના પ્રિય હાથી રામ પ્રસાદનો પણ વિશેષ ઉલ્લેખ છે. એક જ ઝાટકે મુગલ સેનાપતિ બહલોલ ખાનનું માથું કાપતા મહારાણા પ્રતાપનું એક દ્રશ્ય પ્રદર્શિત કરવામાં આવ્યું છે, જે મહારાણા પ્રતાપની વ્યૂહાત્મક પ્રતિભા અને યુદ્ધ કૌશલ્યનું પ્રતીક છે. ઝાલા માનનું સાહસિક કાર્ય અને મહારાણા પ્રતાપનું પોતાના ઘોડા ચેતક પર સવાર થઈને રાજા માન સિંહ પર ભાલાથી પ્રહાર કરવો પ્રદર્શનમાં એક રસપ્રદ પરિમાણ ઉમેરે છે. આ મહાકાવ્ય હલ્દીઘાટી વિજય યુદ્ધમાં મહારાણા પ્રતાપ દ્વારા પોતાની વ્યૂહાત્મક અને યુદ્ધ કૌશલ્ય દ્વારા શક્તિશાળી મુગલ સેનાની વાસ્તવિક હારને દર્શાવે છે.';
 
   @override
-  String get exhibitHighlights => 'Exhibit Highlights:';
+  String get exhibitHighlights => 'પ્રદર્શનની મુખ્ય વિશેષતાઓ:';
 
   @override
   String get epicTaleP2 =>
-      'One of the main highlights of Pratap Gaurav Kendra is the Haldighati Victory Battle Epic, a meticulously created display that narrates the events of the battle between Maharana Pratap and the Mughal army. The exhibit brings to life several heroes of the battlefield:';
+      'પ્રતાપ ગૌરવ કેન્દ્રના મુખ્ય આકર્ષણોમાંનું એક હલ્દીઘાટી વિજય યુદ્ધ મહાકાવ્ય છે, જે મહારાણા પ્રતાપ અને મુગલ સેના વચ્ચેના યુદ્ધની ઘટનાઓનું વર્ણન કરતું એક સાવચેતીપૂર્વક તૈયાર કરાયેલું પ્રદર્શન છે. આ પ્રદર્શન યુદ્ધના મેદાનના કેટલાક નાયકોને જીવંત કરે છે:';
 
   @override
   String get exhibitBullet1 =>
-      'Sculptures of Jhala Man, Purohit Jannath, Mahasani Jagannath, Rana Punja, and Hakeem Khan Sur are prominently displayed.';
+      'ઝાલા માન, પુરોહિત જગન્નાથ, મહાસાની જગન્નાથ, રાણા પુંજા અને હકીમ ખાન સૂરની મૂર્તિઓ મુખ્યત્વે પ્રદર્શિત કરવામાં આવી છે.';
 
   @override
   String get exhibitBullet2 =>
-      'A powerful depiction of Maharana Pratap delivering a fatal blow to Mughal commander Bahlool Khan showcases his martial strength and courage.';
+      'મુગલ કમાન્ડર બહલોલ ખાનને ઘાતક ફટકો આપતા મહારાણા પ્રતાપનું એક શક્તિશાળી નિરૂપણ તેમની યુદ્ધ શક્તિ અને સાહસ દર્શાવે છે.';
 
   @override
   String get exhibitBullet3 =>
-      'The scene where Maharana Pratap strikes Raja Man Singh while riding his loyal horse Chetak adds a dramatic touch to the battle’s narration.';
+      'તે દ્રશ્ય જ્યાં મહારાણા પ્રતાપ પોતાના વફાદાર ઘોડા ચેતકની સવારી કરતા રાજા માન સિંહ પર પ્રહાર કરે છે, યુદ્ધના વર્ણનમાં એક નાટકીય સ્પર્શ ઉમેરે છે.';
 
   @override
   String get exhibitBullet4 =>
-      'A special corner is dedicated to Ram Prasad, the Maharana’s elephant, emphasizing the deep bond between warriors and their animals.';
+      'યોદ્ધાઓ અને તેમના પ્રાણીઓ વચ્ચેના ઊંડા બંધન પર ભાર મૂકતા, મહારાણાના હાથી રામ પ્રસાદને એક વિશેષ ખૂણો સમર્પિત છે.';
 
   @override
   String get epicTaleP3 =>
-      'The combination of storytelling, visuals, and sculpture makes this center stand out among all famous tourist places in Udaipur.';
+      'વાર્તા કહેવા, દ્રશ્યો અને શિલ્પકળાનું સંયોજન આ કેન્દ્રને ઉદયપુરના તમામ પ્રખ્યાત પ્રવાસન સ્થળોમાં અલગ પાડે છે.';
 
   @override
-  String get nationalTributeHeader => 'Who We Are / A National Tribute';
+  String get nationalTributeHeader => 'અમે કોણ છીએ / એક રાષ્ટ્રીય શ્રદ્ધાંજલિ';
 
   @override
   String get nationalTributeP1 =>
-      'The chief of the Rashtriya Swayamsevak Sangh (RSS), Mohan Bhagwat, along with the successful Prime Minister of India, Narendra Modi, and National Saint orator Murari Bapu, and Sadhvi Ritambhara have all visited the Pratap Gaurav Kendra, the “Rashtriya Tirth,” to see the National Tirth. In addition to them, the RSS General Secretary, Bhaiya Joshi, RSS Joint General Secretary Intellectual Head Sunil Bhai Mehta, RSS Joint General Secretary Ghumantu Karya Pramukh Durgadas, Indian government ministers Nitin Gadkari and Mahesh Sharma, and Vishwa Hindu Parishad’s two central ministers Jugal Kishor and Ajay Kumar Parihar, are also present. Prakash Chandra, the Minister of Organization of the Small Industries of Bharatiya Kisan Sangh, Gajendra Singh, the Minister of Bharatiya Janata Party’s National Secretary and Member of Parliament from Pauri Garhwal, Uttarakhand Chief Minister Teerath Singh Rawat, Indian government minister Arjun Ram Meghwal, Central Minister Pratap Chandra Sarangi, former Governor of Rajasthan Kalyan Singh, former Chief Minister Vasundhara Raje, former Deputy Chief Minister of Haryana Ram Vilas Sharma, Nand Kumar Singh, Member of Parliament from Khadwa, Madhya Pradesh, Bhagwant Khuba, Member of Parliament from Bidar, Karnataka, and Pushpendra Singh, Member of Parliament from Hamirpur, Uttar Pradesh, have also graced the occasion.';
+      'રાષ્ટ્રીય સ્વયંસેવક સંઘ (RSS) ના પ્રમુખ મોહન ભાગવતની સાથે ભારતના સફળ વડાપ્રધાન નરેન્દ્ર મોદી અને રાષ્ટ્રીય સંત વક્તા મુરારી બાપુ, તેમજ સાધ્વી ઋતંભરા બધાએ રાષ્ટ્રીય તીર્થ જોવા માટે પ્રતાપ ગૌરવ કેન્દ્ર, “રાષ્ટ્રીય તીર્થ” ની મુલાકાત લીધી છે. આ ઉપરાંત સંઘના સરકાર્યવાહ ભૈયાજી જોશી, સહ-સરકાર્યવાહ બૌદ્ધિક પ્રમુખ સુનિલ ભાઈ મહેતા, સહ-સરકાર્યવાહ ઘુમંતૂ કાર્ય પ્રમુખ દુર્ગાદાસ, ભારત સરકારના મંત્રી નિતિન ગડકરી અને મહેશ શર્મા તેમજ વિશ્વ હિન્દુ પરિષદના બે કેન્દ્રીય મંત્રી જુગલ કિશોર અને અજય કુમાર પરિહારે પણ આ પ્રસંગની શોભા વધારી છે. ભારતીય કિસાન સંઘના લઘુ ઉદ્યોગોના સંગઠન મંત્રી પ્રકાશ ચંદ્ર, ભારતીય જનતા પાર્ટીના રાષ્ટ્રીય સચિવ અને ઉત્તરાખંડના પૌડી ગઢવાલથી સાંસદ તીરથ સિંહ રાવત, ભારત સરકારના મંત્રી અર્જુન રામ મેઘવાલ, કેન્દ્રીય મંત્રી પ્રતાપ ચંદ્ર સારંગી, રાજસ્થાનના પૂર્વ રાજ્યપાલ કલ્યાણ સિંહ, પૂર્વ મુખ્યમંત્રી વસુંધરા રાજે, હરિયાણાના પૂર્વ નાયબ મુખ્યમંત્રી રામવિલાસ શર્મા, મધ્યપ્રદેશના ખંડવાથી સાંસદ નંદ કુમાર સિંહ, કર્ણાટકના બીદરથી સાંસદ ભગવંત ખુબા અને ઉત્તર પ્રદેશના હમીરપુરથી સાંસદ પુષ્પેન્દ્ર સિંહે પણ આ અવસરની શોભા વધારી છે.';
 
   @override
   String get nationalTributeP2 =>
-      'Blessings have been received from various saints, including Swami Narayan of the Swaminarayan Sanstha, Akshar Prem Swami from Abu Dhabi, Sadhu Yogi Premdas, and Mahatma Prem Muni from the Arya Vanprasth Ashram in Haridwar.';
+      'સ્વામિનારાયણ સંસ્થાના સ્વામી નારાયણ, અબુ ધાબીથી અક્ષર પ્રેમ સ્વામી, સાધુ યોગી પ્રેમદાસ અને હરિદ્વારમાં આર્ય વાનપ્રસ્થ આશ્રમથી મહાત્મા પ્રેમ મુનિ સહિત વિવિધ સંતોના આશીર્વાદ પ્રાપ્ત થયા છે.';
 
   @override
   String get nationalTributeP3 =>
-      'Recognized as a Rashtriya Tirth, the center has attracted national and spiritual leaders alike. Their visits strengthen Pratap Gaurav Kendra’s identity as both a place of historical learning and spiritual reflection.';
+      'એક રાષ્ટ્રીય તીર્થ તરીકે માન્યતા પ્રાપ્ત, આ કેન્દ્રે રાષ્ટ્રીય અને આધ્યાત્મિક નેતાઓને સમાન રીતે આકર્ષિત કર્યા છે. તેમની મુલાકાત પ્રતાપ ગૌરવ કેન્દ્રની ઐતિહાસિક શિક્ષણ અને આધ્યાત્મિક પ્રતિબિંબ બંનેના સ્થાન તરીકે ઓળખને મજબૂત કરે છે.';
 
   @override
-  String get perfectPlaceHeader => 'A Perfect Place for All Kinds of Visitors';
+  String get perfectPlaceHeader => 'તમામ પ્રકારના મુલાકાતીઓ માટે એક આદર્શ સ્થળ';
 
   @override
   String get perfectPlaceP1 =>
-      'Whether you’re part of a school group, a family exploring Rajasthan, or an international traveler seeking to understand Indian history, this center offers something for everyone:';
+      'ભલે તમે કોઈ સ્કૂલ ગ્રૂપનો હિસ્સો હોવ, રાજસ્થાનની શોધ કરતો પરિવાર હોવ, અથવા ભારતીય ઇતિહાસને સમજવાની ચાહ રાખતા એક આંતરરાષ્ટ્રીય પ્રવાસી હોવ, આ કેન્દ્ર દરેક માટે કંઈક ને કંઈક પ્રદાન કરે છે:';
 
   @override
   String get perfectPlaceBullet1 =>
-      'Life-like Statues and dramatic storytelling that make the past come alive.';
+      'આદમકદની મૂર્તિઓ અને નાટકીય વાર્તા જે ભૂતકાળને જીવંત કરે છે.';
 
   @override
   String get perfectPlaceBullet2 =>
-      'Audio-Visual Theaters that explain events of Mewar’s history in an engaging format.';
+      'દ્રશ્ય-શ્રાવ્ય થિયેટર્સ જે આકર્ષક ફોર્મેટમાં મેવાડના ઇતિહાસની ઘટનાઓની વ્યાખ્યા કરે છે.';
 
   @override
   String get perfectPlaceBullet3 =>
-      'Peaceful surroundings and cultural richness, ideal for both leisure and learning.';
+      'શાંત વાતાવરણ અને સાંસ્કૃતિક સમૃદ્ધિ, આરામ અને શીખવા બંને માટે આદર્શ.';
 
   @override
   String get perfectPlaceBullet4 =>
-      'A chance to experience patriotism and spiritual pride in one location.';
+      'એક જ સ્થળે દેશભક્તિ અને આધ્યાત્મિક ગૌરવનો અનુભવ કરવાની તક.';
 
   @override
   String get perfectPlaceP2 =>
-      'It rightly claims its spot among the top Udaipur city tour places, offering a complete experience of bravery, tradition, and national pride.';
+      'તે યોગ્ય રીતે જ ઉદયપુર શહેરના જોવાલાયક સ્થળોમાં પોતાનું સ્થાન બનાવે છે, જે બહાદુરી, પરંપરા અને રાષ્ટ્રીય ગૌરવનો સંપૂર્ણ અનુભવ પ્રદાન કરે છે.';
 
   @override
   String get aboutPgkFaqQ1 =>
-      'Q1. Why is Pratap Gaurav Kendra considered the best tourist place in Udaipur?';
+      'પ્ર૧. પ્રતાપ ગૌરવ કેન્દ્રને ઉદયપુરમાં સૌથી સારું પ્રવાસન સ્થળ કેમ માનવામાં આવે છે?';
 
   @override
   String get aboutPgkFaqA1 =>
-      'Because it combines patriotism, history, education, and art in a single experience. It allows visitors to learn about Maharana Pratap and Rajputana glory in an engaging and inspiring manner.';
+      'કારણ કે તે એક જ અનુભવમાં દેશભક્તિ, ઇતિહાસ, શિક્ષણ અને કલાને જોડે છે. તે મુલાકાતીઓને એક આકર્ષક અને પ્રેરણાદાયી રીતે મહારાણા પ્રતાપ અને રાજપૂતાનાની મહિમા વિશે જાણવાની તક આપે છે.';
 
   @override
   String get aboutPgkFaqQ2 =>
-      'Q2. Is the center part of regular Udaipur city tour places?';
+      'પ્ર૨. શું આ કેન્દ્ર નિયમિત ઉદયપુર સિટી ટૂર સ્થળોનો હિસ્સો છે?';
 
   @override
   String get aboutPgkFaqA2 =>
-      'Yes, it is often recommended by guides and travel agencies as one of the must-visit spots in Udaipur, especially for those interested in history and Indian culture.';
+      'હા, તેને અવારનવાર ગાઇડો અને ટ્રાવેલ એજન્સીઓ દ્વારા ઉદયપુરમાં જોવાલાયક સ્થળોમાંના એક તરીકે ભલામણ કરવામાં આવે છે, ખાસ કરીને ઇતિહાસ અને ભારતીય સંસ્કૃતિમાં રસ ધરાવતા લોકો માટે.';
 
   @override
-  String get aboutPgkFaqQ3 =>
-      'Q3. What are the main attractions inside the center?';
+  String get aboutPgkFaqQ3 => 'પ્ર૩. કેન્દ્રની અંદર મુખ્ય આકર્ષણ શું છે?';
 
   @override
   String get aboutPgkFaqA3 =>
-      'The Haldighati Battle Epic, life-sized warrior statues, Chetak Gallery, Maharana Pratap’s life gallery, and a spiritual segment make it one of the most famous tourist places in Udaipur.';
+      'હલ્દીઘાટી યુદ્ધ મહાકાવ્ય, આદમકદના યોદ્ધાઓની મૂર્તિઓ, ચેતક ગેલેરી, મહારાણા પ્રતાપની જીવન ગેલેરી અને એક આધ્યાત્મિક વિભાગ તેને ઉદયપુરના સૌથી પ્રખ્યાત પ્રવાસન સ્થળોમાંનું એક બનાવે છે.';
 
   @override
   String get aboutPgkFaqQ4 =>
-      'Q4. Is this location suitable for children and school groups?';
+      'પ્ર૪. શું આ સ્થળ બાળકો અને સ્કૂલ ગ્રૂપ માટે યોગ્ય છે?';
 
   @override
   String get aboutPgkFaqA4 =>
-      'Definitely. The center’s educational format and visual storytelling make it ideal for young minds and academic groups.';
+      'બિલકુલ. કેન્દ્રનું શૈક્ષણિક ફોર્મેટ અને દ્રશ્ય વાર્તા તેને યુવા મગજ અને શૈક્ષણિક જૂથો માટે આદર્શ બનાવે છે.';
 
   @override
-  String get aboutPgkFaqQ5 => 'Q5. How long does a visit usually take?';
+  String get aboutPgkFaqQ5 =>
+      'પ્ર૫. મુલાકાતમાં સામાન્ય રીતે કેટલો સમય લાગે છે?';
 
   @override
   String get aboutPgkFaqA5 =>
-      'Visitors typically spend 2–3 hours exploring all exhibits and shows comfortably.';
+      'મુલાકાતીઓ સામાન્ય રીતે આરામથી તમામ પ્રદર્શનો અને શો જોવામાં 2-3 કલાક વિતાવે છે.';
 
   @override
-  String get planVisitToday => 'Plan Your Visit Today';
+  String get planVisitToday => 'આજે જ તમારી મુલાકાતનું આયોજન કરો';
 
   @override
   String get planVisitDesc =>
-      'Whether you’re planning a historical exploration or just looking for the best tourist place in Udaipur, Pratap Gaurav Kendra offers a fulfilling experience. It’s not just a place to visit—it’s a place to feel pride, learn heritage, and connect with India’s glorious past. Add it to your list of Udaipur city tour places and experience a journey back in time.';
+      'ભલે તમે એક ઐતિહાસિક અન્વેષણનું આયોજન કરી રહ્યા હોવ કે માત્ર ઉદયપુરમાં સૌથી સારા પ્રવાસન સ્થળની શોધ કરી રહ્યા હોવ, પ્રતાપ ગૌરવ કેન્દ્ર એક સંતોષકારક અનુભવ પ્રદાન કરે છે. આ માત્ર ફરવાની જગ્યા નથી - આ ગર્વ અનુભવવાની, વારસાને શીખવાની અને ભારતના ગૌરવશાળી ભૂતકાળ સાથે જોડાવાની જગ્યા છે. આને તમારી ઉદયપુર સિટી ટૂર સ્થળોની યાદીમાં ઉમેરો અને સમયમાં પાછળ જવાની યાત્રાનો અનુભવ કરો.';
 
   @override
   String get statueOfPrideDesc =>
-      'A 57 feet tall statue of Maharana Pratap in the renunciant posture is installed on a mountain in the Pratap Gaurav Center. The statue is crafted from eight metals and is a masterpiece by renowned sculptors Shri Mahavir Murtikar and Laxman Vyas of Jaipur. The statue weighs approximately 40 tons and depicts Maharana Pratap in a regal pose, showcasing his valor and warrior spirit. The statue is commonly referred to as the “Statue of Pride.”';
+      'પ્રતાપ ગૌરવ કેન્દ્રમાં એક પહાડ પર સંન્યાસી મુદ્રામાં મહારાણા પ્રતાપની 57 ફૂટ ઊંચી પ્રતિમા સ્થાપિત છે. આ મૂર્તિ અષ્ટધાતુમાંથી બનેલી છે અને જયપુરના પ્રખ્યાત શિલ્પકાર શ્રી મહાવીર મૂર્તિકાર અને લક્ષ્મણ વ્યાસની એક ઉત્કૃષ્ટ કૃતિ છે. પ્રતિમાનું વજન આશરે 40 ટન છે અને તે મહારાણા પ્રતાપને શાહી મુદ્રામાં દર્શાવે છે, જે તેમની વીરતા અને યોદ્ધા ભાવનાને પ્રદર્શિત કરે છે. આ પ્રતિમાને સામાન્ય રીતે “સ્ટેચ્યુ ઓફ પ્રાઇડ” કહેવામાં આવે છે.';
+
+  @override
+  String get showDetails => 'શો ની વિગતો';
+
+  @override
+  String get showDuration => '30 મિનિટ';
+
+  @override
+  String get showTiming => 'સાંજે 7:30 વાગ્યે, દરરોજ';
+
+  @override
+  String get aboutTheShow => 'શો વિશે';
+
+  @override
+  String get laserShowDesc1 =>
+      'વોટર સ્ક્રીન પર એક અદ્યતન લેઝર પ્રોજેક્શન શોના માધ્યમથી મહારાણા પ્રતાપની પૌરાણિક વાર્તાનો અનુભવ કરો. મેવાડના ઇતિહાસની વીર ક્ષણોના સાક્ષી બનો, જેમાં પન્ના ધાઈનું બલિદાન અને દિવૈરનું યુદ્ધ સામેલ છે. આ મનમોહક શો, જે મહારાણા પ્રતાપની વાર્તાને હિન્દીમાં સુંદરતાથી સંભળાવે છે, સાંજે 7:30 વાગ્યે શરૂ થાય છે અને આશરે 30 મિનિટ સુધી ચાલે છે.';
+
+  @override
+  String get laserShowDesc2 =>
+      'ઇતિહાસ અને ટેકનોલોજીનું સહજ મિશ્રણ કરતા, જેવી જ મહારાણા પ્રતાપની વાર્તા હિન્દીમાં તમારી આંખો સમક્ષ પ્રગટ થાય છે, મેવાડના ગૌરવશાળી ભૂતકાળમાં ડૂબી જાઓ. આ શો ભારતના સૌથી મહાન યોદ્ધાઓમાંના એકના સાહસ અને વીરતાને દર્શાવવા માટે અત્યાધુનિક દ્રશ્યો અને ધ્વનિનો ઉપયોગ કરે છે. મહાન રાજાને આ શાનદાર શ્રદ્ધાંજલિ જોવાનું ચૂકશો નહીં!';
+
+  @override
+  String get watchLaserShowTitle =>
+      'વોટર લેઝર શો જુઓ - મહારાણા પ્રતાપની વાર્તાને ફરી જીવો';
+
+  @override
+  String get watchLaserShowDesc =>
+      'પ્રતાપ ગૌરવ કેન્દ્ર ઉદયપુર પ્રસ્તુત કરે છે વોટર લેઝર શો, એક અનોખો અનુભવ જ્યાં રોશની, પાણી અને ધ્વનિના માધ્યમથી ઇતિહાસ પ્રદર્શિત કરવામાં આવે છે. આ કાર્યક્રમ હિન્દીમાં મહારાણા પ્રતાપની વાર્તા પર પ્રકાશ પાડે છે, જેથી મુલાકાતીઓને મહાન યોદ્ધાના જીવન, બહાદુરી અને વિરાસત સાથે જોડાવાની તક મળે છે. અદ્યતન લેઝર પ્રોજેક્શન, પરંપરાગત સંગીત અને શક્તિશાળી કથન સાથે, આ શો સાંસ્કૃતિક શિક્ષણ સાથે મનોરંજનને જોડે છે, જે આને ઉદયપુરમાં સાંજના સૌથી આકર્ષક આકર્ષણોમાંનું એક બનાવે છે.';
+
+  @override
+  String get mustSeeShowTitle =>
+      'એક એવો શો જે ઉદયપુર આવતા પ્રવાસીઓએ મિસ ન કરવો જોઈએ';
+
+  @override
+  String get mustSeeShowDesc =>
+      'વોટર લેઝર શોને દર્શકોને મેવાડના ઇતિહાસની યાત્રા પર લઈ જવા માટે ડિઝાઇન કરવામાં આવ્યો છે. દરેક દ્રશ્ય હિન્દીમાં મહારાણા પ્રતાપની વાર્તાના મહત્વપૂર્ણ પ્રસંગોને પ્રદર્શિત કરે છે, જેમાં સ્વતંત્રતા માટેનો તેમનો સંઘર્ષ અને મેવાડના લોકો પ્રત્યેનું તેમનું સમર્પણ સામેલ છે.';
+
+  @override
+  String get showHighlightsTitle => 'શો ની મુખ્ય વિશેષતાઓ:';
+
+  @override
+  String get highlight1 =>
+      'લેઝર રોશની અને પાણીના પ્રોજેક્શન જે ગતિશીલ દ્રશ્યો બનાવે છે';
+
+  @override
+  String get highlight2 => 'સાંસ્કૃતિક જોડાણ માટે હિન્દીમાં સ્પષ્ટ કથન';
+
+  @override
+  String get highlight3 => 'રાજસ્થાનના વારસાથી પ્રેરિત સંગીત';
+
+  @override
+  String get highlight4 => 'તમામ ઉંમરના મુલાકાતીઓ માટે એક સાર્થક અનુભવ';
+
+  @override
+  String get relivingLegacyTitle => 'મહારાણા પ્રતાપની વિરાસતને ફરી જીવવી';
+
+  @override
+  String get warriorJourneyTitle => 'યોદ્ધાની યાત્રા';
+
+  @override
+  String get warriorJourneyDesc =>
+      'આ શો મુગલ સંઘર્ષો દરમિયાન મહારાણા પ્રતાપના સાહસ અને મેવાડની સ્વતંત્રતાની રક્ષા માટે તેમના દ્રઢ સંકલ્પને દર્શાવે છે. દર્શકોને જકડી રાખવા માટે હલ્દીઘાટીના યુદ્ધ જેવા પ્રસંગોને પ્રકાશ અને ધ્વનિ સાથે ફરીથી બનાવવામાં આવ્યા છે.';
+
+  @override
+  String get blendLearningTitle => 'શીખવા અને મનોરંજનનું મિશ્રણ';
+
+  @override
+  String get blendLearningDesc =>
+      'આ પ્રદર્શન માત્ર મનોરંજન જ નથી કરતું પરંતુ શિક્ષિત પણ કરે છે. મહારાણા પ્રતાપની વાર્તાને હિન્દીમાં પ્રસ્તુત કરીને, વોટર લેઝર શો ઇતિહાસને દરેક માટે સુલભ અને સમજવામાં સરળ બનાવે છે.';
+
+  @override
+  String get whyChoosePgkTitle =>
+      'વોટર લેઝર શો માટે પ્રતાપ ગૌરવ કેન્દ્ર શા માટે પસંદ કરવું?';
+
+  @override
+  String get whyPgk1 => 'મહારાણા પ્રતાપના જીવન અને મેવાડના ઇતિહાસને સમર્પિત';
+
+  @override
+  String get whyPgk2 =>
+      'પરંપરાગત વાર્તાઓને રજૂ કરવા માટે આધુનિક ટેકનોલોજીનો ઉપયોગ';
+
+  @override
+  String get whyPgk3 => 'ઉદયપુરમાં પ્રવાસીઓ માટે અનુકૂળ સ્થાન';
+
+  @override
+  String get whyPgk4 =>
+      'દર્શનીય સ્થળોની મુલાકાત લીધા પછી સાંજના સમયની આદર્શ પ્રવૃત્તિ';
+
+  @override
+  String get whyPgk5 => 'વિદ્યાર્થીઓ, પરિવારો અને ઇતિહાસ પ્રેમીઓ માટે યોગ્ય';
+
+  @override
+  String get planVisitLaserShow =>
+      'પ્રતાપ ગૌરવ કેન્દ્રમાં વોટર લેઝર શો રાજસ્થાનના સાંસ્કૃતિક અને ઐતિહાસિક વારસાને જાણવાનો એક પ્રેરણાદાયી માર્ગ છે. હિન્દીમાં મહારાણા પ્રતાપની વાર્તા સાથે આધુનિક દ્રશ્યોનું સંયોજન કરીને, આ શો દર્શકોને ભારતના સૌથી મહાન યોદ્ધાઓમાંના એકના વારસા સાથે જોડે છે.\n\nઆજે જ તમારી મુલાકાત બુક કરો અને ઉદયપુરમાં રોશની, સંગીત અને પાણીના માધ્યમથી મહારાણા પ્રતાપની વાર્તાનો અનુભવ કરો.';
+
+  @override
+  String get faqLaserQ1 => 'પ્ર૧. વોટર લેઝર શો કઈ વાર્તા રજૂ કરે છે?';
+
+  @override
+  String get faqLaserA1 =>
+      'તે મહારાણા પ્રતાપની વાર્તાને હિન્દીમાં રજૂ કરે છે, તેમની બહાદુરી અને વિરાસત પર પ્રકાશ પાડે છે.';
+
+  @override
+  String get faqLaserQ2 => 'પ્ર૨. શું આ શો બાળકો માટે યોગ્ય છે?';
+
+  @override
+  String get faqLaserA2 =>
+      'હા, દ્રશ્યો અને કથન સરળ છે અને બાળકો માટે આકર્ષક છે.';
+
+  @override
+  String get faqLaserQ3 => 'પ્ર૩. શો કેટલા સમય સુધી ચાલે છે?';
+
+  @override
+  String get faqLaserA3 => 'આ શો આશરે 30-40 મિનિટ સુધી ચાલે છે.';
+
+  @override
+  String get faqLaserQ4 =>
+      'પ્ર૪. શું બિન-હિન્દી ભાષી લોકો આ શોનો આનંદ માણી શકે છે?';
+
+  @override
+  String get faqLaserA4 =>
+      'હા, દ્રશ્યો, સંગીત અને અસરો એ સુનિશ્ચિત કરે છે કે હિન્દી જ્ઞાન વિના પણ વાર્તા સમજી શકાય.';
+
+  @override
+  String get faqLaserQ5 => 'પ્ર૫. વોટર લેઝર શો ક્યાં આયોજિત કરવામાં આવે છે?';
+
+  @override
+  String get faqLaserA5 =>
+      'આ શો પ્રતાપ ગૌરવ કેન્દ્ર, ઉદયપુરમાં આયોજિત કરવામાં આવે છે.';
+
+  @override
+  String get bhaktiDhamDetails => 'ભક્તિ ધામ વિગતો';
+
+  @override
+  String get spiritualNarrationTitle => 'આધ્યાત્મિક વર્ણન: ભક્તિ ધામનું મહત્વ';
+
+  @override
+  String get whyPgkFamous => 'પ્રતાપ ગૌરવ કેન્દ્ર શા માટે પ્રખ્યાત છે';
+
+  @override
+  String get bhaktiDhamNarrationText =>
+      'ઉદયપુર, તળાવો અને શાહી વારસાનું શહેર, ઘણા ઐતિહાસિક સ્થળોનું ઘર છે, પરંતુ પ્રતાપ ગૌરવ કેન્દ્ર રાજસ્થાનના સૌથી મહાન યોદ્ધાઓમાંના એકને શ્રદ્ધાંજલિ તરીકે ઊભું છે. મહારાણા પ્રતાપને સમર્પિત, આ કેન્દ્ર એક અનોખો અને અદ્ભુત અનુભવ પ્રદાન કરે છે.';
+
+  @override
+  String get pgkFamousDesc =>
+      'ઉદયપુર, તળાવો અને શાહી વારસાનું શહેર, ઘણા ઐતિહાસિક સ્થળોનું ઘર છે, પરંતુ પ્રતાપ ગૌરવ કેન્દ્ર રાજસ્થાનના સૌથી મહાન યોદ્ધાઓમાંના એકને શ્રદ્ધાંજલિ તરીકે ઊભું છે. મહારાણા પ્રતાપને સમર્પિત, આ કેન્દ્ર એક અનોખો અને અદ્ભુત અનુભવ પ્રદાન કરે છે જે ઇતિહાસના શોખીનો, પ્રવાસીઓ, વિદ્યાર્થીઓ અને સ્થાનિક લોકોને સમાન રીતે આકર્ષિત કરે છે. તે મહારાણા પ્રતાપ સ્મારકને સુંદર રીતે પૂરક બનાવે છે, જે આ મહાન રાજપૂત નાયક વિશે મુલાકાતીઓની સમજને સમૃદ્ધ બનાવે છે.';
+
+  @override
+  String get celebratingHeroicLegacy =>
+      'મહારાણા પ્રતાપના વીરતાપૂર્ણ વારસાની ઉજવણી';
+
+  @override
+  String get celebratingHeroicLegacyDesc =>
+      'પ્રતાપ ગૌરવ કેન્દ્રમાં, મુલાકાતીઓને મહારાણા પ્રતાપના સાહસ અને બલિદાન પ્રત્યે હાર્દિક શ્રદ્ધાંજલિ જોવા મળે છે. પ્રદર્શનો, મૂર્તિઓ અને વિગતવાર યુદ્ધના દ્રશ્યો તેમની વાર્તાને જીવંત કરે છે. આ સાઇટ એક આકર્ષક કથન પૂરું પાડે છે જે નજીકના મહારાણા પ્રતાપ સ્મારકના મહત્વને વધારે છે, જેનાથી બંને સ્થળો ઉદયપુરના કોઈપણ ઐતિહાસિક પ્રવાસ પર અનિવાર્ય સ્ટોપ બની જાય છે.';
+
+  @override
+  String get educationalInsights => 'તમામ ઉંમરના લોકો માટે શૈક્ષણિક માહિતી';
+
+  @override
+  String get educationalInsightsDesc =>
+      'વિદ્યાર્થીઓ, સંશોધકો અને ઇતિહાસ પ્રેમીઓ માટે એકદમ યોગ્ય, પ્રતાપ ગૌરવ કેન્દ્ર પ્રદાન કરે છે:\n• મહારાણા પ્રતાપના જીવન અને સમય પર ઊંડાણપૂર્વકની માહિતી.\n• મલ્ટીમીડિયા ડિસ્પ્લે અને ગાઇડેડ ટૂર જે રાજપૂત ઇતિહાસની વ્યાખ્યા કરે છે.\n• એક શૈક્ષણિક વાતાવરણ જે મહારાણા પ્રતાપ સ્મારકની મુલાકાતને પૂરક બનાવે છે.\nઆ વિશેષતાઓ આને શૈક્ષણિક જૂથો અને સાંસ્કૃતિક પ્રવાસીઓ માટે એક મનપસંદ સ્થળ બનાવે છે. શાનદાર વોટર લેઝર શો જોઈને તમારી મુલાકાતને યાદગાર બનાવો.';
+
+  @override
+  String get scenicSereneEnv => 'સુંદર અને શાંત વાતાવરણ';
+
+  @override
+  String get scenicSereneEnvDesc =>
+      'એક શાંતિપૂર્ણ સ્થળે આવેલું આ કેન્દ્ર મુલાકાતીઓ માટે એક ચિંતનશીલ વાતાવરણ પૂરું પાડે છે. મહારાણા પ્રતાપ સ્મારકની જેમ, તે સુંદર આસપાસનું વાતાવરણ પૂરું પાડે છે જે મહેમાનોને પ્રાકૃતિક દ્રશ્યો અને શાંતિનો આનંદ માણતા યોદ્ધાના વારસા સાથે ભાવનાત્મક રીતે જોડાવાની મંજૂરી આપે છે.';
+
+  @override
+  String get culturalPrograms => 'સાંસ્કૃતિક કાર્યક્રમો અને સામુદાયિક ભાગીદારી';
+
+  @override
+  String get culturalProgramsDesc =>
+      'પ્રતાપ ગૌરવ કેન્દ્ર એક સાંસ્કૃતિક કેન્દ્ર તરીકે પણ કામ કરે છે, જે એવા આયોજનોની યજમાની કરે છે જે રાજપૂત પરંપરાઓ અને મહારાણા પ્રતાપની સ્થાયી ભાવનાની ઉજવણી કરે છે. આ સમુદાય-સંચાલિત પ્રવૃત્તિઓ સ્થાનિક લોકો અને પ્રવાસીઓને આકર્ષિત કરે છે, જે રાજસ્થાનના સમૃદ્ધ સાંસ્કૃતિક વારસાને સાચવવામાં અને પ્રોત્સાહન આપવામાં મદદ કરે છે.';
+
+  @override
+  String get faqTitleBhakti => 'વારંવાર પૂછાતા પ્રશ્નો';
+
+  @override
+  String get faqBhaktiQ1 =>
+      'પ્ર૧: શ્રેષ્ઠ અનુભવ માટે મારે પ્રતાપ ગૌરવ કેન્દ્ર ક્યારે આવવું જોઈએ?';
+
+  @override
+  String get faqBhaktiA1 =>
+      'આદર્શ સમય ઓક્ટોબર અને માર્ચ વચ્ચેનો છે, ખાસ કરીને સવારના સમયે અથવા મોડી બપોર દરમિયાન જ્યારે હવામાન ખુશનુમા હોય છે.';
+
+  @override
+  String get faqBhaktiQ2 => 'પ્ર૨: શું કેન્દ્ર માટે કોઈ પ્રવેશ ફી છે?';
+
+  @override
+  String get faqBhaktiA2 =>
+      'હા, એક નાની પ્રવેશ ફી લાગુ પડે છે, જે મોટાભાગના મુલાકાતીઓ માટે સસ્તી અને યોગ્ય છે.';
+
+  @override
+  String get faqBhaktiQ3 =>
+      'પ્ર૩: શું ગાઇડેડ ટૂર (માર્ગદર્શિત પ્રવાસ) ઉપલબ્ધ છે?';
+
+  @override
+  String get faqBhaktiA3 =>
+      'હા, તમારી મુલાકાતને સમૃદ્ધ બનાવવા માટે ગાઇડેડ ટૂર અને ઓડિયો ગાઇડ આપવામાં આવે છે.';
+
+  @override
+  String get faqBhaktiQ4 =>
+      'પ્ર૪: શું કેન્દ્ર પરિવારો અને બાળકો માટે યોગ્ય છે?';
+
+  @override
+  String get faqBhaktiA4 =>
+      'બિલકુલ! સુરક્ષિત ચાલવાના વિસ્તારો અને શૈક્ષણિક પ્રદર્શનો સાથે આ સાઇટ પરિવાર માટે અનુકૂળ છે.';
+
+  @override
+  String get templesInBhaktiDham => 'ભક્તિ ધામમાં મંદિરો';
+
+  @override
+  String get showLess => 'ઓછું બતાવો';
+
+  @override
+  String get readMoreBtn => 'વધુ વાંચો';
+
+  @override
+  String get temple1Title => 'શ્રી રિદ્ધિ સિદ્ધિ વિનાયક મંદિર';
+
+  @override
+  String get temple1Desc =>
+      'ભક્તિધામમાં પ્રથમ પૂજનીય મંદિર વિઘ્નહર્તા ભગવાન ગણેશને સમર્પિત છે. આ સુંદર રીતે તૈયાર કરાયેલું મંદિર પરિસરની અંદર આધ્યાત્મિક યાત્રાની શુભ શરૂઆતનું પ્રતીક છે. એક ધન્ય અને શાંતિપૂર્ણ મુલાકાત સુનિશ્ચિત કરવા માટે મુલાકાતીઓ હંમેશા અહીંથી પોતાની પ્રાર્થના શરૂ કરે છે.';
+
+  @override
+  String get temple2Title => 'શ્રીનાથ જી મંદિર';
+
+  @override
+  String get temple2Desc =>
+      'ઉદયપુરથી આશરે 41 કિલોમીટર દૂર નાથદ્વારા ગામમાં આવેલી આ પ્રતિકૃતિ પુષ્ટિમાર્ગ સંપ્રદાયના પ્રાથમિક દેવતાને શ્રદ્ધાંજલિ આપે છે. આ મૂર્તિ ભારતભરમાં વલ્લભ સંપ્રદાયના અનુયાયીઓની જટિલ કલા, ભક્તિ અને ઊંડી આસ્થાને દર્શાવે છે.';
+
+  @override
+  String get temple3Title => 'શ્રી દ્વારકાધીશ જી મંદિર';
+
+  @override
+  String get temple3Desc =>
+      'શ્રી દ્વારકાધીશ જીની ત્રીજી પીઠ, જે વલ્લભ પરંપરા સાથે નજીકથી જોડાયેલી છે. આ ભવ્ય મંદિર પ્રતિકૃતિ રાજસમંદ તળાવ પાસે કાંકરોલીમાં સ્થિત પ્રખ્યાત મંદિરના આધ્યાત્મિક સારને પકડે છે, જેનાથી ભક્તોને તેની દિવ્ય ઉપસ્થિતિનો અનુભવ થાય છે.';
+
+  @override
+  String get temple4Title => '顺શ્રી ચારભુજા જી મંદિર';
+
+  @override
+  String get temple4Desc =>
+      'મેવાડના લગભગ દરેક ગામમાં ભગવાન ચારભુજાનાથના મંદિરો સ્થાપિત છે. આ વિશેષ મંદિર ચાર ભુજાઓ વાળા દેવતાનું સન્માન કરે છે, જેમને સ્થાનિક રાજપૂત સમુદાય દ્વારા તેમના પરિવારો અને ભૂમિ પર સુરક્ષા, સમૃદ્ધિ અને શાંતિ લાવવા માટે ઊંડેથી પૂજવામાં આવે છે.';
+
+  @override
+  String get temple5Title => 'શ્રી એકલિંગ નાથ જી મંદિર';
+
+  @override
+  String get temple5Desc =>
+      'શ્રી એકલિંગ જી મેવાડ પ્રદેશના મુખ્ય દેવતા છે અને સ્વયં મહારાણાના આરાધ્ય દેવ છે. આ ભવ્ય પ્રતિકૃતિ મૂળ પ્રાચીન કૈલાશપુરી મંદિરની શાનદાર સ્થાપત્ય ભવ્યતાને સીધી ભક્તિ ધામના મુલાકાતીઓ માટે લાવે છે.';
+
+  @override
+  String get temple6Title => 'શ્રી સાંવરિયા જી મંદિર';
+
+  @override
+  String get temple6Desc =>
+      'શ્રી સાંવરિયા જી, ભગવાન કૃષ્ણના એક અત્યંત પૂજનીય પ્રાચીન સ્વરૂપ, સદીઓથી વેપારીઓ અને વ્યવસાયીઓ દ્વારા પૂજવામાં આવે છે. આ જીવંત મંદિર મેવાડ વેપારી સમુદાયની અપાર આસ્થા, સંપત્તિ અને સાંસ્કૃતિક સમૃદ્ધિને સુંદર રીતે દર્શાવે છે.';
+
+  @override
+  String get attractionDetails => 'આકર્ષણની વિગતો';
+
+  @override
+  String get pratapGouravKendra => 'પ્રતાપ ગૌરવ કેન્દ્ર';
+
+  @override
+  String get waterLaserShowOnly => 'માત્ર વોટર લેઝર શો';
+
+  @override
+  String get pratapGouravKendraCombo =>
+      'પ્રતાપ ગૌરવ કેન્દ્ર + વોટર લેઝર શો કોમ્બો';
+
+  @override
+  String get wantToAddWaterLaserShow =>
+      'શું તમે વોટર લેઝર શોની ટિકિટ ઉમેરવા માંગો છો?';
+
+  @override
+  String get no => 'ના';
+
+  @override
+  String get yes => 'હા';
+
+  @override
+  String get dateLabel => 'તારીખ:';
+
+  @override
+  String get nationalityLabel => 'રાષ્ટ્રીયતા:';
+
+  @override
+  String get indian => 'ભારતીય';
+
+  @override
+  String get foreigner => 'વિદેશી';
+
+  @override
+  String get selectTickets => 'ટિકિટ પસંદ કરો';
+
+  @override
+  String get infantLabel => 'બાળક (0-5 વર્ષ)';
+
+  @override
+  String get free => 'મફત';
+
+  @override
+  String get kidsLabel => 'બાળકો (6-12 વર્ષ)';
+
+  @override
+  String get adultLabel => 'પુખ્ત (12+ વર્ષ)';
+
+  @override
+  String get totalAmountLabel => 'કુલ રકમ:  ';
+
+  @override
+  String get contactDetails => 'સંપર્ક વિગતો';
+
+  @override
+  String get fullName => 'પૂરું નામ';
+
+  @override
+  String get enterYourName => 'તમારું નામ દાખલ કરો';
+
+  @override
+  String get emailAddress => 'ઈમેલ આઈડી';
+
+  @override
+  String get enterYourEmail => 'તમારો ઈમેલ દાખલ કરો';
+
+  @override
+  String get phoneNumber => 'ફોન નંબર';
+
+  @override
+  String get enterYourPhoneNumber => 'તમારો ફોન નંબર દાખલ કરો';
+
+  @override
+  String get bookNowBtn => 'અત્યારે જ બુક કરો';
+
+  @override
+  String get rulesRegulationsTitle => 'નિયમો અને નિયમનો';
+
+  @override
+  String get rule1 =>
+      '1. પ્રતાપ ગૌરવ કેન્દ્ર રાષ્ટ્રીય તીર્થ મુલાકાતીઓ માટે દરરોજ ખુલ્લું રહેશે.';
+
+  @override
+  String get rule2 =>
+      '2. ટિકિટ બારી મુલાકાતીઓ માટે સવારે 9:30 થી સાંજે 6:00 વાગ્યા સુધી ખુલ્લી રહેશે.';
+
+  @override
+  String get rule3 =>
+      '3. પ્રતાપ ગૌરવ કેન્દ્રમાં તમામ પ્રદર્શનો અને રોબોટિક શો જોવાનો સમયગાળો આશરે દોઢ કલાકનો છે.';
+
+  @override
+  String get rule4 =>
+      '4. પ્રતાપ ગૌરવ કેન્દ્રની જાળવણી માટે 12 વર્ષથી વધુ ઉંમરના પ્રતિ વ્યક્તિની ટિકિટ સામાન્ય શો માટે માત્ર 160/- રૂપિયા છે. પરિવાર સાથે 0-5 વર્ષનું બાળક મફત છે અને 6-12 વર્ષના બાળકની ટિકિટ 110/- રૂપિયા છે. મુખ્ય આકર્ષણ લાઈવ વોટર લેઝર શો માટે, 12... વર્ષથી વધુ ઉંમરના પ્રતિ વ્યક્તિની ટિકિટ 100/- રૂપિયા છે, 0-5 વર્ષનું બાળક મફત છે અને 6-12 વર્ષના બાળકની ટિકિટ 50/- રૂપિયા છે.';
+
+  @override
+  String get rule5 =>
+      '5. વિદેશી પ્રવાસીઓ માટે 12 વર્ષથી વધુ ઉંમરના પ્રતિ વ્યક્તિની ટિકિટ 460/- રૂપિયા અને 6-12 વર્ષના બાળક માટે 260/- રૂપિયા છે, તેમજ 0-5 વર્ષનું બાળક મફત છે. (તમામ શો અને હેડફોન સામેલ છે.)';
+
+  @override
+  String get rule6 =>
+      '6. પાર્કિંગ અને પરિસરની અંદર ધૂમ્રપાન અને દારૂનું સેવન સખત મનાઈ છે. પાર્કિંગ અને પરિસરની અંદર વાહનોમાં દારૂ અને પ્રતિબંધિત પદાર્થો લઈ જવાની સખત મનાઈ છે.';
+
+  @override
+  String get rule7 =>
+      '7. કૃપા કરીને પ્રતાપ ગૌરવ કેન્દ્રમાં મોબાઈલ ફોન અને કેમેરા બંધ રાખો.';
+
+  @override
+  String get rule8 =>
+      '8. નમ્ર વિનંતી - પ્રતાપ ગૌરવ કેન્દ્ર રાષ્ટ્રીય તીર્થની તમારી મુલાકાત એ ભારતીય સાંસ્કૃતિક પરંપરાઓ અને મૂલ્યોના પવિત્ર કેન્દ્રની તીર્થયાત્રા છે. અમે પરિસરની શાંતિ, ગરિમા અને દિવ્યતા જાળવવામાં આપના સહકારની વિનંતી કરીએ છીએ.';
+
+  @override
+  String get rule9 =>
+      '9. મેનેજમેન્ટ પાસે પ્રવેશના તમામ હકો અબાધિત છે. કોઈપણ અસુવિધા માટે અમને ખેદ છે.';
+
+  @override
+  String get mevadSphurtiDirghaTitle => 'મેવાડ સ્ફૂર્તિ દીર્ઘા';
+
+  @override
+  String get roboticShowLabel => 'રોબોટિક શો';
+
+  @override
+  String get durationTBA => 'સમયગાળો: ટૂંક સમયમાં જાહેર કરાશે';
+
+  @override
+  String get mevadSphurtiDirghaDesc =>
+      'આ શો મેવાડની વિવિધ વાર્તાઓ કહેવા માટે યાંત્રિક મોડેલોનો ઉપયોગ કરે છે. તે એક સિનેમેટિક અનુભવ પ્રદાન કરે છે, જેમાં હમ્મીરના ચિત્તોડગઢ વિજય જેવી ઘટનાઓ દર્શાવવામાં આવે છે.';
+
+  @override
+  String get yeGathaHaiMevadKiTitle => 'આ ગાથા છે મેવાડની';
+
+  @override
+  String get duration18Mins => '18 મિનિટ';
+
+  @override
+  String get documentaryShowLabel => 'ડોક્યુમેન્ટ્રી શો';
+
+  @override
+  String get overviewTitle => 'વિહંગાવલોકન';
+
+  @override
+  String get docShowOverviewDesc =>
+      'આ ડોક્યુમેન્ટ્રી શો 18 મિનિટમાં મેવાડના સમગ્ર ઇતિહાસની વ્યાપક ઝાંખી પૂરી પાડે છે. તે મેવાડના બલિદાનો અને રાષ્ટ્ર પ્રત્યેના સતત સમર્પણની માહિતી આપે છે.';
+
+  @override
+  String get proudHistoryMewarTitle => 'મેવાડનો ગૌરવશાળી ઇતિહાસ';
+
+  @override
+  String get proudHistoryMewarDesc =>
+      'મેવાડનો ઇતિહાસ અજોડ સાહસ, બલિદાન અને માતૃભૂમિ પ્રત્યેની વફાદારીની ગાથા છે. ઉદયપુરના પ્રતાપ ગૌરવ કેન્દ્રમાં, મુલાકાતીઓ આકર્ષક પ્રદર્શનો અને પ્રસ્તુતિઓ દ્વારા આ અકલ્પનીય યાત્રાને જાણી શકે છે. ઉદયપુરના અન્ય કોઈપણ મ્યુઝિયમથી વિપરીત, આ હેરિટેજ સેન્ટર એ ગૌરવ અને વીરતાનો અનુભવ કરવાની એક અનોખી રીત પ્રદાન કરે છે જેણે ભારતની સાંસ્કૃતિક અને ઐતિહાસિક ઓળખને આકાર આપ્યો.';
+
+  @override
+  String get whatMakesPgkSpecialTitle =>
+      'પ્રતાપ ગૌરવ કેન્દ્રને શું ખાસ બનાવે છે?';
+
+  @override
+  String get whatMakesPgkSpecialDesc =>
+      'ઉદયપુરના પરંપરાગત મ્યુઝિયમથી વિપરીત જે માત્ર કલાકૃતિઓ પર ધ્યાન કેન્દ્રિત કરે છે, આ કેન્દ્ર ટેક્નોલોજી અને વાર્તા કહેવાની કળાનું મિશ્રણ છે. અહીં, મેવાડનો ઇતિહાસ આની સાથે પ્રદર્શિત થાય છે:';
+
+  @override
+  String get specialBullet1 =>
+      'આકર્ષક દ્રશ્યો જે નોંધપાત્ર લડાઇઓ અને બલિદાનોને ફરીથી જીવંત કરે છે.';
+
+  @override
+  String get specialBullet2 =>
+      'સંક્ષિપ્ત કથાઓ જે મિનિટોમાં સદીઓ જૂના ઇતિહાસનો સારાંશ આપે છે.';
+
+  @override
+  String get specialBullet3 =>
+      'ભાવનાત્મક ઊંડાણ જે મુલાકાતીઓને ભૂમિની ભાવના સાથે જોડે છે.';
+
+  @override
+  String get specialBullet4 =>
+      'ભારતીય ઓળખમાં મેવાડના યોગદાનને ઉજાગર કરતું રાષ્ટ્રીય મહત્વ.';
+
+  @override
+  String get whyVisitTitle => 'મુલાકાત શા માટે લેવી?';
+
+  @override
+  String get whyVisitDesc =>
+      'જો તમે ઉદયપુરમાં મ્યુઝિયમ જોવાનું વિચારી રહ્યા છો, તો આ કેન્દ્ર તમારી યાદીમાં સૌથી ઉપર શા માટે હોવું જોઈએ તે અહીં દર્શાવેલ છે:';
+
+  @override
+  String get whyVisitBullet1 =>
+      'તે મેવાડના ઇતિહાસને અરસપરસ (ઇન્ટરેક્ટિવ) અને પ્રેરણાદાયક રીતે રજૂ કરે છે.';
+
+  @override
+  String get whyVisitBullet2 =>
+      'પરિવારો, વિદ્યાર્થીઓ અને પ્રવાસીઓને જ્ઞાન અને ગૌરવ બંને મળે છે.';
+
+  @override
+  String get whyVisitBullet3 =>
+      'આ માત્ર એક મ્યુઝિયમ નથી - આ સાહસ અને સંસ્કૃતિને જીવંત શ્રદ્ધાંજલિ છે.';
+
+  @override
+  String get conclusionTitle => 'નિષ્કર્ષ';
+
+  @override
+  String get conclusionDesc =>
+      'મેવાડનો ઇતિહાસ બહાદુરી અને સન્માનની કાલાતીત વાર્તા છે. પ્રતાપ ગૌરવ કેન્દ્ર ખાતરી કરે છે કે દરેક મુલાકાતી માત્ર આ ઇતિહાસ વિશે શીખે જ નહીં પરંતુ તેની ભાવના સાથે પણ જોડાયેલો અનુભવ કરે. ઉદયપુરમાં મ્યુઝિયમની મુલાકાત લેવાનું આયોજન કરનાર કોઈપણ વ્યક્તિ માટે, આ કેન્દ્ર કલાકૃતિઓથી આગળ વધવાની અને મેવાડના જીવંત વારસામાં પ્રવેશવાની અનોખી તક પૂરી પાડે છે.\n\nપ્રતાપ ગૌરવ કેન્દ્રની મુલાકાત લો અને મેવાડના ગૌરવશાળી ઇતિહાસનો અનુભવ કરો.';
+
+  @override
+  String get faqTitleStandard => 'વારંવાર પૂછાતા પ્રશ્નો';
+
+  @override
+  String get faqDocQ1 => 'મેવાડના ઇતિહાસમાં શું સામેલ છે?';
+
+  @override
+  String get faqDocA1 =>
+      'તેમાં ઉત્પત્તિ, સ્થાપત્ય સિદ્ધિઓ, સાંસ્કૃતિક મૂલ્યો અને બહાદુરી અને બલિદાનની કાલાતીત પરંપરાઓ આવરી લેવામાં આવી છે જે પેઢીઓને પ્રેરણા આપતી રહે છે.';
+
+  @override
+  String get faqDocQ2 => 'આ પરંપરાગત મ્યુઝિયમથી કેવી રીતે અલગ છે?';
+
+  @override
+  String get faqDocA2 =>
+      'જ્યાં નિયમિત મ્યુઝિયમ વસ્તુઓ પ્રદર્શિત કરવા પર ધ્યાન કેન્દ્રિત કરે છે, ત્યાં પ્રતાપ ગૌરવ કેન્દ્ર દ્રશ્યો, ધ્વનિ અને વાર્તા દ્વારા મેવાડના ઇતિહાસને જીવંત કરે છે.';
+
+  @override
+  String get faqDocQ3 => 'શું આ સ્થળ બાળકો અને વિદ્યાર્થીઓ માટે યોગ્ય છે?';
+
+  @override
+  String get faqDocA3 =>
+      'હા, તે મેવાડના ઇતિહાસને આકર્ષક સ્વરૂપોમાં સરળ બનાવે છે જેને યુવા શીખનારાઓ સરળતાથી સમજી શકે છે.';
+
+  @override
+  String get faqDocQ4 => 'તે ક્યાં આવેલું છે?';
+
+  @override
+  String get faqDocA4 =>
+      'પ્રતાપ ગૌરવ કેન્દ્ર ઉદયપુર, રાજસ્થાનમાં આવેલું છે, જે તેને ઉદયપુરમાં પરંપરાગત મ્યુઝિયમનો શ્રેષ્ઠ વિકલ્પ બનાવે છે.';
 }

@@ -2,6 +2,8 @@ import 'dart:convert';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../core/models/login_model/otp_verification_response_model.dart';
+
 class StorageService extends GetxService {
   // Enables the `StorageService.to.methodName()` syntax used in ApiClient
   static StorageService get to => Get.find<StorageService>();
@@ -47,15 +49,15 @@ class StorageService extends GetxService {
   // USER DATA MANAGEMENT
   // ==========================================
 
-  Map<String, dynamic>? getUser() {
+  UserModel? getUser() {
     final userStr = _prefs.getString(_userKey);
     if (userStr != null) {
-      return jsonDecode(userStr);
+      return UserModel.fromJson(jsonDecode(userStr));
     }
     return null;
   }
 
-  Future<void> saveUser(dynamic user) async {
+  Future<void> saveUser(UserModel user) async {
     // Converts the user object/map into a JSON string before saving
     await _prefs.setString(_userKey, jsonEncode(user));
   }

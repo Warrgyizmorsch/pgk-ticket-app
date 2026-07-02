@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'app/routes/app_pages.dart';
+import 'app/services/storage_services.dart';
 import 'firebase_options.dart';
 import 'package:pgk_ticket_app/l10n/app_localizations.dart';
+
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -12,6 +14,9 @@ Future<void> main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
+  // 2. Initialize the StorageService synchronously before the app starts
+  await Get.putAsync(() => StorageService().init());
 
   runApp(
     GetMaterialApp(

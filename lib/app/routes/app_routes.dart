@@ -1,5 +1,4 @@
 part of 'app_pages.dart';
-// DO NOT EDIT. This is code generated via package:get_cli/get_cli.dart
 
 abstract class Routes {
   Routes._();
@@ -18,6 +17,10 @@ abstract class Routes {
   static const BHAKTIDHAM = _Paths.BHAKTIDHAM;
   static const PRATAPHISTORY = _Paths.PRATAPHISTORY;
   static const ABOUTPGK = _Paths.ABOUTPGK;
+  static const BOOKING = _Paths.BOOKING;
+  static const PAYMENT = _Paths.PAYMENT;
+  static const PROFILE = _Paths.PROFILE;
+  static const BLUETOOTH = _Paths.BLUETOOTH;
 }
 
 abstract class _Paths {
@@ -37,4 +40,8 @@ abstract class _Paths {
   static const BHAKTIDHAM = '/bhaktidham';
   static const PRATAPHISTORY = '/prataphistory';
   static const ABOUTPGK = '/aboutPGK';
+  static const BOOKING = '/booking';
+  static const PAYMENT = '/payment';
+  static const PROFILE = '/profile';
+  static const BLUETOOTH = '/bluetooth';
 }

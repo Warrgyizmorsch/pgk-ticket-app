@@ -62,7 +62,7 @@ class SplashView extends GetView<SplashController> {
                   Text(
                     'Loading, please wait...',
                     style: TextStyle(
-                      color: AppColors.white.withOpacity(0.8),
+                      color: AppColors.white.withValues(alpha:0.8),
                       fontSize: 13,
                       fontWeight: FontWeight.w400,
                       letterSpacing: 0.3,

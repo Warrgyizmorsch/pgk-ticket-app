@@ -1,21 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import '../../../core/utils/api/login_api/app_otp_api.dart';
 import '../../../routes/app_pages.dart';
+import '../../../services/storage_services.dart';
 
 class LoginController extends GetxController {
-  // ─── State Variables ───────────────────────────────────────────────────────
-  /// Stores the selected dial code from the CountryCodePicker (Defaults to India '+91')
   final selectedDialCode = '+91'.obs;
 
-  /// Controls the loading state during API operations (Get OTP / Google Login)
   final isLoading = false.obs;
 
-  // ─── Controllers & Form Keys ───────────────────────────────────────────────
-  /// Controller to manage and retrieve phone number text input
   late TextEditingController phoneController;
 
-  /// Global form key for input validation constraints
   final loginFormKey = GlobalKey<FormState>();
 
   @override
@@ -29,36 +26,29 @@ class LoginController extends GetxController {
     phoneController.dispose();
     super.onClose();
   }
+
   /// Validates input criteria for a 10-digit mobile number.
   String? validatePhoneNumber(String? value) {
-    // Remove trailing and leading whitespaces
     final cleanValue = value?.trim() ?? '';
 
-    // Requirement Check: Empty field validation
     if (cleanValue.isEmpty) {
       return 'Please enter your mobile phone number';
     }
 
-    // Length Check: Ensures the input is exactly 10 digits long
     if (cleanValue.length != 10) {
       return 'Please enter a valid 10-digit phone number';
     }
 
-    // Content Check: Regular expression checking if input consists purely of digits [0-9]
     if (!RegExp(r'^\d{10}$').hasMatch(cleanValue)) {
       return 'Phone number must only contain numeric digits';
     }
 
-    // Returns null if the value passes all security/formatting validation constraints
     return null;
   }
-  // ─── Business Logic Methods ────────────────────────────────────────────────
 
-  /// Validates input criteria and requests an OTP code
   Future<void> getOtp() async {
     final phone = phoneController.text.trim();
 
-    // Basic Input Validation
     if (phone.isEmpty) {
       Get.snackbar(
         'Required Field',
@@ -84,13 +74,11 @@ class LoginController extends GetxController {
     try {
       isLoading.value = true;
 
-      // Combine full international phone data string
       final fullPhoneNumber = '${selectedDialCode.value}$phone';
 
-      // TODO: Connect your repository or API endpoint authentication provider here
-      // await _authRepository.requestPhoneOtp(fullPhoneNumber);
-
-      await Future.delayed(const Duration(seconds: 2)); // Simulating network latency
+      final requestData = {'mobile': phone};
+      //
+      await AppLogin.requestPhoneOtp(data: requestData);
 
       Get.snackbar(
         'Success',
@@ -100,9 +88,7 @@ class LoginController extends GetxController {
         colorText: Colors.white,
       );
 
-      // Navigate to your OTP Verification Screen if needed:
-      Get.toNamed(Routes.OTP, arguments: fullPhoneNumber);
-
+      Get.toNamed(Routes.OTP, arguments: phone);
     } catch (e) {
       Get.snackbar(
         'Error',
@@ -116,23 +102,104 @@ class LoginController extends GetxController {
     }
   }
 
-  /// Triggers single sign-on authentication through OAuth credentials
+
+
   Future<void> loginWithGoogle() async {
     try {
       isLoading.value = true;
 
-      // TODO: Inject Google Sign In SDK login configurations here
-      // final userCredential = await _authRepository.signInWithGoogle();
+      final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
 
-      await Future.delayed(const Duration(seconds: 2)); // Simulating network latency
+      if (googleUser == null) {
+        isLoading.value = false;
+        return;
+      }
 
-      // Redirect on successful authentication flow completion:
-      // Get.offAllNamed('/home');
+      final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
+      final AuthCredential credential = GoogleAuthProvider.credential(
+        accessToken: googleAuth.accessToken,
+        idToken: googleAuth.idToken,
+      );
 
-    } catch (e) {
+      final UserCredential userCredential = await FirebaseAuth.instance.signInWithCredential(credential);
+      final user = userCredential.user;
+
+      if (user == null) {
+        throw Exception('Failed to retrieve user from Firebase.');
+      }
+
+      // 1. Check if the user is brand new or returning
+      final bool isNewUser = userCredential.additionalUserInfo?.isNewUser ?? false;
+
+      // 2. Get the FIREBASE ID Token
+      final String? firebaseIdToken = await user.getIdToken();
+
+      if (firebaseIdToken == null) {
+        throw Exception('Failed to retrieve Firebase ID Token.');
+      }
+
+      // 3. Branch your logic based on user status
+      if (isNewUser) {
+        // ---------------------------------------------------------
+        // SCENARIO A: NEW USER
+        // ---------------------------------------------------------
+        // The user just created their account right now via Google.
+        // You can navigate them to an onboarding/registration screen
+        // and pass the token so you can save it later.
+
+        Get.offAllNamed(Routes.HOME, arguments: {
+          'id_token': firebaseIdToken,
+          'email': user.email,
+          'name': user.displayName,
+        });
+
+        /* * OR, if your backend handles registration directly via an API call,
+       * you would call your AppLogin.googleRegister() endpoint here instead.
+       */
+
+      } else {
+        // ---------------------------------------------------------
+        // SCENARIO B: EXISTING USER (Just get the token and login)
+        // ---------------------------------------------------------
+        final requestData = {
+          'id_token': firebaseIdToken,
+        };
+
+        final authResponse = await AppLogin.googleLogin(data: requestData);
+
+        if (authResponse.success == true && authResponse.token != null) {
+          await StorageService.to.saveToken(authResponse.token);
+
+          if (authResponse.user != null) {
+            await StorageService.to.saveUser(authResponse.user);
+          }
+
+          await Future.delayed(const Duration(seconds: 2));
+          Get.offAllNamed(Routes.HOME);
+
+        } else {
+          Get.snackbar(
+            'Login Failed',
+            'Failed to authenticate with our servers.',
+            snackPosition: SnackPosition.BOTTOM,
+            backgroundColor: Colors.redAccent,
+            colorText: Colors.white,
+          );
+        }
+      }
+
+    } on FirebaseAuthException catch (e) {
       Get.snackbar(
         'Authentication Failed',
-        'Google login was canceled or encountered an internal issue.',
+        e.message ?? 'An unknown Firebase error occurred.',
+        snackPosition: SnackPosition.BOTTOM,
+        backgroundColor: Colors.redAccent,
+        colorText: Colors.white,
+      );
+    } catch (e) {
+      Get.snackbar(
+        'Error',
+        'Google login encountered an internal issue. $e',
         snackPosition: SnackPosition.BOTTOM,
         backgroundColor: Colors.redAccent,
         colorText: Colors.white,

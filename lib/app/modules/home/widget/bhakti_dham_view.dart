@@ -1,7 +1,6 @@
-
-
 import '../../../common/constant/app_imports.dart';
 import '../controllers/home_controller.dart';
+// import 'package:flutter_gen/gen_l10n/app_localizations.dart'; // Ensure this is imported
 
 class BhaktiDhamView extends GetView<HomeController> {
   BhaktiDhamView({super.key});
@@ -19,45 +18,51 @@ class BhaktiDhamView extends GetView<HomeController> {
   // ─── Individual 'isExpanded' states for each Grid Item ───
   final RxMap<int, bool> _expandedStates = <int, bool>{}.obs;
 
-  // ─── FULL Temple Data ───
-  final List<Map<String, String>> _templeList = [
-    {
-      "image": ImageConstant.bhaktiDham,
-      "title": "Shri Riddhi Siddhi Vinayak Temple",
-      "desc": "The first revered temple in Bhaktidham is dedicated to Lord Ganesha, the remover of obstacles. This beautifully crafted shrine marks the auspicious beginning of the spiritual journey within the complex. Visitors always start their prayers here to ensure a blessed and peaceful visit."
-    },
-    {
-      "image": ImageConstant.bhaktiDham,
-      "title": "ShreeNath Ji Mandir",
-      "desc": "Located approximately 41 kilometers from Udaipur in the village of Nathdwara, this replica pays homage to the primary deity of the Pushtimarg sect. The idol reflects intricate art, devotion, and the deep-rooted faith of the Vallabh Sampradaya followers across India."
-    },
-    {
-      "image": ImageConstant.bhaktiDham,
-      "title": "Shree Dwarkadhish Ji Mandir",
-      "desc": "The third seat of Shri Dwarkadheesh Ji, closely associated with the Vallabh tradition. This gorgeous temple recreation captures the spiritual essence of the famous shrine located in Kankroli, near Rajsamand Lake, allowing devotees to experience its divine presence."
-    },
-    {
-      "image": ImageConstant.bhaktiDham,
-      "title": "Shree Charbhuja Ji Mandir",
-      "desc": "Temples of Lord Charbhujanath are established in almost every village in Mewar. This particular shrine honors the four-armed deity, who is deeply revered by the local Rajput community for bringing protection, prosperity, and peace to their families and land."
-    },
-    {
-      "image": ImageConstant.bhaktiDham,
-      "title": "Shree Ekling Nath Ji Mandir",
-      "desc": "Shri Ekaling Ji is the principal deity of the Mewad region and the ruling deity of the Maharana themselves. This monumental replica brings the magnificent architectural grandeur of the original ancient Kailashpuri temple directly to the visitors of Bhakti Dham."
-    },
-    {
-      "image": ImageConstant.bhaktiDham,
-      "title": "Shree Sawariya Ji Mandir",
-      "desc": "Shri Sanwaliya ji, a highly revered ancient manifestation of Lord Krishna, has been worshipped by merchants and traders for centuries. This vibrant shrine beautifully reflects the immense faith, wealth, and cultural richness of the Mewar trading community."
-    },
-  ];
+  // ─── FULL Temple Data Method ───
+  // Converted to a method to access l10n strings dynamically
+  List<Map<String, String>> _getTempleList(AppLocalizations l10n) {
+    return [
+      {
+        "image": ImageConstant.bhaktiDham,
+        "title": l10n.temple1Title,
+        "desc": l10n.temple1Desc
+      },
+      {
+        "image": ImageConstant.bhaktiDham,
+        "title": l10n.temple2Title,
+        "desc": l10n.temple2Desc
+      },
+      {
+        "image": ImageConstant.bhaktiDham,
+        "title": l10n.temple3Title,
+        "desc": l10n.temple3Desc
+      },
+      {
+        "image": ImageConstant.bhaktiDham,
+        "title": l10n.temple4Title,
+        "desc": l10n.temple4Desc
+      },
+      {
+        "image": ImageConstant.bhaktiDham,
+        "title": l10n.temple5Title,
+        "desc": l10n.temple5Desc
+      },
+      {
+        "image": ImageConstant.bhaktiDham,
+        "title": l10n.temple6Title,
+        "desc": l10n.temple6Desc
+      },
+    ];
+  }
 
   @override
   Widget build(BuildContext context) {
     Get.put(HomeController());
+    final l10n = AppLocalizations.of(context)!;
 
-    const String narrationText = "Udaipur, the city of lakes and royal heritage, is home to many historical sites, but Pratap Gaurav Kendra stands out as a tribute to one of Rajasthan’s greatest warriors. Dedicated to Maharana Pratap, this center offers a unique and immersive experience.";
+    // Fetch translated temple list
+    final List<Map<String, String>> templeList = _getTempleList(l10n);
+    final String narrationText = l10n.bhaktiDhamNarrationText;
 
     return Scaffold(
       backgroundColor: const Color(0xFFFFF6F0),
@@ -70,9 +75,9 @@ class BhaktiDhamView extends GetView<HomeController> {
           icon: const Icon(Icons.arrow_back_ios_new_rounded, color: Colors.black87),
           onPressed: () => Get.back(),
         ),
-        title: const Text(
-          'Bhakti Dham Details',
-          style: TextStyle(
+        title: Text(
+          l10n.bhaktiDhamDetails,
+          style: const TextStyle(
             color: Colors.black87,
             fontWeight: FontWeight.bold,
             fontSize: 18,
@@ -137,34 +142,6 @@ class BhaktiDhamView extends GetView<HomeController> {
             ),
             const SizedBox(height: 16),
 
-            // ─── 4. TITLE CARD ───
-            Container(
-              padding: const EdgeInsets.all(16),
-              decoration: _cardDecoration(),
-              child: const Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Bhakti Dham',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black87,
-                    ),
-                  ),
-                  SizedBox(height: 4),
-                  Text(
-                    'A Spiritual Center of Mewar',
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: Colors.black54,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(height: 16),
 
             // ─── 5. AUDIO PLAYER CARD (TTS INTEGRATED) ───
             Container(
@@ -212,11 +189,11 @@ class BhaktiDhamView extends GetView<HomeController> {
                           ),
                         ),
                         const SizedBox(height: 6),
-                        const Text(
-                          'Spiritual Narration: The Significance of Bhakti Dham',
+                        Text(
+                          l10n.spiritualNarrationTitle,
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.w600,
                             color: Colors.black87,
@@ -257,9 +234,9 @@ class BhaktiDhamView extends GetView<HomeController> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    'Why Pratap Gaurav Kendra is Famous',
-                    style: TextStyle(
+                  Text(
+                    l10n.whyPgkFamous,
+                    style: const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                       color: Colors.black87,
@@ -267,48 +244,48 @@ class BhaktiDhamView extends GetView<HomeController> {
                   ),
                   const SizedBox(height: 12),
 
-                  _buildParagraph('Udaipur, the city of lakes and royal heritage, is home to many historical sites, but Pratap Gaurav Kendra stands out as a tribute to one of Rajasthan’s greatest warriors. Dedicated to Maharana Pratap, this center offers a unique and immersive experience that draws history enthusiasts, tourists, students, and locals alike. It beautifully complements the Maharana Pratap Smarak, enriching visitors’ understanding of this legendary Rajput hero.'),
+                  _buildParagraph(l10n.pgkFamousDesc),
 
-                  _buildSubHeader('Celebrating Maharana Pratap’s Heroic Legacy'),
-                  _buildParagraph('At Pratap Gaurav Kendra, visitors encounter a heartfelt homage to Maharana Pratap’s courage and sacrifice. The exhibits, statues, and detailed battle recreations vividly bring his story to life. This site provides an engaging narrative that enhances the significance of the nearby Maharana Pratap Smarak, making both places essential stops on any historical tour of Udaipur.'),
+                  _buildSubHeader(l10n.celebratingHeroicLegacy),
+                  _buildParagraph(l10n.celebratingHeroicLegacyDesc),
 
-                  _buildSubHeader('Educational Insights for All Ages'),
-                  _buildParagraph('Perfect for students, researchers, and history buffs, Pratap Gaurav Kendra offers:\n• In-depth information on Maharana Pratap’s life and times.\n• Multimedia displays and guided tours that explain Rajput history.\n• An educational environment that complements visits to the Maharana Pratap Smarak.\nThese features make it a favored destination for academic groups and cultural tourists. Make your visit memorable by watching the stunning Water Laser Show.'),
+                  _buildSubHeader(l10n.educationalInsights),
+                  _buildParagraph(l10n.educationalInsightsDesc),
 
-                  _buildSubHeader('Scenic and Serene Environment'),
-                  _buildParagraph('Set in a peaceful location, the Kendra provides a reflective atmosphere for visitors. Just like the Maharana Pratap Smarak, it offers beautiful surroundings that allow guests to connect emotionally with the warrior’s legacy while enjoying scenic views and calmness.'),
+                  _buildSubHeader(l10n.scenicSereneEnv),
+                  _buildParagraph(l10n.scenicSereneEnvDesc),
 
-                  _buildSubHeader('Cultural Programs and Community Involvement'),
-                  _buildParagraph('Pratap Gaurav Kendra also serves as a cultural hub, hosting events that celebrate Rajput traditions and Maharana Pratap’s enduring spirit. These community-driven activities attract locals and tourists, helping preserve and promote Rajasthan’s rich cultural heritage.'),
+                  _buildSubHeader(l10n.culturalPrograms),
+                  _buildParagraph(l10n.culturalProgramsDesc),
 
                   const SizedBox(height: 16),
                   const Divider(),
                   const SizedBox(height: 8),
 
-                  const Text(
-                    'Frequently Asked Questions',
-                    style: TextStyle(
+                  Text(
+                    l10n.faqTitleBhakti,
+                    style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
                       color: Colors.black87,
                     ),
                   ),
                   const SizedBox(height: 12),
-                  _buildFaqTile(question: 'Q1: When should I visit Pratap Gaurav Kendra for the best experience?',answer: 'The ideal time is between October and March, especially during early mornings or late afternoons when the weather is pleasant.'),
-                  _buildFaqTile(question: 'Q2: Is there an entry fee for the Kendra?', answer:'Yes, a small entry fee applies, which is affordable for most visitors.'),
-                  _buildFaqTile(question: 'Q3: Are guided tours available?',answer: 'Yes, guided tours and audio guides are provided to enrich your visit.'),
-                  _buildFaqTile(question: 'Q4: Is the Kendra suitable for families and children?', answer:'Definitely! The site is family-friendly, with safe walking areas and educational displays.'),
+                  _buildFaqTile(question: l10n.faqBhaktiQ1, answer: l10n.faqBhaktiA1),
+                  _buildFaqTile(question: l10n.faqBhaktiQ2, answer: l10n.faqBhaktiA2),
+                  _buildFaqTile(question: l10n.faqBhaktiQ3, answer: l10n.faqBhaktiA3),
+                  _buildFaqTile(question: l10n.faqBhaktiQ4, answer: l10n.faqBhaktiA4),
                 ],
               ),
             ),
             const SizedBox(height: 24),
 
             // ─── 7. TEMPLES GRID WITH PROPER READ MORE ───
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 4.0),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 4.0),
               child: Text(
-                'Temples in Bhakti Dham',
-                style: TextStyle(
+                l10n.templesInBhaktiDham,
+                style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                   color: Colors.black87,
@@ -317,13 +294,12 @@ class BhaktiDhamView extends GetView<HomeController> {
             ),
             const SizedBox(height: 16),
 
-            // REMOVED THE OUTER Obx FROM HERE!
             Wrap(
               spacing: 16,
               runSpacing: 24,
               crossAxisAlignment: WrapCrossAlignment.start,
-              children: List.generate(_templeList.length, (index) {
-                final item = _templeList[index];
+              children: List.generate(templeList.length, (index) {
+                final item = templeList[index];
                 final itemWidth = (MediaQuery.of(context).size.width - 32 - 16) / 2;
 
                 return SizedBox(
@@ -333,6 +309,7 @@ class BhaktiDhamView extends GetView<HomeController> {
                     imagePath: item["image"]!,
                     title: item["title"]!,
                     desc: item["desc"]!,
+                    l10n: l10n, // Passed l10n down to translate the button text
                   ),
                 );
               }),
@@ -353,7 +330,7 @@ class BhaktiDhamView extends GetView<HomeController> {
       borderRadius: BorderRadius.circular(16),
       boxShadow: [
         BoxShadow(
-          color: Colors.black.withOpacity(0.04),
+          color: Colors.black.withValues(alpha: 0.04),
           blurRadius: 10,
           offset: const Offset(0, 4),
         ),
@@ -451,6 +428,7 @@ class BhaktiDhamView extends GetView<HomeController> {
     required String imagePath,
     required String title,
     required String desc,
+    required AppLocalizations l10n,
   }) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -464,7 +442,7 @@ class BhaktiDhamView extends GetView<HomeController> {
             borderRadius: BorderRadius.circular(24),
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withOpacity(0.08),
+                color: Colors.black.withValues(alpha: 0.08),
                 blurRadius: 8,
                 offset: const Offset(0, 4),
               ),
@@ -542,7 +520,7 @@ class BhaktiDhamView extends GetView<HomeController> {
                     borderRadius: BorderRadius.circular(4),
                   ),
                   child: Text(
-                    isExpanded ? 'Show less' : 'Read more',
+                    isExpanded ? l10n.showLess : l10n.readMoreBtn,
                     style: const TextStyle(
                       fontSize: 10,
                       fontWeight: FontWeight.w600,

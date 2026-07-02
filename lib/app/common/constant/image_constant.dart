@@ -24,6 +24,8 @@ class ImageConstant {
    static const String pgkFullImageNight = '${imagesPath}pgk_full_image_night.jpg';
    static const String pgkFullNight = '${imagesPath}pgk_image_night.jpg';
    static const String maharanaImage = '${imagesPath}maharana-pratap.jpg';
+   static const String lightSound = '${imagesPath}light_sound.png';
+   static const String documentation = '${imagesPath}documentary.png';
 
   static const String googleIcon = '${iconPath}google.png';
   static const String appleIcon = '${iconPath}apple_icon.png';

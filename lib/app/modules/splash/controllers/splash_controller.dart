@@ -1,6 +1,6 @@
-import 'package:get/get.dart';
-
 import '../../../common/constant/app_imports.dart';
+import '../../../services/storage_services.dart';
+
 
 class SplashController extends GetxController {
   @override
@@ -9,12 +9,15 @@ class SplashController extends GetxController {
     _navigateToNextScreen();
   }
 
-  /// Handles routing logic after initial app loading configurations are met
   Future<void> _navigateToNextScreen() async {
-    // Standard professional delay hold for branding recognition visibility
     await Future.delayed(const Duration(seconds: 3));
 
-    Get.offNamed(Routes.LOGIN);
+    final String? token = StorageService.to.getToken();
 
+    if (token != null && token.isNotEmpty) {
+      Get.offNamed(Routes.NAV_BAR);
+    } else {
+      Get.offNamed(Routes.LOGIN);
+    }
   }
 }

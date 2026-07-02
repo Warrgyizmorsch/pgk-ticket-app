@@ -23,7 +23,7 @@ class CustomAppBar extends StatelessWidget
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.primary,
       elevation: 0,
       scrolledUnderElevation: 0,
       centerTitle: true,
@@ -35,7 +35,7 @@ class CustomAppBar extends StatelessWidget
           (showBackButton
               ? IconButton(
             onPressed: Get.back,
-            icon: const Icon(Icons.arrow_back_ios_new),
+            icon: const Icon(Icons.arrow_back_ios_new,color: AppColors.white,),
           )
               : null),
 

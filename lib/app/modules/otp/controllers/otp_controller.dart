@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../core/models/language/language_model.dart';
+import '../../../core/utils/api/login_api/app_otp_api.dart';
 import '../../../routes/app_pages.dart';
+import '../../../services/storage_services.dart';
 import '../widget/language_selection.dart'; // Adjust path based on your directory structure
 
 class OtpController extends GetxController {
-  // ─── Existing OTP State Trackers ──────────────────────────────────────────
   final isLoading = false.obs;
   final List<TextEditingController> otpControllers = List.generate(5, (_) => TextEditingController());
   final List<FocusNode> otpFocusNodes = List.generate(5, (_) => FocusNode());
-
-  // ─── Integrated Language State Section ─────────────────────────────────────
-  /// Tracks the currently active selected language key (Defaults to English 'en')
+  String mobileNumber = '';
   final selectedLanguageId = 'en'.obs;
 
-  /// Your requested dataset array for Hindi, English, and Gujarati
   final List<LanguageModel> supportedLanguages = const [
     LanguageModel(id: 'hi', name: 'Hindi', nativeName: 'हिंदी', languageCode: 'hi'),
     LanguageModel(id: 'en', name: 'English', nativeName: 'English', languageCode: 'en'),
@@ -32,7 +30,6 @@ class OtpController extends GetxController {
     super.onClose();
   }
 
-  // ─── Existing OTP UI Methods ───────────────────────────────────────────────
   void handleOtpInput(String value, int index) {
     if (value.length == 1 && index < 4) {
       otpFocusNodes[index + 1].requestFocus();
@@ -40,39 +37,68 @@ class OtpController extends GetxController {
       otpFocusNodes[index - 1].requestFocus();
     }
   }
-
+  @override
+  void onInit() {
+    super.onInit();
+    if (Get.arguments != null) {
+      mobileNumber = Get.arguments as String;
+    }
+  }
   Future<void> verifyOtp() async {
     String absoluteCode = otpControllers.map((c) => c.text).join();
 
     if (absoluteCode.length < 5) {
-      Get.snackbar(
-        'Incomplete Code',
-        'Please enter the full 5-digit verification security token code.',
-        snackPosition: SnackPosition.BOTTOM,
-        backgroundColor: const Color(0xFFEF4444),
-        colorText: Colors.white,
-      );
+      _showSnackbar('Incomplete Code', 'Please enter the full 5-digit verification code.', const Color(0xFFEF4444));
       return;
     }
 
     try {
       isLoading.value = true;
 
-      // Simulate network API validation delay
-      await Future.delayed(const Duration(seconds: 2));
+      final requestData = {
+        "mobile": mobileNumber,
+        "otp": absoluteCode,
+      };
 
-      Get.snackbar(
-        'Verified',
-        'OTP Verification Successful!',
-        snackPosition: SnackPosition.BOTTOM,
-        backgroundColor: const Color(0xFF22C55E),
-        colorText: Colors.white,
-      );
+      final response = await AppLogin.verifyOtp(data: requestData);
 
-      Get.to(LanguageSelectionView());
+      if (response.success && response.token != null) {
+
+        await StorageService.to.saveToken(response.token!);
+
+        // Save the user data if it exists
+        if (response.user != null) {
+          await StorageService.to.saveUser(response.user);
+        }
+
+        _showSnackbar('Verified', response.message, const Color(0xFF22C55E));
+
+        // Clear navigation stack and go to Language Selection
+        Get.to(LanguageSelectionView());
+
+      } else {
+        // The API returned success: false, show the backend's error message
+        _showSnackbar('Verification Failed', response.message, const Color(0xFFEF4444));
+      }
+
+    } catch (e) {
+      // Handle network drops or 500 server errors
+      _showSnackbar('Error', 'Network error. Please try again.', const Color(0xFFEF4444));
     } finally {
       isLoading.value = false;
     }
+  }
+
+// Re-using the helper method from earlier
+  void _showSnackbar(String title, String message, Color bgColor) {
+    Get.snackbar(
+      title,
+      message,
+      snackPosition: SnackPosition.BOTTOM,
+      backgroundColor: bgColor,
+      colorText: Colors.white,
+      margin: const EdgeInsets.all(10),
+    );
   }
 
   // ─── Integrated Language Methods ───────────────────────────────────────────

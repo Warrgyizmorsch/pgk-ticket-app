@@ -30,7 +30,7 @@ class NavBarView extends GetView<NavBarController> {
                   gradient: AppColors.primaryGradient,
                   boxShadow: [
                     BoxShadow(
-                      color: AppColors.primary.withOpacity(0.4),
+                      color: AppColors.primary.withValues(alpha:0.4),
                       blurRadius: 10,
                       offset: const Offset(0, 4),
                     ),
@@ -57,7 +57,7 @@ class NavBarView extends GetView<NavBarController> {
         decoration: BoxDecoration(
           color: AppColors.white,
           borderRadius: const BorderRadius.only(topLeft: Radius.circular(24), topRight: Radius.circular(24)),
-          boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 10, offset: const Offset(0, -4))],
+          boxShadow: [BoxShadow(color: Colors.black.withValues(alpha:0.05), blurRadius: 10, offset: const Offset(0, -4))],
         ),
         child: ClipRRect(
           borderRadius: const BorderRadius.only(topLeft: Radius.circular(24), topRight: Radius.circular(24)),
@@ -88,10 +88,10 @@ class NavBarView extends GetView<NavBarController> {
                   isActive: controller.currentRoute == Routes.TICKETS,
                 ),
                 _buildNavItem(
-                  route: Routes.HISTORY,
-                  icon: Icons.description_rounded,
-                  label: 'History',
-                  isActive: controller.currentRoute == Routes.HISTORY,
+                  route: Routes.PROFILE,
+                  icon: Icons.account_circle_rounded,
+                  label: 'Profile',
+                  isActive: controller.currentRoute == Routes.PROFILE,
                 ),
               ],
             )),

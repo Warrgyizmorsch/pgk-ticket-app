@@ -32,10 +32,7 @@ class NotificationService {
       }
 
       debugPrint("Received JSON - Title: $title, Body: $body");
-      //
-      // // Controller mein add karein
-      // final controller = Get.find<HomeController>();
-      // controller.addNotification(title, body);
+
     });
   }
 }

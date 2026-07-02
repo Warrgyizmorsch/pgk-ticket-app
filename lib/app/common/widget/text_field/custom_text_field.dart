@@ -96,7 +96,7 @@ class TextFieldCustom extends StatelessWidget {
         focusNode: focusNode,
         onFieldSubmitted: onSubmitted,
         style: TextStyle(
-          fontSize: hintTextSize ?? 15,
+          fontSize: hintTextSize ?? 12,
           fontFamily: hintTextStyle ?? FontFamily.regular,
           color: AppColors.textPrimary,
         ),
@@ -110,7 +110,7 @@ class TextFieldCustom extends StatelessWidget {
           errorText: errorText,
           labelStyle: TextStyle(
             color: hintTextColor ?? AppColors.textSecondary,
-            fontSize: hintTextSize ?? AppFontSize.s14,
+            fontSize: hintTextSize ?? AppFontSize.s12,
             fontFamily: hintTextStyle ?? FontFamily.regular,
           ),
           counterText: "",
@@ -118,7 +118,7 @@ class TextFieldCustom extends StatelessWidget {
           errorStyle: AppTextStyles.error,
           hintStyle: TextStyle(
             color: hintTextColor ?? AppColors.textSecondary,
-            fontSize: hintTextSize ?? AppFontSize.s14,
+            fontSize: hintTextSize ?? AppFontSize.s12,
             fontFamily: hintTextStyle ?? FontFamily.regular,
           ),
           border: OutlineInputBorder(

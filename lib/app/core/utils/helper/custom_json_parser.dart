@@ -1,6 +1,7 @@
 import 'dart:convert';
 
-import 'helpers.dart';
+import '../../../common/constant/app_imports.dart';
+
 
 extension JsonMapParser on Map<String, dynamic> {
   T? parse<T>(String key) {
@@ -47,14 +48,14 @@ extension JsonMapParser on Map<String, dynamic> {
         }
       }
     } catch (e) {
-      createLog(
+      debugPrint(
         "[JsonParser Error] Failed parsing key: $key, value: $value, type: ${T.toString()}, error: $e",
       );
       return null;
     }
 
     // Log only if parsing actually failed
-    createLog(
+    debugPrint(
       "[JsonParser Warning] Could not parse key: $key, value: $value, expected type: ${T.toString()}",
     );
     return null;
@@ -73,7 +74,7 @@ extension JsonMapParser on Map<String, dynamic> {
         if (decoded is Map<String, dynamic>) return parser(decoded);
       }
     } catch (e) {
-      createLog("[JsonParser Error] Failed nested parsing key: $key, value: $value, error: $e");
+      debugPrint("[JsonParser Error] Failed nested parsing key: $key, value: $value, error: $e");
     }
     return null;
   }
@@ -101,12 +102,12 @@ extension JsonMapParser on Map<String, dynamic> {
           // Assuming parser returns T, not T?
           list.add(parsed);
         } catch (e) {
-          createLog("[JsonParser Error] Failed parsing list element key: $key, element: $e, error: $e");
+          debugPrint("[JsonParser Error] Failed parsing list element key: $key, element: $e, error: $e");
         }
       }
       return list.isEmpty ? null : list;
     } catch (e) {
-      createLog("[JsonParser Error] Failed parsing list key: $key, value: $value, error: $e");
+      debugPrint("[JsonParser Error] Failed parsing list key: $key, value: $value, error: $e");
       return null;
     }
   }
