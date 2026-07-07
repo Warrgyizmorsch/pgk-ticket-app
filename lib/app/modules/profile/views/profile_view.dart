@@ -1,27 +1,28 @@
+import 'dart:io';
 import 'package:pgk_ticket_app/app/modules/profile/widget/edit_profile_view.dart';
-
+import 'package:pgk_ticket_app/app/services/storage_services.dart';
 import '../../../common/constant/app_imports.dart';
 import '../../otp/controllers/otp_controller.dart';
 import '../../otp/widget/language_selection.dart';
 import '../controllers/profile_controller.dart';
 import '../widget/cancellation_policy_view.dart';
 import '../widget/refund_policy_view.dart';
+import '../widget/visitor_info_view.dart';
 
 class ProfileView extends GetView<ProfileController> {
   const ProfileView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // If you are using localization:
-    // final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context)!;
 
     return Scaffold(
       backgroundColor: AppColors.background,
 
       // ─── Custom App Bar ───
-      // It automatically handles the back button since showBackButton defaults to true
-      appBar: const CustomAppBar(
-        title: 'My Profile', // Replace with: l10n.myProfile if localized
+      appBar: CustomAppBar(
+        title: l10n.myProfile,
+        showBackButton: false,
       ),
 
       body: SingleChildScrollView(
@@ -30,7 +31,7 @@ class ProfileView extends GetView<ProfileController> {
             const SizedBox(height: 24),
 
             // ─── Profile Header (Avatar, Name, Email) ───
-            _buildProfileHeader(),
+            _buildProfileHeader( ctrl: controller),
 
             const SizedBox(height: 32),
 
@@ -43,15 +44,15 @@ class ProfileView extends GetView<ProfileController> {
                     children: [
                       _buildProfileOption(
                         icon: Icons.person_outline,
-                        title: 'Edit Profile',
+                        title: l10n.editProfileTitle, // Reused from earlier
                         onTap: () {
-                          Get.to(EditProfileView());
+                          Get.to(const EditProfileView());
                         },
                       ),
                       _buildDivider(),
                       _buildProfileOption(
                         icon: Icons.language_outlined,
-                        title: 'Language Preferences',
+                        title: l10n.languagePreferences,
                         onTap: () {
                           Get.lazyPut(() => OtpController());
                           Get.to(() => const LanguageSelectionView());
@@ -66,7 +67,7 @@ class ProfileView extends GetView<ProfileController> {
                     children: [
                       _buildProfileOption(
                         icon: Icons.bluetooth_searching_outlined,
-                        title: 'Bluetooth Connectivity',
+                        title: l10n.bluetoothConnectivity, // Reused from earlier
                         onTap: () {
                           Get.toNamed(Routes.BLUETOOTH);
                         },
@@ -74,31 +75,40 @@ class ProfileView extends GetView<ProfileController> {
                       _buildDivider(),
                       _buildProfileOption(
                         icon: Icons.history,
-                        title: 'Payment History',
+                        title: l10n.paymentHistory,
                         onTap: () {
                           Get.toNamed(Routes.HISTORY);
                         },
                       ),
                     ],
-                  ), const SizedBox(height: 16),
+                  ),
+                  const SizedBox(height: 16),
 
                   _buildOptionGroup(
                     children: [
                       _buildProfileOption(
-                        icon: Icons.receipt_long_outlined, // Updated to a refund/receipt icon
-                        title: 'Refund Policy',
+                        icon: Icons.receipt_long_outlined,
+                        title: l10n.refundPolicy,
                         onTap: () {
                           Get.to(() => const RefundPolicyView());
                         },
                       ),
                       _buildDivider(),
                       _buildProfileOption(
-                        icon: Icons.cancel_outlined, // Updated to a cancellation icon
-                        title: 'Cancellation Policy',
+                        icon: Icons.cancel_outlined,
+                        title: l10n.cancellationPolicy,
                         onTap: () {
                           Get.to(() => const CancellationPolicyView());
                         },
                       ),
+                      _buildDivider(),
+                      _buildProfileOption(
+                        icon: Icons.info_outline_rounded,
+                        title: l10n.profileInstructions,
+                        onTap: () {
+                          Get.to(() => const VisitorInfoView());
+                        },
+                      )
                     ],
                   ),
 
@@ -108,26 +118,24 @@ class ProfileView extends GetView<ProfileController> {
                     children: [
                       _buildProfileOption(
                         icon: Icons.help_outline,
-                        title: 'Help & Support',
+                        title: l10n.helpSupport,
                         onTap: () {
-                          // Replace with your actual Help URL if you have one
                           controller.openWebLink('https://pratapgauravkendra.org/contact/');
                         },
                       ),
                       _buildDivider(),
                       _buildProfileOption(
                         icon: Icons.privacy_tip_outlined,
-                        title: 'Privacy Policy',
+                        title: l10n.privacyPolicy,
                         onTap: () {
-                          // The URL you provided
                           controller.openWebLink('https://pratapgauravkendra.org/privacy-policy/');
                         },
-                      ), _buildDivider(),
+                      ),
+                      _buildDivider(),
                       _buildProfileOption(
                         icon: Icons.gavel_outlined,
-                        title: 'Terms & Conditions',
+                        title: l10n.termsConditions,
                         onTap: () {
-                          // The URL you provided
                           controller.openWebLink('https://pratapgauravkendra.org/terms-condition/');
                         },
                       ),
@@ -137,7 +145,7 @@ class ProfileView extends GetView<ProfileController> {
                   const SizedBox(height: 32),
 
                   // ─── Logout Button ───
-                  _buildLogoutButton(),
+                  _buildLogoutButton(l10n),
 
                   const SizedBox(height: 40),
                 ],
@@ -150,66 +158,38 @@ class ProfileView extends GetView<ProfileController> {
   }
 
   // ─── Helper: Profile Header ───
-  Widget _buildProfileHeader() {
-    return Column(
-      children: [
-        Stack(
-          alignment: Alignment.bottomRight,
-          children: [
-            // Avatar Background & Icon
-            Container(
-              width: 100,
-              height: 100,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: AppColors.primary.withValues(alpha: 0.1),
-                border: Border.all(color: AppColors.primary, width: 2),
-              ),
-              child: const Icon(
-                Icons.person,
-                size: 50,
-                color: AppColors.primary,
-              ),
-            ),
-            // Edit Avatar Badge
-            Container(
-              height: 32,
-              width: 32,
-              decoration: BoxDecoration(
-                color: AppColors.primary,
-                shape: BoxShape.circle,
-                border: Border.all(color: AppColors.white, width: 2),
-              ),
-              child: IconButton(
-                padding: EdgeInsets.zero,
-                icon: const Icon(
-                  Icons.camera_alt,
-                  size: 16,
-                  color: AppColors.white,
-                ),
-                onPressed: () {
-                  // TODO: Open image picker
-                },
-              ),
-            ),
-          ],
-        ),
-        const SizedBox(height: 16),
-
-        // Name using AppTextStyles
-        const Text(
-          'Rohit Kumar', // Replace with: controller.userName.value
-          style: AppTextStyles.titleLarge,
-        ),
-        const SizedBox(height: 4),
-
-        // Email using AppTextStyles
-        const Text(
-          'rohit.kumar@example.com', // Replace with: controller.userEmail.value
-          style: AppTextStyles.sectionSub,
-        ),
-      ],
-    );
+  Widget _buildProfileHeader({required ProfileController ctrl}) {
+    return  Obx(() => Container(
+      width: 120,
+      height: 120,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        color: AppColors.primary.withValues(alpha: 0.1),
+        border: Border.all(color: AppColors.primary, width: 2),
+        boxShadow: const [
+          BoxShadow(
+            color: AppColors.lightShadow,
+            blurRadius: 10,
+            offset: Offset(0, 4),
+          ),
+        ],
+        // Display the image if one is selected
+        image: controller.profileImage.value != null
+            ? DecorationImage(
+          image: FileImage(File(controller.profileImage.value!.path)),
+          fit: BoxFit.cover,
+        )
+            : null,
+      ),
+      // Fallback to the icon if no image is selected
+      child: controller.profileImage.value == null
+          ? const Icon(
+        Icons.person,
+        size: 60,
+        color: AppColors.primary,
+      )
+          : null,
+    ));
   }
 
   // ─── Helper: Option Group Card ───
@@ -220,8 +200,7 @@ class ProfileView extends GetView<ProfileController> {
         borderRadius: BorderRadius.circular(16),
         boxShadow: const [
           BoxShadow(
-            color:
-                AppColors.lightShadow, // Replaced static color with your token
+            color: AppColors.lightShadow,
             blurRadius: 10,
             offset: Offset(0, 4),
           ),
@@ -249,13 +228,13 @@ class ProfileView extends GetView<ProfileController> {
       ),
       title: Text(
         title,
-        style: AppTextStyles.subtitle, // Standardized subtitle style
+        style: AppTextStyles.subtitle,
       ),
       trailing: const Icon(
         Icons.arrow_forward_ios,
         size: 16,
         color: AppColors.lightTextDisabled,
-      ), // Standardized icon color
+      ),
       onTap: onTap,
     );
   }
@@ -268,12 +247,12 @@ class ProfileView extends GetView<ProfileController> {
         height: 1,
         thickness: 1,
         color: AppColors.lightDivider,
-      ), // Standardized divider color
+      ),
     );
   }
 
   // ─── Helper: Logout Button ───
-  Widget _buildLogoutButton() {
+  Widget _buildLogoutButton(AppLocalizations l10n) {
     return SizedBox(
       width: double.infinity,
       height: 50,
@@ -282,25 +261,26 @@ class ProfileView extends GetView<ProfileController> {
           Get.dialog(
             AlertDialog(
               backgroundColor: AppColors.white,
-              title: const Text('Logout', style: AppTextStyles.titleLarge),
-              content: const Text(
-                'Are you sure you want to log out?',
+              title: Text(l10n.logout, style: AppTextStyles.titleLarge),
+              content: Text(
+                l10n.logoutPrompt,
                 style: AppTextStyles.bodyMedium,
               ),
               actions: [
                 TextButton(
                   onPressed: () => Get.back(),
-                  child: const Text('Cancel', style: AppTextStyles.subtitle),
+                  child: Text(l10n.cancel, style: AppTextStyles.subtitle),
                 ),
                 ElevatedButton(
                   onPressed: () {
                     Get.back();
+                    StorageService.to.clearAuthData();
                     Get.offAllNamed(Routes.LOGIN);
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: AppColors.error,
                   ),
-                  child: Text('Logout', style: AppTextStyles.button),
+                  child: Text(l10n.logout, style: AppTextStyles.button),
                 ),
               ],
             ),
@@ -315,9 +295,9 @@ class ProfileView extends GetView<ProfileController> {
           ),
         ),
         child: Text(
-          'Logout',
+          l10n.logout,
           style: AppTextStyles.button.copyWith(
-            color: AppColors.error, // Overrides the white text to red
+            color: AppColors.error,
           ),
         ),
       ),

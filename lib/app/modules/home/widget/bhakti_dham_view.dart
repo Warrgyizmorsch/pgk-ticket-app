@@ -1,56 +1,65 @@
 import '../../../common/constant/app_imports.dart';
 import '../controllers/home_controller.dart';
-// import 'package:flutter_gen/gen_l10n/app_localizations.dart'; // Ensure this is imported
 
 class BhaktiDhamView extends GetView<HomeController> {
   BhaktiDhamView({super.key});
 
-  // Reactive state variable to track the active image index in the carousel
   final RxInt _currentCarouselIndex = 0.obs;
 
-  // List of images for the slider
   final List<String> _carouselImages = [
-    ImageConstant.bhaktiDham, // Image 1
-    ImageConstant.mewar,      // Image 2
-    ImageConstant.bhaktiDham, // Image 3
+    ImageConstant.bhaktiDhamIntro,
+    ImageConstant.bhaktiDham,
+    ImageConstant.pgkFullImage,
   ];
 
-  // ─── Individual 'isExpanded' states for each Grid Item ───
-  final RxMap<int, bool> _expandedStates = <int, bool>{}.obs;
 
-  // ─── FULL Temple Data Method ───
-  // Converted to a method to access l10n strings dynamically
+
   List<Map<String, String>> _getTempleList(AppLocalizations l10n) {
     return [
       {
-        "image": ImageConstant.bhaktiDham,
-        "title": l10n.temple1Title,
-        "desc": l10n.temple1Desc
+        "image": ImageConstant.ridhiSidhiVinayakMandir,
+        "title": l10n.templeDetailVinayakTitle,
+        "desc": l10n.templeDetailVinayakDesc
       },
       {
-        "image": ImageConstant.bhaktiDham,
-        "title": l10n.temple2Title,
-        "desc": l10n.temple2Desc
+        "image": ImageConstant.shreeNathJiMandir,
+        "title": l10n.templeDetailShreenathTitle,
+        "desc": l10n.templeDetailShreenathDesc
       },
       {
-        "image": ImageConstant.bhaktiDham,
-        "title": l10n.temple3Title,
-        "desc": l10n.temple3Desc
+        "image": ImageConstant.dwarkadhishJiMandir,
+        "title": l10n.templeDetailDwarkadhishTitle,
+        "desc": l10n.templeDetailDwarkadhishDesc
       },
       {
-        "image": ImageConstant.bhaktiDham,
-        "title": l10n.temple4Title,
-        "desc": l10n.temple4Desc
+        "image": ImageConstant.charbhujaJiMandir,
+        "title": l10n.templeDetailCharbhujaTitle,
+        "desc": l10n.templeDetailCharbhujaDesc
       },
       {
-        "image": ImageConstant.bhaktiDham,
-        "title": l10n.temple5Title,
-        "desc": l10n.temple5Desc
+        "image": ImageConstant.eklingNathJiMandir,
+        "title": l10n.templeDetailEklingTitle,
+        "desc": l10n.templeDetailEklingDesc
       },
       {
-        "image": ImageConstant.bhaktiDham,
-        "title": l10n.temple6Title,
-        "desc": l10n.temple6Desc
+        "image": ImageConstant.sawariyaJiMandir,
+        "title": l10n.templeDetailSawariyaTitle,
+        "desc": l10n.templeDetailSawariyaDesc
+      },
+      {
+        "image": ImageConstant.chamundaMataMandir,
+        "title": l10n.templeDetailChamundaTitle,
+        "desc": l10n.templeDetailChamundaDesc
+      },
+      {
+        "image": ImageConstant.kesariyaJiMandir,
+        "title": l10n.templeDetailKesariyaTitle,
+        "desc": l10n.templeDetailKesariyaDesc
+      },
+      {
+        "image": ImageConstant.ramDarbarMandir,
+        "title": l10n.templeDetailRamDarbarTitle,
+        "desc": l10n.templeDetailRamDarbarDesc
       },
     ];
   }
@@ -60,14 +69,12 @@ class BhaktiDhamView extends GetView<HomeController> {
     Get.put(HomeController());
     final l10n = AppLocalizations.of(context)!;
 
-    // Fetch translated temple list
     final List<Map<String, String>> templeList = _getTempleList(l10n);
     final String narrationText = l10n.bhaktiDhamNarrationText;
 
     return Scaffold(
       backgroundColor: const Color(0xFFFFF6F0),
 
-      // ─── 1. APP BAR ───
       appBar: AppBar(
         backgroundColor: const Color(0xFFFFF6F0),
         elevation: 0,
@@ -92,7 +99,6 @@ class BhaktiDhamView extends GetView<HomeController> {
         ],
       ),
 
-      // ─── 2. MAIN SCROLLABLE CONTENT ───
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
@@ -100,7 +106,6 @@ class BhaktiDhamView extends GetView<HomeController> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
 
-            // ─── 3. FULLY FUNCTIONAL IMAGE CAROUSEL CARD ───
             Container(
               padding: const EdgeInsets.all(12),
               decoration: _cardDecoration(),
@@ -294,28 +299,54 @@ class BhaktiDhamView extends GetView<HomeController> {
             ),
             const SizedBox(height: 16),
 
-            Wrap(
-              spacing: 16,
-              runSpacing: 24,
-              crossAxisAlignment: WrapCrossAlignment.start,
-              children: List.generate(templeList.length, (index) {
-                final item = templeList[index];
-                final itemWidth = (MediaQuery.of(context).size.width - 32 - 16) / 2;
 
-                return SizedBox(
-                  width: itemWidth,
-                  child: _buildExpandableTempleGridItem(
-                    index: index,
-                    imagePath: item["image"]!,
-                    title: item["title"]!,
-                    desc: item["desc"]!,
-                    l10n: l10n, // Passed l10n down to translate the button text
-                  ),
+            GridView.builder(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              itemCount: templeList.length,
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                crossAxisSpacing: 14,
+                mainAxisSpacing: 16,
+                mainAxisExtent: 310, // Locks card boundaries to protect row alignments
+              ),
+              itemBuilder: (context, index) {
+                final item = templeList[index];
+                return _buildExpandableTempleGridItem(
+                  index: index,
+                  imagePath: item["image"]!,
+                  title: item["title"]!,
+                  desc: item["desc"]!,
+                  l10n: l10n,
                 );
-              }),
+              },
             ),
 
-            const SizedBox(height: 100), // Spacer for bottom nav
+
+
+            //
+            // Wrap(
+            //   spacing: 16,
+            //   runSpacing: 24,
+            //   crossAxisAlignment: WrapCrossAlignment.start,
+            //   children: List.generate(templeList.length, (index) {
+            //     final item = templeList[index];
+            //     final itemWidth = (MediaQuery.of(context).size.width - 32 - 16) / 2;
+            //
+            //     return SizedBox(
+            //       width: itemWidth,
+            //       child: _buildExpandableTempleGridItem(
+            //         index: index,
+            //         imagePath: item["image"]!,
+            //         title: item["title"]!,
+            //         desc: item["desc"]!,
+            //         l10n: l10n, // Passed l10n down to translate the button text
+            //       ),
+            //     );
+            //   }),
+            // ),
+
+            const SizedBox(height: 24), // Spacer for bottom nav
           ],
         ),
       ),
@@ -421,8 +452,6 @@ class BhaktiDhamView extends GetView<HomeController> {
       ),
     );
   }
-
-  // ─── FULLY FIXED EXPANDABLE HELPER ───
   Widget _buildExpandableTempleGridItem({
     required int index,
     required String imagePath,
@@ -430,109 +459,308 @@ class BhaktiDhamView extends GetView<HomeController> {
     required String desc,
     required AppLocalizations l10n,
   }) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisSize: MainAxisSize.min, // Hugs content perfectly
-      children: [
-        // Image
-        Container(
-          width: double.infinity,
-          height: 160,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(24),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withValues(alpha: 0.08),
-                blurRadius: 8,
-                offset: const Offset(0, 4),
-              ),
-            ],
-          ),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(24),
-            child: Image.asset(
-              imagePath,
-              fit: BoxFit.cover,
-              errorBuilder: (context, error, stackTrace) => _placeholderImage(),
-            ),
-          ),
-        ),
-        const SizedBox(height: 12),
-
-        // Title
-        Text(
-          title,
-          textAlign: TextAlign.center,
-          maxLines: 2,
-          overflow: TextOverflow.ellipsis,
-          style: const TextStyle(
-            fontSize: 14,
-            fontWeight: FontWeight.w800,
-            color: Colors.black87,
-            height: 1.2,
-          ),
-        ),
-        const SizedBox(height: 6),
-
-        // Reactive Text & Button
-        Obx(() {
-          final isExpanded = _expandedStates[index] ?? false;
-
-          return Column(
-            children: [
-              // ─── FIXED TEXT TOGGLE ───
-              if (isExpanded)
-                Text(
-                  desc, // Show all data
-                  textAlign: TextAlign.center,
-                  style: const TextStyle(
-                    fontSize: 11,
-                    fontWeight: FontWeight.w400,
-                    color: Colors.black54,
-                    height: 1.3,
+    return Card(
+      margin: EdgeInsets.zero,
+      elevation: 0,
+      color: Colors.white,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16),
+        side: BorderSide(color: Colors.grey.shade100, width: 1),
+      ),
+      clipBehavior: Clip.antiAlias,
+      child: InkWell(
+        onTap: () {
+          // Tapping the card opens a beautifully presented Detail Bottom Sheet
+          // to read long historical narratives without breaking grid view UI
+          _showTempleDetailBottomSheet(Get.context!, title, imagePath, desc);
+        },
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            // Lighter, unified image container with a subtle gradient mask
+            AspectRatio(
+              aspectRatio: 2 / 3,
+              child: Stack(
+                fit: StackFit.expand,
+                children: [
+                  Image.asset(
+                    imagePath,
+                    fit: BoxFit.cover,
+                    errorBuilder: (context, error, stackTrace) => _placeholderImage(),
                   ),
-                )
-              else
-                Text(
-                  desc, // Limit to 3 lines
-                  textAlign: TextAlign.center,
-                  maxLines: 3,
-                  overflow: TextOverflow.ellipsis,
-                  style: const TextStyle(
-                    fontSize: 11,
-                    fontWeight: FontWeight.w400,
-                    color: Colors.black54,
-                    height: 1.3,
-                  ),
-                ),
-
-              const SizedBox(height: 12),
-
-              // Button
-              GestureDetector(
-                onTap: () {
-                  _expandedStates[index] = !isExpanded;
-                },
-                child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Colors.grey.shade400, width: 1),
-                    borderRadius: BorderRadius.circular(4),
-                  ),
-                  child: Text(
-                    isExpanded ? l10n.showLess : l10n.readMoreBtn,
-                    style: const TextStyle(
-                      fontSize: 10,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.black87,
+                  Container(
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                        colors: [
+                          Colors.black.withValues(alpha: 0.1),
+                          Colors.black.withValues(alpha: 0.0),
+                        ],
+                      ),
                     ),
                   ),
+                ],
+              ),
+            ),
+
+            // Card content details
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      title,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: const TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black87,
+                      ),
+                    ),
+                    const SizedBox(height: 4),
+                    Expanded(
+                      child: Text(
+                        desc,
+                        maxLines: 3,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          fontSize: 11,
+                          fontWeight: FontWeight.w400,
+                          color: Colors.grey.shade600,
+                          height: 1.4,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 8),
+
+                    // Interactive action bar hint
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          l10n.readMoreBtn,
+                          style: const TextStyle(
+                            fontSize: 11,
+                            fontWeight: FontWeight.w700,
+                            color: Color(0xFFF47B20),
+                          ),
+                        ),
+                        const Icon(
+                          Icons.arrow_forward_rounded,
+                          size: 14,
+                          color: Color(0xFFF47B20),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
               ),
-            ],
-          );
-        }),
-      ],
+            ),
+          ],
+        ),
+      ),
     );
   }
+  void _showTempleDetailBottomSheet(BuildContext context, String title, String imagePath, String desc) {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: const Color(0xFFFFF6F0),
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+      ),
+      builder: (context) {
+        return DraggableScrollableSheet(
+          initialChildSize: 0.65,
+          minChildSize: 0.4,
+          maxChildSize: 0.9,
+          expand: false,
+          builder: (context, scrollController) {
+            return SingleChildScrollView(
+              controller: scrollController,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  // Top Grab Handle pill
+                  Center(
+                    child: Container(
+                      margin: const EdgeInsets.symmetric(vertical: 12),
+                      width: 40,
+                      height: 4,
+                      decoration: BoxDecoration(
+                        color: Colors.grey.shade400,
+                        borderRadius: BorderRadius.circular(2),
+                      ),
+                    ),
+                  ),
+
+                  // Hero Image Banner
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(16),
+                      child: Image.asset(
+                        imagePath,
+                        height: 220,
+                        fit: BoxFit.cover,
+                        errorBuilder: (context, error, stackTrace) => _placeholderImage(),
+                      ),
+                    ),
+                  ),
+
+                  // Narrative Details Container
+                  Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          title,
+                          style: const TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black87,
+                          ),
+                        ),
+                        const SizedBox(height: 8),
+                        const Divider(color: Color(0xFFF47B20), thickness: 1.5, endIndent: 240),
+                        const SizedBox(height: 12),
+                        Text(
+                          desc,
+                          style: const TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400,
+                            color: Colors.black87,
+                            height: 1.6,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            );
+          },
+        );
+      },
+    );
+  }
+
+  // // ─── FULLY FIXED EXPANDABLE HELPER ───
+  // Widget _buildExpandableTempleGridItem({
+  //   required int index,
+  //   required String imagePath,
+  //   required String title,
+  //   required String desc,
+  //   required AppLocalizations l10n,
+  // }) {
+  //   return Column(
+  //     crossAxisAlignment: CrossAxisAlignment.center,
+  //     mainAxisSize: MainAxisSize.min, // Hugs content perfectly
+  //     children: [
+  //       // Image
+  //       Container(
+  //         width: double.infinity,
+  //         height: 160,
+  //         decoration: BoxDecoration(
+  //           borderRadius: BorderRadius.circular(24),
+  //           boxShadow: [
+  //             BoxShadow(
+  //               color: Colors.black.withValues(alpha: 0.08),
+  //               blurRadius: 8,
+  //               offset: const Offset(0, 4),
+  //             ),
+  //           ],
+  //         ),
+  //         child: ClipRRect(
+  //           borderRadius: BorderRadius.circular(24),
+  //           child: Image.asset(
+  //             imagePath,
+  //             fit: BoxFit.cover,
+  //             errorBuilder: (context, error, stackTrace) => _placeholderImage(),
+  //           ),
+  //         ),
+  //       ),
+  //       const SizedBox(height: 12),
+  //
+  //       // Title
+  //       Text(
+  //         title,
+  //         textAlign: TextAlign.center,
+  //         maxLines: 2,
+  //         overflow: TextOverflow.ellipsis,
+  //         style: const TextStyle(
+  //           fontSize: 14,
+  //           fontWeight: FontWeight.w800,
+  //           color: Colors.black87,
+  //           height: 1.2,
+  //         ),
+  //       ),
+  //       const SizedBox(height: 6),
+  //
+  //       // Reactive Text & Button
+  //       Obx(() {
+  //         final isExpanded = _expandedStates[index] ?? false;
+  //
+  //         return Column(
+  //           children: [
+  //             // ─── FIXED TEXT TOGGLE ───
+  //             if (isExpanded)
+  //               Text(
+  //                 desc, // Show all data
+  //                 textAlign: TextAlign.center,
+  //                 style: const TextStyle(
+  //                   fontSize: 11,
+  //                   fontWeight: FontWeight.w400,
+  //                   color: Colors.black54,
+  //                   height: 1.3,
+  //                 ),
+  //               )
+  //             else
+  //               Text(
+  //                 desc, // Limit to 3 lines
+  //                 textAlign: TextAlign.center,
+  //                 maxLines: 3,
+  //                 overflow: TextOverflow.ellipsis,
+  //                 style: const TextStyle(
+  //                   fontSize: 11,
+  //                   fontWeight: FontWeight.w400,
+  //                   color: Colors.black54,
+  //                   height: 1.3,
+  //                 ),
+  //               ),
+  //
+  //             const SizedBox(height: 12),
+  //
+  //             // Button
+  //             GestureDetector(
+  //               onTap: () {
+  //                 _expandedStates[index] = !isExpanded;
+  //               },
+  //               child: Container(
+  //                 padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
+  //                 decoration: BoxDecoration(
+  //                   border: Border.all(color: Colors.grey.shade400, width: 1),
+  //                   borderRadius: BorderRadius.circular(4),
+  //                 ),
+  //                 child: Text(
+  //                   isExpanded ? l10n.showLess : l10n.readMoreBtn,
+  //                   style: const TextStyle(
+  //                     fontSize: 10,
+  //                     fontWeight: FontWeight.w600,
+  //                     color: Colors.black87,
+  //                   ),
+  //                 ),
+  //               ),
+  //             ),
+  //           ],
+  //         );
+  //       }),
+  //     ],
+  //   );
+  // }
 }

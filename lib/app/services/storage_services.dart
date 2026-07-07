@@ -14,7 +14,7 @@ class StorageService extends GetxService {
   static const String _tokenKey = 'auth_token';
   static const String _refreshTokenKey = 'refresh_token';
   static const String _userKey = 'user_data';
-
+  static const String _languageKey = 'app_language';
   // Initialize the service (Call this in main.dart)
   Future<StorageService> init() async {
     _prefs = await SharedPreferences.getInstance();
@@ -65,6 +65,17 @@ class StorageService extends GetxService {
   // ==========================================
   // CLEAR DATA (LOGOUT)
   // ==========================================
+// ==========================================
+  // LANGUAGE MANAGEMENT
+  // ==========================================
+
+  String? getLanguage() {
+    return _prefs.getString(_languageKey);
+  }
+
+  Future<void> saveLanguage(String languageCode) async {
+    await _prefs.setString(_languageKey, languageCode);
+  }
 
   Future<void> clearAuthData() async {
     await _prefs.remove(_tokenKey);

@@ -1,6 +1,10 @@
+
+import '../../../../services/storage_services.dart';
 import '../../../constant_api/api_constant.dart';
+import '../../../models/booking/booking_list_response.dart';
 import '../../../models/booking/booking_payload_model.dart';
 import '../../../models/booking/booking_response_model.dart';
+import '../../../models/login_model/otp_verification_response_model.dart';
 import '../../../network/network_api_service.dart';
 
 class TicketBooking {
@@ -23,5 +27,37 @@ class TicketBooking {
     }
   }
 
+  static Future<BookingListResponse> ticketBookingList({
+    String paymentStatus = 'success',
+    int perPage = 10,
+  }) async {
+    try {
+      final UserModel? user = StorageService.to.getUser();
+      final int userId = user?.id ?? 0;
 
+      if (userId == 0) {
+        throw Exception('User ID not found. User might be logged out.');
+      }
+      final baseUrl = '${ApiConstant.BASE_URL}${ApiConstant.booking}'; // Maps to .../api/bookings
+
+      final url = Uri.parse(baseUrl).replace(
+        queryParameters: {
+          'user_id': userId.toString(),
+          'payment_status': paymentStatus,
+          'per_page': perPage.toString(),
+        },
+      );
+
+      final response = await ApiClient.get(
+        url,
+      );
+
+      // 3. Parse using the BookingListResponse model we created
+      return BookingListResponse.fromJson(response);
+
+    } catch (e) {
+      // Updated exception message to make debugging booking errors precise
+      throw Exception('Failed to fetch booking list: $e');
+    }
+  }
 }

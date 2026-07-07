@@ -1,3 +1,4 @@
+import 'dart:io';
 import '../../../common/constant/app_imports.dart';
 import '../controllers/profile_controller.dart';
 
@@ -6,10 +7,13 @@ class EditProfileView extends GetView<ProfileController> {
 
   @override
   Widget build(BuildContext context) {
+    // Initialize AppLocalizations
+    final l10n = AppLocalizations.of(context)!;
+
     return Scaffold(
-      backgroundColor: AppColors.background, // Uses your creamy background
-      appBar: const CustomAppBar(
-        title: 'Edit Profile',
+      backgroundColor: AppColors.background,
+      appBar: CustomAppBar(
+        title: l10n.editProfileTitle,
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(24.0),
@@ -23,37 +27,41 @@ class EditProfileView extends GetView<ProfileController> {
               const SizedBox(height: 40),
 
               // ─── Form Fields ───
-              _buildTextField(
-                label: 'FULL NAME',
-                hint: 'Enter your full name',
+              _buildCustomField(
+                label: l10n.fullNameLabel,
+                hint: l10n.enterFullNameHint,
                 textController: controller.nameController,
                 icon: Icons.person_outline,
+                isRequired: true,
                 validator: (value) {
-                  if (value == null || value.isEmpty) return 'Name cannot be empty';
+                  if (value == null || value.isEmpty) return l10n.nameEmptyError;
                   return null;
                 },
               ),
               const SizedBox(height: 20),
 
-              _buildTextField(
-                label: 'EMAIL ADDRESS',
-                hint: 'Enter your email',
+              _buildCustomField(
+                label: l10n.emailLabel,
+                hint: l10n.enterEmailHint,
                 textController: controller.emailController,
                 icon: Icons.email_outlined,
                 keyboardType: TextInputType.emailAddress,
+                isRequired: true,
                 validator: (value) {
-                  if (value == null || !value.contains('@')) return 'Enter a valid email';
+                  if (value == null || !value.contains('@')) return l10n.invalidEmailError;
                   return null;
                 },
               ),
               const SizedBox(height: 20),
 
-              _buildTextField(
-                label: 'PHONE NUMBER',
-                hint: 'Enter your phone number',
+              // Phone field explicitly set to readOnly
+              _buildCustomField(
+                label: l10n.phoneLabel,
+                hint: l10n.enterPhoneHint,
                 textController: controller.phoneController,
                 icon: Icons.phone_outlined,
                 keyboardType: TextInputType.phone,
+                readOnly: true,
               ),
               const SizedBox(height: 40),
 
@@ -70,8 +78,8 @@ class EditProfileView extends GetView<ProfileController> {
                       borderRadius: BorderRadius.circular(16),
                     ),
                   ),
-                  child: const Text(
-                    'Save Changes',
+                  child: Text(
+                    l10n.saveChangesBtn,
                     style: AppTextStyles.button,
                   ),
                 ),
@@ -83,12 +91,40 @@ class EditProfileView extends GetView<ProfileController> {
     );
   }
 
+  // ─── Helper: Custom Field using Provided Standardized Widgets ───
+  Widget _buildCustomField({
+    required String label,
+    required String hint,
+    required TextEditingController textController,
+    required IconData icon,
+    TextInputType keyboardType = TextInputType.text,
+    String? Function(String?)? validator,
+    bool isRequired = false,
+    bool readOnly = false,
+  }) {
+    return TextFormFieldCustom(
+      title: label,
+      isRequired: isRequired,
+      method: TextFieldCustom(
+        controller: textController,
+        hintText: hint,
+        textInputType: keyboardType,
+        validator: validator,
+        readOnly: readOnly,
+        backgroundColor: AppColors.white,
+        borderColor: AppColors.transparent, // Prevents double-borders if shadowed
+        prefixIcon: Icon(icon, color: AppColors.textSecondary, size: 22),
+      ),
+    );
+  }
+
   // ─── Helper: Avatar Editor ───
   Widget _buildAvatarEditor() {
     return Stack(
       alignment: Alignment.bottomRight,
       children: [
-        Container(
+        // Wrapped in Obx to update when an image is picked
+        Obx(() => Container(
           width: 120,
           height: 120,
           decoration: BoxDecoration(
@@ -102,17 +138,28 @@ class EditProfileView extends GetView<ProfileController> {
                 offset: Offset(0, 4),
               ),
             ],
+            // Display the image if one is selected
+            image: controller.profileImage.value != null
+                ? DecorationImage(
+              image: FileImage(File(controller.profileImage.value!.path)),
+              fit: BoxFit.cover,
+            )
+                : null,
           ),
-          child: const Icon(
+          // Fallback to the icon if no image is selected
+          child: controller.profileImage.value == null
+              ? const Icon(
             Icons.person,
             size: 60,
             color: AppColors.primary,
-          ),
-        ),
+          )
+              : null,
+        )),
         // Camera Action Button
         GestureDetector(
           onTap: () {
-            // TODO: Trigger Image Picker
+            // Triggers the image picker from the controller
+            controller.pickImage();
           },
           child: Container(
             height: 40,
@@ -130,72 +177,6 @@ class EditProfileView extends GetView<ProfileController> {
               ],
             ),
             child: const Icon(Icons.camera_alt, size: 20, color: AppColors.white),
-          ),
-        ),
-      ],
-    );
-  }
-
-  // ─── Helper: Custom Styled Text Field ───
-  Widget _buildTextField({
-    required String label,
-    required String hint,
-    required TextEditingController textController,
-    required IconData icon,
-    TextInputType keyboardType = TextInputType.text,
-    String? Function(String?)? validator,
-  }) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        // Using your custom field label style
-        Text(label, style: AppTextStyles.fieldLabel),
-        const SizedBox(height: 8),
-
-        // Input Field wrapped in a container for the custom shadow & border
-        Container(
-          decoration: BoxDecoration(
-            color: AppColors.white,
-            borderRadius: BorderRadius.circular(12),
-            boxShadow: const [
-              BoxShadow(
-                color: AppColors.lightShadow,
-                blurRadius: 8,
-                offset: Offset(0, 2),
-              ),
-            ],
-          ),
-          child: TextFormField(
-            controller: textController,
-            keyboardType: keyboardType,
-            validator: validator,
-            style: AppTextStyles.inputText, // User input styling
-            decoration: InputDecoration(
-              hintText: hint,
-              hintStyle: AppTextStyles.hintText, // Hint text styling
-              prefixIcon: Icon(icon, color: AppColors.textSecondary, size: 22),
-
-              // Clean borders integrating with your colors
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(12),
-                borderSide: BorderSide.none,
-              ),
-              enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(12),
-                borderSide: const BorderSide(color: AppColors.lightDivider, width: 1),
-              ),
-              focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(12),
-                borderSide: const BorderSide(color: AppColors.primary, width: 1.5),
-              ),
-              errorBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(12),
-                borderSide: const BorderSide(color: AppColors.error, width: 1),
-              ),
-              filled: true,
-              fillColor: AppColors.white,
-              contentPadding: const EdgeInsets.symmetric(vertical: 16),
-            ),
           ),
         ),
       ],

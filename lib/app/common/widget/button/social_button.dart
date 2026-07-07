@@ -23,21 +23,16 @@ class SocialButton extends StatelessWidget {
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           color: Colors.white,
-          border: Border.all(
-            color: Colors.grey.shade300,
-          ),
+          border: Border.all(color: Colors.grey.shade300),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withValues(alpha:0.05),
+              color: Colors.black.withValues(alpha: 0.05),
               blurRadius: 5,
               offset: const Offset(0, 2),
             ),
           ],
         ),
-        child: Image.asset(
-          imagePath,
-          height: 28,
-        ),
+        child: Image.asset(imagePath, height: 28),
       ),
     );
   }

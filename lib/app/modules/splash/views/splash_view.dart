@@ -6,7 +6,6 @@ class SplashView extends GetView<SplashController> {
 
   @override
   Widget build(BuildContext context) {
-    // ─── CRITICAL FIX: Initialize your controller here ───
     Get.put(SplashController());
 
     return Scaffold(

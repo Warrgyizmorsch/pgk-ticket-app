@@ -638,48 +638,6 @@ class AppLocalizationsHi extends AppLocalizations {
   String get readMoreBtn => 'और पढ़ें';
 
   @override
-  String get temple1Title => 'श्री रिद्धि सिद्धि विनायक मंदिर';
-
-  @override
-  String get temple1Desc =>
-      'भक्तिधाम में पहला पूजनीय मंदिर विघ्नहर्ता भगवान गणेश को समर्पित है। यह खूबसूरती से तैयार किया गया मंदिर परिसर के भीतर आध्यात्मिक यात्रा की शुभ शुरुआत का प्रतीक है। एक धन्य और शांतिपूर्ण यात्रा सुनिश्चित करने के लिए आगंतुक हमेशा यहां से अपनी प्रार्थना शुरू करते हैं।';
-
-  @override
-  String get temple2Title => 'श्रीनाथ जी मंदिर';
-
-  @override
-  String get temple2Desc =>
-      'उदयपुर से लगभग 41 किलोमीटर दूर नाथद्वारा गाँव में स्थित, यह प्रतिकृति पुष्टिमार्ग संप्रदाय के प्राथमिक देवता को श्रद्धांजलि देती है। यह मूर्ति भारत भर में वल्लभ संप्रदाय के अनुयायियों की जटिल कला, भक्ति और गहरी जड़ें जमा चुकी आस्था को दर्शाती है।';
-
-  @override
-  String get temple3Title => 'श्री द्वारकाधीश जी मंदिर';
-
-  @override
-  String get temple3Desc =>
-      'श्री द्वारकाधीश जी की तीसरी पीठ, जो वल्लभ परंपरा से निकटता से जुड़ी है। यह भव्य मंदिर मनोरंजन राजसमंद झील के पास कांकरोली में स्थित प्रसिद्ध मंदिर के आध्यात्मिक सार को पकड़ता है, जिससे भक्तों को इसकी दिव्य उपस्थिति का अनुभव होता है।';
-
-  @override
-  String get temple4Title => 'श्री चारभुजा जी मंदिर';
-
-  @override
-  String get temple4Desc =>
-      'मेवाड़ के लगभग हर गांव में भगवान चारभुजानाथ के मंदिर स्थापित हैं। यह विशेष मंदिर चार भुजाओं वाले देवता का सम्मान करता है, जिन्हें स्थानीय राजपूत समुदाय द्वारा उनके परिवारों और भूमि पर सुरक्षा, समृद्धि और शांति लाने के लिए गहराई से पूजा जाता है।';
-
-  @override
-  String get temple5Title => 'श्री एकलिंग नाथ जी मंदिर';
-
-  @override
-  String get temple5Desc =>
-      'श्री एकलिंग जी मेवाड़ क्षेत्र के प्रमुख देवता हैं और स्वयं महाराणा के शासक देवता हैं। यह स्मारकीय प्रतिकृति मूल प्राचीन कैलाशपुरी मंदिर की शानदार स्थापत्य भव्यता को सीधे भक्ति धाम के आगंतुकों के लिए लाती है।';
-
-  @override
-  String get temple6Title => 'श्री सांवरिया जी मंदिर';
-
-  @override
-  String get temple6Desc =>
-      'श्री सांवरिया जी, भगवान कृष्ण के एक अत्यंत पूजनीय प्राचीन स्वरूप, सदियों से व्यापारियों और व्यवसायियों द्वारा पूजे जाते रहे हैं। यह जीवंत मंदिर मेवाड़ व्यापारिक समुदाय की अपार आस्था, धन और सांस्कृतिक समृद्धि को खूबसूरती से दर्शाता है।';
-
-  @override
   String get attractionDetails => 'आकर्षण का विवरण';
 
   @override
@@ -706,7 +664,7 @@ class AppLocalizationsHi extends AppLocalizations {
   String get dateLabel => 'दिनांक:';
 
   @override
-  String get nationalityLabel => 'राष्ट्रीयता:';
+  String get nationalityLabel => 'राष्ट्रीयता';
 
   @override
   String get indian => 'भारतीय';
@@ -724,7 +682,7 @@ class AppLocalizationsHi extends AppLocalizations {
   String get free => 'निःशुल्क';
 
   @override
-  String get kidsLabel => 'बच्चे (6-12 वर्ष)';
+  String get kidsLabel => 'बच्चे';
 
   @override
   String get adultLabel => 'वयस्क (12+ वर्ष)';
@@ -911,4 +869,1473 @@ class AppLocalizationsHi extends AppLocalizations {
   @override
   String get faqDocA4 =>
       'प्रताप गौरव केंद्र उदयपुर, राजस्थान में स्थित है, जो इसे उदयपुर में एक पारंपरिक संग्रहालय का एक शीर्ष विकल्प बनाता है।';
+
+  @override
+  String get rajasthanDirghaTitle => 'राजस्थान दीर्घा';
+
+  @override
+  String get rajasthanDirghaNarrationText =>
+      'इस महाकाव्य में राजस्थान के 25 चयनित योद्धाओं, महान विभूतियों, संतों और लोक देवताओं की भव्य प्रतिमाएं प्रदर्शित की गई हैं...';
+
+  @override
+  String get rajasthanDirghaNarrationLabel => 'राजस्थान दीर्घा वर्णन';
+
+  @override
+  String get audioGuideLabel => 'ऑडियो गाइड';
+
+  @override
+  String get greatPersonalitiesTitle => 'राजस्थान की महान विभूतियां';
+
+  @override
+  String get greatPersonalitiesDesc1 =>
+      'इस महाकाव्य में राजस्थान के 25 चयनित योद्धाओं, महान विभूतियों, संतों और लोक देवताओं की अद्भुत और भव्य प्रतिमाएं गर्व से प्रदर्शित की गई हैं। यह प्रदर्शनी एक सांस्कृतिक संग्रह के रूप में कार्य करती है, जो इस क्षेत्र के विविध आध्यात्मिक और सैन्य इतिहास की झलक प्रदान करती है।';
+
+  @override
+  String get prominentLocalDeitiesTitle => 'प्रमुख लोक देवता';
+
+  @override
+  String get deity1 => 'रामदेवजी';
+
+  @override
+  String get deity2 => 'तेजाजी';
+
+  @override
+  String get deity3 => 'गोगाजी';
+
+  @override
+  String get heroicFiguresTitle => 'वीर नायक और योद्धा';
+
+  @override
+  String get warrior1 => 'दुर्गादास राठौड़';
+
+  @override
+  String get warrior2 => 'हम्मीर चौहान';
+
+  @override
+  String get warrior3 => 'राव चंद्रसेन';
+
+  @override
+  String get warrior4 => 'राव शेखा जी';
+
+  @override
+  String get moreLegendaryFigures => 'और कई अन्य महान ऐतिहासिक विभूतियां।';
+
+  @override
+  String get greatPersonalitiesDesc2 =>
+      'केवल एक दृश्य प्रदर्शन से कहीं अधिक, यह गौरवशाली दीर्घा इन स्थानीय देवताओं, संतों और योद्धाओं के जीवन की कहानियों, उपदेशों और महान बलिदानों के पूरी तरह से प्रलेखित रिकॉर्ड प्रदान करती है।';
+
+  @override
+  String get pratapHeroTitle => 'महाराणा प्रताप: मेवाड़ के शेर';
+
+  @override
+  String get narrationBattleOfHaldighati => 'कथन: हल्दीघाटी का युद्ध';
+
+  @override
+  String get keyEventsTitle => 'प्रमुख घटनाएं';
+
+  @override
+  String get haldighatiRecreation => 'हल्दीघाटी युद्ध\nपुनर्निर्माण';
+
+  @override
+  String get chetaksSacrifice => 'चेतक का बलिदान';
+
+  @override
+  String get pratapsCoronation => 'प्रताप का राज्याभिषेक';
+
+  @override
+  String get mewadRatanDirghaTitle => 'मेवाड़ रत्न दीर्घा';
+
+  @override
+  String get mewadRatanNarrationText =>
+      'इस दीर्घा में मेवाड़ के प्रमुख योद्धाओं और वीर महिलाओं को प्रदर्शित किया गया है। बप्पा रावल से शुरू होकर, यह योद्धाओं, संतों और वीर महिलाओं तक फैली हुई है...';
+
+  @override
+  String get mewadRatanNarrationLabel => 'मेवाड़ रत्न दीर्घा वर्णन';
+
+  @override
+  String get prideOfMewarTitle => 'मेवाड़ का गौरव';
+
+  @override
+  String get prideOfMewarDesc1 =>
+      'इस दीर्घा में मेवाड़ के प्रमुख योद्धाओं और वीर महिलाओं को प्रदर्शित किया गया है। बप्पा रावल से शुरू होकर, यह महाराणा राज सिंह के शासनकाल के दौरान योद्धाओं, संतों और वीर महिलाओं तक फैली हुई है। यह प्रदर्शनी मेवाड़ की सेना की सैन्य वीरता और आध्यात्मिक झुकाव को दर्शाती है।';
+
+  @override
+  String get prideOfMewarDesc2 =>
+      'यह अपनी स्थापना से लेकर 18वीं शताब्दी तक मेवाड़ में गुहिलोटों के राज्य के इतिहास और संस्कृति के बारे में संक्षिप्त जानकारी प्रदान करता है।';
+
+  @override
+  String get significantFiguresTitle => 'प्रदर्शित प्रमुख विभूतियां';
+
+  @override
+  String get significantFiguresDesc =>
+      'दीर्घा में निम्नलिखित ऐतिहासिक विभूतियों की राजसी मूर्तियाँ और चित्रण शामिल हैं:';
+
+  @override
+  String get mewadFigure1 => 'बप्पा रावल और हारीत राशि';
+
+  @override
+  String get mewadFigure2 => 'पद्मावती, गोरा और बादल';
+
+  @override
+  String get mewadFigure3 => 'सत्यव्रत चूंडा';
+
+  @override
+  String get mewadFigure4 => 'महाराणा कुंभकर्ण (राणा कुंभा)';
+
+  @override
+  String get mewadFigure5 => 'महाराणा संग्राम सिंह प्रथम (राणा सांगा)';
+
+  @override
+  String get mewadFigure6 => 'पन्ना धाय';
+
+  @override
+  String get mewadFigure7 => 'जयमल मेड़तिया और पत्ता सिसोदिया';
+
+  @override
+  String get mewadFigure8 => 'कल्ला राठौड़';
+
+  @override
+  String get mewadFigure9 => 'मीरा बाई';
+
+  @override
+  String get mewadFigure10 => 'महाराणा उदय सिंह द्वितीय';
+
+  @override
+  String get mewadFigure11 => 'भामाशाह और राणा पूंजा';
+
+  @override
+  String get mewadFigure12 => 'हकीम खान सूर';
+
+  @override
+  String get mewadFigure13 => 'महाराणा अमर सिंह और महाराणा राज सिंह';
+
+  @override
+  String get mewadFigure14 => 'हाड़ी रानी';
+
+  @override
+  String get krantikariDirghaTitle => 'क्रांतिकारी दीर्घा';
+
+  @override
+  String get krantikariNarrationText =>
+      'प्रताप गौरव केंद्र के मध्य में स्थित यह दीर्घा, भारतीय स्वतंत्रता संग्राम के वीर योद्धाओं की कहानियों को प्रदर्शित करती है...';
+
+  @override
+  String get krantikariNarrationLabel => 'क्रांतिकारी दीर्घा वर्णन';
+
+  @override
+  String get heroesOfIndependenceTitle => 'स्वतंत्रता संग्राम के नायक';
+
+  @override
+  String get heroesOfIndependenceDesc1 =>
+      'प्रताप गौरव केंद्र के मध्य में स्थित यह शानदार प्रदर्शनी शानदार मूर्तियों का उपयोग करके भारतीय स्वतंत्रता संग्राम के वीर योद्धाओं की कहानियों को प्रदर्शित करती है।';
+
+  @override
+  String get heroesOfIndependenceDesc2 =>
+      'यह दीर्घा 1857 से 1947 तक के महत्वपूर्ण कालखंड को कवर करती है, जो आश्चर्यजनक मूर्तिकला प्रस्तुतियों के माध्यम से वीरता और बलिदान की कालातीत कहानियों को प्रस्तुत करती है।';
+
+  @override
+  String get keyHighlightsTitle => 'मुख्य विशेषताएं';
+
+  @override
+  String get krantikariHighlight1 =>
+      'केंद्रीय स्थान: केंद्र के मध्य में प्रमुखता से स्थित है।';
+
+  @override
+  String get krantikariHighlight2 =>
+      'ऐतिहासिक समयरेखा: स्वतंत्रता के प्रथम संग्राम (1857) से लेकर भारत की आजादी (1947) तक के स्मारकीय युग को कवर करता है।';
+
+  @override
+  String get krantikariHighlight3 =>
+      'मूर्तिकला के माध्यम से कहानी: अविश्वसनीय रूप से विस्तृत, जीवंत मूर्तियों के माध्यम से वीरता की कहानियों को जीवंत किया गया है।';
+
+  @override
+  String get krantikariHighlight4 =>
+      'शहीदों को श्रद्धांजलि: पूरी तरह से उन बहादुर क्रांतिकारियों को समर्पित है जिन्होंने औपनिवेशिक शासन के खिलाफ लड़ाई लड़ी थी।';
+
+  @override
+  String get haldighatiDirghaTitle => 'हल्दीघाटी विजय युद्ध दीर्घा';
+
+  @override
+  String get haldighatiNarrationText1 =>
+      'हल्दीघाटी विजय युद्ध दीर्घा ऐतिहासिक हल्दीघाटी युद्ध का एक शक्तिशाली दृश्य वर्णन प्रस्तुत करती है...';
+
+  @override
+  String get haldighatiNarrationLabel => 'हल्दीघाटी के युद्ध का वर्णन';
+
+  @override
+  String get exploreLegacyTitle => 'महाराणा प्रताप की विरासत का अन्वेषण करें';
+
+  @override
+  String get exploreLegacyDesc1 =>
+      'प्रताप गौरव केंद्र उदयपुर महाराणा प्रताप के वीर जीवन और उपलब्धियों में एक अनूठी यात्रा प्रदान करता है, जो भारतीय इतिहास में साहस और लचीलेपन का प्रतीक है। यह साइट इतिहास प्रेमियों, पर्यटकों और राजस्थान की समृद्ध विरासत की खोज करने के इच्छुक छात्रों के लिए अत्यधिक प्रासंगिक है। उदयपुर में एक प्रमुख संग्रहालय के रूप में, महाराणा प्रताप संग्रहालय इमर्सिव प्रदर्शन प्रदान करता है जो राजा के संघर्षों और जीतों को उजागर करता है, जिससे यह सांस्कृतिक अन्वेषण के लिए एक आवश्यक गंतव्य बन जाता है।';
+
+  @override
+  String get highlightsMuseumTitle => 'संग्रहालय की मुख्य विशेषताएं';
+
+  @override
+  String get highlightMuseum1 =>
+      'महाराणा प्रताप संग्रहालय ऐतिहासिक कलाकृतियों, चित्रों और हथियारों का एक क्यूरेटेड संग्रह प्रदर्शित करता है।';
+
+  @override
+  String get highlightMuseum2 =>
+      'थीम आधारित दीर्घाएँ महाराणा प्रताप के युद्धों और दरबारी जीवन के महत्वपूर्ण क्षणों को फिर से जीवंत करती हैं।';
+
+  @override
+  String get highlightMuseum3 =>
+      'दुर्लभ पांडुलिपियां और तस्वीरें 16वीं सदी की राजपूत संस्कृति की जानकारी देती हैं।';
+
+  @override
+  String get highlightMuseum4 =>
+      'इंटरएक्टिव टचस्क्रीन आकर्षक आख्यान और विस्तृत जानकारी प्रदान करते हैं।';
+
+  @override
+  String get highlightMuseum5 =>
+      'सिटी टूर की योजना बना रहे हैं? इन आवश्यक उदयपुर सिटी टूर स्थानों को न चूकें।';
+
+  @override
+  String get visitorTipsTitle => 'आगंतुक सुझाव और अनुभव';
+
+  @override
+  String get visitorTip1 =>
+      'शांत, अधिक व्यक्तिगत अनुभव का आनंद लेने के लिए सुबह जल्दी या देर दोपहर में आएं।';
+
+  @override
+  String get visitorTip2 =>
+      'फोटोग्राफी के शौकीनों को अनोखे शॉट्स लेने के लिए कई सुंदर और ऐतिहासिक रूप से समृद्ध स्थान मिलेंगे।';
+
+  @override
+  String get visitorTip3 =>
+      'स्थानीय गाइड और टूर ऑपरेटर प्रताप गौरव केंद्र और आसपास के आकर्षणों सहित विशेष विरासत पर्यटन प्रदान करते हैं।';
+
+  @override
+  String get exploreLegacyDesc2 =>
+      'हल्दीघाटी विजय युद्ध दीर्घा मेवाड़ के महाराणा प्रताप और मुगल सेना के बीच लड़े गए ऐतिहासिक हल्दीघाटी युद्ध का एक शक्तिशाली दृश्य वर्णन प्रस्तुत करती है। यह गैलरी राजपूत योद्धाओं के साहस, सैन्य रणनीति और अटूट दृढ़ संकल्प को खूबसूरती से प्रदर्शित करती है, जिन्होंने एक शक्तिशाली साम्राज्य के खिलाफ अपनी मातृभूमि की रक्षा की थी। जीवंत प्रतिष्ठानों और कलात्मक कहानी के माध्यम से, दीर्घा भारतीय इतिहास के एक गौरवपूर्ण अध्याय को संरक्षित करती है और सम्मान और प्रतिरोध की भावना को जीवंत करती है।';
+
+  @override
+  String get faqHaldighatiQ1 =>
+      'प्रताप गौरव केंद्र कितने बजे खुलता और बंद होता है?';
+
+  @override
+  String get faqHaldighatiA1 =>
+      'आगंतुक चुनिंदा छुट्टियों को छोड़कर हर दिन सुबह 10:00 बजे से शाम 5:30 बजे तक संग्रहालय का भ्रमण कर सकते हैं।';
+
+  @override
+  String get faqHaldighatiQ2 =>
+      'क्या संग्रहालय विकलांग आगंतुकों के लिए सुलभ है?';
+
+  @override
+  String get faqHaldighatiA2 =>
+      'हां, संग्रहालय को रैंप और सहायता सेवाओं जैसी सुविधाओं के साथ समावेशी बनाया गया है।';
+
+  @override
+  String get faqHaldighatiQ3 =>
+      'क्या संग्रहालय में निर्देशित पर्यटन (गाइडेड टूर) उपलब्ध हैं?';
+
+  @override
+  String get faqHaldighatiA3 =>
+      'हां, निर्देशित पर्यटन विभिन्न भाषाओं में पेश किए जाते हैं और इन्हें पहले से बुक किया जा सकता है।';
+
+  @override
+  String get faqHaldighatiQ4 =>
+      'क्या स्कूल समूह शैक्षिक कार्यक्रमों में भाग ले सकते हैं?';
+
+  @override
+  String get faqHaldighatiA4 =>
+      'निश्चित रूप से, संग्रहालय नियमित रूप से सभी उम्र के छात्रों के लिए विशेष शैक्षिक यात्राओं का आयोजन करता है।';
+
+  @override
+  String get faqHaldighatiQ5 => 'क्या अंदर फोटोग्राफी की अनुमति है?';
+
+  @override
+  String get faqHaldighatiA5 =>
+      'निर्दिष्ट क्षेत्रों में फोटोग्राफी की अनुमति है, लेकिन संग्रहालय के नियमों के अनुसार फ्लैश और वीडियो रिकॉर्डिंग प्रतिबंधित हो सकती है।';
+
+  @override
+  String get charitraPradarshaneeTitle => 'महाराणा प्रताप चरित्र प्रदर्शनी';
+
+  @override
+  String get charitraNarrationText1 =>
+      'महाराणा प्रताप के जन्म से लेकर मृत्यु तक की जीवन गाथा को पाँच कमरों में चित्रों के माध्यम से प्रदर्शित किया गया है। चाहे वह प्रताप का जन्मस्थान हो...';
+
+  @override
+  String get charitraNarrationLabel => 'चरित्र प्रदर्शनी वर्णन';
+
+  @override
+  String get journeyThroughLegendTitle => 'एक किंवदंती के जीवन की यात्रा';
+
+  @override
+  String get charitraDesc1 =>
+      'महाराणा प्रताप के जन्म से लेकर मृत्यु तक की जीवन गाथा को पाँच कमरों में चित्रों के माध्यम से प्रदर्शित किया गया है। चाहे कुंभलगढ़ में प्रताप का जन्मस्थान हो या अब्दुल रहीम खान-खाना के परिवार को मुक्त कराने वाले प्रताप के दृश्य या उनके वफादार घोड़े चेतक का बलिदान, ये दृश्य चित्रों के माध्यम से एक ज्वलंत चित्रण प्रदान करते हैं, जो दर्शकों को एक शानदार अनुभव देते हैं।';
+
+  @override
+  String get charitraDesc2 =>
+      'एक आकर्षक आकर्षण महाराणा प्रताप की विशाल प्रतिमा है जो उनके अटूट साहस और वीरता का प्रतीक है। चरित्र प्रदर्शनी एक आकर्षक और शैक्षिक अनुभव प्रदान करती है जो महान राजपूत योद्धा के जीवन को प्रकाश में लाती है।';
+
+  @override
+  String get grandStatueTitle => 'महाराणा प्रताप की भव्य प्रतिमा';
+
+  @override
+  String get grandStatueDesc =>
+      'प्रदर्शनी के अंदर ऊंचे स्थान पर स्थित, यह शानदार मूर्ति महाराणा प्रताप को उनके वफादार घोड़े, चेतक पर सवार दिखाती है। यह अदम्य राजपूत भावना को सच्ची श्रद्धांजलि है।';
+
+  @override
+  String get statueBullet1 => 'साहस, बलिदान और सम्मान का प्रतिनिधित्व करता है।';
+
+  @override
+  String get statueBullet2 =>
+      'भावी पीढ़ियों के लिए एक प्रेरणा के रूप में कार्य करता है।';
+
+  @override
+  String get statueBullet3 =>
+      'एक ऐतिहासिक स्थल जो पूरे भारत से आगंतुकों को आकर्षित करता है।';
+
+  @override
+  String get charitraHighlight1 =>
+      'युद्ध के डायोरमा (Dioramas): हल्दीघाटी के युद्ध और अन्य निर्णायक क्षणों को दर्शाने वाले जीवंत प्रदर्शन।';
+
+  @override
+  String get charitraHighlight2 =>
+      'हथियार और कलाकृतियां: राजपूत योद्धाओं द्वारा उपयोग की जाने वाली तलवारों, ढालों और कवचों की प्रतिकृतियां।';
+
+  @override
+  String get charitraHighlight3 =>
+      'सांस्कृतिक दीर्घाएं: राजपूताना जीवन शैली, वेशभूषा और परंपराओं को प्रदर्शित करने वाली प्रदर्शनियां।';
+
+  @override
+  String get charitraHighlight4 =>
+      'स्वतंत्रता सेनानी खंड: भारत के उन नायकों का सम्मान करना जिन्होंने महाराणा प्रताप के साहस के मार्ग का अनुसरण किया।';
+
+  @override
+  String get whyVisitUdaipurTitle =>
+      'अपनी उदयपुर यात्रा के दौरान यहां क्यों आएं?';
+
+  @override
+  String get visitBullet1 =>
+      'राजस्थान के इतिहास के साथ गहरा संबंध स्थापित करें।';
+
+  @override
+  String get visitBullet2 =>
+      'महाराणा प्रताप की स्वतंत्रता की अद्वितीय भावना के बारे में जानने का अवसर।';
+
+  @override
+  String get visitBullet3 =>
+      'किसी भी अन्य पर्यटन स्थल के विपरीत एक प्रेरक सांस्कृतिक अनुभव।';
+
+  @override
+  String get charitraConclusion =>
+      'एक संग्रहालय से अधिक, महाराणा प्रताप चरित्र प्रदर्शनी प्रेरणा का स्थान है। प्रदर्शन और मूर्ति हर आगंतुक में देशभक्ति और गर्व की भावना जगाती है। यह एक अनुस्मारक है कि सच्चा नेतृत्व निस्वार्थता, लचीलेपन और सम्मान में निहित है।';
+
+  @override
+  String get faqCharitraQ1 => 'चरित्र प्रदर्शनी किस लिए प्रसिद्ध है?';
+
+  @override
+  String get faqCharitraA1 =>
+      'यह अपनी शानदार महाराणा प्रताप प्रतिमा और विस्तृत दीर्घाओं के लिए प्रसिद्ध है जो महाराणा प्रताप की विरासत और मेवाड़ के इतिहास को जीवंत करती हैं।';
+
+  @override
+  String get faqCharitraQ2 => 'महाराणा प्रताप की प्रतिमा कहाँ स्थित है?';
+
+  @override
+  String get faqCharitraA2 =>
+      'महाराणा प्रताप की भव्य प्रतिमा उदयपुर के प्रताप गौरव केंद्र के अंदर चरित्र प्रदर्शनी में स्थित है।';
+
+  @override
+  String get faqCharitraQ3 => 'घूमने में कितना समय लगता है?';
+
+  @override
+  String get faqCharitraA3 =>
+      'आगंतुक आमतौर पर विस्तार से संग्रहालय, मूर्ति और प्रदर्शनों की खोज में 2-3 घंटे बिताते हैं।';
+
+  @override
+  String get faqCharitraQ4 => 'क्या यह परिवारों और बच्चों के लिए उपयुक्त है?';
+
+  @override
+  String get faqCharitraA4 =>
+      'हां, संग्रहालय परिवार के अनुकूल है और बच्चों और वयस्कों के लिए एक अद्भुत शैक्षिक अनुभव प्रदान करता है।';
+
+  @override
+  String get faqCharitraQ5 => 'महाराणा प्रताप की मूर्ति क्यों महत्वपूर्ण है?';
+
+  @override
+  String get faqCharitraA5 =>
+      'यह एक सांस्कृतिक मील का पत्थर है जो बहादुरी और बलिदान का प्रतीक है, जो पीढ़ियों तक महाराणा प्रताप की कहानी को जीवित रखता है।';
+
+  @override
+  String get bharatMataMandirTitle => 'भारत माता मंदिर';
+
+  @override
+  String get bharatMataNarrationText =>
+      'भारत में ग्राम देवी, स्थान देव और मातृ देवी की पूजा की परंपरा प्राचीन काल से रही है। मेवाड़ में जगदम्बा को राष्ट्र श्यामला के रूप में पूजा जाता है, और उन्हें समर्पित एक मंदिर कैलाशपुरी के रास्ते में स्थित है...';
+
+  @override
+  String get bharatMataNarrationLabel => 'भारत माता मंदिर वर्णन';
+
+  @override
+  String get worshipingRashtraDeviTitle => 'राष्ट्र देवी की पूजा';
+
+  @override
+  String get bharatMataDesc1 =>
+      'भारत में ग्राम देवी, स्थान देव और मातृ देवी की पूजा की परंपरा प्राचीन काल से रही है। मेवाड़ में जगदम्बा को राष्ट्र श्यामला के रूप में पूजा जाता है, और उन्हें समर्पित एक मंदिर उदयपुर के पास कैलाशपुरी के रास्ते में स्थित है। स्थानीय परंपरा में, उन्हें राठासेणा माता के रूप में जाना जाता है।';
+
+  @override
+  String get bharatMataDesc2 =>
+      'यह संभवतः देश में राष्ट्र देवी (भारत माता) को समर्पित सबसे पुराना मंदिर है। स्वतंत्रता संग्राम के दौरान, बंकिम चंद्र चट्टोपाध्याय ने अपने उपन्यास \"आनंदमठ\" में पहली बार भारत माता की पूजा का आह्वान किया और राष्ट्र देवी की एक छवि प्रस्तुत की, जिसमें गान \"वंदे मातरम\" ने राष्ट्रीय गीत का रूप ले लिया।';
+
+  @override
+  String get appearanceArchitectureTitle => 'स्वरूप और वास्तुकला';
+
+  @override
+  String get bharatMataBullet1 =>
+      'नारंगी रंग की साड़ी से सजी, हाथ में भगवा झंडा लिए हुए।';
+
+  @override
+  String get bharatMataBullet2 => 'अपने वाहन शेर पर राजसी रूप से विराजमान।';
+
+  @override
+  String get bharatMataBullet3 =>
+      'मंदिर का गर्भगृह विशिष्ट रूप से अष्टकोणीय है और ऊंचाई पर स्थित है।';
+
+  @override
+  String get bharatMataBullet4 =>
+      'मंदिर तक पहुंचने के लिए आगंतुकों को 71 सीढ़ियां चढ़नी पड़ती हैं, जो राष्ट्रीय गौरव के शिखर का प्रतीक है और गर्व की गहरी भावना पैदा करता है।';
+
+  @override
+  String get meditationRoomTitle => 'ध्यान कक्ष';
+
+  @override
+  String get meditationRoomDesc =>
+      'मंदिर के ठीक नीचे एक शांत ध्यान कक्ष स्थापित किया गया है। प्रताप गौरव केंद्र का भ्रमण करने के बाद, आगंतुक इस खूबसूरत नीले-सफेद स्थान में ध्यान और चिंतन कर सकते हैं, और अलौकिक और आध्यात्मिक आनंद का अनुभव कर सकते हैं।';
+
+  @override
+  String get guestUser => 'अतिथि उपयोगकर्ता';
+
+  @override
+  String get profile => 'प्रोफ़ाइल';
+
+  @override
+  String get changeLanguage => 'भाषा बदलें';
+
+  @override
+  String get bluetoothConnectivity => 'ब्लूटूथ कनेक्टिविटी';
+
+  @override
+  String get connectAudioGuides => 'ऑडियो गाइड कनेक्ट करें';
+
+  @override
+  String get logout => 'लॉग आउट';
+
+  @override
+  String get logoutConfirmationMessage =>
+      'क्या आप वाकई एप्लिकेशन से लॉग आउट करना चाहते हैं?';
+
+  @override
+  String get cancel => 'रद्द करें';
+
+  @override
+  String get refundReturnsTitle => 'धनवापसी और रिटर्न';
+
+  @override
+  String get refundPolicyHeader => 'धनवापसी और रिटर्न नीति';
+
+  @override
+  String get refundPolicyP1 =>
+      'हमारी धनवापसी और रिटर्न नीति 30 दिनों तक चलती है। यदि आपकी खरीद को 30 दिन बीत चुके हैं, तो हम आपको पूर्ण धनवापसी या विनिमय (एक्सचेंज) की पेशकश नहीं कर सकते।';
+
+  @override
+  String get refundPolicyP2 =>
+      'रिटर्न के लिए पात्र होने के लिए, आपका आइटम अप्रयुक्त होना चाहिए और उसी स्थिति में होना चाहिए जिसमें आपने इसे प्राप्त किया था। यह मूल पैकेजिंग में भी होना चाहिए।';
+
+  @override
+  String get refundPolicyP3 =>
+      'कई प्रकार के सामान वापस करने से छूट प्राप्त हैं। खराब होने वाले सामान जैसे भोजन, फूल, समाचार पत्र या पत्रिकाओं को वापस नहीं किया जा सकता है। हम ऐसे उत्पाद भी स्वीकार नहीं करते हैं जो अंतरंग या स्वच्छता के सामान, खतरनाक सामग्री, या ज्वलनशील तरल पदार्थ या गैसें हैं।';
+
+  @override
+  String get nonReturnableItemsHeader => 'अतिरिक्त गैर-वापसी योग्य वस्तुएं:';
+
+  @override
+  String get nonReturnable1 => 'गिफ्ट कार्ड';
+
+  @override
+  String get nonReturnable2 => 'डाउनलोड करने योग्य सॉफ़्टवेयर उत्पाद';
+
+  @override
+  String get nonReturnable3 => 'कुछ स्वास्थ्य और व्यक्तिगत देखभाल की वस्तुएं';
+
+  @override
+  String get proofOfPurchaseText =>
+      'अपना रिटर्न पूरा करने के लिए, हमें रसीद या खरीद के प्रमाण की आवश्यकता है। कृपया अपनी खरीद को वापस निर्माता के पास न भेजें।';
+
+  @override
+  String get partialRefundsHeader =>
+      'कुछ ऐसी स्थितियां हैं जहां केवल आंशिक धनवापसी की जाती है:';
+
+  @override
+  String get partialRefund1 => 'उपयोग के स्पष्ट संकेतों वाली पुस्तक।';
+
+  @override
+  String get partialRefund2 =>
+      'CD, DVD, VHS टेप, सॉफ्टवेयर, वीडियो गेम, कैसेट टेप, या विनाइल रिकॉर्ड जिसे खोला गया हो।';
+
+  @override
+  String get partialRefund3 =>
+      'कोई भी वस्तु जो अपनी मूल स्थिति में नहीं है, क्षतिग्रस्त है या हमारी त्रुटि के कारण भागों के गायब होने के अलावा अन्य कारणों से गायब है।';
+
+  @override
+  String get partialRefund4 =>
+      'कोई भी वस्तु जो डिलीवरी के 30 दिनों के बाद वापस की जाती है।';
+
+  @override
+  String get refundsHeader => 'धनवापसी';
+
+  @override
+  String get refundsP1 =>
+      'एक बार जब आपका रिटर्न प्राप्त हो जाता है और उसका निरीक्षण किया जाता है, तो हम आपको यह सूचित करने के लिए एक ईमेल भेजेंगे कि हमें आपका लौटाया गया आइटम प्राप्त हो गया है। हम आपको आपकी धनवापसी की स्वीकृति या अस्वीकृति के बारे में भी सूचित करेंगे।';
+
+  @override
+  String get refundsP2 =>
+      'यदि आपको मंजूरी मिल जाती है, तो आपकी धनवापसी संसाधित की जाएगी, और एक निश्चित राशि के दिनों के भीतर आपके क्रेडिट कार्ड या भुगतान के मूल तरीके पर स्वचालित रूप से एक क्रेडिट लागू किया जाएगा।';
+
+  @override
+  String get lateMissingRefundsHeader => 'देर से या गायब धनवापसी';
+
+  @override
+  String get lateRefund1 =>
+      'यदि आपको अभी तक धनवापसी प्राप्त नहीं हुई है, तो पहले अपने बैंक खाते की दोबारा जांच करें।';
+
+  @override
+  String get lateRefund2 =>
+      'फिर अपनी क्रेडिट कार्ड कंपनी से संपर्क करें, आपकी धनवापसी आधिकारिक रूप से पोस्ट होने में कुछ समय लग सकता है।';
+
+  @override
+  String get lateRefund3 =>
+      'इसके बाद अपने बैंक से संपर्क करें। धनवापसी पोस्ट होने से पहले अक्सर कुछ प्रसंस्करण समय लगता है।';
+
+  @override
+  String get lateRefund4 =>
+      'यदि आपने यह सब कर लिया है और आपको अभी तक धनवापसी प्राप्त नहीं हुई है, तो कृपया हमसे support@pratapgauravkendra.org पर संपर्क करें।';
+
+  @override
+  String get saleItemsHeader => 'बिक्री वाली वस्तुएं (Sale items)';
+
+  @override
+  String get saleItemsText =>
+      'केवल नियमित मूल्य वाली वस्तुओं को वापस किया जा सकता है। बिक्री (सेल) की वस्तुओं को वापस नहीं किया जा सकता।';
+
+  @override
+  String get exchangesHeader => 'विनिमय (Exchanges)';
+
+  @override
+  String get exchangesText =>
+      'हम केवल उन्हीं वस्तुओं को बदलते हैं जो दोषपूर्ण या क्षतिग्रस्त हैं। यदि आपको उसी वस्तु के लिए इसका आदान-प्रदान करने की आवश्यकता है, तो हमें support@pratapgauravkendra.org पर एक ईमेल भेजें और अपना आइटम इस पते पर भेजें: प्रताप गौरव केंद्र, उदयपुर, राजस्थान।';
+
+  @override
+  String get needHelpHeader => 'मदद चाहिए?';
+
+  @override
+  String get needHelpText =>
+      'धनवापसी और रिटर्न से संबंधित प्रश्नों के लिए हमसे support@pratapgauravkendra.org पर संपर्क करें।';
+
+  @override
+  String get cancellationPolicyTitle => 'रद्दीकरण नीति';
+
+  @override
+  String get cancellationHeader => 'रद्दीकरण';
+
+  @override
+  String get cancellationIntro =>
+      'वीर शिरोमणि महाराणा प्रताप समिति जहाँ तक संभव हो अपने ग्राहकों की मदद करने में विश्वास करती है, और इसलिए इसकी एक उदार रद्दीकरण नीति है। इस नीति के तहत:';
+
+  @override
+  String get cancellationPoint1 =>
+      'रद्दीकरण पर तभी विचार किया जाएगा जब अनुरोध आदेश देने के तुरंत बाद किया जाए। हालांकि, यदि विक्रेताओं/व्यापारियों को आदेश दे दिया गया है और उन्होंने उन्हें भेजने की प्रक्रिया शुरू कर दी है, तो रद्दीकरण अनुरोध पर विचार नहीं किया जा सकता है।';
+
+  @override
+  String get cancellationPoint2 =>
+      'हम फूल, खाने-पीने की चीज़ें जैसी जल्दी खराब होने वाली वस्तुओं के लिए रद्दीकरण अनुरोध स्वीकार नहीं करते हैं। हालाँकि, यदि ग्राहक यह स्थापित करता है कि डिलीवर किए गए उत्पाद की गुणवत्ता अच्छी नहीं है, तो रिफंड/रिप्लेसमेंट किया जा सकता है।';
+
+  @override
+  String get cancellationPoint3 =>
+      'क्षतिग्रस्त या दोषपूर्ण वस्तुएं प्राप्त होने की स्थिति में कृपया हमारी ग्राहक सेवा टीम को इसकी सूचना दें। हालांकि, व्यापारी द्वारा अपने स्तर पर इसकी जांच और निर्धारण करने के बाद ही अनुरोध पर विचार किया जाएगा। इसकी सूचना उत्पादों की प्राप्ति के 7 दिनों के भीतर दी जानी चाहिए।';
+
+  @override
+  String get cancellationPoint4 =>
+      'यदि आपको लगता है कि प्राप्त उत्पाद साइट पर दिखाए गए अनुसार या आपकी अपेक्षाओं के अनुसार नहीं है, तो आपको उत्पाद प्राप्त करने के 7 दिनों के भीतर हमारी ग्राहक सेवा के ध्यान में लाना होगा। ग्राहक सेवा टीम आपकी शिकायत को देखने के बाद उचित निर्णय लेगी।';
+
+  @override
+  String get cancellationPoint5 =>
+      'निर्माताओं से वारंटी के साथ आने वाले उत्पादों के संबंध में शिकायतों के मामले में, कृपया इस मुद्दे को उनके पास भेजें।';
+
+  @override
+  String get cancellationPoint6 =>
+      'वीर शिरोमणि महाराणा प्रताप समिति द्वारा स्वीकृत किसी भी धनवापसी (रिफंड) के मामले में, अंतिम ग्राहक को धनवापसी संसाधित होने में 3-5 दिन लगेंगे।';
+
+  @override
+  String get editProfileTitle => 'प्रोफ़ाइल संपादित करें';
+
+  @override
+  String get fullNameLabel => 'पूरा नाम';
+
+  @override
+  String get enterFullNameHint => 'अपना पूरा नाम दर्ज करें';
+
+  @override
+  String get nameEmptyError => 'नाम खाली नहीं हो सकता';
+
+  @override
+  String get emailLabel => 'ईमेल';
+
+  @override
+  String get enterEmailHint => 'अपना ईमेल दर्ज करें';
+
+  @override
+  String get invalidEmailError => 'एक वैध ईमेल दर्ज करें';
+
+  @override
+  String get phoneLabel => 'फ़ोन';
+
+  @override
+  String get enterPhoneHint => 'अपना फ़ोन नंबर दर्ज करें';
+
+  @override
+  String get saveChangesBtn => 'परिवर्तन सहेजें';
+
+  @override
+  String get myProfile => 'मेरी प्रोफ़ाइल';
+
+  @override
+  String get languagePreferences => 'भाषा प्राथमिकताएं';
+
+  @override
+  String get paymentHistory => 'भुगतान इतिहास';
+
+  @override
+  String get refundPolicy => 'धनवापसी नीति';
+
+  @override
+  String get cancellationPolicy => 'रद्दीकरण नीति';
+
+  @override
+  String get helpSupport => 'मदद और समर्थन';
+
+  @override
+  String get privacyPolicy => 'गोपनीयता नीति';
+
+  @override
+  String get termsConditions => 'नियम और शर्तें';
+
+  @override
+  String get logoutPrompt => 'क्या आप वाकई लॉग आउट करना चाहते हैं?';
+
+  @override
+  String get navQrScan => 'QR स्कैन';
+
+  @override
+  String get navHome => 'होम';
+
+  @override
+  String get navShows => 'शो';
+
+  @override
+  String get navTickets => 'टिकट';
+
+  @override
+  String get navProfile => 'प्रोफ़ाइल';
+
+  @override
+  String get myTicketsTitle => 'मेरे टिकट';
+
+  @override
+  String get bookNewTicketTooltip => 'नया टिकट बुक करें';
+
+  @override
+  String get noTicketsYet => 'अभी तक कोई टिकट नहीं';
+
+  @override
+  String get noTicketsDesc =>
+      'ऐसा लगता है कि आपने अभी तक कोई टिकट बुक नहीं किया है। आकर्षणों का अन्वेषण करें और अपनी अगली यात्रा की योजना बनाएं!';
+
+  @override
+  String get bookATicketBtn => 'टिकट बुक करें';
+
+  @override
+  String get generalWord => 'सामान्य';
+
+  @override
+  String get ticketWord => 'टिकट';
+
+  @override
+  String get upcomingStatus => 'आगामी';
+
+  @override
+  String get pendingStatus => 'लंबित';
+
+  @override
+  String get visitDateLabel => 'यात्रा की तिथि';
+
+  @override
+  String get ticketsLabel => 'टिकट';
+
+  @override
+  String get personsLabel => 'व्यक्ति';
+
+  @override
+  String get totalLabel => 'कुल';
+
+  @override
+  String get ticketDetailTitle => 'टिकट विवरण';
+
+  @override
+  String get attractionNameFallback => 'आकर्षण का नाम';
+
+  @override
+  String get notAvailableFallback => 'N/A';
+
+  @override
+  String get nameLabel => 'नाम';
+
+  @override
+  String get statusLabel => 'स्थिति';
+
+  @override
+  String get bookingDateLabel => 'बुकिंग तिथि';
+
+  @override
+  String get totalPaidLabel => 'कुल भुगतान';
+
+  @override
+  String get ticketsBreakupLabel => 'टिकट विवरण';
+
+  @override
+  String get totalWord => 'कुल';
+
+  @override
+  String get adultsLabel => 'वयस्क';
+
+  @override
+  String get infantsLabel => 'शिशु';
+
+  @override
+  String get museumShowsTitle => 'संग्रहालय के शो';
+
+  @override
+  String get showsViewWaterLaserTitle => 'वाटर लेज़र शो';
+
+  @override
+  String get showsViewWaterLaserDesc =>
+      'पन्ना के बलिदान और ऐतिहासिक दिवेर के युद्ध को एक मनमोहक जल और लेजर तमाशे के माध्यम से जीवंत होते हुए अनुभव करें।';
+
+  @override
+  String get showsViewPopularTag => 'लोकप्रिय';
+
+  @override
+  String get showsViewRoboticTitle => 'रोबोटिक शो';
+
+  @override
+  String get showsViewRoboticDesc =>
+      'यह शो एक आकर्षक और इंटरैक्टिव प्रारूप में विभिन्न ऐतिहासिक कहानियों को बताने के लिए उन्नत यांत्रिक मॉडल का उपयोग करता है।';
+
+  @override
+  String get showsViewDocTitle => 'डॉक्यूमेंट्री शो';
+
+  @override
+  String get showsViewDocDesc =>
+      'महाराणा प्रताप की प्रेरक डॉक्यूमेंट्री देखें, जिसमें उनके जीवन, संघर्षों और अंतिम विजय का विवरण दिया गया है।';
+
+  @override
+  String get showsViewLightSoundTitle => 'लाइट एंड साउंड शो';
+
+  @override
+  String get showsViewLightSoundDesc =>
+      'एक इमर्सिव आउटडोर लाइट एंड साउंड (प्रकाश और ध्वनि) कथन के माध्यम से मेवाड़ के गौरवशाली इतिहास का अनुभव करें।';
+
+  @override
+  String get showsViewEveningTag => 'केवल शाम';
+
+  @override
+  String get showsViewDetailsBtn => 'विवरण देखें';
+
+  @override
+  String get diverMahotsavTitle => 'दिवेर विजय महोत्सव 2025';
+
+  @override
+  String get vikramSamvat => 'विक्रम संवत : 2082';
+
+  @override
+  String get historicalBackground => 'ऐतिहासिक पृष्ठभूमि';
+
+  @override
+  String get historyDesc =>
+      'विक्रम संवत 1640 को विजयदशमी के दिन लडा गया दिवेर का युद्ध भारतीय इतिहास में युगान्तकारी परिवर्तन लाने वाला युद्ध है। महाराणा प्रताप के नेतृत्व में दिवेर विजय के उपरांत अगले दो-तीन वर्षों में मुगलों के द्वारा स्थापित समस्त थाने समाप्त हो गए तथा लगभग समस्त मेवाड तथा वागड, गोडवाड से लेकर मालवा तक महाराणा प्रताप का शासन स्थापित हो गया। अगले 20-22 वर्षों तक मेवाड़ में शांति बनी रही।';
+
+  @override
+  String get upcomingHighlights => 'आगामी विशेष कार्यक्रम';
+
+  @override
+  String get event1Date => '26 सितंबर 2025';
+
+  @override
+  String get event1Time => 'सांय 4 बजे से';
+
+  @override
+  String get event1Title => 'दिवेर सार्वजनिक कार्यक्रम';
+
+  @override
+  String get event2Date => '12 अक्टूबर 2025';
+
+  @override
+  String get event2Time => 'इन्फ्लुएंसर्स के लिए विशेष';
+
+  @override
+  String get event2Title => 'सोशल मीडिया इन्फ्लुएंसर मीट';
+
+  @override
+  String get event2Subtitle => 'डिजिटल मार्केटिंग और कंटेंट रणनीति';
+
+  @override
+  String get competitionsPrograms => 'प्रतियोगिताएं एवं कार्यक्रम';
+
+  @override
+  String get quizTitle => 'ऑनलाइन प्रश्नोत्तरी प्रतियोगिता';
+
+  @override
+  String get quizSubtitle => 'विषय – महाराणा प्रताप: हल्दी घाटी से दिवेर';
+
+  @override
+  String get prize1st => 'प्रथम';
+
+  @override
+  String get prize2nd => 'द्वितीय';
+
+  @override
+  String get prize3rd => 'तृतीय';
+
+  @override
+  String get prizeConsolation => 'सांत्वना (2)';
+
+  @override
+  String get quizRules =>
+      '• प्रायोजक: निर्माण करियर एकेडमी, उदयपुर\n• 3 वर्ग: कक्षा 6-8, कक्षा 9-12, और महाविद्यालय।\n• प्रारूप: 100 बहुविकल्पीय प्रश्न (1 घंटा)।\n• सामग्री: PDF फॉर्मेट में वेबसाइट पर उपलब्ध।\n• पंजीकरण: संस्था प्रधान द्वारा एक्सेल शीट अपलोड।\n\nसंपर्क: 9829260309, 9461834208, 8700705071';
+
+  @override
+  String get essayTitle => 'निबंध प्रतियोगिता';
+
+  @override
+  String get essaySubtitle => '5 विभिन्न विषयों पर आधारित';
+
+  @override
+  String get essayTopics =>
+      'विषय:\n1. महाराणा प्रताप : हल्दीघाटी से दिवेर\n2. दिवेर युद्ध: विजय पर्व\n3. महाराणा प्रताप की युद्धनीति\n4. जन-जन के नायक : महाराणा प्रताप\n5. महाराणा प्रताप: सामाजिक समरसता के महानायक\n';
+
+  @override
+  String get essayRules =>
+      '• भाषा: हिंदी अथवा अंग्रेजी (1500-2000 शब्द)।\n• प्रारूप: हस्तलिखित, फुलस्केप पेपर पर बांयी ओर हाशिया।\n• जमा करें: PDF बनाकर वेबसाइट पर अपलोड या WhatsApp (9468545516)।\n\nसंपर्क: 8005816971, 9414156547';
+
+  @override
+  String get paintTitle => 'चित्रकला प्रतियोगिता';
+
+  @override
+  String get paintSubtitle => 'माध्यमिक से उच्च शिक्षा स्तर तक';
+
+  @override
+  String get prizeSec => 'माध्यमिक स्तर (5 श्रेष्ठ)';
+
+  @override
+  String get prizeSrSec => 'उच्च माध्यमिक स्तर (5 श्रेष्ठ)';
+
+  @override
+  String get prizeHigher => 'उच्च शिक्षा स्तर (5 श्रेष्ठ)';
+
+  @override
+  String get eachWord => 'प्रत्येक';
+
+  @override
+  String get paintRules =>
+      '• रंग: जलरंग / तेल रंग / पेस्टल (प्रतिभागी स्वयं लाएंगे)।\n• शीट: समिति द्वारा उपलब्ध।\n• चयन: शिक्षण संस्थानों को श्रेष्ठ 3 प्रतिभागियों के नाम Info@pratapgauravkendra.org या WhatsApp (9468545516) पर भेजने हैं। चयनित चित्र कला दीर्घा में प्रदर्शित होंगे।\n\nसंपर्क: 9414234955, 9414385701';
+
+  @override
+  String get filmTitle => 'लघु फिल्म निर्माण प्रतियोगिता';
+
+  @override
+  String get filmSubtitle => 'विषय – महाराणा प्रताप का व्यक्तित्व एवं कृतित्व';
+
+  @override
+  String get filmNSS => 'सह-आयोजक: राष्ट्रीय सेवा योजना (NSS)';
+
+  @override
+  String get filmRules =>
+      '• स्तर: विश्वविद्यालय/महाविद्यालय, संभाग, राज्य स्तर।\n• राजस्थान के सभी विश्वविद्यालयों में NSS के माध्यम से आयोजित।\n\nसंपर्क: 9829260309, 7087400453, 8005802574';
+
+  @override
+  String get lectureTitle => 'व्याख्यानमाला कार्यक्रम';
+
+  @override
+  String get lectureSubtitle => 'उदयपुर, चित्तौड तथा राजसमंद में आयोजित';
+
+  @override
+  String get lectureRules =>
+      'शिक्षण संस्थानों और छात्रावासों में महाराणा प्रताप के व्यक्तित्व और दिवेर युद्ध पर विषय विशेषज्ञों द्वारा व्याख्यान। नई पीढ़ी को राष्ट्र प्रेम का संकल्प दिलवाया जाएगा।\n\nसंपर्क सूत्र: 9785172992, 9660090556, 9414711071';
+
+  @override
+  String get closingTitle => 'सार्वजनिक समापन कार्यक्रम';
+
+  @override
+  String get closingSubtitle => 'विजेताओं का सम्मान';
+
+  @override
+  String get closingRules =>
+      'कार्यक्रम में दिवेर विजय महोत्सव के अंतर्गत आयोजित प्रतियोगिताओं के श्रेष्ठ चयनित प्रतिभागियों का सम्मान किया जाएगा।\n\nसंयोजक: अशोक सिंह मेतवाला (8209529107)\nसह-संयोजक: पारस सिंघवी (9414167776)\nसह-संयोजक: जयदीप आमेटा (9509470784)';
+
+  @override
+  String get eventDetailAppBarTitle => 'हल्दीघाटी विजय 450 वर्ष';
+
+  @override
+  String get historicalEventLabel => 'ऐतिहासिक आयोजन';
+
+  @override
+  String get eventWelcomeText =>
+      'वीर शिरोमणि महाराणा प्रताप की हल्दीघाटी विजय के 450 वर्ष पूर्ण होने के उपलक्ष्य में आयोजित भव्य समारोह में आपका स्वागत है।';
+
+  @override
+  String get eventDateValue => '17 जून 2026';
+
+  @override
+  String get eventTimeValue => 'प्रातः 09:30';
+
+  @override
+  String get eventVenueValue => 'गांधी ग्राउंड, उदयपुर';
+
+  @override
+  String get lifeJourneyTitle => 'महाराणा प्रताप : जीवन यात्रा';
+
+  @override
+  String get tlYear1 => '1540';
+
+  @override
+  String get tlTitle1 => 'जन्म';
+
+  @override
+  String get tlDesc1 => 'कुम्भलगढ़ में जन्म';
+
+  @override
+  String get tlYear2 => '1559';
+
+  @override
+  String get tlTitle2 => 'अमर सिंह जन्म';
+
+  @override
+  String get tlDesc2 => 'उत्तराधिकारी अमर सिंह का जन्म';
+
+  @override
+  String get tlYear3 => '1572';
+
+  @override
+  String get tlTitle3 => 'राजतिलक';
+
+  @override
+  String get tlDesc3 => 'गोगुंदा व कुम्भलगढ़ में राज्याभिषेक';
+
+  @override
+  String get tlYear4 => '1576';
+
+  @override
+  String get tlTitle4 => 'हल्दीघाटी युद्ध';
+
+  @override
+  String get tlDesc4 => 'मुगलों के विरुद्ध ऐतिहासिक युद्ध';
+
+  @override
+  String get tlYear5 => '1577';
+
+  @override
+  String get tlTitle5 => 'संघर्ष काल';
+
+  @override
+  String get tlDesc5 => 'मेवाड़ रक्षा हेतु गुरिल्ला युद्ध प्रारम्भ';
+
+  @override
+  String get tlYear6 => '1578';
+
+  @override
+  String get tlTitle6 => 'भामाशाह सहयोग';
+
+  @override
+  String get tlDesc6 => 'सेना पुनर्गठन हेतु आर्थिक सहायता';
+
+  @override
+  String get tlYear7 => '1582';
+
+  @override
+  String get tlTitle7 => 'दिवेर विजय';
+
+  @override
+  String get tlDesc7 => 'मेवाड़ की निर्णायक विजय';
+
+  @override
+  String get tlYear8 => '1585';
+
+  @override
+  String get tlTitle8 => 'चावंड राजधानी';
+
+  @override
+  String get tlDesc8 => 'नई राजधानी की स्थापना';
+
+  @override
+  String get tlYear9 => '1588';
+
+  @override
+  String get tlTitle9 => 'जावर विजय';
+
+  @override
+  String get tlDesc9 => 'मेवाड़ का पुनः विस्तार';
+
+  @override
+  String get tlYear10 => '1597';
+
+  @override
+  String get tlTitle10 => 'देवलोक गमन';
+
+  @override
+  String get tlDesc10 => 'राष्ट्रवीर महाराणा प्रताप अमर हुए';
+
+  @override
+  String get visitorInfoTitle => 'आगंतुक जानकारी';
+
+  @override
+  String get tabInstructions => 'निर्देश और टिकट';
+
+  @override
+  String get tabFacilities => 'सुविधाएं';
+
+  @override
+  String get timingsTitle => 'समय और अवधि';
+
+  @override
+  String get timing1 => '• दर्शकों के लिए प्रतिदिन खुला है।';
+
+  @override
+  String get timing2 => '• टिकट खिड़की: सुबह 9:30 से शाम 6:00 बजे तक';
+
+  @override
+  String get timing3 =>
+      '• यात्रा की अनुमानित अवधि: 1.5 घंटे (प्रदर्शनी और रोबोटिक शो)।';
+
+  @override
+  String get pricingIndianTitle => 'टिकट मूल्य निर्धारण (भारतीय नागरिक)';
+
+  @override
+  String get pricingInd1 => '• वयस्क (12 वर्ष से अधिक): ₹160 (सामान्य शो)';
+
+  @override
+  String get pricingInd2 => '• बच्चे (5-12 वर्ष): ₹110';
+
+  @override
+  String get pricingInd3 => '• शिशु (0-4 वर्ष): परिवार के साथ निःशुल्क';
+
+  @override
+  String get pricingInd4 =>
+      '• लाइव रोबोटिक शो: ₹100 प्रति व्यक्ति (कोई आयु छूट नहीं, प्रमुख आकर्षण)';
+
+  @override
+  String get pricingForeignTitle => 'टिकट मूल्य निर्धारण (विदेशी पर्यटक)';
+
+  @override
+  String get pricingFor1 => '• वयस्क (12 वर्ष से अधिक): ₹460';
+
+  @override
+  String get pricingFor2 => '• बच्चे (5-12 वर्ष): ₹260';
+
+  @override
+  String get pricingFor3 => '• शिशु (0-4 वर्ष): निःशुल्क';
+
+  @override
+  String get pricingFor4 => '• नोट: इसमें सभी शो और हेडफ़ोन शामिल हैं।';
+
+  @override
+  String get schoolGroupsTitle => 'स्कूल और कॉलेज समूह';
+
+  @override
+  String get schoolGrp1 =>
+      '• छात्र और कर्मचारी: ₹50 प्रति व्यक्ति (सामान्य शो)';
+
+  @override
+  String get schoolGrp2 => '• अग्रिम बुकिंग (Advance booking) अनिवार्य है।';
+
+  @override
+  String get schoolGrp3 => '• रोबोटिक शो के लिए कोई छूट उपलब्ध नहीं है।';
+
+  @override
+  String get guidelinesTitle => 'दिशानिर्देश और नियम';
+
+  @override
+  String get guideline1 =>
+      '• केंद्र के अंदर मोबाइल फोन और कैमरे बंद रखे जाने चाहिए।';
+
+  @override
+  String get guideline2 =>
+      '• परिसर और पार्किंग के अंदर धूम्रपान, शराब का सेवन और प्रतिबंधित पदार्थ सख्त वर्जित हैं।';
+
+  @override
+  String get guideline3 =>
+      '• प्रबंधन के पास प्रवेश के सभी अधिकार सुरक्षित हैं।';
+
+  @override
+  String get humbleRequestTitle => 'एक विनम्र निवेदन';
+
+  @override
+  String get humbleRequestDesc =>
+      'प्रताप गौरव केंद्र राष्ट्रीय तीर्थ की आपकी यात्रा भारत की सांस्कृतिक परंपराओं और मूल्यों के एक पवित्र केंद्र की तीर्थयात्रा है। हम आपसे परिसर की शांति, गरिमा और दिव्यता बनाए रखने में सहयोग का अनुरोध करते हैं।';
+
+  @override
+  String get facCanteenTitle => 'कैंटीन और डाइनिंग';
+
+  @override
+  String get facCanteenDesc =>
+      'सशुल्क शाकाहारी भोजन और स्नैक्स उपलब्ध हैं। संग्रहालय के अंदर एक अलग डाइनिंग हॉल संचालित है। बड़े समूहों के लिए पूर्व पंजीकरण संभव है।';
+
+  @override
+  String get facRestroomsTitle => 'शौचालय (Restrooms)';
+
+  @override
+  String get facRestroomsDesc =>
+      'पूरे परिसर में बुनियादी स्वच्छता, शौचालय और हाथ धोने की सुविधाओं के साथ सार्वजनिक उपयोगिता केंद्र स्थापित हैं।';
+
+  @override
+  String get facWaterTitle => 'मुफ्त पीने का पानी';
+
+  @override
+  String get facWaterDesc =>
+      'विभिन्न स्थानों पर ठंडा और सामान्य पानी उपलब्ध कराने वाले R.O. सिस्टम लगाए गए हैं। प्रवेश करने पर पानी खरीदने की आवश्यकता नहीं है।';
+
+  @override
+  String get facMedicalTitle => 'प्राथमिक चिकित्सा सहायता';
+
+  @override
+  String get facMedicalDesc =>
+      'आपात स्थिति के लिए बुनियादी प्राथमिक स्वास्थ्य देखभाल की व्यवस्था उपलब्ध है। (नोट: साइट पर कोई पूर्ण फार्मेसी नहीं है)।';
+
+  @override
+  String get facWheelchairTitle => 'व्हीलचेयर सुविधा';
+
+  @override
+  String get facWheelchairDesc =>
+      'दिव्यांग और बुजुर्ग आगंतुकों के लिए मुफ्त व्हीलचेयर प्रदान की जाती है। इसे आगंतुक के परिवार/देखभालकर्ता द्वारा संचालित किया जाना चाहिए।';
+
+  @override
+  String get facParkingTitle => 'पार्किंग स्थल';
+
+  @override
+  String get facParkingDesc =>
+      'पर्यटक वाहनों के लिए परिसर में सशुल्क पार्किंग सुविधाएं उपलब्ध हैं।';
+
+  @override
+  String get facCookingTitle => 'समूह खाना पकाने का क्षेत्र';
+
+  @override
+  String get facCookingDesc =>
+      'उन समूहों के लिए एक सशुल्क स्थान उपलब्ध है जो अपना भोजन स्वयं पकाना चाहते हैं। इसमें डाइनिंग हॉल और पानी (अपना सामान स्वयं लाएं) तक पहुंच शामिल है।';
+
+  @override
+  String get profileInstructions => 'निर्देश';
+
+  @override
+  String get showDetailsTitle => 'शो विवरण';
+
+  @override
+  String get waterShowTitle => 'वाटर लेज़र शो';
+
+  @override
+  String get waterShowDuration => 'लगभग 30 मिनट';
+
+  @override
+  String get waterShowTiming => 'शाम 7:30 बजे शुरू';
+
+  @override
+  String get waterShowS1Title => 'महागाथा का अनुभव करें';
+
+  @override
+  String get waterShowS1P1 =>
+      'वॉटर स्क्रीन पर उन्नत लेजर प्रोजेक्शन शो के माध्यम से जीवंत हुई महाराणा प्रताप की पौराणिक कथा का अनुभव करें। पन्ना के बलिदान और दिवेर के युद्ध सहित मेवाड़ के इतिहास के वीर क्षणों के साक्षी बनें।';
+
+  @override
+  String get waterShowS1P2 =>
+      'मेवाड़ के गौरवशाली अतीत में डूब जाएं, जब महाराणा प्रताप की कहानी इतिहास और प्रौद्योगिकी के सहज मिश्रण के साथ आपकी आंखों के सामने हिंदी में सामने आती है। यह शो भारत के सबसे महान योद्धाओं में से एक के साहस और वीरता को दर्शाने के लिए अत्याधुनिक दृश्यों और ध्वनि का उपयोग करता है। महान राजा को दी गई इस शानदार श्रद्धांजलि को देखने से न चूकें!';
+
+  @override
+  String get waterShowS2Title => 'महाराणा प्रताप की कहानी को फिर से जिएं';
+
+  @override
+  String get waterShowS2P1 =>
+      'प्रताप गौरव केंद्र उदयपुर \'वाटर लेजर शो\' प्रस्तुत करता है, एक अनूठा अनुभव जहां रोशनी, पानी और ध्वनि के माध्यम से इतिहास प्रदर्शित किया जाता है। यह कार्यक्रम हिंदी में महाराणा प्रताप की कहानी पर प्रकाश डालता है, जिससे आगंतुकों को महान योद्धा के जीवन, बहादुरी और विरासत से जुड़ने का मौका मिलता है। उन्नत लेजर अनुमानों, पारंपरिक संगीत और शक्तिशाली कथन के साथ, यह शो सांस्कृतिक शिक्षा के साथ मनोरंजन को जोड़ता है, जिससे यह उदयपुर में सबसे आकर्षक शाम के आकर्षणों में से एक बन जाता है।';
+
+  @override
+  String get waterShowS3Title => 'एक ऐसा शो जिसे पर्यटकों को नहीं छोड़ना चाहिए';
+
+  @override
+  String get waterShowS3P1 =>
+      'वाटर लेजर शो दर्शकों को मेवाड़ के इतिहास की यात्रा पर ले जाने के लिए बनाया गया है। हर दृश्य हिंदी में महाराणा प्रताप की कहानी के महत्वपूर्ण एपिसोड को दर्शाता है, जिसमें स्वतंत्रता के लिए उनका संघर्ष और मेवाड़ के लोगों के प्रति उनका समर्पण शामिल है।';
+
+  @override
+  String get waterShowHighlightsTitle => 'शो के मुख्य आकर्षण';
+
+  @override
+  String get waterShowHighlight1 =>
+      'गतिशील दृश्य बनाने वाले लेजर लाइट और वाटर प्रोजेक्शन';
+
+  @override
+  String get waterShowHighlight2 =>
+      'सांस्कृतिक जुड़ाव के लिए हिंदी में स्पष्ट कथन';
+
+  @override
+  String get waterShowHighlight3 => 'राजस्थान की विरासत से प्रेरित संगीत';
+
+  @override
+  String get waterShowHighlight4 =>
+      'सभी उम्र के आगंतुकों के लिए एक सार्थक अनुभव';
+
+  @override
+  String get waterShowS4Title => 'महाराणा प्रताप की विरासत को फिर से जीना';
+
+  @override
+  String get waterShowS4Sub1 => 'योद्धा की यात्रा';
+
+  @override
+  String get waterShowS4P1 =>
+      'यह शो मुगलों के संघर्ष के दौरान महाराणा प्रताप के साहस और मेवाड़ की स्वतंत्रता की रक्षा के उनके दृढ़ संकल्प को दर्शाता है। दर्शकों को बांधे रखने के लिए हल्दीघाटी के युद्ध जैसे एपिसोड को प्रकाश और ध्वनि के साथ फिर से बनाया गया है।';
+
+  @override
+  String get waterShowS4Sub2 => 'सीखने और मनोरंजन का मिश्रण';
+
+  @override
+  String get waterShowS4P2 =>
+      'यह प्रदर्शन न केवल मनोरंजन करता है बल्कि शिक्षित भी करता है। महाराणा प्रताप की कहानी को हिंदी में प्रस्तुत करके, वाटर लेजर शो इतिहास को सभी के लिए सुलभ और समझने में आसान बनाता है।';
+
+  @override
+  String get waterShowS5Title => 'प्रताप गौरव केंद्र क्यों चुनें?';
+
+  @override
+  String get waterShowS5Point1 =>
+      'महाराणा प्रताप के जीवन और मेवाड़ के इतिहास को समर्पित';
+
+  @override
+  String get waterShowS5Point2 =>
+      'पारंपरिक कहानियों को प्रस्तुत करने के लिए आधुनिक तकनीक का उपयोग';
+
+  @override
+  String get waterShowS5Point3 => 'उदयपुर में यात्रियों के लिए सुविधाजनक स्थान';
+
+  @override
+  String get waterShowS5Point4 => 'पर्यटन के बाद शाम की आदर्श गतिविधि';
+
+  @override
+  String get waterShowS5Point5 =>
+      'छात्रों, परिवारों और इतिहास प्रेमियों के लिए उपयुक्त';
+
+  @override
+  String get waterShowS6Title => 'अपनी यात्रा की योजना बनाएं';
+
+  @override
+  String get waterShowS6P1 =>
+      'प्रताप गौरव केंद्र में वाटर लेजर शो राजस्थान की सांस्कृतिक और ऐतिहासिक विरासत का पता लगाने का एक प्रेरक तरीका है। आधुनिक दृश्यों को हिंदी में महाराणा प्रताप की कहानी के साथ जोड़कर, यह शो दर्शकों को भारत के सबसे महान योद्धाओं में से एक की विरासत से जोड़ता है।\n\nआज ही अपनी यात्रा बुक करें और उदयपुर में रोशनी, संगीत और पानी के माध्यम से महाराणा प्रताप की कहानी का अनुभव करें।';
+
+  @override
+  String get faqWaterQ1 => 'वाटर लेजर शो कौन सी कहानी प्रस्तुत करता है?';
+
+  @override
+  String get faqWaterA1 =>
+      'यह हिंदी में महाराणा प्रताप की कहानी प्रस्तुत करता है, जो उनकी बहादुरी और विरासत को उजागर करता है।';
+
+  @override
+  String get faqWaterQ2 => 'क्या यह शो बच्चों के लिए उपयुक्त है?';
+
+  @override
+  String get faqWaterA2 => 'हां, दृश्य और कथन बच्चों के लिए सरल और आकर्षक हैं।';
+
+  @override
+  String get faqWaterQ3 => 'शो कितनी देर चलता है?';
+
+  @override
+  String get faqWaterA3 => 'यह शो लगभग 30-40 मिनट तक चलता है।';
+
+  @override
+  String get faqWaterQ4 => 'क्या गैर-हिंदी भाषी शो का आनंद ले सकते हैं?';
+
+  @override
+  String get faqWaterA4 =>
+      'हां, दृश्य, संगीत और प्रभाव यह सुनिश्चित करते हैं कि हिंदी ज्ञान के बिना भी कहानी समझने योग्य हो।';
+
+  @override
+  String get faqWaterQ5 => 'वाटर लेजर शो कहाँ आयोजित किया जाता है?';
+
+  @override
+  String get faqWaterA5 =>
+      'यह शो प्रताप गौरव केंद्र, उदयपुर में आयोजित किया जाता है।';
+
+  @override
+  String get bookTicketBtn => 'टिकट बुक करें';
+
+  @override
+  String get templeDetailVinayakTitle => 'श्री रिद्धि सिद्धि विनायक मंदिर';
+
+  @override
+  String get templeDetailVinayakDesc =>
+      'भक्तिधाम में पहला पूजनीय मंदिर भगवान गणेश को समर्पित है और इसे श्री रिद्धि सिद्धि विनायक मंदिर के रूप में जाना जाता है। बुद्धि के दाता, इस मंदिर में भगवान गणेश की मनमोहक मूर्ति है, जिनके साथ रिद्धि-सिद्धि और उनका वाहन मूषक भी हैं। भगवान गणेश की विशेष पूजा और अर्चना करने के इच्छुक आगंतुक इसके लिए अग्रिम पंजीकरण करा सकते हैं।';
+
+  @override
+  String get templeDetailShreenathTitle => 'श्रीनाथ जी मंदिर';
+
+  @override
+  String get templeDetailShreenathDesc =>
+      'उदयपुर से लगभग 41 किलोमीटर दूर सिहाड़ गांव में स्थित, जिसे अब श्रीनाथद्वारा के नाम से जाना जाता है, श्री श्रीनाथ जी वल्लभ संप्रदाय (पुष्टिमार्ग या शुद्धाद्वैत दर्शन) की मुख्य पीठ हैं, जो भगवान कृष्ण के बाल रूप, प्रिय लाडले लाल श्री कृष्ण को समर्पित है। मंदिर में श्री श्रीनाथ जी की छवि है, और देवता की प्रतिकृति भक्तिधाम में प्रतिष्ठित है। इस मंदिर के संरक्षक पुष्टिमार्ग के अनुयायी हैं और पुष्टिमार्ग परंपराओं के अनुसार श्री ठाकुरजी की पूजा के लिए समर्पित हैं। आगंतुक श्री श्रीनाथ जी के दर्शन के लिए अग्रिम पंजीकरण कराकर अपनी मनोकामनाएं पूरी कर सकते हैं। पुष्टिमार्ग साहित्य के अनुसार, औरंगजेब के आदेशों के कारण श्री श्रीनाथ जी और गिरिराज जी दोनों की मूर्तियों और मंदिरों का विनाश हुआ। बाद में, मथुरा से महंत श्री गुसाईंजी दामोदरलाल जी द्वारा दिव्य मूर्तियों को मेवाड़ लाया गया। औरंगजेब के डर के कारण, किसी भी राज्य ने मूर्तियों को सुरक्षा प्रदान नहीं की। अंततः, मेवाड़ के महाराणा राज सिंह ने उन्हें मेवाड़ आमंत्रित किया। संवत 1728 में, कार्तिक के महीने में, श्री श्रीनाथ जी सिहाड़ पहुंचे। मंदिर का निर्माण किया गया, और फाल्गुन के महीने में कृष्ण पक्ष के सातवें शनिवार को उनका पाटोत्सव (औपचारिक पूजा) मनाया गया।';
+
+  @override
+  String get templeDetailDwarkadhishTitle => 'श्री द्वारकाधीश जी मंदिर';
+
+  @override
+  String get templeDetailDwarkadhishDesc =>
+      'श्री द्वारकाधीश जी की तीसरी पीठ, जो वल्लभ संप्रदाय (पुष्टिमार्ग या शुद्धाद्वैत दर्शन) से जुड़ी है, राजसमंद जिले में उदयपुर से 68 किलोमीटर दूर आसोटिया गांव में झील (पाला) के तट पर महल में स्थित है। वर्तमान में, आसोटिया को कांकरोली के रूप में जाना जाता है, और राजसमंद जिला मुख्यालय है। द्वारकाधीश देवता के रूप में स्थापित, श्री वल्लभाचार्य के उपदेशों से जुड़े इस स्थान पर श्री वल्लभाचार्य के तीसरे पुत्र, बालकृष्णलाल जी एक सेवक के रूप में उपस्थित हैं। श्रीमद्भागवत महापुराण के अनुसार, वे पहले राजा अम्बरीष के सेवक के रूप में प्रकट हुए थे। उन्हें मेवाड़ में श्री नाथ जी के आगमन से एक साल पहले यहां स्थापित किया गया था। इस स्थान पर, कोई भी पूर्व पंजीकरण के माध्यम से अपनी इच्छाओं को पंजीकृत कर सकता है और मनोरथ कर सकता है।';
+
+  @override
+  String get templeDetailCharbhujaTitle => 'श्री चारभुजा जी मंदिर';
+
+  @override
+  String get templeDetailCharbhujaDesc =>
+      'भगवान चारभुजानाथ के मंदिर मेवाड़ के हर गांव में स्थापित हैं, जिससे यह स्पष्ट होता है कि मेवाड़ में वैष्णव परंपरा लगभग 1000 वर्षों से स्मार्त परंपरा से प्रभावित रही है और अभी भी स्थानीय रीति-रिवाजों में प्रचलित है। चारभुजानाथ देवता उदयपुर से लगभग 90 किलोमीटर दूर गढ़बोर के किले में सेवंत्री गांव के पास विराजमान हैं। समय के अनुसार स्मार्त और अन्य परंपराओं के संयोजन से यहां पूजा प्रथाएं विकसित हुई हैं, लेकिन अभी भी स्मार्त परंपरा का मजबूत प्रभाव दिखाई देता है। यहां का मुख्य त्योहार देवझूलनी एकादशी है, जहां देवता को विसर्जन के लिए पास के गंगा स्थल (जल जलाशय) में ले जाया जाता है। इस दिन गढ़बोर में 100,000 से अधिक भक्त उमड़ते हैं। मेवाड़ के लोगों के इष्टदेव चारभुजानाथ भक्ति धाम के प्रभु गौरव केंद्र में स्थापित हैं। मुख्य अनुष्ठान में उत्सव देवता को पास के जल जलाशय में स्नान के लिए ले जाना शामिल है। व्यक्तिगत इच्छाओं के लिए पंजीकरण भी इस स्थान पर किया जा सकता है।';
+
+  @override
+  String get templeDetailEklingTitle => 'श्री एकलिंग नाथ जी मंदिर';
+
+  @override
+  String get templeDetailEklingDesc =>
+      'श्री एकलिंग जी मेवाड़ क्षेत्र के प्रमुख देवता हैं और भारत में लकुलीश परंपरा की मुख्य पीठ हैं। यह उदयपुर से 22 किलोमीटर दूर कैलाशपुरी गांव में स्थित है। इसे मेवाड़ के इष्टदेव के रूप में स्वीकार किया जाता है और महाराजाधिराज द्वारा प्रतिष्ठित किया जाता है। बप्पा रावल के अभिलेखों के अनुसार, मंदिर का निर्माण उनके द्वारा वर्ष 724 ईस्वी में किया गया था। उस समय एक बाण लिंग (तीर के आकार के शीर्ष वाला शिव लिंग) स्थापित किया गया था। 15वीं शताब्दी में, महाराणा रायमल ने मंदिर का जीर्णोद्धार किया और लकुलीश संप्रदाय की परंपराओं के अनुसार एक पंचमुखी शिव लिंग स्थापित किया। पंचमुखी शिव लिंग शिव के पांच चेहरों का प्रतिनिधित्व करता है, जिसमें पूर्व की ओर सद्योजात (पृथ्वी), पश्चिम की ओर वामदेव (जल), दक्षिण की ओर अघोर (अग्नि), उत्तर की ओर तत्पुरुष (वायु), और ऊपर की ओर ईशान (आकाश) है। मंदिर परिसर में, लकुलीश के साथ-साथ विंध्यवासिनी को समर्पित एक वैष्णव मंदिर भी है। भक्ति धाम में प्रताप गौरव केंद्र में पंचमुखी एकलिंग नाथ की मूर्ति भी है। महाशिवरात्रि के अवसर पर रुद्राभिषेक का आयोजन किया जाता है।';
+
+  @override
+  String get templeDetailSawariyaTitle => 'श्री सांवलिया जी मंदिर';
+
+  @override
+  String get templeDetailSawariyaDesc =>
+      'श्री सांवलिया जी, एक प्राचीन स्वरूप, रामानंदी वैरागी वैष्णवों द्वारा लगभग 450 वर्षों से पूजे जा रहे हैं। यह मंदिर उदयपुर से लगभग 79 किलोमीटर दूर मण्डफिया गांव में स्थित है। सांवलिया जी के ऐसे ही स्वरूपों की पूजा मेवाड़ के अन्य स्थानों पर भी की जाती है, जैसे जगत-बंबोर के पास लखाड़ श्याम मंदिर और उथराड़ के पास कोटड़ी चारभुजानाथ। चतुर्भुज विष्णु के रूप में कृष्ण की मूर्ति यहां स्थापित है। सांवलिया जी को चतुर्भुज विष्णु के साथ कृष्ण का रूप माना जाता है। भक्त पंजीकरण कर सकते हैं और भक्ति धाम में महाशिवरात्रि के अवसर पर पूजा और रुद्राभिषेक कर सकते हैं।';
+
+  @override
+  String get templeDetailChamundaTitle => 'श्री चामुंडा माता मंदिर';
+
+  @override
+  String get templeDetailChamundaDesc =>
+      'मेवाड़ में महिषासुरमर्दिनी की पूजा प्राचीन काल से ही एक परंपरा रही है। जहाँ बाण माता को मेवाड़ की कुल देवी माना जाता है, वहीं चामुंडा माता अधिकांश महाराजाओं की इष्ट देवी हैं। महाराणा प्रताप ने युद्ध के बाद चावंड में चामुंडा माता मंदिर की स्थापना की थी। चावंड उदयपुर से लगभग 64 किलोमीटर दूर है। मेवाड़ में विभिन्न स्थानों पर कई चामुंडा माता मंदिर मौजूद हैं। प्रताप गौरव केंद्र में चामुंडा माता मंदिर न केवल दोनों नवरात्रों के दौरान बल्कि गुप्त नवरात्रों के दौरान भी विशेष पूजा और अनुष्ठान आयोजित करता है। भक्त दुर्गा पूजा के लिए पंजीकरण कर सकते हैं और इसे वैष्णव परंपराओं के अनुसार कर सकते हैं।';
+
+  @override
+  String get templeDetailKesariyaTitle => 'श्री केसरिया जी मंदिर';
+
+  @override
+  String get templeDetailKesariyaDesc =>
+      'मेवाड़ में कई जैन तीर्थ हैं, और उनमें से एक प्रमुख धुलेव में भगवान आदिनाथ (ऋषभदेव) का मंदिर है। केसरिया जी या धुलेव गांव उदयपुर से लगभग 65 किलोमीटर दूर है। यहां जैन, वैष्णव और शैव परंपराओं के अनुयायियों द्वारा भगवान ऋषभदेव की पूजा की जाती है। भील समुदाय भी उन्हें शैव परंपरा में पशुपति मानता है। जैन मंदिर चैत्र कृष्ण सप्तमी पर एक भव्य उत्सव मनाता है, जो भगवान ऋषभदेव की जयंती है। यह मंदिर एक अनूठा स्थान है जहाँ देवता की वैदिक और गैर-वैदिक दोनों पूजा होती है। यह धार्मिक सद्भाव का प्रतीक है जहाँ भगवान ऋषभदेव की पूजा केसर के लेप से की जाती है, जो जैन परंपरा का प्रतीक है।';
+
+  @override
+  String get templeDetailRamDarbarTitle => 'श्री राम दरबार मंदिर';
+
+  @override
+  String get templeDetailRamDarbarDesc =>
+      'प्रताप गौरव केंद्र के भक्ति धाम में राम दरबार है, जहाँ भगवान श्री रामचन्द्र जी, माता जानकी, श्री लक्ष्मण जी और श्री हनुमान जी की मूर्तियाँ स्थापित हैं।';
+
+  @override
+  String get bharatDarshanTitle => 'भारत दर्शन लाइट एंड साउंड शो';
+
+  @override
+  String get bharatDarshanDesc1 =>
+      'प्रताप गौरव केंद्र, उदयपुर में स्थित महाराणा प्रताप स्मारक में 18 मिनट का लाइट एंड साउंड शो भारत की समृद्ध सांस्कृतिक विरासत को खूबसूरती से प्रदर्शित करता है। यह नदियों, पहाड़ों और प्रसिद्ध तीर्थ स्थलों सहित देश के भौगोलिक स्थलों पर प्रकाश डालता है। यह शो कश्मीर से कन्याकुमारी और अटक से कटक तक भारतीय नायकों, नायिकाओं और संतों की महानता का भी सम्मान करता है।';
+
+  @override
+  String get bharatDarshanDesc2 =>
+      'प्रताप गौरव केंद्र, उदयपुर के भीतर ऐतिहासिक महाराणा प्रताप स्मारक में स्थित, यह शो बहादुर योद्धाओं की विरासत और भारत की सांस्कृतिक एकता की भावना को साझा करके आगंतुकों को प्रेरित करता है। देश के गौरवशाली अतीत से जुड़ने की चाह रखने वालों के लिए यह एक अवश्य देखने योग्य अनुभव है।';
+
+  @override
+  String get bharatDarshanDesc3 =>
+      'प्रताप गौरव केंद्र उदयपुर में भारत दर्शन लाइट एंड साउंड शो एक लुभावनी 18 मिनट का तमाशा है जो विविधता में भारत की एकता का जश्न मनाता है। जीवंत रोशनी, इमर्सिव ध्वनि प्रभाव और मनोरम कथन के माध्यम से, यह राष्ट्र के भौगोलिक आश्चर्यों, आध्यात्मिक स्थलों और वीर विरासत को प्रदर्शित करता है। कश्मीर की बर्फीली चोटियों से लेकर कन्याकुमारी के दक्षिणी सिरे तक, यह शो आगंतुकों को पूरे भारत की एक मंत्रमुग्ध कर देने वाली यात्रा पर ले जाता है, जो राष्ट्र को आकार देने वाले योद्धाओं, संतों और दूरदर्शियों का सम्मान करता है।';
+
+  @override
+  String get visualJourneyTitle => 'भारत भर में एक दृश्य और भावनात्मक यात्रा';
+
+  @override
+  String get visualJourneyDesc1 =>
+      'भारत दर्शन लाइट एंड साउंड शो सिर्फ एक प्रस्तुति से कहीं अधिक है - यह भारत की कालातीत विरासत को एक हार्दिक श्रद्धांजलि है। एक अंधेरे हॉल में आयोजित, यह अनुभव भारत के इतिहास और भूगोल को जीवंत करने के लिए प्रबुद्ध 3D मॉडल, सिंक्रनाइज़ प्रकाश व्यवस्था और एक शक्तिशाली ऑडियो स्क्रिप्ट को जोड़ता है।';
+
+  @override
+  String get visualJourneyDesc2 =>
+      'महाराणा प्रताप के इतिहास के माध्यम से मेवाड़ की बहादुरी और विरासत के बारे में जानें।';
+
+  @override
+  String get significanceTitle => 'प्रताप गौरव केंद्र उदयपुर का महत्व';
+
+  @override
+  String get significanceDesc =>
+      'उदयपुर के मध्य में स्थित, प्रताप गौरव केंद्र महान राजपूत राजा महाराणा प्रताप को समर्पित एक सांस्कृतिक स्थल है। हल्दीघाटी की लड़ाई के दौरान अपनी वीरता और अदम्य भावना के लिए जाने जाने वाले, महाराणा प्रताप साहस और देशभक्ति के एक स्थायी प्रतीक बने हुए हैं।';
+
+  @override
+  String get pgkAimsTitle => 'प्रताप गौरव केंद्र का उद्देश्य है:';
+
+  @override
+  String get pgkAim1 =>
+      'आगंतुकों को महाराणा प्रताप के जीवन और विरासत के बारे में शिक्षित करना।';
+
+  @override
+  String get pgkAim2 => 'भारतीय सांस्कृतिक मूल्यों का संरक्षण और संवर्धन करना।';
+
+  @override
+  String get pgkAim3 =>
+      'इंटरएक्टिव प्रदर्शनों और भारत दर्शन लाइट एंड साउंड शो जैसे कार्यक्रमों के माध्यम से ऐतिहासिक जागरूकता को बढ़ावा देना।';
+
+  @override
+  String get whyStandOutTitle => 'भारत दर्शन शो क्यों खास है';
+
+  @override
+  String get standOut1Title => 'इमर्सिव स्टोरीटेलिंग (आकर्षक कहानी)';
+
+  @override
+  String get standOut1Desc =>
+      'उच्च गुणवत्ता वाले दृश्य और यथार्थवादी ध्वनि प्रभाव आपको ऐसा महसूस कराते हैं जैसे आप केवल 18 मिनट में पूरे भारत की यात्रा कर रहे हैं।';
+
+  @override
+  String get standOut2Title => 'शैक्षिक मूल्य';
+
+  @override
+  String get standOut2Desc =>
+      'भारतीय इतिहास, भूगोल और सांस्कृतिक विविधता के बारे में जानने का एक आकर्षक तरीका - स्कूल और कॉलेज के छात्रों के लिए बिल्कुल सही।';
+
+  @override
+  String get standOut3Title => 'भावनात्मक जुड़ाव';
+
+  @override
+  String get standOut3Desc =>
+      'देशभक्त आगंतुकों के लिए, यह राष्ट्र का निर्माण करने वाले बलिदानों और योगदानों की एक मार्मिक याद दिलाता है।';
+
+  @override
+  String get planVisitTitle => 'आज ही अपनी यात्रा की योजना बनाएं';
+
+  @override
+  String get planVisitDesc1 =>
+      'प्रताप गौरव केंद्र उदयपुर में भारत दर्शन लाइट एंड साउंड शो एक आकर्षण से कहीं अधिक है - यह भारत के हृदय के माध्यम से एक प्रेरक यात्रा है। चाहे आप एक छात्र, पर्यटक या इतिहास के प्रति उत्साही हों, यह इमर्सिव अनुभव एक ही बैठक में राष्ट्र की सुंदरता, बहादुरी और एकता को देखने का एक दुर्लभ अवसर प्रदान करता है।';
+
+  @override
+  String get planVisitDesc2 =>
+      'आज ही अपनी यात्रा की योजना बनाएं और उस शो का हिस्सा बनें जो भारत के गौरवशाली अतीत और जीवंत वर्तमान का जश्न मनाता है।';
+
+  @override
+  String get faqBharatQ1 =>
+      'भारत दर्शन लाइट एंड साउंड शो कहाँ आयोजित किया जाता है?';
+
+  @override
+  String get faqBharatA1 =>
+      'यह प्रताप गौरव केंद्र, उदयपुर में आयोजित किया जाता है।';
+
+  @override
+  String get faqBharatQ2 => 'यह शो कितनी देर का है?';
+
+  @override
+  String get faqBharatA2 => 'यह शो लगभग 18 मिनट तक चलता है।';
+
+  @override
+  String get faqBharatQ3 => 'क्या यह बच्चों के लिए उपयुक्त है?';
+
+  @override
+  String get faqBharatA3 =>
+      'हां, यह परिवार के अनुकूल है और सभी आयु समूहों के लिए शैक्षिक है।';
 }

@@ -7,7 +7,6 @@ class BookingView extends GetView<BookingController> {
 
   @override
   Widget build(BuildContext context) {
-    // Initialize AppLocalizations
     final l10n = AppLocalizations.of(context)!;
 
     return Scaffold(
@@ -342,53 +341,6 @@ class BookingView extends GetView<BookingController> {
     );
   }
 
-  Widget _buildContactForm(AppLocalizations l10n) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(l10n.contactDetails, style: AppTextStyles.sectionHeading),
-        const SizedBox(height: 8),
-
-        TextFormFieldCustom(
-          title: l10n.fullName,
-          isRequired: true,
-          method: TextFieldCustom(
-            controller: controller.nameController,
-            hintText: l10n.enterYourName,
-            textInputType: TextInputType.name,
-            prefixIcon: const Icon(Icons.person_outline, size: 20, color: AppColors.textSecondary),
-          ),
-        ),
-
-        const SizedBox(height: 16),
-
-        TextFormFieldCustom(
-          title: l10n.emailAddress,
-          isRequired: true,
-          method: TextFieldCustom(
-            controller: controller.emailController,
-            hintText: l10n.enterYourEmail,
-            textInputType: TextInputType.emailAddress,
-            prefixIcon: const Icon(Icons.email_outlined, size: 20, color: AppColors.textSecondary),
-          ),
-        ),
-
-        const SizedBox(height: 16),
-
-        TextFormFieldCustom(
-          title: l10n.phoneNumber,
-          isRequired: true,
-          method: TextFieldCustom(
-            controller: controller.phoneController,
-            hintText: l10n.enterYourPhoneNumber,
-            textInputType: TextInputType.phone,
-            inputFormatters: [UsNumberTextInputFormatter()], // Using your custom formatter
-            prefixIcon: const Icon(Icons.phone_outlined, size: 20, color: AppColors.textSecondary),
-          ),
-        ),
-      ],
-    );
-  }
 
   Widget _buildTotalAndSubmit(AppLocalizations l10n) {
     return SizedBox(

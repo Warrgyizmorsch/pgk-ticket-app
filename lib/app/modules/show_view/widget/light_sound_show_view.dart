@@ -56,7 +56,7 @@ class LightSoundShowView extends GetView<ShowViewController> {
 
                   // 2. Title
                   Text(
-                    l10n.waterLaserShow,
+                    l10n.bharatDarshanTitle,
                     style: const TextStyle(
                       fontSize: 22,
                       fontWeight: FontWeight.bold,
@@ -80,19 +80,29 @@ class LightSoundShowView extends GetView<ShowViewController> {
                   const SizedBox(height: 16),
 
                   // 4. Detailed Content Sections
+
+                  // About The Show
                   _buildSectionTitle(l10n.aboutTheShow),
-                  _buildParagraph(l10n.laserShowDesc1),
-                  _buildParagraph(l10n.laserShowDesc2),
-
-                  _buildSectionTitle(l10n.watchLaserShowTitle),
-                  _buildParagraph(l10n.watchLaserShowDesc),
-
-                  _buildSectionTitle(l10n.mustSeeShowTitle),
-                  _buildParagraph(l10n.mustSeeShowDesc),
+                  _buildParagraph(l10n.bharatDarshanDesc1),
+                  _buildParagraph(l10n.bharatDarshanDesc2),
+                  _buildParagraph(l10n.bharatDarshanDesc3),
 
                   const SizedBox(height: 8),
+
+                  // Visual and Emotional Journey
+                  _buildSectionTitle(l10n.visualJourneyTitle),
+                  _buildParagraph(l10n.visualJourneyDesc1),
+                  _buildParagraph(l10n.visualJourneyDesc2),
+
+                  const SizedBox(height: 8),
+
+                  // Significance of Pratap Gaurav Kendra
+                  _buildSectionTitle(l10n.significanceTitle),
+                  _buildParagraph(l10n.significanceDesc),
+
+                  const SizedBox(height: 4),
                   Text(
-                    l10n.showHighlightsTitle,
+                    l10n.pgkAimsTitle,
                     style: const TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.w600,
@@ -101,73 +111,43 @@ class LightSoundShowView extends GetView<ShowViewController> {
                     ),
                   ),
                   const SizedBox(height: 8),
-                  _buildBulletPoint(l10n.highlight1),
-                  _buildBulletPoint(l10n.highlight2),
-                  _buildBulletPoint(l10n.highlight3),
-                  _buildBulletPoint(l10n.highlight4),
+                  _buildBulletPoint(l10n.pgkAim1),
+                  _buildBulletPoint(l10n.pgkAim2),
+                  _buildBulletPoint(l10n.pgkAim3),
 
                   const SizedBox(height: 16),
-                  _buildSectionTitle(l10n.relivingLegacyTitle),
 
-                  Text(
-                    l10n.warriorJourneyTitle,
-                    style: const TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.w600,
-                      color: AppColors.primary,
-                      fontFamily: FontFamily.semiBold,
-                    ),
-                  ),
-                  const SizedBox(height: 4),
-                  _buildParagraph(l10n.warriorJourneyDesc),
+                  // Why It Stands Out
+                  _buildSectionTitle(l10n.whyStandOutTitle),
+                  _buildSubheadingPoint(l10n.standOut1Title, l10n.standOut1Desc),
+                  _buildSubheadingPoint(l10n.standOut2Title, l10n.standOut2Desc),
+                  _buildSubheadingPoint(l10n.standOut3Title, l10n.standOut3Desc),
 
-                  Text(
-                    l10n.blendLearningTitle,
-                    style: const TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.w600,
-                      color: AppColors.primary,
-                      fontFamily: FontFamily.semiBold,
-                    ),
-                  ),
-                  const SizedBox(height: 4),
-                  _buildParagraph(l10n.blendLearningDesc),
-
-                  _buildSectionTitle(l10n.whyChoosePgkTitle),
-                  _buildBulletPoint(l10n.whyPgk1),
-                  _buildBulletPoint(l10n.whyPgk2),
-                  _buildBulletPoint(l10n.whyPgk3),
-                  _buildBulletPoint(l10n.whyPgk4),
-                  _buildBulletPoint(l10n.whyPgk5),
-
-                  const SizedBox(height: 16),
+                  const SizedBox(height: 8),
                   const Divider(color: AppColors.lightDivider, thickness: 1),
                   const SizedBox(height: 16),
 
-                  _buildSectionTitle(l10n.planVisitToday),
-                  _buildParagraph(l10n.planVisitLaserShow),
+                  // Plan Visit Today
+                  _buildSectionTitle(l10n.planVisitTitle),
+                  _buildParagraph(l10n.planVisitDesc1),
+                  _buildParagraph(l10n.planVisitDesc2),
 
                   const SizedBox(height: 16),
                   const Divider(color: AppColors.lightDivider, thickness: 1),
                   const SizedBox(height: 8),
 
+                  // FAQs
                   _buildSectionTitle(l10n.faqTitle),
                   const SizedBox(height: 8),
                   _buildFaqTile(
-                      question: l10n.faqLaserQ1,
-                      answer: l10n.faqLaserA1),
+                      question: l10n.faqBharatQ1,
+                      answer: l10n.faqBharatA1),
                   _buildFaqTile(
-                      question: l10n.faqLaserQ2,
-                      answer: l10n.faqLaserA2),
+                      question: l10n.faqBharatQ2,
+                      answer: l10n.faqBharatA2),
                   _buildFaqTile(
-                      question: l10n.faqLaserQ3,
-                      answer: l10n.faqLaserA3),
-                  _buildFaqTile(
-                      question: l10n.faqLaserQ4,
-                      answer: l10n.faqLaserA4),
-                  _buildFaqTile(
-                      question: l10n.faqLaserQ5,
-                      answer: l10n.faqLaserA5),
+                      question: l10n.faqBharatQ3,
+                      answer: l10n.faqBharatA3),
 
                   const SizedBox(height: 24),
                 ],
@@ -214,33 +194,6 @@ class LightSoundShowView extends GetView<ShowViewController> {
                   child: const Icon(Icons.image_not_supported, color: Colors.grey, size: 50),
                 );
               },
-            ),
-          ),
-          Container(
-            decoration: BoxDecoration(
-              color: Colors.black.withValues(alpha: 0.2),
-              borderRadius: BorderRadius.circular(12),
-            ),
-          ),
-          GestureDetector(
-            onTap: () {
-              // controller.playVideo();
-            },
-            child: Container(
-              width: 56,
-              height: 56,
-              decoration: BoxDecoration(
-                color: Colors.white.withValues(alpha: 0.3),
-                shape: BoxShape.circle,
-                border: Border.all(color: Colors.white, width: 2),
-              ),
-              child: const Center(
-                child: Icon(
-                  Icons.play_arrow_rounded,
-                  color: Colors.white,
-                  size: 36,
-                ),
-              ),
             ),
           ),
         ],
@@ -323,9 +276,30 @@ class LightSoundShowView extends GetView<ShowViewController> {
     );
   }
 
+  // New helper for bold heading with text below it
+  Widget _buildSubheadingPoint(String title, String desc) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 4.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            title,
+            style: const TextStyle(
+              fontSize: 15,
+              fontWeight: FontWeight.w600,
+              color: AppColors.primary,
+              fontFamily: FontFamily.semiBold,
+            ),
+          ),
+          const SizedBox(height: 4),
+          _buildParagraph(desc),
+        ],
+      ),
+    );
+  }
+
   Widget _buildFaqTile({required String question, required String answer}) {
-    // Note: Since `GetView` uses GetX context, this is fine, but you can also pass
-    // your standard `context` here instead of `Get.context!` if preferred.
     return Theme(
       data: Theme.of(Get.context!).copyWith(dividerColor: Colors.transparent),
       child: Container(

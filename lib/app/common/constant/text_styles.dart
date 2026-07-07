@@ -57,12 +57,13 @@ class AppTextStyles {
     fontWeight: FontWeight.w600,
     color: AppColors.textPrimary,
   );
-  static const TextStyle titleSmall= TextStyle(
+  static const TextStyle titleSmall = TextStyle(
     fontFamily: FontFamily.regular,
     fontSize: AppFontSize.s12,
     fontWeight: FontWeight.w600,
     color: AppColors.textPrimary,
   );
+
   /// AppBar title — "Order Assignment" / "Order Now"
   static const TextStyle appBarTitle = TextStyle(
     fontFamily: FontFamily.regular,
@@ -91,7 +92,7 @@ class AppTextStyles {
   // ── Field ────────────────────────────────────────────────────────────────────
   /// Uppercase field label — "ASSIGNMENT TOPIC", "SUBJECT" etc.
   static const TextStyle fieldLabel = TextStyle(
-    fontFamily:FontFamily.regular,
+    fontFamily: FontFamily.regular,
     fontSize: AppFontSize.s11,
     fontWeight: FontWeight.w600,
     color: AppColors.textSecondary,
@@ -316,5 +317,4 @@ class AppTextStyles {
     fontWeight: FontWeight.w400,
     color: AppColors.textPrimary,
   );
-  
 }

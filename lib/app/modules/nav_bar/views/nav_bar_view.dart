@@ -8,6 +8,7 @@ class NavBarView extends GetView<NavBarController> {
   @override
   Widget build(BuildContext context) {
     Get.put(NavBarController());
+    final l10n = AppLocalizations.of(context)!;
 
     return Scaffold(
       backgroundColor: AppColors.background,
@@ -20,7 +21,6 @@ class NavBarView extends GetView<NavBarController> {
           mainAxisSize: MainAxisSize.min,
           children: [
             GestureDetector(
-              // Switch tab using your route string constant
               onTap: () => controller.changeTabByRoute(Routes.SCANNER),
               child: Container(
                 width: 64,
@@ -30,7 +30,7 @@ class NavBarView extends GetView<NavBarController> {
                   gradient: AppColors.primaryGradient,
                   boxShadow: [
                     BoxShadow(
-                      color: AppColors.primary.withValues(alpha:0.4),
+                      color: AppColors.primary.withValues(alpha: 0.4),
                       blurRadius: 10,
                       offset: const Offset(0, 4),
                     ),
@@ -45,8 +45,8 @@ class NavBarView extends GetView<NavBarController> {
             ),
             const SizedBox(height: 4),
             Text(
-              'QR Scan',
-              style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: AppColors.primary),
+              l10n.navQrScan,
+              style: const TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: AppColors.primary),
             ),
           ],
         ),
@@ -57,7 +57,13 @@ class NavBarView extends GetView<NavBarController> {
         decoration: BoxDecoration(
           color: AppColors.white,
           borderRadius: const BorderRadius.only(topLeft: Radius.circular(24), topRight: Radius.circular(24)),
-          boxShadow: [BoxShadow(color: Colors.black.withValues(alpha:0.05), blurRadius: 10, offset: const Offset(0, -4))],
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withValues(alpha: 0.05),
+              blurRadius: 10,
+              offset: const Offset(0, -4),
+            )
+          ],
         ),
         child: ClipRRect(
           borderRadius: const BorderRadius.only(topLeft: Radius.circular(24), topRight: Radius.circular(24)),
@@ -69,28 +75,28 @@ class NavBarView extends GetView<NavBarController> {
                 _buildNavItem(
                   route: Routes.HOME,
                   icon: Icons.home_rounded,
-                  label: 'Home',
+                  label: l10n.navHome,
                   isActive: controller.currentRoute == Routes.HOME,
                 ),
                 _buildNavItem(
                   route: Routes.SHOW_VIEW,
                   icon: Icons.star_rounded,
-                  label: 'Shows',
+                  label: l10n.navShows,
                   isActive: controller.currentRoute == Routes.SHOW_VIEW,
                 ),
 
-                const SizedBox(width: 64), // FAB spacing gap block
+                const SizedBox(width: 64),
 
                 _buildNavItem(
                   route: Routes.TICKETS,
                   icon: Icons.confirmation_number_rounded,
-                  label: 'Tickets',
+                  label: l10n.navTickets,
                   isActive: controller.currentRoute == Routes.TICKETS,
                 ),
                 _buildNavItem(
                   route: Routes.PROFILE,
                   icon: Icons.account_circle_rounded,
-                  label: 'Profile',
+                  label: l10n.navProfile,
                   isActive: controller.currentRoute == Routes.PROFILE,
                 ),
               ],
@@ -108,7 +114,7 @@ class NavBarView extends GetView<NavBarController> {
     required bool isActive,
   }) {
     return GestureDetector(
-      onTap: () => controller.changeTabByRoute(route), // Pass route constant straight to controller
+      onTap: () => controller.changeTabByRoute(route),
       behavior: HitTestBehavior.opaque,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -126,7 +132,11 @@ class NavBarView extends GetView<NavBarController> {
           const SizedBox(height: 4),
           Text(
             label,
-            style: TextStyle(fontSize: 10, fontWeight: FontWeight.w300, color: isActive ? AppColors.primary : AppColors.textSecondary),
+            style: TextStyle(
+              fontSize: 10,
+              fontWeight: FontWeight.w300,
+              color: isActive ? AppColors.primary : AppColors.textSecondary,
+            ),
           ),
         ],
       ),

@@ -6,11 +6,7 @@ class AppButton extends StatelessWidget {
   final String title;
   final VoidCallback onTap;
 
-  const AppButton({
-    super.key,
-    required this.title,
-    required this.onTap,
-  });
+  const AppButton({super.key, required this.title, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -21,11 +17,7 @@ class AppButton extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(6),
           gradient: const LinearGradient(
-            colors: [
-              AppColors.secondary,
-              AppColors.primary,
-
-            ],
+            colors: [AppColors.secondary, AppColors.primary],
           ),
         ),
         alignment: Alignment.center,

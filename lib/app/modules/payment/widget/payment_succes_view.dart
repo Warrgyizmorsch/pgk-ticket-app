@@ -1,6 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
 import 'package:pgk_ticket_app/app/modules/payment/controllers/payment_controller.dart';
 import '../../../common/constant/app_imports.dart';
 
@@ -25,7 +22,7 @@ class PaymentSuccessView extends GetView<PaymentController> {
         padding: const EdgeInsets.all(20.0),
         child: Column(
           children: [
-            // Header Row (Title & Print Icon)
+            // Header Row (Title & Action Icons)
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -36,9 +33,18 @@ class PaymentSuccessView extends GetView<PaymentController> {
                     fontSize: 16,
                   ),
                 ),
-                IconButton(
-                  icon: const Icon(Icons.print_outlined, color: AppColors.textPrimary, size: 28),
-                  onPressed: controller.printReceipt,
+                // --- ADDED SHARE OPTION HERE ---
+                Row(
+                  children: [
+                    IconButton(
+                      icon: const Icon(Icons.share_outlined, color: AppColors.textPrimary, size: 28),
+                      onPressed: controller.shareReceipt, // Ensure this method exists in PaymentController
+                    ),
+                    IconButton(
+                      icon: const Icon(Icons.print_outlined, color: AppColors.textPrimary, size: 28),
+                      onPressed: controller.printReceipt,
+                    ),
+                  ],
                 ),
               ],
             ),
@@ -59,7 +65,7 @@ class PaymentSuccessView extends GetView<PaymentController> {
                     child: Container(
                       width: double.infinity,
                       padding: const EdgeInsets.only(
-                        top: 20, // Space for the checkmark
+                        top: 35, // Space for the checkmark
                         left: 20,
                         right: 20,
                         bottom: 40, // Space for the scalloped edge
@@ -69,11 +75,11 @@ class PaymentSuccessView extends GetView<PaymentController> {
                         children: [
                           // Optional Watermark Logo
                           Opacity(
-                            opacity: 0.05,
+                            opacity: 0.04,
                             child: Image.asset(
                               ImageConstant.appLogo,
-                              width: 200,
-                              height: 200,
+                              width: 180,
+                              height: 180,
                             ),
                           ),
 
@@ -106,7 +112,7 @@ class PaymentSuccessView extends GetView<PaymentController> {
                                       ],
                                     ),
                                   ),
-                                  const SizedBox(width: 16), // Adds breathing room between columns
+                                  const SizedBox(width: 12), // Adds breathing room between columns
                                   // Right Column: Name, Email & Phone
                                   Expanded(
                                     flex: 1,

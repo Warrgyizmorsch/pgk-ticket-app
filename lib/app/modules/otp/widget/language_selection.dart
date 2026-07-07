@@ -1,4 +1,3 @@
-
 import '../../../common/constant/app_imports.dart';
 import '../controllers/otp_controller.dart';
 
@@ -7,7 +6,6 @@ class LanguageSelectionView extends GetView<OtpController> {
 
   @override
   Widget build(BuildContext context) {
-    // Access the localized strings from the current build context
     final localizations = AppLocalizations.of(context)!;
 
     return Scaffold(

@@ -76,9 +76,19 @@ class TextFieldCustom extends StatelessWidget {
     final currentBorderColor = borderColor ?? AppColors.textSecondary;
     final fallbackFocusColor = borderColor ?? AppColors.primary;
 
-    return SizedBox(
+    return Container(
       width: width,
       height: height,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(8),
+        boxShadow: const [
+          BoxShadow(
+            color: AppColors.lightShadow,
+            blurRadius: 8,
+            offset: Offset(0, 2),
+          ),
+        ],
+      ),
       child: TextFormField(
         autovalidateMode: autoValidateMode,
         onTap: onTap,
@@ -114,7 +124,9 @@ class TextFieldCustom extends StatelessWidget {
             fontFamily: hintTextStyle ?? FontFamily.regular,
           ),
           counterText: "",
-          contentPadding: contentPadding ?? const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+          contentPadding:
+              contentPadding ??
+              const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
           errorStyle: AppTextStyles.error,
           hintStyle: TextStyle(
             color: hintTextColor ?? AppColors.textSecondary,
@@ -123,24 +135,39 @@ class TextFieldCustom extends StatelessWidget {
           ),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8),
-            borderSide: BorderSide(color: currentBorderColor, width: borderWidth ?? 1.0),
+            borderSide: BorderSide(
+              color: currentBorderColor,
+              width: borderWidth ?? 1.0,
+            ),
           ),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8),
-            borderSide: BorderSide(color: currentBorderColor, width: borderWidth ?? 1.0),
+            borderSide: BorderSide(
+              color: currentBorderColor,
+              width: borderWidth ?? 1.0,
+            ),
           ),
           // If a custom error/border color is forced, use it for focus state to suppress the primary focus color
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8),
-            borderSide: BorderSide(color: fallbackFocusColor, width: borderWidth ?? 1.5),
+            borderSide: BorderSide(
+              color: fallbackFocusColor,
+              width: borderWidth ?? 1.5,
+            ),
           ),
           errorBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8),
-            borderSide: BorderSide(color: AppColors.error, width: borderWidth ?? 1.0),
+            borderSide: BorderSide(
+              color: AppColors.error,
+              width: borderWidth ?? 1.0,
+            ),
           ),
           focusedErrorBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8),
-            borderSide: BorderSide(color: AppColors.error, width: borderWidth ?? 1.5),
+            borderSide: BorderSide(
+              color: AppColors.error,
+              width: borderWidth ?? 1.5,
+            ),
           ),
           filled: true,
           fillColor: backgroundColor ?? Colors.white,

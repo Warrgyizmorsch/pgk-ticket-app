@@ -10,52 +10,50 @@ class ShowView extends GetView<ShowViewController> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+
     return Scaffold(
       backgroundColor: AppColors.background,
       appBar: CustomAppBar(
-        title: 'Museum Shows',
+        title: l10n.museumShowsTitle,
         showBackButton: false,
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.notifications_none_rounded, color: AppColors.white),
-            onPressed: () {
-              // TODO: Handle notifications
-            },
-          ),
-        ],
+
       ),
       body: ListView(
         padding: const EdgeInsets.all(20.0),
         physics: const BouncingScrollPhysics(),
         children: [
           _buildPremiumShowCard(
-            imageUrl: ImageConstant.lightSound,
-            title: 'Water Laser Show',
-            description: "Experience Panna's sacrifice and the historic Battle of Diwer brought to life through a mesmerizing water and laser spectacle.",
-            tag: 'Popular', // Adds a nice badge to the image
+            imageUrl: ImageConstant.waterShow,
+            title: l10n.showsViewWaterLaserTitle,
+            description: l10n.showsViewWaterLaserDesc,
+            tag: l10n.showsViewPopularTag, // Adds a nice badge to the image
             onTap: () => Get.to(() => const WaterShowView()),
+            l10n: l10n,
           ),
           _buildPremiumShowCard(
             imageUrl: ImageConstant.documentation, // Update if you have a specific robotic asset
-            title: 'Robotic Show',
-            description: 'This show uses advanced mechanical models to narrate various historical tales in an engaging and interactive format.',
+            title: l10n.showsViewRoboticTitle,
+            description: l10n.showsViewRoboticDesc,
             onTap: () => Get.to(() => const RoboticShowView()),
+            l10n: l10n,
           ),
           _buildPremiumShowCard(
             imageUrl: ImageConstant.documentation,
-            title: 'Documentary Show',
-            description: 'Watch the inspiring documentary of Maharana Pratap, detailing his life, struggles, and ultimate victories.',
+            title: l10n.showsViewDocTitle,
+            description: l10n.showsViewDocDesc,
             onTap: () => Get.to(() => const DocumentationShowView()),
+            l10n: l10n,
           ),
           _buildPremiumShowCard(
             imageUrl: ImageConstant.lightSound,
-            title: 'Light And Sound Show',
-            description: 'Experience the glorious history of Mewar through an immersive outdoor light and sound narration.',
-            tag: 'Evening Only',
+            title: l10n.showsViewLightSoundTitle,
+            description: l10n.showsViewLightSoundDesc,
+            tag: l10n.showsViewEveningTag,
             onTap: () => Get.to(() => const LightSoundShowView()),
+            l10n: l10n,
           ),
-          // Extra padding at the bottom so the last card doesn't hug the screen edge
-          const SizedBox(height: 20),
+          const SizedBox(height: 4),
         ],
       ),
     );
@@ -67,6 +65,7 @@ class ShowView extends GetView<ShowViewController> {
     required String title,
     required String description,
     required VoidCallback onTap,
+    required AppLocalizations l10n,
     String? tag,
   }) {
     return GestureDetector(
@@ -94,7 +93,7 @@ class ShowView extends GetView<ShowViewController> {
                 children: [
                   Image.asset(
                     imageUrl,
-                    height: 180, // Taller image for a premium feel
+                    height: 220, // Taller image for a premium feel
                     width: double.infinity,
                     fit: BoxFit.cover,
                     errorBuilder: (context, error, stackTrace) => Container(
@@ -158,7 +157,7 @@ class ShowView extends GetView<ShowViewController> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        'View Details',
+                        l10n.showsViewDetailsBtn,
                         style: AppTextStyles.subtitle.copyWith(
                           color: AppColors.primary,
                         ),

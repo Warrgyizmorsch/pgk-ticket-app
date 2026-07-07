@@ -1,16 +1,11 @@
-
-
 import '../../../common/constant/app_imports.dart';
-
 import '../controllers/otp_controller.dart';
-
 
 class OtpView extends GetView<OtpController> {
   const OtpView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // Dynamically calculate responsive parameters for standard grid elements
     final double fieldSize = (MediaQuery.of(context).size.width - 64 - 48) / 5;
 
     return Scaffold(
@@ -31,14 +26,13 @@ class OtpView extends GetView<OtpController> {
             children: [
               const SizedBox(height: 16),
 
-              // ─── Illustration Container Section ───
               Center(
                 child: SizedBox(
                   height: MediaQuery.of(context).size.height * 0.35,
                   child: AspectRatio(
                     aspectRatio: 1,
                     child: Image.asset(
-                      ImageConstant.otp, // Cleanly pulls from your registered image tokens
+                      ImageConstant.otp,
                       fit: BoxFit.contain,
                       errorBuilder: (context, error, stackTrace) => Container(
                         decoration: BoxDecoration(
@@ -57,7 +51,6 @@ class OtpView extends GetView<OtpController> {
               ),
               const SizedBox(height: 40),
 
-              // ─── Subheading Label Text ───
               Text(
                 'Enter Code Here',
                 style: AppTextStyles.subhead.copyWith(
@@ -66,7 +59,6 @@ class OtpView extends GetView<OtpController> {
               ),
               const SizedBox(height: 32),
 
-              // ─── 5-Digit Grid Layout Row ───
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: List.generate(
@@ -115,7 +107,6 @@ class OtpView extends GetView<OtpController> {
               ),
               const SizedBox(height: 64),
 
-              // ─── Verification CTA Trigger Button ───
               Obx(
                     () => controller.isLoading.value
                     ? const SizedBox(

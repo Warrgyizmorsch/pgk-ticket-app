@@ -641,48 +641,6 @@ class AppLocalizationsGu extends AppLocalizations {
   String get readMoreBtn => 'વધુ વાંચો';
 
   @override
-  String get temple1Title => 'શ્રી રિદ્ધિ સિદ્ધિ વિનાયક મંદિર';
-
-  @override
-  String get temple1Desc =>
-      'ભક્તિધામમાં પ્રથમ પૂજનીય મંદિર વિઘ્નહર્તા ભગવાન ગણેશને સમર્પિત છે. આ સુંદર રીતે તૈયાર કરાયેલું મંદિર પરિસરની અંદર આધ્યાત્મિક યાત્રાની શુભ શરૂઆતનું પ્રતીક છે. એક ધન્ય અને શાંતિપૂર્ણ મુલાકાત સુનિશ્ચિત કરવા માટે મુલાકાતીઓ હંમેશા અહીંથી પોતાની પ્રાર્થના શરૂ કરે છે.';
-
-  @override
-  String get temple2Title => 'શ્રીનાથ જી મંદિર';
-
-  @override
-  String get temple2Desc =>
-      'ઉદયપુરથી આશરે 41 કિલોમીટર દૂર નાથદ્વારા ગામમાં આવેલી આ પ્રતિકૃતિ પુષ્ટિમાર્ગ સંપ્રદાયના પ્રાથમિક દેવતાને શ્રદ્ધાંજલિ આપે છે. આ મૂર્તિ ભારતભરમાં વલ્લભ સંપ્રદાયના અનુયાયીઓની જટિલ કલા, ભક્તિ અને ઊંડી આસ્થાને દર્શાવે છે.';
-
-  @override
-  String get temple3Title => 'શ્રી દ્વારકાધીશ જી મંદિર';
-
-  @override
-  String get temple3Desc =>
-      'શ્રી દ્વારકાધીશ જીની ત્રીજી પીઠ, જે વલ્લભ પરંપરા સાથે નજીકથી જોડાયેલી છે. આ ભવ્ય મંદિર પ્રતિકૃતિ રાજસમંદ તળાવ પાસે કાંકરોલીમાં સ્થિત પ્રખ્યાત મંદિરના આધ્યાત્મિક સારને પકડે છે, જેનાથી ભક્તોને તેની દિવ્ય ઉપસ્થિતિનો અનુભવ થાય છે.';
-
-  @override
-  String get temple4Title => '顺શ્રી ચારભુજા જી મંદિર';
-
-  @override
-  String get temple4Desc =>
-      'મેવાડના લગભગ દરેક ગામમાં ભગવાન ચારભુજાનાથના મંદિરો સ્થાપિત છે. આ વિશેષ મંદિર ચાર ભુજાઓ વાળા દેવતાનું સન્માન કરે છે, જેમને સ્થાનિક રાજપૂત સમુદાય દ્વારા તેમના પરિવારો અને ભૂમિ પર સુરક્ષા, સમૃદ્ધિ અને શાંતિ લાવવા માટે ઊંડેથી પૂજવામાં આવે છે.';
-
-  @override
-  String get temple5Title => 'શ્રી એકલિંગ નાથ જી મંદિર';
-
-  @override
-  String get temple5Desc =>
-      'શ્રી એકલિંગ જી મેવાડ પ્રદેશના મુખ્ય દેવતા છે અને સ્વયં મહારાણાના આરાધ્ય દેવ છે. આ ભવ્ય પ્રતિકૃતિ મૂળ પ્રાચીન કૈલાશપુરી મંદિરની શાનદાર સ્થાપત્ય ભવ્યતાને સીધી ભક્તિ ધામના મુલાકાતીઓ માટે લાવે છે.';
-
-  @override
-  String get temple6Title => 'શ્રી સાંવરિયા જી મંદિર';
-
-  @override
-  String get temple6Desc =>
-      'શ્રી સાંવરિયા જી, ભગવાન કૃષ્ણના એક અત્યંત પૂજનીય પ્રાચીન સ્વરૂપ, સદીઓથી વેપારીઓ અને વ્યવસાયીઓ દ્વારા પૂજવામાં આવે છે. આ જીવંત મંદિર મેવાડ વેપારી સમુદાયની અપાર આસ્થા, સંપત્તિ અને સાંસ્કૃતિક સમૃદ્ધિને સુંદર રીતે દર્શાવે છે.';
-
-  @override
   String get attractionDetails => 'આકર્ષણની વિગતો';
 
   @override
@@ -709,7 +667,7 @@ class AppLocalizationsGu extends AppLocalizations {
   String get dateLabel => 'તારીખ:';
 
   @override
-  String get nationalityLabel => 'રાષ્ટ્રીયતા:';
+  String get nationalityLabel => 'રાષ્ટ્રીયતા';
 
   @override
   String get indian => 'ભારતીય';
@@ -727,7 +685,7 @@ class AppLocalizationsGu extends AppLocalizations {
   String get free => 'મફત';
 
   @override
-  String get kidsLabel => 'બાળકો (6-12 વર્ષ)';
+  String get kidsLabel => 'બાળકો';
 
   @override
   String get adultLabel => 'પુખ્ત (12+ વર્ષ)';
@@ -914,4 +872,1471 @@ class AppLocalizationsGu extends AppLocalizations {
   @override
   String get faqDocA4 =>
       'પ્રતાપ ગૌરવ કેન્દ્ર ઉદયપુર, રાજસ્થાનમાં આવેલું છે, જે તેને ઉદયપુરમાં પરંપરાગત મ્યુઝિયમનો શ્રેષ્ઠ વિકલ્પ બનાવે છે.';
+
+  @override
+  String get rajasthanDirghaTitle => 'રાજસ્થાન દીર્ઘા';
+
+  @override
+  String get rajasthanDirghaNarrationText =>
+      'આ મહાકાવ્યમાં રાજસ્થાનના ૨૫ પસંદ કરેલા યોદ્ધાઓ, મહાન વિભૂતિઓ, સંતો અને લોક દેવતાઓની ભવ્ય પ્રતિમાઓ પ્રદર્શિત કરવામાં આવી છે...';
+
+  @override
+  String get rajasthanDirghaNarrationLabel => 'રાજસ્થાન દીર્ઘા વર્ણન';
+
+  @override
+  String get audioGuideLabel => 'ઓડિયો ગાઇડ';
+
+  @override
+  String get greatPersonalitiesTitle => 'રાજસ્થાનની મહાન વિભૂતિઓ';
+
+  @override
+  String get greatPersonalitiesDesc1 =>
+      'આ મહાકાવ્યમાં રાજસ્થાનના ૨૫ પસંદ કરેલા યોદ્ધાઓ, મહાન વિભૂતિઓ, સંતો અને લોક દેવતાઓની અદભુત અને ભવ્ય પ્રતિમાઓ ગર્વભેર પ્રદર્શિત કરવામાં આવી છે. આ પ્રદર્શન એક સાંસ્કૃતિક સંગ્રહ તરીકે કાર્ય કરે છે, જે આ પ્રદેશના વિવિધ આધ્યાત્મિક અને સૈન્ય ઇતિહાસની ઝાંખી આપે છે.';
+
+  @override
+  String get prominentLocalDeitiesTitle => 'મુખ્ય લોક દેવતાઓ';
+
+  @override
+  String get deity1 => 'રામદેવજી';
+
+  @override
+  String get deity2 => 'તેજાજી';
+
+  @override
+  String get deity3 => 'ગોગાજી';
+
+  @override
+  String get heroicFiguresTitle => 'વીર નાયકો અને યોદ્ધાઓ';
+
+  @override
+  String get warrior1 => 'દુર્ગાદાસ રાઠોડ';
+
+  @override
+  String get warrior2 => 'હમ્મીર ચૌહાણ';
+
+  @override
+  String get warrior3 => 'રાવ ચંદ્રસેન';
+
+  @override
+  String get warrior4 => 'રાવ શેખા જી';
+
+  @override
+  String get moreLegendaryFigures => 'અને અન્ય ઘણી મહાન ઐતિહાસિક વિભૂતિઓ.';
+
+  @override
+  String get greatPersonalitiesDesc2 =>
+      'માત્ર એક દ્રશ્ય પ્રદર્શનથી ઘણું વધારે, આ ગૌરવશાળી દીર્ઘા આ સ્થાનિક દેવતાઓ, સંતો અને યોદ્ધાઓના જીવનની વાર્તાઓ, ઉપદેશો અને મહાન બલિદાનોના સંપૂર્ણ દસ્તાવેજી રેકોર્ડ પ્રદાન કરે છે.';
+
+  @override
+  String get pratapHeroTitle => 'મહારાણા પ્રતાપ: મેવાડના સિંહ';
+
+  @override
+  String get narrationBattleOfHaldighati => 'કથન: હલ્દીઘાટીનું યુદ્ધ';
+
+  @override
+  String get keyEventsTitle => 'મુખ્ય ઘટનાઓ';
+
+  @override
+  String get haldighatiRecreation => 'હલ્દીઘાટી યુદ્ધ\nપુનર્નિર્માણ';
+
+  @override
+  String get chetaksSacrifice => 'ચેતકનું બલિદાન';
+
+  @override
+  String get pratapsCoronation => 'પ્રતાપનો રાજ્યાભિષેક';
+
+  @override
+  String get mewadRatanDirghaTitle => 'મેવાડ રત્ન દીર્ઘા';
+
+  @override
+  String get mewadRatanNarrationText =>
+      'આ દીર્ઘામાં મેવાડના મુખ્ય યોદ્ધાઓ અને વીર મહિલાઓને પ્રદર્શિત કરવામાં આવી છે. બપ્પા રાવલથી શરૂ કરીને, તે યોદ્ધાઓ, સંતો અને વીર મહિલાઓ સુધી વિસ્તરેલી છે...';
+
+  @override
+  String get mewadRatanNarrationLabel => 'મેવાડ રત્ન દીર્ઘા વર્ણન';
+
+  @override
+  String get prideOfMewarTitle => 'મેવાડનું ગૌરવ';
+
+  @override
+  String get prideOfMewarDesc1 =>
+      'આ દીર્ઘામાં મેવાડના મુખ્ય યોદ્ધાઓ અને વીર મહિલાઓને પ્રદર્શિત કરવામાં આવી છે. બપ્પા રાવલથી શરૂ કરીને, તે મહારાણા રાજ સિંહના શાસનકાળ દરમિયાન યોદ્ધાઓ, સંતો અને વીર મહિલાઓ સુધી વિસ્તરેલી છે. આ પ્રદર્શન મેવાડની સેનાની સૈન્ય વીરતા અને આધ્યાત્મિક ઝોકને દર્શાવે છે.';
+
+  @override
+  String get prideOfMewarDesc2 =>
+      'તે તેની સ્થાપનાથી લઈને 18 મી સદી સુધી મેવાડમાં ગુહિલોટોના રાજ્યના ઇતિહાસ અને સંસ્કૃતિ વિશે સંક્ષિપ્ત માહિતી પૂરી પાડે છે.';
+
+  @override
+  String get significantFiguresTitle => 'પ્રદર્શિત મુખ્ય વિભૂતિઓ';
+
+  @override
+  String get significantFiguresDesc =>
+      'દીર્ઘામાં નીચેની ઐતિહાસિક વિભૂતિઓની ભવ્ય મૂર્તિઓ અને ચિત્રો સામેલ છે:';
+
+  @override
+  String get mewadFigure1 => 'બપ્પા રાવલ અને હારીત રાશિ';
+
+  @override
+  String get mewadFigure2 => 'પદ્માવતી, ગોરા અને બાદલ';
+
+  @override
+  String get mewadFigure3 => 'સત્યવ્રત ચૂંડા';
+
+  @override
+  String get mewadFigure4 => 'મહારાણા કુંભકર્ણ (રાણા કુંભા)';
+
+  @override
+  String get mewadFigure5 => 'મહારાણા સંગ્રામ સિંહ પ્રથમ (રાણા સાંગા)';
+
+  @override
+  String get mewadFigure6 => 'પન્ના ધાઈ';
+
+  @override
+  String get mewadFigure7 => 'જયમલ મેડતિયા અને પત્તા સિસોદિયા';
+
+  @override
+  String get mewadFigure8 => 'કલ્લા રાઠોડ';
+
+  @override
+  String get mewadFigure9 => 'મીરા બાઈ';
+
+  @override
+  String get mewadFigure10 => 'મહારાણા ઉદય સિંહ દ્વિતીય';
+
+  @override
+  String get mewadFigure11 => 'ભામાશાહ અને રાણા પુંજા';
+
+  @override
+  String get mewadFigure12 => 'હકીમ ખાન સૂર';
+
+  @override
+  String get mewadFigure13 => 'મહારાણા અમર સિંહ અને મહારાણા રાજ સિંહ';
+
+  @override
+  String get mewadFigure14 => 'હાડી રાણી';
+
+  @override
+  String get krantikariDirghaTitle => 'ક્રાંતિકારી દીર્ઘા';
+
+  @override
+  String get krantikariNarrationText =>
+      'પ્રતાપ ગૌરવ કેન્દ્રની મધ્યમાં આવેલી આ દીર્ઘા, ભારતીય સ્વાતંત્ર્ય સંગ્રામના વીર યોદ્ધાઓની વાર્તાઓ પ્રદર્શિત કરે છે...';
+
+  @override
+  String get krantikariNarrationLabel => 'ક્રાંતિકારી દીર્ઘા વર્ણન';
+
+  @override
+  String get heroesOfIndependenceTitle => 'સ્વાતંત્ર્ય સંગ્રામના નાયકો';
+
+  @override
+  String get heroesOfIndependenceDesc1 =>
+      'પ્રતાપ ગૌરવ કેન્દ્રની મધ્યમાં આવેલું આ ભવ્ય પ્રદર્શન શાનદાર મૂર્તિઓનો ઉપયોગ કરીને ભારતીય સ્વાતંત્ર્ય સંગ્રામના વીર યોદ્ધાઓની વાર્તાઓ પ્રદર્શિત કરે છે.';
+
+  @override
+  String get heroesOfIndependenceDesc2 =>
+      'આ દીર્ઘા 1857 થી 1947 સુધીના નિર્ણાયક સમયગાળાને આવરી લે છે, જે અદભૂત શિલ્પ પ્રસ્તુતિઓ દ્વારા વીરતા અને બલિદાનની કાલાતીત વાર્તાઓ રજૂ કરે છે.';
+
+  @override
+  String get keyHighlightsTitle => 'મુખ્ય વિશેષતાઓ';
+
+  @override
+  String get krantikariHighlight1 =>
+      'કેન્દ્રીય સ્થાન: કેન્દ્રની મધ્યમાં મુખ્ય રીતે આવેલું છે.';
+
+  @override
+  String get krantikariHighlight2 =>
+      'ઐતિહાસિક સમયરેખા: સ્વાતંત્ર્યના પ્રથમ સંગ્રામ (1857) થી લઈને ભારતની આઝાદી (1947) સુધીના સ્મારકીય યુગને આવરી લે છે.';
+
+  @override
+  String get krantikariHighlight3 =>
+      'શિલ્પ દ્વારા વાર્તા: અવિશ્વસનીય રીતે વિગતવાર, જીવંત મૂર્તિઓ દ્વારા વીરતાની વાર્તાઓને જીવંત કરવામાં આવી છે.';
+
+  @override
+  String get krantikariHighlight4 =>
+      'શહીદોને શ્રદ્ધાંજલિ: સંપૂર્ણપણે એવા બહાદુર ક્રાંતિકારીઓને સમર્પિત છે જેમણે સંસ્થાનવાદી શાસન સામે લડત આપી હતી.';
+
+  @override
+  String get haldighatiDirghaTitle => 'હલ્દીઘાટી વિજય યુદ્ધ દીર્ઘા';
+
+  @override
+  String get haldighatiNarrationText1 =>
+      'હલ્દીઘાટી વિજય યુદ્ધ દીર્ઘા ઐતિહાસિક હલ્દીઘાટીના યુદ્ધનું શક્તિશાળી દ્રશ્ય વર્ણન રજૂ કરે છે...';
+
+  @override
+  String get haldighatiNarrationLabel => 'હલ્દીઘાટીના યુદ્ધનું વર્ણન';
+
+  @override
+  String get exploreLegacyTitle => 'મહારાણા પ્રતાપના વારસાનું અન્વેષણ કરો';
+
+  @override
+  String get exploreLegacyDesc1 =>
+      'પ્રતાપ ગૌરવ કેન્દ્ર ઉદયપુર મહારાણા પ્રતાપના વીર જીવન અને સિદ્ધિઓમાં એક અનોખી સફર પ્રદાન કરે છે, જે ભારતીય ઇતિહાસમાં સાહસ અને સ્થિતિસ્થાપકતાનું પ્રતીક છે. આ સાઇટ ઇતિહાસ પ્રેમીઓ, પ્રવાસીઓ અને રાજસ્થાનના સમૃદ્ધ વારસાને જાણવા આતુર વિદ્યાર્થીઓ માટે અત્યંત સુસંગત છે. ઉદયપુરના એક પ્રમુખ મ્યુઝિયમ તરીકે, મહારાણા પ્રતાપ મ્યુઝિયમ ઇમર્સિવ પ્રદર્શનો પ્રદાન કરે છે જે રાજાના સંઘર્ષો અને વિજયોને ઉજાગર કરે છે, જેનાથી તે સાંસ્કૃતિક અન્વેષણ માટે એક અનિવાર્ય ગંતવ્ય બની જાય છે.';
+
+  @override
+  String get highlightsMuseumTitle => 'મ્યુઝિયમની મુખ્ય વિશેષતાઓ';
+
+  @override
+  String get highlightMuseum1 =>
+      'મહારાણા પ્રતાપ મ્યુઝિયમ ઐતિહાસિક કલાકૃતિઓ, ચિત્રો અને હથિયારોનો સંગ્રહ પ્રદર્શિત કરે છે.';
+
+  @override
+  String get highlightMuseum2 =>
+      'થીમ આધારિત ગેલેરીઓ મહારાણા પ્રતાપના યુદ્ધો અને દરબારી જીવનની મહત્વપૂર્ણ ક્ષણોને ફરીથી જીવંત કરે છે.';
+
+  @override
+  String get highlightMuseum3 =>
+      'દુર્લભ હસ્તપ્રતો અને તસવીરો 16મી સદીની રાજપૂત સંસ્કૃતિની માહિતી આપે છે.';
+
+  @override
+  String get highlightMuseum4 =>
+      'ઇન્ટરેક્ટિવ ટચસ્ક્રીન આકર્ષક કથાઓ અને વિગતવાર માહિતી પ્રદાન કરે છે.';
+
+  @override
+  String get highlightMuseum5 =>
+      'સિટી ટૂરનું આયોજન કરી રહ્યાં છો? આ આવશ્યક ઉદયપુર સિટી ટૂર સ્થાનો ચૂકશો નહીં.';
+
+  @override
+  String get visitorTipsTitle => 'મુલાકાતીઓ માટે ટિપ્સ અને અનુભવ';
+
+  @override
+  String get visitorTip1 =>
+      'શાંત, વધુ વ્યક્તિગત અનુભવનો આનંદ માણવા વહેલી સવારે અથવા મોડી બપોરે મુલાકાત લો.';
+
+  @override
+  String get visitorTip2 =>
+      'ફોટોગ્રાફીના શોખીનોને અનોખા શોર્ટ્સ લેવા માટે ઘણા સુંદર અને ઐતિહાસિક રીતે સમૃદ્ધ સ્થાનો મળશે.';
+
+  @override
+  String get visitorTip3 =>
+      'સ્થાનિક ગાઇડ અને ટૂર ઓપરેટરો પ્રતાપ ગૌરવ કેન્દ્ર અને નજીકના આકર્ષણો સહિત વિશેષ હેરિટેજ ટૂર પ્રદાન કરે છે.';
+
+  @override
+  String get exploreLegacyDesc2 =>
+      'હલ્દીઘાટી વિજય યુદ્ધ દીર્ઘા મેવાડના મહારાણા પ્રતાપ અને મુગલ સેના વચ્ચે લડાયેલા ઐતિહાસિક હલ્દીઘાટીના યુદ્ધનું શક્તિશાળી દ્રશ્ય વર્ણન રજૂ કરે છે. આ ગેલેરી રાજપૂત યોદ્ધાઓના સાહસ, સૈન્ય વ્યૂહરચના અને અતૂટ સંકલ્પને સુંદર રીતે પ્રદર્શિત કરે છે જેમણે એક શક્તિશાળી સામ્રાજ્ય સામે પોતાની માતૃભૂમિનો બચાવ કર્યો હતો. જીવંત સ્થાપનો અને કલાત્મક વાર્તા દ્વારા, દીર્ઘા ભારતીય ઇતિહાસના ગૌરવશાળી અધ્યાયને સાચવે છે અને સન્માન તેમજ પ્રતિકારની ભાવનાને જીવંત કરે છે.';
+
+  @override
+  String get faqHaldighatiQ1 =>
+      'પ્રતાપ ગૌરવ કેન્દ્ર કેટલા વાગ્યે ખુલે છે અને બંધ થાય છે?';
+
+  @override
+  String get faqHaldighatiA1 =>
+      'મુલાકાતીઓ પસંદગીની રજાઓને બાદ કરતા દરરોજ સવારે 10:00 થી સાંજે 5:30 વાગ્યા સુધી મ્યુઝિયમની મુલાકાત લઈ શકે છે.';
+
+  @override
+  String get faqHaldighatiQ2 => 'શું મ્યુઝિયમ વિકલાંગ મુલાકાતીઓ માટે સુલભ છે?';
+
+  @override
+  String get faqHaldighatiA2 =>
+      'હા, મ્યુઝિયમને રેમ્પ અને સહાયક સેવાઓ જેવી સુવિધાઓ સાથે સર્વસમાવેશક બનાવવામાં આવ્યું છે.';
+
+  @override
+  String get faqHaldighatiQ3 => 'શું મ્યુઝિયમમાં ગાઇડેડ ટૂર ઉપલબ્ધ છે?';
+
+  @override
+  String get faqHaldighatiA3 =>
+      'હા, ગાઇડેડ ટૂર વિવિધ ભાષાઓમાં ઓફર કરવામાં આવે છે અને તેને અગાઉથી બુક કરી શકાય છે.';
+
+  @override
+  String get faqHaldighatiQ4 =>
+      'શું સ્કૂલ ગ્રૂપ શૈક્ષણિક કાર્યક્રમોમાં ભાગ લઈ શકે છે?';
+
+  @override
+  String get faqHaldighatiA4 =>
+      'ચોક્કસ, મ્યુઝિયમ નિયમિતપણે તમામ ઉંમરના વિદ્યાર્થીઓ માટે ખાસ શૈક્ષણિક મુલાકાતોનું આયોજન કરે છે.';
+
+  @override
+  String get faqHaldighatiQ5 => 'શું અંદર ફોટોગ્રાફીની મંજૂરી છે?';
+
+  @override
+  String get faqHaldighatiA5 =>
+      'નિયુક્ત વિસ્તારોમાં ફોટોગ્રાફીની મંજૂરી છે, પરંતુ મ્યુઝિયમના નિયમો મુજબ ફ્લેશ અને વિડિઓ રેકોર્ડિંગ પ્રતિબંધિત હોઈ શકે છે.';
+
+  @override
+  String get charitraPradarshaneeTitle => 'મહારાણા પ્રતાપ ચરિત્ર પ્રદર્શની';
+
+  @override
+  String get charitraNarrationText1 =>
+      'મહારાણા પ્રતાપના જન્મથી લઈને મૃત્યુ સુધીની જીવન ગાથા પાંચ રૂમમાં ચિત્રો દ્વારા પ્રદર્શિત કરવામાં આવી છે. પછી ભલે તે પ્રતાપનું જન્મસ્થળ હોય...';
+
+  @override
+  String get charitraNarrationLabel => 'ચરિત્ર પ્રદર્શની વર્ણન';
+
+  @override
+  String get journeyThroughLegendTitle => 'એક મહાન યોદ્ધાના જીવનની યાત્રા';
+
+  @override
+  String get charitraDesc1 =>
+      'મહારાણા પ્રતાપના જન્મથી લઈને મૃત્યુ સુધીની જીવન ગાથા પાંચ રૂમમાં ચિત્રો દ્વારા પ્રદર્શિત કરવામાં આવી છે. કુંભલગઢમાં પ્રતાપનું જન્મસ્થળ હોય, અબ્દુલ રહીમ ખાન-ખાનાના પરિવારને મુક્ત કરાવતા પ્રતાપના દ્રશ્યો હોય કે તેમના વફાદાર ઘોડા ચેતકનું બલિદાન, આ દ્રશ્યો ચિત્રો દ્વારા એક આકર્ષક ચિત્રણ પ્રદાન કરે છે, જે દર્શકોને એક અદભુત અનુભવ કરાવે છે.';
+
+  @override
+  String get charitraDesc2 =>
+      'એક આકર્ષક કેન્દ્ર મહારાણા પ્રતાપની વિશાળ પ્રતિમા છે જે તેમની અતૂટ હિંમત અને વીરતાનું પ્રતીક છે. ચરિત્ર પ્રદર્શની એક આકર્ષક અને શૈક્ષણિક અનુભવ પ્રદાન કરે છે જે મહાન રાજપૂત યોદ્ધાના જીવનને પ્રકાશમાં લાવે છે.';
+
+  @override
+  String get grandStatueTitle => 'મહારાણા પ્રતાપની ભવ્ય પ્રતિમા';
+
+  @override
+  String get grandStatueDesc =>
+      'પ્રદર્શનીની અંદર ઊંચાઈ પર આવેલી, આ શાનદાર મૂર્તિ મહારાણા પ્રતાપને તેમના વફાદાર ઘોડા, ચેતક પર સવાર દર્શાવે છે. આ અદમ્ય રાજપૂત ભાવનાને સાચી શ્રદ્ધાંજલિ છે.';
+
+  @override
+  String get statueBullet1 => 'સાહસ, બલિદાન અને સન્માનનું પ્રતિનિધિત્વ કરે છે.';
+
+  @override
+  String get statueBullet2 =>
+      'ભવિષ્યની પેઢીઓ માટે એક પ્રેરણા તરીકે કાર્ય કરે છે.';
+
+  @override
+  String get statueBullet3 =>
+      'એક ઐતિહાસિક સ્થળ જે સમગ્ર ભારતમાંથી મુલાકાતીઓને આકર્ષે છે.';
+
+  @override
+  String get charitraHighlight1 =>
+      'યુદ્ધના ડાયોરામા (Dioramas): હલ્દીઘાટીના યુદ્ધ અને અન્ય નિર્ણાયક ક્ષણોને દર્શાવતા જીવંત પ્રદર્શનો.';
+
+  @override
+  String get charitraHighlight2 =>
+      'હથિયારો અને કલાકૃતિઓ: રાજપૂત યોદ્ધાઓ દ્વારા ઉપયોગમાં લેવાતી તલવારો, ઢાલ અને કવચની પ્રતિકૃતિઓ.';
+
+  @override
+  String get charitraHighlight3 =>
+      'સાંસ્કૃતિક ગેલેરીઓ: રાજપૂતાના જીવનશૈલી, પોશાક અને પરંપરાઓને પ્રદર્શિત કરતા પ્રદર્શનો.';
+
+  @override
+  String get charitraHighlight4 =>
+      'સ્વાતંત્ર્ય સેનાની વિભાગ: ભારતના એવા નાયકોનું સન્માન કરવું જેમણે મહારાણા પ્રતાપના સાહસના માર્ગને અનુસર્યો.';
+
+  @override
+  String get whyVisitUdaipurTitle =>
+      'તમારી ઉદયપુર યાત્રા દરમિયાન અહીં શા માટે મુલાકાત લેવી?';
+
+  @override
+  String get visitBullet1 => 'રાજસ્થાનના ઇતિહાસ સાથે ઊંડો સંબંધ સ્થાપિત કરો.';
+
+  @override
+  String get visitBullet2 =>
+      'મહારાણા પ્રતાપની સ્વતંત્રતાની અદ્વિતીય ભાવના વિશે જાણવાની તક.';
+
+  @override
+  String get visitBullet3 =>
+      'કોઈપણ અન્ય પ્રવાસન સ્થળથી વિપરીત એક પ્રેરક સાંસ્કૃતિક અનુભવ.';
+
+  @override
+  String get charitraConclusion =>
+      'એક મ્યુઝિયમ કરતાં વધુ, મહારાણા પ્રતાપ ચરિત્ર પ્રદર્શની પ્રેરણાનું સ્થાન છે. પ્રદર્શનો અને મૂર્તિ દરેક મુલાકાતીમાં દેશભક્તિ અને ગર્વની ભાવના જગાડે છે. તે એક સ્મૃતિ છે કે સાચું નેતૃત્વ નિઃસ્વાર્થતા, સ્થિતિસ્થાપકતા અને સન્માનમાં રહેલું છે.';
+
+  @override
+  String get faqCharitraQ1 => 'ચરિત્ર પ્રદર્શની શેના માટે પ્રખ્યાત છે?';
+
+  @override
+  String get faqCharitraA1 =>
+      'તે તેની શાનદાર મહારાણા પ્રતાપ પ્રતિમા અને વિગતવાર ગેલેરીઓ માટે પ્રખ્યાત છે જે મહારાણા પ્રતાપના વારસા અને મેવાડના ઇતિહાસને જીવંત કરે છે.';
+
+  @override
+  String get faqCharitraQ2 => 'મહારાણા પ્રતાપની પ્રતિમા ક્યાં આવેલી છે?';
+
+  @override
+  String get faqCharitraA2 =>
+      'મહારાણા પ્રતાપની ભવ્ય પ્રતિમા ઉદયપુરના પ્રતાપ ગૌરવ કેન્દ્રની અંદર ચરિત્ર પ્રદર્શનીમાં આવેલી છે.';
+
+  @override
+  String get faqCharitraQ3 => 'ફરવામાં કેટલો સમય લાગે છે?';
+
+  @override
+  String get faqCharitraA3 =>
+      'મુલાકાતીઓ સામાન્ય રીતે વિગતવાર મ્યુઝિયમ, પ્રતિમા અને પ્રદર્શનો જોવામાં 2-3 કલાક વિતાવે છે.';
+
+  @override
+  String get faqCharitraQ4 => 'શું તે પરિવારો અને બાળકો માટે યોગ્ય છે?';
+
+  @override
+  String get faqCharitraA4 =>
+      'હા, મ્યુઝિયમ પરિવાર માટે અનુકૂળ છે અને બાળકો તેમજ વયસ્કો માટે સમાન રીતે અદભુત શૈક્ષણિક અનુભવ પ્રદાન કરે છે.';
+
+  @override
+  String get faqCharitraQ5 => 'મહારાણા પ્રતાપની પ્રતિમા શા માટે મહત્વપૂર્ણ છે?';
+
+  @override
+  String get faqCharitraA5 =>
+      'તે એક સાંસ્કૃતિક સીમાચિહ્ન છે જે બહાદુરી અને બલિદાનનું પ્રતીક છે, જે પેઢીઓ સુધી મહારાણા પ્રતાપની વાર્તાને જીવંત રાખે છે.';
+
+  @override
+  String get bharatMataMandirTitle => 'ભારત માતા મંદિર';
+
+  @override
+  String get bharatMataNarrationText =>
+      'ભારતમાં ગ્રામ દેવી, સ્થાન દેવ અને માતૃ દેવીની પૂજાની પરંપરા પ્રાચીન કાળથી રહી છે. મેવાડમાં જગદંબાને રાષ્ટ્ર શ્યામલા તરીકે પૂજવામાં આવે છે, અને તેમને સમર્પિત એક મંદિર કૈલાશપુરીના રસ્તે આવેલું છે...';
+
+  @override
+  String get bharatMataNarrationLabel => 'ભારત માતા મંદિર વર્ણન';
+
+  @override
+  String get worshipingRashtraDeviTitle => 'રાષ્ટ્ર દેવીની પૂજા';
+
+  @override
+  String get bharatMataDesc1 =>
+      'ભારતમાં ગ્રામ દેવી, સ્થાન દેવ અને માતૃ દેવીની પૂજાની પરંપરા પ્રાચીન કાળથી રહી છે. મેવાડમાં જગદંબાને રાષ્ટ્ર શ્યામલા તરીકે પૂજવામાં આવે છે, અને તેમને સમર્પિત એક મંદિર ઉદયપુર પાસે કૈલાશપુરીના રસ્તે આવેલું છે. સ્થાનિક પરંપરામાં, તેમને રાઠાસેણા માતા તરીકે ઓળખવામાં આવે છે.';
+
+  @override
+  String get bharatMataDesc2 =>
+      'આ સંભવતઃ દેશમાં રાષ્ટ્ર દેવી (ભારત માતા) ને સમર્પિત સૌથી જૂનું મંદિર છે. સ્વાતંત્ર્ય સંગ્રામ દરમિયાન, બંકિમ ચંદ્ર ચટ્ટોપાધ્યાયે તેમની નવલકથા \"આનંદમઠ\" માં સૌપ્રથમ વખત ભારત માતાની પૂજા કરવાનું આહ્વાન કર્યું હતું અને રાષ્ટ્ર દેવીની છબી રજૂ કરી હતી, જેમાં ગીત \"વંદે માતરમ\" એ રાષ્ટ્રીય ગીતનું સ્વરૂપ લીધું હતું.';
+
+  @override
+  String get appearanceArchitectureTitle => 'સ્વરૂપ અને વાસ્તુકલા';
+
+  @override
+  String get bharatMataBullet1 =>
+      'નારંગી રંગની સાડીથી સજ્જ, હાથમાં ભગવો ધ્વજ લીધેલી.';
+
+  @override
+  String get bharatMataBullet2 => 'તેમના વાહન સિંહ પર ભવ્ય રીતે બિરાજમાન.';
+
+  @override
+  String get bharatMataBullet3 =>
+      'મંદિરનો ગર્ભગૃહ અષ્ટકોણીય છે અને ઊંચાઈ પર આવેલો છે.';
+
+  @override
+  String get bharatMataBullet4 =>
+      'મંદિર સુધી પહોંચવા માટે મુલાકાતીઓએ 71 પગથિયાં ચઢવા પડે છે, જે રાષ્ટ્રીય ગૌરવના શિખરનું પ્રતીક છે અને ગર્વની ઊંડી ભાવના જગાડે છે.';
+
+  @override
+  String get meditationRoomTitle => 'ધ્યાન કક્ષ';
+
+  @override
+  String get meditationRoomDesc =>
+      'મંદિરની બરાબર નીચે એક શાંત ધ્યાન કક્ષ સ્થાપિત કરવામાં આવ્યો છે. પ્રતાપ ગૌરવ કેન્દ્રની મુલાકાત લીધા પછી, મુલાકાતીઓ આ સુંદર વાદળી-સફેદ જગ્યામાં ધ્યાન અને ચિંતન કરી શકે છે, અને અલૌકિક અને આધ્યાત્મિક આનંદનો અનુભવ કરી શકે છે.';
+
+  @override
+  String get guestUser => 'અતિથિ વપરાશકર્તા';
+
+  @override
+  String get profile => 'પ્રોફાઇલ';
+
+  @override
+  String get changeLanguage => 'ભાષા બદલો';
+
+  @override
+  String get bluetoothConnectivity => 'બ્લૂટૂથ કનેક્ટિવિટી';
+
+  @override
+  String get connectAudioGuides => 'ઓડિયો ગાઇડ કનેક્ટ કરો';
+
+  @override
+  String get logout => 'લૉગ આઉટ';
+
+  @override
+  String get logoutConfirmationMessage =>
+      'શું તમે ખરેખર એપ્લિકેશનમાંથી લૉગ આઉટ કરવા માંગો છો?';
+
+  @override
+  String get cancel => 'રદ કરો';
+
+  @override
+  String get refundReturnsTitle => 'રિફંડ અને રિટર્ન';
+
+  @override
+  String get refundPolicyHeader => 'રિફંડ અને રિટર્ન નીતિ';
+
+  @override
+  String get refundPolicyP1 =>
+      'અમારી રિફંડ અને રિટર્ન પોલિસી 30 દિવસ માટે માન્ય છે. જો તમારી ખરીદીને 30 દિવસ પસાર થઈ ગયા છે, તો અમે તમને સંપૂર્ણ રિફંડ અથવા એક્સચેન્જ ઓફર કરી શકતા નથી.';
+
+  @override
+  String get refundPolicyP2 =>
+      'રિટર્ન માટે પાત્ર બનવા માટે, તમારી વસ્તુ વપરાયેલી ન હોવી જોઈએ અને તમને જે સ્થિતિમાં મળી હતી તે જ સ્થિતિમાં હોવી જોઈએ. તે મૂળ પેકેજિંગમાં પણ હોવી આવશ્યક છે.';
+
+  @override
+  String get refundPolicyP3 =>
+      'કેટલીક પ્રકારની વસ્તુઓને પરત કરવાથી મુક્તિ આપવામાં આવી છે. નાશવંત વસ્તુઓ જેવી કે ખોરાક, ફૂલો, સમાચાર પત્રો અથવા મેગેઝિન પરત કરી શકાતા નથી. અમે એવા ઉત્પાદનો પણ સ્વીકારતા નથી જે અંતરંગ અથવા સેનિટરી સામાન, જોખમી સામગ્રી, અથવા જ્વલનશીલ પ્રવાહી અથવા ગેસ હોય.';
+
+  @override
+  String get nonReturnableItemsHeader => 'વધારાની નોન-રિટર્નેબલ વસ્તુઓ:';
+
+  @override
+  String get nonReturnable1 => 'ગિફ્ટ કાર્ડ્સ';
+
+  @override
+  String get nonReturnable2 => 'ડાઉનલોડ કરી શકાય તેવા સોફ્ટવેર ઉત્પાદનો';
+
+  @override
+  String get nonReturnable3 => 'કેટલીક આરોગ્ય અને વ્યક્તિગત સંભાળની વસ્તુઓ';
+
+  @override
+  String get proofOfPurchaseText =>
+      'તમારું રિટર્ન પૂર્ણ કરવા માટે, અમને રસીદ અથવા ખરીદીના પુરાવાની જરૂર છે. કૃપા કરીને તમારી ખરીદી ઉત્પાદકને પાછી ન મોકલો.';
+
+  @override
+  String get partialRefundsHeader =>
+      'અમુક એવી પરિસ્થિતિઓ છે જ્યાં માત્ર આંશિક રિફંડ આપવામાં આવે છે:';
+
+  @override
+  String get partialRefund1 => 'સ્પષ્ટ ઉપયોગના સંકેતોવાળું પુસ્તક.';
+
+  @override
+  String get partialRefund2 =>
+      'CD, DVD, VHS ટેપ, સોફ્ટવેર, વિડિઓ ગેમ, કેસેટ ટેપ, અથવા વિનાઇલ રેકોર્ડ જે ખોલવામાં આવ્યું છે.';
+
+  @override
+  String get partialRefund3 =>
+      'કોઈપણ વસ્તુ જે તેની મૂળ સ્થિતિમાં નથી, નુકસાન પામી છે અથવા અમારી ભૂલ સિવાયના અન્ય કારણોસર ભાગો ગાયબ છે.';
+
+  @override
+  String get partialRefund4 =>
+      'ડિલિવરીના 30 દિવસ પછી પરત કરવામાં આવતી કોઈપણ વસ્તુ.';
+
+  @override
+  String get refundsHeader => 'રિફંડ';
+
+  @override
+  String get refundsP1 =>
+      'એકવાર તમારું રિટર્ન પ્રાપ્ત થાય અને તપાસવામાં આવે, પછી અમે તમને ઇમેઇલ મોકલીશું કે અમને તમારી પરત કરેલી વસ્તુ મળી ગઈ છે. અમે તમને તમારા રિફંડની મંજૂરી અથવા નામંજૂરી વિશે પણ જાણ કરીશું.';
+
+  @override
+  String get refundsP2 =>
+      'જો તમને મંજૂરી મળી જાય, તો તમારા રિફંડ પર પ્રક્રિયા કરવામાં આવશે, અને અમુક દિવસોમાં તમારા ક્રેડિટ કાર્ડ અથવા ચૂકવણીની મૂળ પદ્ધતિ પર આપમેળે ક્રેડિટ લાગુ કરવામાં આવશે.';
+
+  @override
+  String get lateMissingRefundsHeader => 'મોડા અથવા ગાયબ રિફંડ';
+
+  @override
+  String get lateRefund1 =>
+      'જો તમને હજી સુધી રિફંડ મળ્યું નથી, તો પહેલા તમારું બેંક એકાઉન્ટ ફરીથી તપાસો.';
+
+  @override
+  String get lateRefund2 =>
+      'પછી તમારી ક્રેડિટ કાર્ડ કંપનીનો સંપર્ક કરો, તમારું રિફંડ સત્તાવાર રીતે પોસ્ટ થવામાં થોડો સમય લાગી શકે છે.';
+
+  @override
+  String get lateRefund3 =>
+      'આગળ તમારી બેંકનો સંપર્ક કરો. રિફંડ પોસ્ટ થાય તે પહેલાં ઘણીવાર થોડો પ્રોસેસિંગ સમય હોય છે.';
+
+  @override
+  String get lateRefund4 =>
+      'જો તમે આ બધું કર્યું છે અને તમને હજી સુધી તમારું રિફંડ મળ્યું નથી, તો કૃપા કરીને અમારો support@pratapgauravkendra.org પર સંપર્ક કરો.';
+
+  @override
+  String get saleItemsHeader => 'વેચાણની વસ્તુઓ (Sale items)';
+
+  @override
+  String get saleItemsText =>
+      'માત્ર નિયમિત કિંમતવાળી વસ્તુઓ જ રિફંડ થઈ શકે છે. સેલ (વેચાણ) ની વસ્તુઓ રિફંડ થઈ શકતી નથી.';
+
+  @override
+  String get exchangesHeader => 'એક્સચેન્જ';
+
+  @override
+  String get exchangesText =>
+      'અમે માત્ર એવી જ વસ્તુઓ બદલીએ છીએ જે ખામીયુક્ત અથવા નુકસાન પામેલી હોય. જો તમારે તે જ વસ્તુ માટે તેને બદલવાની જરૂર હોય, તો અમને support@pratapgauravkendra.org પર ઇમેઇલ મોકલો અને તમારી વસ્તુ અહીં મોકલો: પ્રતાપ ગૌરવ કેન્દ્ર, ઉદયપુર, રાજસ્થાન.';
+
+  @override
+  String get needHelpHeader => 'મદદ જોઈએ છે?';
+
+  @override
+  String get needHelpText =>
+      'રિફંડ અને રિટર્ન સંબંધિત પ્રશ્નો માટે અમારો support@pratapgauravkendra.org પર સંપર્ક કરો.';
+
+  @override
+  String get cancellationPolicyTitle => 'રદ્દીકરણ નીતિ';
+
+  @override
+  String get cancellationHeader => 'રદ્દીકરણ';
+
+  @override
+  String get cancellationIntro =>
+      'વીર શિરોમણી મહારાણા પ્રતાપ સમિતિ બને ત્યાં સુધી તેના ગ્રાહકોને મદદ કરવામાં માને છે, અને તેથી તેની ઉદાર રદ્દીકરણ નીતિ છે. આ નીતિ હેઠળ:';
+
+  @override
+  String get cancellationPoint1 =>
+      'રદ્દીકરણ પર માત્ર ત્યારે જ વિચાર કરવામાં આવશે જો ઓર્ડર આપ્યા પછી તરત જ વિનંતી કરવામાં આવે. જો કે, જો ઓર્ડર વિક્રેતાઓ/વેપારીઓને પહોંચાડવામાં આવ્યા હોય અને તેઓએ તેને મોકલવાની પ્રક્રિયા શરૂ કરી દીધી હોય, તો રદ્દીકરણની વિનંતી ધ્યાનમાં લેવામાં આવશે નહીં.';
+
+  @override
+  String get cancellationPoint2 =>
+      'અમે ફૂલો, ખાવા-પીવાની વસ્તુઓ જેવી નાશવંત વસ્તુઓ માટે રદ્દીકરણની વિનંતીઓ સ્વીકારતા નથી. જો કે, જો ગ્રાહક એ સાબિત કરે છે કે વિતરિત ઉત્પાદનની ગુણવત્તા સારી નથી, તો રિફંડ/રિપ્લેસમેન્ટ કરી શકાય છે.';
+
+  @override
+  String get cancellationPoint3 =>
+      'ક્ષતિગ્રસ્ત અથવા ખામીયુક્ત વસ્તુઓ મળ્યાના કિસ્સામાં કૃપા કરીને અમારી ગ્રાહક સેવા ટીમનો સંપર્ક કરો. જોકે, વેપારી દ્વારા તેમના સ્તરે તપાસ અને નિર્ધારણ કરવામાં આવ્યા પછી જ વિનંતી પર વિચાર કરવામાં આવશે. આ અંગે ઉત્પાદનો મળ્યાના 7 દિવસની અંદર જાણ કરવી જોઈએ.';
+
+  @override
+  String get cancellationPoint4 =>
+      'જો તમને લાગે કે પ્રાપ્ત થયેલ ઉત્પાદન સાઇટ પર દર્શાવ્યા મુજબ અથવા તમારી અપેક્ષાઓ મુજબ નથી, તો તમારે ઉત્પાદન પ્રાપ્ત કર્યાના 7 દિવસની અંદર અમારી ગ્રાહક સેવાના ધ્યાનમાં લાવવું જોઈએ. ગ્રાહક સેવા ટીમ તમારી ફરિયાદ જોયા પછી યોગ્ય નિર્ણય લેશે.';
+
+  @override
+  String get cancellationPoint5 =>
+      'ઉત્પાદકો તરફથી વોરંટી સાથે આવતા ઉત્પાદનોને લગતી ફરિયાદોના કિસ્સામાં, કૃપા કરીને આ મુદ્દો તેમના સુધી પહોંચાડો.';
+
+  @override
+  String get cancellationPoint6 =>
+      'વીર શિરોમણી મહારાણા પ્રતાપ સમિતિ દ્વારા મંજૂર કરાયેલ કોઈપણ રિફંડના કિસ્સામાં, અંતિમ ગ્રાહકને રિફંડની પ્રક્રિયા થવામાં 3-5 દિવસ લાગશે.';
+
+  @override
+  String get editProfileTitle => 'પ્રોફાઇલ સંપાદિત કરો';
+
+  @override
+  String get fullNameLabel => 'પૂરું નામ';
+
+  @override
+  String get enterFullNameHint => 'તમારું પૂરું નામ દાખલ કરો';
+
+  @override
+  String get nameEmptyError => 'નામ ખાલી ન હોઈ શકે';
+
+  @override
+  String get emailLabel => 'ઈમેલ';
+
+  @override
+  String get enterEmailHint => 'તમારો ઈમેલ દાખલ કરો';
+
+  @override
+  String get invalidEmailError => 'માન્ય ઈમેલ દાખલ કરો';
+
+  @override
+  String get phoneLabel => 'ફોન';
+
+  @override
+  String get enterPhoneHint => 'તમારો ફોન નંબર દાખલ કરો';
+
+  @override
+  String get saveChangesBtn => 'ફેરફારો સાચવો';
+
+  @override
+  String get myProfile => 'મારી પ્રોફાઇલ';
+
+  @override
+  String get languagePreferences => 'ભાષા પસંદગીઓ';
+
+  @override
+  String get paymentHistory => 'ચુકવણી ઇતિહાસ';
+
+  @override
+  String get refundPolicy => 'રિફંડ નીતિ';
+
+  @override
+  String get cancellationPolicy => 'રદ્દીકરણ નીતિ';
+
+  @override
+  String get helpSupport => 'મદદ અને આધાર';
+
+  @override
+  String get privacyPolicy => 'ગોપનીયતા નીતિ';
+
+  @override
+  String get termsConditions => 'નિયમો અને શરતો';
+
+  @override
+  String get logoutPrompt => 'શું તમે ખરેખર લૉગ આઉટ કરવા માંગો છો?';
+
+  @override
+  String get navQrScan => 'QR સ્કેન';
+
+  @override
+  String get navHome => 'હોમ';
+
+  @override
+  String get navShows => 'શો';
+
+  @override
+  String get navTickets => 'ટિકિટ';
+
+  @override
+  String get navProfile => 'પ્રોફાઇલ';
+
+  @override
+  String get myTicketsTitle => 'મારી ટિકિટો';
+
+  @override
+  String get bookNewTicketTooltip => 'નવી ટિકિટ બુક કરો';
+
+  @override
+  String get noTicketsYet => 'હજી સુધી કોઈ ટિકિટ નથી';
+
+  @override
+  String get noTicketsDesc =>
+      'એવું લાગે છે કે તમે હજી સુધી કોઈ ટિકિટ બુક કરી નથી. આકર્ષણોનું અન્વેષણ કરો અને તમારી આગામી મુલાકાતનું આયોજન કરો!';
+
+  @override
+  String get bookATicketBtn => 'ટિકિટ બુક કરો';
+
+  @override
+  String get generalWord => 'સામાન્ય';
+
+  @override
+  String get ticketWord => 'ટિકિટ';
+
+  @override
+  String get upcomingStatus => 'આગામી';
+
+  @override
+  String get pendingStatus => 'પેન્ડિંગ';
+
+  @override
+  String get visitDateLabel => 'મુલાકાતની તારીખ';
+
+  @override
+  String get ticketsLabel => 'ટિકિટો';
+
+  @override
+  String get personsLabel => 'વ્યક્તિઓ';
+
+  @override
+  String get totalLabel => 'કુલ';
+
+  @override
+  String get ticketDetailTitle => 'ટિકિટની વિગતો';
+
+  @override
+  String get attractionNameFallback => 'આકર્ષણનું નામ';
+
+  @override
+  String get notAvailableFallback => 'N/A';
+
+  @override
+  String get nameLabel => 'નામ';
+
+  @override
+  String get statusLabel => 'સ્થિતિ';
+
+  @override
+  String get bookingDateLabel => 'બુકિંગ તારીખ';
+
+  @override
+  String get totalPaidLabel => 'કુલ ચૂકવેલ';
+
+  @override
+  String get ticketsBreakupLabel => 'ટિકિટ વિભાજન';
+
+  @override
+  String get totalWord => 'કુલ';
+
+  @override
+  String get adultsLabel => 'પુખ્ત';
+
+  @override
+  String get infantsLabel => 'શિશુઓ';
+
+  @override
+  String get museumShowsTitle => 'મ્યુઝિયમ શો';
+
+  @override
+  String get showsViewWaterLaserTitle => 'વોટર લેઝર શો';
+
+  @override
+  String get showsViewWaterLaserDesc =>
+      'પન્ના ધાઈના બલિદાન અને ઐતિહાસિક દિવૈરના યુદ્ધને એક મનમોહક જળ અને લેસર પ્રદર્શન દ્વારા જીવંત થતા અનુભવો.';
+
+  @override
+  String get showsViewPopularTag => 'લોકપ્રિય';
+
+  @override
+  String get showsViewRoboticTitle => 'રોબોટિક શો';
+
+  @override
+  String get showsViewRoboticDesc =>
+      'આ શો એક આકર્ષક અને ઇન્ટરેક્ટિવ ફોર્મેટમાં વિવિધ ઐતિહાસિક વાર્તાઓ કહેવા માટે અદ્યતન યાંત્રિક મોડેલોનો ઉપયોગ કરે છે.';
+
+  @override
+  String get showsViewDocTitle => 'ડોક્યુમેન્ટ્રી શો';
+
+  @override
+  String get showsViewDocDesc =>
+      'મહારાણા પ્રતાપની પ્રેરણાદાયક ડોક્યુમેન્ટ્રી જુઓ, જેમાં તેમના જીવન, સંઘર્ષો અને અંતિમ વિજયની વિગતો આપવામાં આવી છે.';
+
+  @override
+  String get showsViewLightSoundTitle => 'લાઇટ એન્ડ સાઉન્ડ શો';
+
+  @override
+  String get showsViewLightSoundDesc =>
+      'એક ઇમર્સિવ આઉટડોર લાઇટ એન્ડ સાઉન્ડ (પ્રકાશ અને ધ્વનિ) વર્ણન દ્વારા મેવાડના ગૌરવશાળી ઇતિહાસનો અનુભવ કરો.';
+
+  @override
+  String get showsViewEveningTag => 'માત્ર સાંજે';
+
+  @override
+  String get showsViewDetailsBtn => 'વિગતો જુઓ';
+
+  @override
+  String get diverMahotsavTitle => 'દિવેર વિજય મહોત્સવ 2025';
+
+  @override
+  String get vikramSamvat => 'વિક્રમ સંવત: 2082';
+
+  @override
+  String get historicalBackground => 'ઐતિહાસિક પૃષ્ઠભૂમિ';
+
+  @override
+  String get historyDesc =>
+      'વિક્રમ સંવત 1640 માં વિજયાદશમીના દિવસે લડવામાં આવેલ દિવેરનું યુદ્ધ ભારતીય ઇતિહાસમાં યુગપ્રવર્તક પરિવર્તન લાવનાર યુદ્ધ છે. મહારાણા પ્રતાપના નેતૃત્વમાં દિવેર વિજય બાદ આગામી બે-ત્રણ વર્ષમાં મુઘલો દ્વારા સ્થાપિત તમામ થાણાઓ ખતમ થઈ ગયા અને લગભગ સમગ્ર મેવાડ, વાગડ, ગોડવાડથી લઈને માળવા સુધી મહારાણા પ્રતાપનું શાસન સ્થપાયું. આગામી 20-22 વર્ષ સુધી મેવાડમાં શાંતિ રહી.';
+
+  @override
+  String get upcomingHighlights => 'આગામી વિશેષ કાર્યક્રમો';
+
+  @override
+  String get event1Date => '26 સપ્ટેમ્બર 2025';
+
+  @override
+  String get event1Time => 'સાંજે 4 વાગ્યાથી';
+
+  @override
+  String get event1Title => 'દિવેર સાર્વજનિક કાર્યક્રમ';
+
+  @override
+  String get event2Date => '12 ઓક્ટોબર 2025';
+
+  @override
+  String get event2Time => 'ઇન્ફ્લુએન્સર્સ માટે વિશેષ';
+
+  @override
+  String get event2Title => 'સોશિયલ મીડિયા ઇન્ફ્લુએન્સર મીટ';
+
+  @override
+  String get event2Subtitle => 'ડિજિટલ માર્કેટિંગ અને કન્ટેન્ટ વ્યૂહરચના';
+
+  @override
+  String get competitionsPrograms => 'સ્પર્ધાઓ અને કાર્યક્રમો';
+
+  @override
+  String get quizTitle => 'ઓનલાઇન ક્વિઝ સ્પર્ધા';
+
+  @override
+  String get quizSubtitle => 'વિષય - મહારાણા પ્રતાપ: હલ્દીઘાટી થી દિવેર';
+
+  @override
+  String get prize1st => 'પ્રથમ';
+
+  @override
+  String get prize2nd => 'દ્વિતીય';
+
+  @override
+  String get prize3rd => 'તૃતીય';
+
+  @override
+  String get prizeConsolation => 'આશ્વાસન (2)';
+
+  @override
+  String get quizRules =>
+      '• પ્રાયોજક: નિર્માણ કરિયર એકેડેમી, ઉદયપુર\n• 3 વર્ગો: ધોરણ 6-8, 9-12, અને કોલેજ.\n• ફોર્મેટ: 100 બહુવિકલ્પી પ્રશ્નો (1 કલાક).\n• સામગ્રી: પીડીએફ ફોર્મેટમાં વેબસાઇટ પર ઉપલબ્ધ.\n• નોંધણી: સંસ્થાના વડા દ્વારા એક્સેલ શીટ અપલોડ.\n\nસંપર્ક: 9829260309, 9461834208, 8700705071';
+
+  @override
+  String get essayTitle => 'નિબંધ સ્પર્ધા';
+
+  @override
+  String get essaySubtitle => '5 વિવિધ વિષયો પર આધારિત';
+
+  @override
+  String get essayTopics =>
+      'વિષયો:\n1. મહારાણા પ્રતાપ: હલ્દીઘાટી થી દિવેર\n2. દિવેર યુદ્ધ: વિજય પર્વ\n3. મહારાણા પ્રતાપની યુદ્ધનીતિ\n4. જન-જનના નાયક: મહારાણા પ્રતાપ\n5. મહારાણા પ્રતાપ: સામાજિક સમરસતાના મહાનાયક\n';
+
+  @override
+  String get essayRules =>
+      '• ભાષા: હિન્દી અથવા અંગ્રેજી (1500-2000 શબ્દો).\n• ફોર્મેટ: હસ્તલિખિત, ફુલસ્કેપ પેપર પર ડાબી બાજુ માર્જિન.\n• સબમિટ કરો: પીડીએફ બનાવીને વેબસાઇટ પર અપલોડ કરો અથવા WhatsApp (9468545516).\n\nસંપર્ક: 8005816971, 9414156547';
+
+  @override
+  String get paintTitle => 'ચિત્રકલા સ્પર્ધા';
+
+  @override
+  String get paintSubtitle => 'માધ્યમિક થી ઉચ્ચ શિક્ષણ સ્તર સુધી';
+
+  @override
+  String get prizeSec => 'માધ્યમિક સ્તર (શ્રેષ્ઠ 5)';
+
+  @override
+  String get prizeSrSec => 'ઉચ્ચ માધ્યમિક સ્તર (શ્રેષ્ઠ 5)';
+
+  @override
+  String get prizeHigher => 'ઉચ્ચ શિક્ષણ સ્તર (શ્રેષ્ઠ 5)';
+
+  @override
+  String get eachWord => 'દરેક';
+
+  @override
+  String get paintRules =>
+      '• રંગ: વોટર કલર / ઓઇલ કલર / પેસ્ટલ (સ્પર્ધકો જાતે લાવશે).\n• શીટ: સમિતિ દ્વારા પૂરી પાડવામાં આવશે.\n• પસંદગી: શૈક્ષણિક સંસ્થાઓએ શ્રેષ્ઠ 3 સ્પર્ધકોના નામ Info@pratapgauravkendra.org અથવા WhatsApp (9468545516) પર મોકલવાના રહેશે. પસંદગી પામેલા ચિત્રો આર્ટ ગેલેરીમાં પ્રદર્શિત કરવામાં આવશે.\n\nસંપર્ક: 9414234955, 9414385701';
+
+  @override
+  String get filmTitle => 'લઘુ ફિલ્મ નિર્માણ સ્પર્ધા';
+
+  @override
+  String get filmSubtitle => 'વિષય - મહારાણા પ્રતાપનું વ્યક્તિત્વ અને કૃતિત્વ';
+
+  @override
+  String get filmNSS => 'સહ-આયોજક: રાષ્ટ્રીય સેવા યોજના (NSS)';
+
+  @override
+  String get filmRules =>
+      '• સ્તર: યુનિવર્સિટી/કોલેજ, વિભાગ, રાજ્ય સ્તર.\n• રાજસ્થાનની તમામ યુનિવર્સિટીઓમાં એનએસએસ (NSS) દ્વારા આયોજિત.\n\nસંપર્ક: 9829260309, 7087400453, 8005802574';
+
+  @override
+  String get lectureTitle => 'વ્યાખ્યાનમાળા કાર્યક્રમ';
+
+  @override
+  String get lectureSubtitle => 'ઉદયપુર, ચિત્તોડ અને રાજસમંદમાં આયોજિત';
+
+  @override
+  String get lectureRules =>
+      'શૈક્ષણિક સંસ્થાઓ અને છાત્રાલયોમાં મહારાણા પ્રતાપના વ્યક્તિત્વ અને દિવેર યુદ્ધ વિશે વિષય નિષ્ણાતો દ્વારા વ્યાખ્યાનો અપાશે. નવી પેઢીને રાષ્ટ્રપ્રેમનો સંકલ્પ લેવડાવવામાં આવશે.\n\nસંપર્ક સૂત્ર: 9785172992, 9660090556, 9414711071';
+
+  @override
+  String get closingTitle => 'સાર્વજનિક સમાપન સમારોહ';
+
+  @override
+  String get closingSubtitle => 'વિજેતાઓનું સન્માન';
+
+  @override
+  String get closingRules =>
+      'આ કાર્યક્રમમાં દિવેર વિજય મહોત્સવ અંતર્ગત આયોજિત સ્પર્ધાઓના શ્રેષ્ઠ પસંદગી પામેલા સ્પર્ધકોનું સન્માન કરવામાં આવશે.\n\nસંયોજક: અશોક સિંહ મેતવાલા (8209529107)\nસહ-સંયોજક: પારસ સિંઘવી (9414167776)\nસહ-સંયોજક: જયદીપ અમેટા (9509470784)';
+
+  @override
+  String get eventDetailAppBarTitle => 'હલ્દીઘાટી વિજય 450 વર્ષ';
+
+  @override
+  String get historicalEventLabel => 'ઐતિહાસિક આયોજન';
+
+  @override
+  String get eventWelcomeText =>
+      'વીર શિરોમણી મહારાણા પ્રતાપના હલ્દીઘાટી વિજયના 450 વર્ષ પૂર્ણ થવાના અવસરે આયોજિત ભવ્ય સમારોહમાં આપનું સ્વાગત છે.';
+
+  @override
+  String get eventDateValue => '17 જૂન 2026';
+
+  @override
+  String get eventTimeValue => 'સવારે 09:30';
+
+  @override
+  String get eventVenueValue => 'ગાંધી ગ્રાઉન્ડ, ઉદયપુર';
+
+  @override
+  String get lifeJourneyTitle => 'મહારાણા પ્રતાપ: જીવન યાત્રા';
+
+  @override
+  String get tlYear1 => '1540';
+
+  @override
+  String get tlTitle1 => 'જન્મ';
+
+  @override
+  String get tlDesc1 => 'કુંભલગઢમાં જન્મ';
+
+  @override
+  String get tlYear2 => '1559';
+
+  @override
+  String get tlTitle2 => 'અમર સિંહનો જન્મ';
+
+  @override
+  String get tlDesc2 => 'ઉત્તરાધિકારી અમર સિંહનો જન્મ';
+
+  @override
+  String get tlYear3 => '1572';
+
+  @override
+  String get tlTitle3 => 'રાજ્યાભિષેક';
+
+  @override
+  String get tlDesc3 => 'ગોગુંદા અને કુંભલગઢમાં રાજ્યાભિષેક';
+
+  @override
+  String get tlYear4 => '1576';
+
+  @override
+  String get tlTitle4 => 'હલ્દીઘાટી યુદ્ધ';
+
+  @override
+  String get tlDesc4 => 'મુઘલો સામે ઐતિહાસિક યુદ્ધ';
+
+  @override
+  String get tlYear5 => '1577';
+
+  @override
+  String get tlTitle5 => 'સંઘર્ષ કાળ';
+
+  @override
+  String get tlDesc5 => 'મેવાડની રક્ષા માટે ગેરિલા યુદ્ધ શરૂ';
+
+  @override
+  String get tlYear6 => '1578';
+
+  @override
+  String get tlTitle6 => 'ભામાશાહનો સહયોગ';
+
+  @override
+  String get tlDesc6 => 'લશ્કરના પુનર્ગઠન માટે આર્થિક સહાય';
+
+  @override
+  String get tlYear7 => '1582';
+
+  @override
+  String get tlTitle7 => 'દિવેર વિજય';
+
+  @override
+  String get tlDesc7 => 'મેવાડનો નિર્ણાયક વિજય';
+
+  @override
+  String get tlYear8 => '1585';
+
+  @override
+  String get tlTitle8 => 'ચાવંડ રાજધાની';
+
+  @override
+  String get tlDesc8 => 'નવી રાજધાનીની સ્થાપના';
+
+  @override
+  String get tlYear9 => '1588';
+
+  @override
+  String get tlTitle9 => 'જાવર વિજય';
+
+  @override
+  String get tlDesc9 => 'મેવાડનો પુનઃ વિસ્તાર';
+
+  @override
+  String get tlYear10 => '1597';
+
+  @override
+  String get tlTitle10 => 'દેવલોક ગમન';
+
+  @override
+  String get tlDesc10 => 'રાષ્ટ્રવીર મહારાણા પ્રતાપ અમર થયા';
+
+  @override
+  String get visitorInfoTitle => 'મુલાકાતીની માહિતી';
+
+  @override
+  String get tabInstructions => 'સૂચનાઓ અને ટિકિટ';
+
+  @override
+  String get tabFacilities => 'સુવિધાઓ';
+
+  @override
+  String get timingsTitle => 'સમય અને અવધિ';
+
+  @override
+  String get timing1 => '• દર્શકો માટે દરરોજ ખુલ્લું છે.';
+
+  @override
+  String get timing2 => '• ટિકિટ બારી: સવારે 9:30 થી સાંજે 6:00 સુધી';
+
+  @override
+  String get timing3 =>
+      '• મુલાકાતનો અંદાજિત સમય: 1.5 કલાક (પ્રદર્શનો અને રોબોટિક શો).';
+
+  @override
+  String get pricingIndianTitle => 'ટિકિટના દર (ભારતીય નાગરિકો)';
+
+  @override
+  String get pricingInd1 => '• પુખ્ત (12 વર્ષથી વધુ): ₹160 (સામાન્ય શો)';
+
+  @override
+  String get pricingInd2 => '• બાળકો (5-12 વર્ષ): ₹110';
+
+  @override
+  String get pricingInd3 => '• શિશુ (0-4 વર્ષ): પરિવાર સાથે મફત';
+
+  @override
+  String get pricingInd4 =>
+      '• લાઈવ રોબોટિક શો: ₹100 પ્રતિ વ્યક્તિ (કોઈ ઉંમરની છૂટ નથી, મુખ્ય આકર્ષણ)';
+
+  @override
+  String get pricingForeignTitle => 'ટિકિટના દર (વિદેશી પ્રવાસીઓ)';
+
+  @override
+  String get pricingFor1 => '• પુખ્ત (12 વર્ષથી વધુ): ₹460';
+
+  @override
+  String get pricingFor2 => '• બાળકો (5-12 વર્ષ): ₹260';
+
+  @override
+  String get pricingFor3 => '• શિશુ (0-4 વર્ષ): મફત';
+
+  @override
+  String get pricingFor4 => '• નોંધ: આમાં તમામ શો અને હેડફોન સામેલ છે.';
+
+  @override
+  String get schoolGroupsTitle => 'શાળા અને કોલેજ જૂથો';
+
+  @override
+  String get schoolGrp1 =>
+      '• વિદ્યાર્થીઓ અને કર્મચારીઓ: ₹50 પ્રતિ વ્યક્તિ (સામાન્ય શો)';
+
+  @override
+  String get schoolGrp2 => '• એડવાન્સ બુકિંગ સખત રીતે ફરજિયાત છે.';
+
+  @override
+  String get schoolGrp3 => '• રોબોટિક શો માટે કોઈ છૂટ ઉપલબ્ધ નથી.';
+
+  @override
+  String get guidelinesTitle => 'માર્ગદર્શિકા અને નિયમો';
+
+  @override
+  String get guideline1 =>
+      '• કેન્દ્રની અંદર મોબાઈલ ફોન અને કેમેરા બંધ રાખવા જોઈએ.';
+
+  @override
+  String get guideline2 =>
+      '• પરિસર અને પાર્કિંગની અંદર ધૂમ્રપાન, દારૂનું સેવન અને પ્રતિબંધિત પદાર્થો સખત પ્રતિબંધિત છે.';
+
+  @override
+  String get guideline3 =>
+      '• મેનેજમેન્ટ પાસે પ્રવેશના તમામ અધિકારો સુરક્ષિત છે.';
+
+  @override
+  String get humbleRequestTitle => 'એક નમ્ર વિનંતી';
+
+  @override
+  String get humbleRequestDesc =>
+      'પ્રતાપ ગૌરવ કેન્દ્ર રાષ્ટ્રીય તીર્થની તમારી મુલાકાત એ ભારતીય સાંસ્કૃતિક પરંપરાઓ અને મૂલ્યોના પવિત્ર કેન્દ્રની તીર્થયાત્રા છે. અમે પરિસરની શાંતિ, ગરિમા અને દિવ્યતા જાળવવામાં આપના સહકારની વિનંતી કરીએ છીએ.';
+
+  @override
+  String get facCanteenTitle => 'કેન્ટીન અને ડાઇનિંગ';
+
+  @override
+  String get facCanteenDesc =>
+      'ચૂકવણી આધારિત શાકાહારી ભોજન અને નાસ્તો ઉપલબ્ધ છે. મ્યુઝિયમની અંદર એક અલગ ડાઇનિંગ હોલ ચલાવવામાં આવે છે. મોટા જૂથો માટે અગાઉથી નોંધણી શક્ય છે.';
+
+  @override
+  String get facRestroomsTitle => 'શૌચાલય (Restrooms)';
+
+  @override
+  String get facRestroomsDesc =>
+      'સમગ્ર કેમ્પસમાં પાયાની સ્વચ્છતા, શૌચાલય અને હાથ ધોવાની સુવિધાઓ સાથે જાહેર ઉપયોગિતા કેન્દ્રો સ્થાપિત છે.';
+
+  @override
+  String get facWaterTitle => 'મફત પીવાનું પાણી';
+
+  @override
+  String get facWaterDesc =>
+      'વિવિધ સ્થળોએ ઠંડુ અને સામાન્ય પાણી પૂરું પાડતા R.O. સિસ્ટમ લગાવવામાં આવ્યા છે. પ્રવેશતી વખતે પાણી ખરીદવાની જરૂર નથી.';
+
+  @override
+  String get facMedicalTitle => 'પ્રાથમિક તબીબી સહાય';
+
+  @override
+  String get facMedicalDesc =>
+      'કટોકટી માટે મૂળભૂત પ્રાથમિક આરોગ્ય સંભાળની વ્યવસ્થા ઉપલબ્ધ છે. (નોંધ: સાઇટ પર કોઈ સંપૂર્ણ ફાર્મસી નથી).';
+
+  @override
+  String get facWheelchairTitle => 'વ્હીલચેરની સુવિધા';
+
+  @override
+  String get facWheelchairDesc =>
+      'વિકલાંગ અને વૃદ્ધ મુલાકાતીઓ માટે મફત વ્હીલચેર પ્રદાન કરવામાં આવે છે. તે મુલાકાતીના પરિવાર/સંભાળ રાખનાર દ્વારા સંચાલિત હોવી જોઈએ.';
+
+  @override
+  String get facParkingTitle => 'પાર્કિંગની જગ્યા';
+
+  @override
+  String get facParkingDesc =>
+      'પ્રવાસી વાહનો માટે પરિસરમાં ચૂકવણી આધારિત પાર્કિંગની સુવિધા ઉપલબ્ધ છે.';
+
+  @override
+  String get facCookingTitle => 'જૂથ રસોઈ વિસ્તાર';
+
+  @override
+  String get facCookingDesc =>
+      'જે જૂથો પોતાનું ભોજન રાંધવા માંગે છે તેમના માટે ચૂકવણી આધારિત જગ્યા ઉપલબ્ધ છે. તેમાં ડાઇનિંગ હોલ અને પાણી (તમારો સામાન જાતે લાવો) સુધીની પહોંચ સામેલ છે.';
+
+  @override
+  String get profileInstructions => 'સૂચનાઓ';
+
+  @override
+  String get showDetailsTitle => 'શો ની વિગતો';
+
+  @override
+  String get waterShowTitle => 'વોટર લેઝર શો';
+
+  @override
+  String get waterShowDuration => 'લગભગ 30 મિનિટ';
+
+  @override
+  String get waterShowTiming => 'સાંજે 7:30 વાગ્યે શરૂ';
+
+  @override
+  String get waterShowS1Title => 'મહાગાથાનો અનુભવ કરો';
+
+  @override
+  String get waterShowS1P1 =>
+      'વોટર સ્ક્રીન પર અદ્યતન લેસર પ્રોજેક્શન શો દ્વારા જીવંત બનેલી મહારાણા પ્રતાપની પૌરાણિક કથાનો અનુભવ કરો. પન્ના ધાઈના બલિદાન અને દિવેરના યુદ્ધ સહિત મેવાડના ઈતિહાસની વીરતાપૂર્ણ ક્ષણોના સાક્ષી બનો.';
+
+  @override
+  String get waterShowS1P2 =>
+      'મેવાડના ગૌરવશાળી ભૂતકાળમાં ડૂબી જાઓ, જ્યારે મહારાણા પ્રતાપની વાર્તા ઇતિહાસ અને ટેકનોલોજીના અદભૂત મિશ્રણ સાથે હિન્દીમાં તમારી આંખો સમક્ષ ખુલે છે. આ શો ભારતના સૌથી મહાન યોદ્ધાઓમાંના એકની હિંમત અને વીરતાને દર્શાવવા માટે અત્યાધુનિક દ્રશ્યો અને ધ્વનિનો ઉપયોગ કરે છે. મહાન રાજાને આપવામાં આવેલી આ શાનદાર શ્રદ્ધાંજલિને ચૂકશો નહીં!';
+
+  @override
+  String get waterShowS2Title => 'મહારાણા પ્રતાપની વાર્તાને ફરીથી જીવો';
+
+  @override
+  String get waterShowS2P1 =>
+      'પ્રતાપ ગૌરવ કેન્દ્ર ઉદયપુર \'વોટર લેઝર શો\' રજૂ કરે છે, એક અનોખો અનુભવ જ્યાં રોશની, પાણી અને અવાજ દ્વારા ઇતિહાસ પ્રદર્શિત કરવામાં આવે છે. આ કાર્યક્રમ હિન્દીમાં મહારાણા પ્રતાપની વાર્તા પર પ્રકાશ પાડે છે, જે મુલાકાતીઓને મહાન યોદ્ધાના જીવન, બહાદુરી અને વારસા સાથે જોડાવા દે છે. અદ્યતન લેસર પ્રોજેક્શન, પરંપરાગત સંગીત અને શક્તિશાળી કથા સાથે, આ શો સાંસ્કૃતિક શિક્ષણ સાથે મનોરંજનને જોડે છે, જે તેને ઉદયપુરના સૌથી આકર્ષક સાંજ પર્વમાંથી એક બનાવે છે.';
+
+  @override
+  String get waterShowS3Title => 'એક એવો શો જે પ્રવાસીઓએ ચૂકવો ન જોઈએ';
+
+  @override
+  String get waterShowS3P1 =>
+      'વોટર લેઝર શો પ્રેક્ષકોને મેવાડના ઇતિહાસની સફર પર લઈ જવા માટે ડિઝાઇન કરવામાં આવ્યો છે. દરેક દ્રશ્ય હિન્દીમાં મહારાણા પ્રતાપની વાર્તાના મહત્વપૂર્ણ એપિસોડ દર્શાવે છે, જેમાં સ્વતંત્રતા માટેના તેમના સંઘર્ષ અને મેવાડના લોકો પ્રત્યેના તેમના સમર્પણનો સમાવેશ થાય છે.';
+
+  @override
+  String get waterShowHighlightsTitle => 'શોના મુખ્ય આકર્ષણો';
+
+  @override
+  String get waterShowHighlight1 =>
+      'ગતિશીલ દ્રશ્યો બનાવતા લેસર લાઇટ અને વોટર પ્રોજેક્શન';
+
+  @override
+  String get waterShowHighlight2 =>
+      'સાંસ્કૃતિક જોડાણ માટે હિન્દીમાં સ્પષ્ટ વર્ણન';
+
+  @override
+  String get waterShowHighlight3 => 'રાજસ્થાનના વારસાથી પ્રેરિત સંગીત';
+
+  @override
+  String get waterShowHighlight4 =>
+      'તમામ ઉંમરના મુલાકાતીઓ માટે એક સાર્થક અનુભવ';
+
+  @override
+  String get waterShowS4Title => 'મહારાણા પ્રતાપના વારસાને ફરીથી જીવંત કરવો';
+
+  @override
+  String get waterShowS4Sub1 => 'યોદ્ધાની યાત્રા';
+
+  @override
+  String get waterShowS4P1 =>
+      'આ શો મુઘલ સંઘર્ષો દરમિયાન મહારાણા પ્રતાપની હિંમત અને મેવાડની સ્વતંત્રતાના રક્ષણ માટેના તેમના દ્રઢ નિશ્ચયને પ્રતિબિંબિત કરે છે. પ્રેક્ષકોને જકડી રાખવા માટે હલ્દીઘાટીના યુદ્ધ જેવા એપિસોડને પ્રકાશ અને અવાજ સાથે ફરીથી બનાવવામાં આવ્યા છે.';
+
+  @override
+  String get waterShowS4Sub2 => 'શિક્ષણ અને મનોરંજનનું મિશ્રણ';
+
+  @override
+  String get waterShowS4P2 =>
+      'આ પ્રદર્શન માત્ર મનોરંજન જ નથી કરતું પણ શિક્ષિત પણ કરે છે. હિન્દીમાં મહારાણા પ્રતાપની વાર્તા રજૂ કરીને, વોટર લેઝર શો ઇતિહાસને દરેક માટે સુલભ અને સમજવામાં સરળ બનાવે છે.';
+
+  @override
+  String get waterShowS5Title => 'પ્રતાપ ગૌરવ કેન્દ્ર શા માટે પસંદ કરવું?';
+
+  @override
+  String get waterShowS5Point1 =>
+      'મહારાણા પ્રતાપના જીવન અને મેવાડના ઇતિહાસને સમર્પિત';
+
+  @override
+  String get waterShowS5Point2 =>
+      'પરંપરાગત વાર્તાઓ રજૂ કરવા માટે આધુનિક તકનીકનો ઉપયોગ';
+
+  @override
+  String get waterShowS5Point3 => 'ઉદયપુરમાં પ્રવાસીઓ માટે અનુકૂળ સ્થાન';
+
+  @override
+  String get waterShowS5Point4 => 'સાઇટસીઇંગ પછી સાંજની આદર્શ પ્રવૃત્તિ';
+
+  @override
+  String get waterShowS5Point5 =>
+      'વિદ્યાર્થીઓ, પરિવારો અને ઇતિહાસ પ્રેમીઓ માટે યોગ્ય';
+
+  @override
+  String get waterShowS6Title => 'તમારી મુલાકાતનું આયોજન કરો';
+
+  @override
+  String get waterShowS6P1 =>
+      'પ્રતાપ ગૌરવ કેન્દ્ર ખાતેનો વોટર લેઝર શો રાજસ્થાનના સાંસ્કૃતિક અને ઐતિહાસિક વારસાને જાણવાની એક પ્રેરણાદાયક રીત છે. આધુનિક દ્રશ્યોને હિન્દીમાં મહારાણા પ્રતાપની વાર્તા સાથે જોડીને, આ શો પ્રેક્ષકોને ભારતના સૌથી મહાન યોદ્ધાઓમાંના એકના વારસા સાથે જોડે છે.\n\nઆજે જ તમારી મુલાકાત બુક કરો અને ઉદયપુરમાં લાઇટ, સંગીત અને પાણી દ્વારા મહારાણા પ્રતાપની વાર્તાનો અનુભવ કરો.';
+
+  @override
+  String get faqWaterQ1 => 'વોટર લેઝર શો કઈ વાર્તા રજૂ કરે છે?';
+
+  @override
+  String get faqWaterA1 =>
+      'તે હિન્દીમાં મહારાણા પ્રતાપની વાર્તા રજૂ કરે છે, જે તેમની બહાદુરી અને વારસાને ઉજાગર કરે છે.';
+
+  @override
+  String get faqWaterQ2 => 'શું આ શો બાળકો માટે યોગ્ય છે?';
+
+  @override
+  String get faqWaterA2 =>
+      'હા, દ્રશ્યો અને વર્ણન બાળકો માટે સરળ અને આકર્ષક છે.';
+
+  @override
+  String get faqWaterQ3 => 'શો કેટલો સમય ચાલે છે?';
+
+  @override
+  String get faqWaterA3 => 'આ શો લગભગ 30-40 મિનિટ ચાલે છે.';
+
+  @override
+  String get faqWaterQ4 => 'શું બિન-હિન્દી ભાષી લોકો આ શોનો આનંદ માણી શકે છે?';
+
+  @override
+  String get faqWaterA4 =>
+      'હા, દ્રશ્યો, સંગીત અને અસરો એ સુનિશ્ચિત કરે છે કે હિન્દી જ્ઞાન વિના પણ વાર્તા સમજી શકાય.';
+
+  @override
+  String get faqWaterQ5 => 'વોટર લેઝર શો ક્યાં યોજવામાં આવે છે?';
+
+  @override
+  String get faqWaterA5 =>
+      'આ શો ઉદયપુરના પ્રતાપ ગૌરવ કેન્દ્રમાં યોજવામાં આવે છે.';
+
+  @override
+  String get bookTicketBtn => 'ટિકિટ બુક કરો';
+
+  @override
+  String get templeDetailVinayakTitle => 'શ્રી રિદ્ધિ સિદ્ધિ વિનાયક મંદિર';
+
+  @override
+  String get templeDetailVinayakDesc =>
+      'ભક્તિધામમાં પહેલું પૂજનીય મંદિર ભગવાન ગણેશને સમર્પિત છે અને તેને શ્રી રિદ્ધિ સિદ્ધિ વિનાયક મંદિર તરીકે ઓળખવામાં આવે છે. બુદ્ધિના દાતા, આ મંદિરમાં ભગવાન ગણેશની મનમોહક મૂર્તિ છે, જેની સાથે રિદ્ધિ-સિદ્ધિ અને તેમનું વાહન મૂષક પણ છે. ભગવાન ગણેશની વિશેષ પૂજા અને અર્ચના કરવા ઈચ્છતા મુલાકાતીઓ અગાઉથી નોંધણી કરાવી શકે છે.';
+
+  @override
+  String get templeDetailShreenathTitle => 'શ્રીનાથજી મંદિર';
+
+  @override
+  String get templeDetailShreenathDesc =>
+      'ઉદયપુરથી લગભગ 41 કિલોમીટર દૂર સિંહાડ ગામમાં આવેલું, જેને હવે શ્રીનાથદ્વારા તરીકે ઓળખવામાં આવે છે, શ્રી શ્રીનાથજી વલ્લભ સંપ્રદાય (પુષ્ટિમાર્ગ અથવા શુદ્ધાદ્વૈત દર્શન) ની મુખ્ય પીઠ છે, જે ભગવાન કૃષ્ણના બાળ સ્વરૂપ, લાડલા લાલ શ્રી કૃષ્ણને સમર્પિત છે. મંદિરમાં શ્રી શ્રીનાથજીની છબી છે, અને દેવતાની પ્રતિકૃતિ ભક્તિધામમાં પ્રતિષ્ઠિત છે. આ મંદિરના સંરક્ષકો પુષ્ટિમાર્ગના અનુયાયીઓ છે અને પુષ્ટિમાર્ગ પરંપરાઓ અનુસાર શ્રી ઠાકુરજીની પૂજા માટે સમર્પિત છે. મુલાકાતીઓ શ્રી શ્રીનાથજીના દર્શન માટે અગાઉથી નોંધણી કરાવીને તેમની મનોકામનાઓ પૂર્ણ કરી શકે છે. પુષ્ટિમાર્ગ સાહિત્ય અનુસાર, ઔરંગઝેબના આદેશોને કારણે શ્રી શ્રીનાથજી અને ગિરિરાજજી બંનેની મૂર્તિઓ અને મંદિરોનો વિનાશ થયો. બાદમાં, મથુરાથી મહંત શ્રી ગુસાઈંજી દામોદરલાલજી દ્વારા દિવ્ય મૂર્તિઓને મેવાડ લાવવામાં આવી. ઔરંગઝેબના ડરને કારણે, કોઈ પણ રાજ્યે મૂર્તિઓને સુરક્ષા પૂરી પાડી ન હતી. અંતે, મેવાડના મહારાણા રાજ સિંહે તેમને મેવાડ આમંત્રિત કર્યા. સંવત 1728 માં, કાર્તિક મહિનામાં, શ્રી શ્રીનાથજી સિંહાડ પહોંચ્યા. મંદિરનું નિર્માણ કરવામાં આવ્યું, અને ફાગણ મહિનામાં કૃષ્ણ પક્ષના સાતમા શનિવારે તેમનો પાટોત્સવ (ઔપચારિક પૂજા) ઉજવવામાં આવ્યો.';
+
+  @override
+  String get templeDetailDwarkadhishTitle => 'શ્રી દ્વારકાધીશ જી મંદિર';
+
+  @override
+  String get templeDetailDwarkadhishDesc =>
+      'શ્રી દ્વારકાધીશજીની ત્રીજી પીઠ, જે વલ્લભ સંપ્રદાય (પુષ્ટિમાર્ગ અથવા શુદ્ધાદ્વૈત દર્શન) સાથે જોડાયેલી છે, તે રાજસમંદ જિલ્લામાં ઉદયપુરથી 68 કિલોમીટર દૂર આસોટિયા ગામમાં તળાવ (પાલા) ના કાંઠે મહેલમાં આવેલી છે. હાલમાં, આસોટિયા કાંકરોલી તરીકે ઓળખાય છે, અને રાજસમંદ જિલ્લાનું મુખ્ય મથક છે. દ્વારકાધીશ દેવતા તરીકે સ્થાપિત, શ્રી વલ્લભાચાર્યના ઉપદેશો સાથે જોડાયેલા આ સ્થળે શ્રી વલ્લભાચાર્યના ત્રીજા પુત્ર, બાલકૃષ્ણલાલજી એક સેવક તરીકે ઉપસ્થિત છે. શ્રીમદ્ ભાગવત મહાપુરાણ અનુસાર, તેઓ અગાઉ રાજા અંબરીષના સેવક તરીકે પ્રગટ થયા હતા. તેમને મેવાડમાં શ્રી નાથજીના આગમનના એક વર્ષ પહેલા અહીં સ્થાપિત કરવામાં આવ્યા હતા. આ સ્થળે, કોઈપણ અગાઉથી નોંધણી દ્વારા તેમની ઈચ્છાઓ નોંધી શકે છે અને મનોરથ કરી શકે છે.';
+
+  @override
+  String get templeDetailCharbhujaTitle => 'શ્રી ચારભુજા જી મંદિર';
+
+  @override
+  String get templeDetailCharbhujaDesc =>
+      'ભગવાન ચારભુજાનાથના મંદિરો મેવાડના દરેક ગામમાં સ્થાપિત છે, જે સ્પષ્ટ કરે છે કે મેવાડમાં વૈષ્ણવ પરંપરા લગભગ 1000 વર્ષોથી સ્માર્ત પરંપરાથી પ્રભાવિત રહી છે અને હજુ પણ સ્થાનિક રીતરિવાજોમાં પ્રચલિત છે. ચારભુજાનાથ દેવતા ઉદયપુરથી લગભગ 90 કિલોમીટર દૂર ગઢબોરના કિલ્લામાં સેવંત્રી ગામ પાસે બિરાજમાન છે. સમય અનુસાર સ્માર્ત અને અન્ય પરંપરાઓના સંયોજનથી અહીં પૂજા પ્રથાઓ વિકસિત થઈ છે, પરંતુ હજુ પણ સ્માર્ત પરંપરાનો મજબૂત પ્રભાવ જોવા મળે છે. અહીંનો મુખ્ય તહેવાર દેવઝૂલની એકાદશી છે, જ્યાં દેવતાને વિસર્જન માટે નજીકના ગંગા સ્થળ (જળ જળાશય) માં લઈ જવામાં આવે છે. આ દિવસે ગઢબોરમાં 100,000 થી વધુ ભક્તો ઉમટી પડે છે. મેવાડના લોકોના ઇષ્ટદેવ ચારભુજાનાથ ભક્તિ ધામના પ્રભુ ગૌરવ કેન્દ્રમાં સ્થાપિત છે. મુખ્ય ધાર્મિક વિધિમાં ઉત્સવ દેવતાને નજીકના જળ જળાશયમાં સ્નાન માટે લઈ જવાનો સમાવેશ થાય છે. વ્યક્તિગત ઈચ્છાઓ માટેની નોંધણી પણ આ સ્થળે કરી શકાય છે.';
+
+  @override
+  String get templeDetailEklingTitle => 'શ્રી એકલિંગ નાથ જી મંદિર';
+
+  @override
+  String get templeDetailEklingDesc =>
+      'શ્રી એકલિંગજી મેવાડ વિસ્તારના પ્રમુખ દેવતા છે અને ભારતમાં લકુલીશ પરંપરાની મુખ્ય પીઠ છે. તે ઉદયપુરથી 22 કિલોમીટર દૂર કૈલાશપુરી ગામમાં આવેલું છે. તેને મેવાડના ઇષ્ટદેવ તરીકે સ્વીકારવામાં આવે છે અને મહારાજાધિરાજ દ્વારા પ્રતિષ્ઠિત કરવામાં આવે છે. બપ્પા રાવલના અભિલેખો અનુસાર, મંદિરનું નિર્માણ તેમના દ્વારા વર્ષ 724 એડીમાં કરવામાં આવ્યું હતું. તે સમયે એક બાણ લિંગ (તીર આકારની ટોચવાળું શિવલિંગ) સ્થાપિત કરવામાં આવ્યું હતું. 15મી સદીમાં, મહારાણા રાયમલે મંદિરનો જીર્ણોદ્ધાર કર્યો અને લકુલીશ સંપ્રદાયની પરંપરાઓ અનુસાર એક પંચમુખી શિવલિંગ સ્થાપિત કર્યું. પંચમુખી શિવલિંગ શિવના પાંચ ચહેરાઓનું પ્રતિનિધિત્વ કરે છે, જેમાં પૂર્વ તરફ સદ્યોજાત (પૃથ્વી), પશ્ચિમ તરફ વામદેવ (જળ), દક્ષિણ તરફ અઘોર (અગ્નિ), ઉત્તર તરફ તત્પુરુષ (વાયુ), અને ઉપર તરફ ઈશાન (આકાશ) છે. મંદિર પરિસરમાં, લકુલીશની સાથે વિંધ્યવાસિનીને સમર્પિત એક વૈષ્ણવ મંદિર પણ છે. ભક્તિ ધામમાં પ્રતાપ ગૌરવ કેન્દ્રમાં પંચમુખી એકલિંગ નાથની મૂર્તિ પણ છે. મહાશિવરાત્રીના અવસરે રુદ્રાભિષેકનું આયોજન કરવામાં આવે છે.';
+
+  @override
+  String get templeDetailSawariyaTitle => 'શ્રી સાંવલિયા જી મંદિર';
+
+  @override
+  String get templeDetailSawariyaDesc =>
+      'શ્રી સાંવલિયાજી, એક પ્રાચીન સ્વરૂપ, રામાનંદી વૈરાગી વૈષ્ણવો દ્વારા લગભગ 450 વર્ષોથી પૂજાય છે. આ મંદિર ઉદયપુરથી લગભગ 79 કિલોમીટર દૂર મંડફિયા ગામમાં આવેલું છે. સાંવલિયાજીના આવા જ સ્વરૂપોની પૂજા મેવાડના અન્ય સ્થળોએ પણ કરવામાં આવે છે, જેમ કે જગત-બંબોર પાસે લખાડ શ્યામ મંદિર અને ઉથરાડ પાસે કોટડી ચારભુજાનાથ. ચતુર્ભુજ વિષ્ણુના રૂપમાં કૃષ્ણની મૂર્તિ અહીં સ્થાપિત છે. સાંવલિયાજીને ચતુર્ભુજ વિષ્ણુ સાથે કૃષ્ણનું રૂપ માનવામાં આવે છે. ભક્તો નોંધણી કરાવી શકે છે અને ભક્તિ ધામમાં મહાશિવરાત્રીના અવસરે પૂજા અને રુદ્રાભિષેક કરી શકે છે.';
+
+  @override
+  String get templeDetailChamundaTitle => 'શ્રી ચામુંડા માતા મંદિર';
+
+  @override
+  String get templeDetailChamundaDesc =>
+      'મેવાડમાં મહિષાસુરમર્દિનીની પૂજા પ્રાચીન કાળથી જ એક પરંપરા રહી છે. જ્યારે બાણ માતાને મેવાડની કુળદેવી માનવામાં આવે છે, ત્યારે ચામુંડા માતા મોટાભાગના મહારાજાઓની ઇષ્ટદેવી છે. મહારાણા પ્રતાપે યુદ્ધ પછી ચાવંડમાં ચામુંડા માતા મંદિરની સ્થાપના કરી હતી. ચાવંડ ઉદયપુરથી લગભગ 64 કિલોમીટર દૂર છે. મેવાડમાં વિવિધ સ્થળોએ ઘણા ચામુંડા માતા મંદિરો હાજર છે. પ્રતાપ ગૌરવ કેન્દ્રમાં ચામુંડા માતા મંદિર માત્ર બંને નવરાત્રી દરમિયાન જ નહીં પરંતુ ગુપ્ત નવરાત્રી દરમિયાન પણ વિશેષ પૂજા અને અનુષ્ઠાન આયોજિત કરે છે. ભક્તો દુર્ગા પૂજા માટે નોંધણી કરાવી શકે છે અને તેને વૈષ્ણવ પરંપરાઓ અનુસાર કરી શકે છે.';
+
+  @override
+  String get templeDetailKesariyaTitle => 'શ્રી કેસરિયા જી મંદિર';
+
+  @override
+  String get templeDetailKesariyaDesc =>
+      'મેવાડમાં ઘણા જૈન તીર્થ છે, અને તેમાંથી એક પ્રમુખ ધુલેવમાં ભગવાન આદિનાથ (ઋષભદેવ) નું મંદિર છે. કેસરિયાજી અથવા ધુલેવ ગામ ઉદયપુરથી લગભગ 65 કિલોમીટર દૂર છે. અહીં જૈન, વૈષ્ણવ અને શૈવ પરંપરાઓના અનુયાયીઓ દ્વારા ભગવાન ઋષભદેવની પૂજા કરવામાં આવે છે. ભીલ સમુદાય પણ તેમને શૈવ પરંપરામાં પશુપતિ માને છે. જૈન મંદિર ચૈત્ર કૃષ્ણ સપ્તમી પર એક ભવ્ય ઉત્સવ ઉજવે છે, જે ભગવાન ઋષભદેવની જયંતિ છે. આ મંદિર એક અનોખું સ્થાન છે જ્યાં દેવતાની વૈદિક અને બિન-વૈદિક બંને પૂજા થાય છે. તે ધાર્મિક સદભાવનું પ્રતીક છે જ્યાં ભગવાન ઋષભદેવની પૂજા કેસરના લેપથી કરવામાં આવે છે, જે જૈન પરંપરાનું પ્રતીક છે.';
+
+  @override
+  String get templeDetailRamDarbarTitle => 'શ્રી રામ દરબાર મંદિર';
+
+  @override
+  String get templeDetailRamDarbarDesc =>
+      'પ્રતાપ ગૌરવ કેન્દ્રના ભક્તિ ધામમાં રામ દરબાર છે, જ્યાં ભગવાન શ્રી રામચંદ્રજી, માતા જાનકી, શ્રી લક્ષ્મણજી અને શ્રી હનુમાનજીની મૂર્તિઓ સ્થાપિત છે.';
+
+  @override
+  String get bharatDarshanTitle => 'ભારત દર્શન લાઇટ એન્ડ સાઉન્ડ શો';
+
+  @override
+  String get bharatDarshanDesc1 =>
+      'પ્રતાપ ગૌરવ કેન્દ્ર, ઉદયપુરમાં સ્થિત મહારાણા પ્રતાપ સ્મારક ખાતે 18-મિનિટનો લાઇટ એન્ડ સાઉન્ડ શો ભારતની સમૃદ્ધ સાંસ્કૃતિક વારસાને સુંદર રીતે પ્રદર્શિત કરે છે. તે નદીઓ, પર્વતો અને પ્રખ્યાત તીર્થસ્થાનો સહિત દેશના ભૌગોલિક સીમાચિહ્નોને પ્રકાશિત કરે છે. આ શો કાશ્મીરથી કન્યાકુમારી અને અટકથી કટક સુધીના ભારતીય નાયકો, નાયિકાઓ અને સંતોની મહાનતાનું સન્માન પણ કરે છે.';
+
+  @override
+  String get bharatDarshanDesc2 =>
+      'પ્રતાપ ગૌરવ કેન્દ્ર, ઉદયપુરની અંદર ઐતિહાસિક મહારાણા પ્રતાપ સ્મારક ખાતે સ્થિત, આ શો બહાદુર યોદ્ધાઓના વારસા અને ભારતની સાંસ્કૃતિક એકતાની ભાવના શેર કરીને મુલાકાતીઓને પ્રેરણા આપે છે. દેશના ગૌરવશાળી ભૂતકાળ સાથે જોડાવા માંગતા લોકો માટે આ એક અવશ્ય જોવા જેવો અનુભવ છે.';
+
+  @override
+  String get bharatDarshanDesc3 =>
+      'પ્રતાપ ગૌરવ કેન્દ્ર ઉદયપુર ખાતેનો ભારત દર્શન લાઇટ એન્ડ સાઉન્ડ શો 18 મિનિટનો એક શાનદાર તમાશો છે જે વિવિધતામાં ભારતની એકતાની ઉજવણી કરે છે. જીવંત રોશની, ઇમર્સિવ સાઉન્ડ ઇફેક્ટ્સ અને આકર્ષક કથા દ્વારા, તે રાષ્ટ્રની ભૌગોલિક અજાયબીઓ, આધ્યાત્મિક સીમાચિહ્નો અને વીર વારસાને પ્રદર્શિત કરે છે. કાશ્મીરના બર્ફીલા શિખરોથી લઈને કન્યાકુમારીના દક્ષિણ છેડા સુધી, આ શો રાષ્ટ્રને આકાર આપનાર યોદ્ધાઓ, સંતો અને સ્વપ્નદ્રષ્ટાઓનું સન્માન કરીને, મુલાકાતીઓને ભારતની લંબાઈ અને પહોળાઈમાં એક મંત્રમુગ્ધ પ્રવાસ પર લઈ જાય છે.';
+
+  @override
+  String get visualJourneyTitle => 'સમગ્ર ભારતની વિઝ્યુઅલ અને ભાવનાત્મક સફર';
+
+  @override
+  String get visualJourneyDesc1 =>
+      'ભારત દર્શન લાઇટ એન્ડ સાઉન્ડ શો માત્ર એક પ્રસ્તુતિ કરતાં વધુ છે - તે ભારતની કાલાતીત વિરાસતને હૃદયપૂર્વકની શ્રદ્ધાંજલિ છે. અંધારાવાળા હોલમાં આયોજિત, આ અનુભવ ભારતના ઇતિહાસ અને ભૂગોળને આબેહૂબ રીતે જીવંત કરવા માટે પ્રકાશિત 3D મોડલ, સિંક્રનાઇઝ્ડ લાઇટિંગ અને શક્તિશાળી ઑડિયો સ્ક્રિપ્ટને જોડે છે.';
+
+  @override
+  String get visualJourneyDesc2 =>
+      'મહારાણા પ્રતાપના ઇતિહાસ દ્વારા મેવાડની બહાદુરી અને વારસા વિશે જાણો.';
+
+  @override
+  String get significanceTitle => 'પ્રતાપ ગૌરવ કેન્દ્ર ઉદયપુરનું મહત્વ';
+
+  @override
+  String get significanceDesc =>
+      'ઉદયપુરના મધ્યમાં સ્થિત, પ્રતાપ ગૌરવ કેન્દ્ર મહાન રાજપૂત રાજા મહારાણા પ્રતાપને સમર્પિત સાંસ્કૃતિક સીમાચિહ્ન છે. હલ્દીઘાટીના યુદ્ધ દરમિયાન તેમની બહાદુરી અને અદમ્ય ભાવના માટે જાણીતા, મહારાણા પ્રતાપ હિંમત અને દેશભક્તિના સ્થાયી પ્રતીક તરીકે રહ્યા છે.';
+
+  @override
+  String get pgkAimsTitle => 'પ્રતાપ ગૌરવ કેન્દ્રનો ઉદ્દેશ્ય છે:';
+
+  @override
+  String get pgkAim1 =>
+      'મુલાકાતીઓને મહારાણા પ્રતાપના જીવન અને વારસા વિશે શિક્ષિત કરવા.';
+
+  @override
+  String get pgkAim2 => 'ભારતીય સાંસ્કૃતિક મૂલ્યોનું જતન અને પ્રચાર કરવો.';
+
+  @override
+  String get pgkAim3 =>
+      'ઇન્ટરેક્ટિવ પ્રદર્શનો અને ભારત દર્શન લાઇટ એન્ડ સાઉન્ડ શો જેવા શો દ્વારા ઐતિહાસિક જાગૃતિને પ્રોત્સાહન આપવું.';
+
+  @override
+  String get whyStandOutTitle => 'ભારત દર્શન શો શા માટે અલગ છે';
+
+  @override
+  String get standOut1Title => 'ઇમર્સિવ સ્ટોરીટેલિંગ (આકર્ષક વાર્તા)';
+
+  @override
+  String get standOut1Desc =>
+      'ઉચ્ચ ગુણવત્તાવાળા વિઝ્યુઅલ્સ અને વાસ્તવિક ધ્વનિ અસરો તમને એવું અનુભવ કરાવે છે કે જાણે તમે માત્ર 18 મિનિટમાં સમગ્ર ભારતની મુસાફરી કરી રહ્યા છો.';
+
+  @override
+  String get standOut2Title => 'શૈક્ષણિક મૂલ્ય';
+
+  @override
+  String get standOut2Desc =>
+      'ભારતીય ઇતિહાસ, ભૂગોળ અને સાંસ્કૃતિક વિવિધતા વિશે શીખવાની એક આકર્ષક રીત - શાળા અને કોલેજના વિદ્યાર્થીઓ માટે યોગ્ય છે.';
+
+  @override
+  String get standOut3Title => 'ભાવનાત્મક જોડાણ';
+
+  @override
+  String get standOut3Desc =>
+      'દેશભક્ત મુલાકાતીઓ માટે, તે રાષ્ટ્રનું નિર્માણ કરનાર બલિદાન અને યોગદાનની હૃદયસ્પર્શી યાદ અપાવે છે.';
+
+  @override
+  String get planVisitTitle => 'આજે જ તમારી મુલાકાતનું આયોજન કરો';
+
+  @override
+  String get planVisitDesc1 =>
+      'પ્રતાપ ગૌરવ કેન્દ્ર ઉદયપુર ખાતેનો ભારત દર્શન લાઇટ એન્ડ સાઉન્ડ શો એક આકર્ષણ કરતાં પણ ઘણું વધુ છે - તે ભારતના હૃદયમાંથી એક પ્રેરણાદાયક યાત્રા છે. પછી ભલે તમે વિદ્યાર્થી, પ્રવાસી અથવા ઇતિહાસના ઉત્સાહી હોવ, આ ઇમર્સિવ અનુભવ એક જ બેઠકમાં રાષ્ટ્રની સુંદરતા, બહાદુરી અને એકતાને જોવાની દુર્લભ તક આપે છે.';
+
+  @override
+  String get planVisitDesc2 =>
+      'આજે જ તમારી મુલાકાતનું આયોજન કરો અને તે શોનો ભાગ બનો જે ભારતના ભવ્ય ભૂતકાળ અને જીવંત વર્તમાનની ઉજવણી કરે છે.';
+
+  @override
+  String get faqBharatQ1 =>
+      'ભારત દર્શન લાઇટ એન્ડ સાઉન્ડ શો ક્યાં યોજવામાં આવે છે?';
+
+  @override
+  String get faqBharatA1 =>
+      'તે પ્રતાપ ગૌરવ કેન્દ્ર, ઉદયપુરમાં યોજવામાં આવે છે.';
+
+  @override
+  String get faqBharatQ2 => 'આ શો કેટલો લાંબો છે?';
+
+  @override
+  String get faqBharatA2 => 'આ શો લગભગ 18 મિનિટ ચાલે છે.';
+
+  @override
+  String get faqBharatQ3 => 'શું તે બાળકો માટે યોગ્ય છે?';
+
+  @override
+  String get faqBharatA3 =>
+      'હા, તે કુટુંબ માટે અનુકૂળ છે અને તમામ વય જૂથો માટે શૈક્ષણિક છે.';
 }

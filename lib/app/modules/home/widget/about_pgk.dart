@@ -1,5 +1,3 @@
-
-
 import '../../../common/constant/app_imports.dart';
 import '../controllers/home_controller.dart';
 
@@ -9,11 +7,10 @@ class AboutPgkView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     Get.put(HomeController());
-    // ─── INIT L10N ───
     final l10n = AppLocalizations.of(context)!;
 
     return Scaffold(
-      backgroundColor: const Color(0xFFF8F5EC), // Off-white/cream background
+      backgroundColor: const Color(0xFFF8F5EC),
       appBar: AppBar(
         title: Text(
           l10n.aboutPgkTitle, // LOCALIZED

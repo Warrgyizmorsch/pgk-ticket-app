@@ -1,7 +1,6 @@
 class FontFamily {
   FontFamily._();
 
-  // Poppins Font Family
   static const String thin = 'Poppins-Thin';
   static const String extraLight = 'Poppins-ExtraLight';
   static const String light = 'Poppins-Light';

@@ -1,12 +1,9 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 import '../../constant/app_colors.dart';
 import '../../constant/font_family.dart';
-
 
 class TextFormFieldCustom extends StatelessWidget {
   final Widget method;
@@ -61,15 +58,16 @@ class TextFormFieldCustom extends StatelessWidget {
                     fontFamily: hintTextStyle ?? FontFamily.regular,
                   ),
                 ).paddingOnly(left: 5, bottom: 5),
-                isRequired==true?
-                Text(
-                  "*",
-                  style: TextStyle(
-                    fontSize: hintTextSize ?? 12,
-                    color:  AppColors.error,
-                    fontFamily: FontFamily.regular,
-                  ),
-                ).paddingOnly(left: 5, ):SizedBox.shrink(),
+                isRequired == true
+                    ? Text(
+                        "*",
+                        style: TextStyle(
+                          fontSize: hintTextSize ?? 12,
+                          color: AppColors.error,
+                          fontFamily: FontFamily.regular,
+                        ),
+                      ).paddingOnly(left: 5)
+                    : SizedBox.shrink(),
               ],
             ),
           Container(
@@ -89,11 +87,13 @@ class TextFormFieldCustom extends StatelessWidget {
     );
   }
 }
+
 class UsNumberTextInputFormatter extends TextInputFormatter {
   @override
   TextEditingValue formatEditUpdate(
-      TextEditingValue oldValue, TextEditingValue newValue) {
-
+    TextEditingValue oldValue,
+    TextEditingValue newValue,
+  ) {
     String digits = newValue.text.replaceAll(RegExp(r'\D'), '');
     String formatted = "";
 
@@ -103,10 +103,10 @@ class UsNumberTextInputFormatter extends TextInputFormatter {
       formatted = "(${digits.substring(0, 3)}) ${digits.substring(3)}";
     } else if (digits.length <= 10) {
       formatted =
-      "(${digits.substring(0, 3)}) ${digits.substring(3, 6)}-${digits.substring(6)}";
+          "(${digits.substring(0, 3)}) ${digits.substring(3, 6)}-${digits.substring(6)}";
     } else {
       formatted =
-      "(${digits.substring(0, 3)}) ${digits.substring(3, 6)}-${digits.substring(6, 10)}";
+          "(${digits.substring(0, 3)}) ${digits.substring(3, 6)}-${digits.substring(6, 10)}";
     }
 
     return TextEditingValue(

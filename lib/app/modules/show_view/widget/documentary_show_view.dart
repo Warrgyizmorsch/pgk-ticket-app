@@ -1,7 +1,6 @@
 import '../../../common/constant/app_imports.dart';
 import '../controllers/show_view_controller.dart';
 
-
 class DocumentationShowView extends GetView<ShowViewController> {
   const DocumentationShowView({super.key});
 
@@ -163,7 +162,7 @@ class DocumentationShowView extends GetView<ShowViewController> {
           ClipRRect(
             borderRadius: BorderRadius.circular(12),
             child: Image.asset(
-              ImageConstant.lightSound,
+              ImageConstant.documentation,
               width: double.infinity,
               height: double.infinity,
               fit: BoxFit.cover,
@@ -175,33 +174,33 @@ class DocumentationShowView extends GetView<ShowViewController> {
               },
             ),
           ),
-          Container(
-            decoration: BoxDecoration(
-              color: Colors.black.withValues(alpha: 0.2),
-              borderRadius: BorderRadius.circular(12),
-            ),
-          ),
-          GestureDetector(
-            onTap: () {
-              // controller.playVideo();
-            },
-            child: Container(
-              width: 56,
-              height: 56,
-              decoration: BoxDecoration(
-                color: Colors.white.withValues(alpha: 0.3),
-                shape: BoxShape.circle,
-                border: Border.all(color: Colors.white, width: 2),
-              ),
-              child: const Center(
-                child: Icon(
-                  Icons.play_arrow_rounded,
-                  color: Colors.white,
-                  size: 36,
-                ),
-              ),
-            ),
-          ),
+          // Container(
+          //   decoration: BoxDecoration(
+          //     color: Colors.black.withValues(alpha: 0.2),
+          //     borderRadius: BorderRadius.circular(12),
+          //   ),
+          // ),
+          // GestureDetector(
+          //   onTap: () {
+          //     // controller.playVideo();
+          //   },
+          //   child: Container(
+          //     width: 56,
+          //     height: 56,
+          //     decoration: BoxDecoration(
+          //       color: Colors.white.withValues(alpha: 0.3),
+          //       shape: BoxShape.circle,
+          //       border: Border.all(color: Colors.white, width: 2),
+          //     ),
+          //     child: const Center(
+          //       child: Icon(
+          //         Icons.play_arrow_rounded,
+          //         color: Colors.white,
+          //         size: 36,
+          //       ),
+          //     ),
+          //   ),
+          // ),
         ],
       ),
     );

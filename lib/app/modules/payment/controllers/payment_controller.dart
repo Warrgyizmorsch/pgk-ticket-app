@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:share_plus/share_plus.dart'; // <-- ADDED THIS IMPORT
 
 import '../widget/payment_succes_view.dart';
 
@@ -179,6 +180,46 @@ class PaymentController extends GetxController {
 
   void printReceipt() {
     Get.snackbar('Print Status', 'Connecting to available print services...', snackPosition: SnackPosition.BOTTOM);
+  }
+
+  // ─── ADDED: Share Receipt Logic ───
+  Future<void> shareReceipt() async {
+    try {
+      // Build a clean, formatted text string of the receipt details
+      final StringBuffer receiptText = StringBuffer();
+
+      receiptText.writeln('🎟️ Payment Receipt 🎟️');
+      receiptText.writeln('Maharana Pratap Gorurav Kendra');
+      receiptText.writeln('-----------------------------------');
+      receiptText.writeln('Order ID: ${orderId.value}');
+      receiptText.writeln('Date: ${bookingDate.value}');
+      receiptText.writeln('Name: ${customerName.value}');
+      if (customerPhone.value != 'N/A') {
+        receiptText.writeln('Phone: ${customerPhone.value}');
+      }
+      receiptText.writeln('-----------------------------------');
+
+      // Add Ticket Details
+      for (var item in tickets) {
+        receiptText.writeln('${item['qty']}x ${item['name']} - ₹${item['total'].toStringAsFixed(2)}');
+      }
+
+      receiptText.writeln('-----------------------------------');
+      receiptText.writeln('Grand Total: ₹${grandTotal.toStringAsFixed(2)}');
+      receiptText.writeln('-----------------------------------');
+      receiptText.writeln('Thank you for your visit!');
+
+      // Trigger the native share sheet
+      await SharePlus.instance.share(
+        ShareParams(
+          text: receiptText.toString(),
+          subject: 'Payment Receipt - ${orderId.value}',
+        ),
+      );
+
+    } catch (e) {
+      Get.snackbar('Error', 'Failed to share receipt.', snackPosition: SnackPosition.BOTTOM);
+    }
   }
 
   void _showLoadingDialog(String message) {

@@ -1,7 +1,22 @@
-import 'package:get/get.dart';
+
+import 'package:mobile_scanner/mobile_scanner.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 
+import '../../../common/constant/app_imports.dart';
+
 class ScannerController extends GetxController {
+  // ─── Scanner & Gallery Variables ───
+  final MobileScannerController scannerController = MobileScannerController(
+    detectionSpeed: DetectionSpeed.noDuplicates,
+    facing: CameraFacing.back,
+    torchEnabled: false,
+  );
+  final ImagePicker _picker = ImagePicker();
+
+  // 👉 NEW: Reactive variable to hold the scanned result
+  final RxString scannedText = 'Scan a QR code to see the result here.'.obs;
+
   // ─── TTS State Variables ───
   final FlutterTts flutterTts = FlutterTts();
   final RxBool isPlaying = false.obs;
@@ -13,27 +28,32 @@ class ScannerController extends GetxController {
     _initTts();
   }
 
+  // ─── TTS Methods ───
   void _initTts() {
-    // Reset state when audio finishes
     flutterTts.setCompletionHandler(() {
       isPlaying.value = false;
       audioProgress.value = 1.0;
-      Future.delayed(const Duration(seconds: 1), () => audioProgress.value = 0.0);
+      Future.delayed(
+        const Duration(seconds: 1),
+            () => audioProgress.value = 0.0,
+      );
     });
 
-    // Track which word is currently being spoken to update the slider
-    flutterTts.setProgressHandler((String text, int startOffset, int endOffset, String word) {
+    flutterTts.setProgressHandler((
+        String text,
+        int startOffset,
+        int endOffset,
+        String word,
+        ) {
       audioProgress.value = endOffset / text.length;
     });
   }
 
-  /// Toggles the audio playback and automatically sets the correct language
   Future<void> toggleNarration(String textToRead) async {
     if (isPlaying.value) {
       await flutterTts.pause();
       isPlaying.value = false;
     } else {
-      // 1. Detect current app language and configure TTS voice
       String currentLang = Get.locale?.languageCode ?? 'en';
 
       if (currentLang == 'hi') {
@@ -44,18 +64,46 @@ class ScannerController extends GetxController {
         await flutterTts.setLanguage("en-US");
       }
 
-      // Optional: Adjust speech rate (0.0 to 1.0)
       await flutterTts.setSpeechRate(0.5);
 
-      // 2. Start playing
       isPlaying.value = true;
       await flutterTts.speak(textToRead);
     }
   }
 
+  // ─── Scanner Methods ───
+  void onDetect(BarcodeCapture capture) {
+    final List<Barcode> barcodes = capture.barcodes;
+    for (final barcode in barcodes) {
+      if (barcode.rawValue != null) {
+        scannedText.value = barcode.rawValue!;
+
+        debugPrint('QR Code Scanned: ${barcode.rawValue}');
+      }
+    }
+  }
+
+  void toggleFlash() {
+    scannerController.toggleTorch();
+  }
+
+  Future<void> scanFromGallery() async {
+    final XFile? image = await _picker.pickImage(source: ImageSource.gallery);
+    if (image != null) {
+      final BarcodeCapture? capture = await scannerController.analyzeImage(image.path);
+
+      if (capture == null || capture.barcodes.isEmpty) {
+        Get.snackbar('Error', 'No QR code found in the image.');
+      } else {
+        onDetect(capture);
+      }
+    }
+  }
+
   @override
   void onClose() {
-    flutterTts.stop(); // Stop audio if the user leaves the screen
+    scannerController.dispose();
+    flutterTts.stop();
     super.onClose();
   }
 }

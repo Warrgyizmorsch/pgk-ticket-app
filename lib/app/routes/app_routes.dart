@@ -4,9 +4,8 @@ abstract class Routes {
   Routes._();
   static const HOME = _Paths.HOME;
   static const NAV_BAR = _Paths.NAV_BAR;
-  static const SIGNUP = _Paths.SIGNUP;
+
   static const LOGIN = _Paths.LOGIN;
-  static const SETTINGS = _Paths.SETTINGS;
   static const SPLASH = _Paths.SPLASH;
   static const OTP = _Paths.OTP;
   static const LANGUAGE = _Paths.LANGUAGE;
@@ -27,9 +26,9 @@ abstract class _Paths {
   _Paths._();
   static const HOME = '/home';
   static const NAV_BAR = '/nav-bar';
-  static const SIGNUP = '/signup';
+
   static const LOGIN = '/login';
-  static const SETTINGS = '/settings';
+
   static const SPLASH = '/splash';
   static const OTP = '/otp';
   static const LANGUAGE = '/language';

@@ -1,6 +1,6 @@
-import '../../../common/constant/app_imports.dart';
-import 'package:flutter_blue_plus/flutter_blue_plus.dart';
-import '../controllers/bluetooth_controller.dart'; // Ensure correct path
+import 'package:app_settings/app_settings.dart';
+import 'package:pgk_ticket_app/app/common/constant/app_imports.dart';
+import '../controllers/bluetooth_controller.dart';
 
 class BluetoothView extends GetView<BluetoothController> {
   const BluetoothView({super.key});
@@ -8,149 +8,88 @@ class BluetoothView extends GetView<BluetoothController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.background,
-      appBar: const CustomAppBar(
-        title: 'Bluetooth Audio Guides',
-      ),
+      appBar: CustomAppBar(title: 'Bluetooth Audio Guides'),
       body: Obx(() {
-        // Handle Bluetooth turned off
-        if (!controller.isBluetoothOn.value) {
-          return _buildBluetoothOffState();
+        if (controller.isBluetoothAudioConnected.value) {
+          return Center(
+            child: Container(
+              margin: const EdgeInsets.all(16),
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: Colors.green.withValues(alpha: 0.1),
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(color: Colors.green),
+              ),
+              child: ListTile(
+                leading: const Icon(
+                  Icons.headphones,
+                  color: Colors.green,
+                  size: 40,
+                ),
+                title: Text(
+                  controller.connectedDeviceName.value,
+                  style: const TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                subtitle: const Text(
+                  'Status: Connected (Ready to Play)',
+                  style: TextStyle(
+                    color: Colors.green,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+          );
         }
 
-        return Column(
-          children: [
-            _buildHeader(),
-
-            // Show Connected Device (if any)
-            if (controller.connectedDevice.value != null)
-              _buildConnectedDeviceCard(),
-
-            // List of discovered devices
-            Expanded(
-              child: controller.scanResults.isEmpty && !controller.isScanning.value
-                  ? _buildEmptyState()
-                  : _buildDeviceList(),
-            ),
-          ],
-        );
-      }),
-    );
-  }
-
-  Widget _buildHeader() {
-    return Container(
-      padding: const EdgeInsets.all(20),
-      color: AppColors.white,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          const Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+        return Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('Available Devices', style: AppTextStyles.titleLarge),
-              SizedBox(height: 4),
-              Text('Select a headset to connect', style: AppTextStyles.sectionSub),
+              const Icon(Icons.headset_off, size: 64, color: Colors.grey),
+              const SizedBox(height: 16),
+              const Text(
+                'No Headphones Connected',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 8),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 32),
+                child: Text(
+                  "Please connect your EarPods via Bluetooth in your phone's Settings.",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(color: Colors.grey),
+                ),
+              ),
+              const SizedBox(height: 24),
+              ElevatedButton.icon(
+                onPressed: () {
+                  AppSettings.openAppSettings(type: AppSettingsType.bluetooth);
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: AppColors.primary,
+                  foregroundColor: Colors.white,
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 24,
+                    vertical: 12,
+                  ),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                ),
+                icon: const Icon(Icons.settings_bluetooth),
+                label: const Text(
+                  'Open Bluetooth Settings',
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                ),
+              ),
             ],
           ),
-          Obx(() => controller.isScanning.value
-              ? const SizedBox(
-            height: 24,
-            width: 24,
-            child: CircularProgressIndicator(color: AppColors.primary, strokeWidth: 2),
-          )
-              : IconButton(
-            icon: const Icon(Icons.refresh, color: AppColors.primary),
-            onPressed: () => controller.startScan(),
-          )),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildConnectedDeviceCard() {
-    final device = controller.connectedDevice.value!;
-    return Container(
-      margin: const EdgeInsets.all(16),
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: AppColors.success.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: AppColors.success.withValues(alpha: 0.5)),
-      ),
-      child: ListTile(
-        contentPadding: EdgeInsets.zero,
-        leading: const Icon(Icons.headphones, color: AppColors.success, size: 32),
-        title: Text(device.platformName.isNotEmpty ? device.platformName : 'Unknown Device', style: AppTextStyles.titleLarge),
-        subtitle: const Text('Connected', style: TextStyle(color: AppColors.success, fontWeight: FontWeight.bold)),
-        trailing: TextButton(
-          onPressed: () => controller.disconnectDevice(),
-          child: const Text('Disconnect', style: TextStyle(color: AppColors.error)),
-        ),
-      ),
-    );
-  }
-
-  Widget _buildDeviceList() {
-    return ListView.separated(
-      padding: const EdgeInsets.all(16),
-      itemCount: controller.scanResults.length,
-      separatorBuilder: (context, index) => const Divider(color: AppColors.lightDivider),
-      itemBuilder: (context, index) {
-        final result = controller.scanResults[index];
-        final deviceName = result.device.platformName;
-
-        // Hide empty names if preferred
-        if (deviceName.isEmpty) return const SizedBox.shrink();
-
-        return ListTile(
-          tileColor: AppColors.white,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-          leading: Container(
-            padding: const EdgeInsets.all(8),
-            decoration: BoxDecoration(
-              color: AppColors.primary.withValues(alpha: 0.1),
-              shape: BoxShape.circle,
-            ),
-            child: const Icon(Icons.bluetooth, color: AppColors.primary),
-          ),
-          title: Text(deviceName, style: AppTextStyles.subtitle),
-          subtitle: Text(result.device.remoteId.str, style: AppTextStyles.caption),
-          trailing: ElevatedButton(
-            onPressed: () => controller.connectToDevice(result.device),
-            style: ElevatedButton.styleFrom(
-              backgroundColor: AppColors.primary,
-              foregroundColor: AppColors.white,
-              elevation: 0,
-            ),
-            child: const Text('Connect'),
-          ),
         );
-      },
-    );
-  }
-
-  Widget _buildBluetoothOffState() {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const Icon(Icons.bluetooth_disabled, size: 64, color: AppColors.lightTextDisabled),
-          const SizedBox(height: 16),
-          const Text('Bluetooth is turned off', style: AppTextStyles.titleLarge),
-          const SizedBox(height: 8),
-          const Text('Please enable Bluetooth in your settings.', style: AppTextStyles.bodyMedium),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildEmptyState() {
-    return const Center(
-      child: Text('No devices found.\nTap refresh to scan again.',
-        textAlign: TextAlign.center,
-        style: AppTextStyles.bodyMedium,
-      ),
+      }),
     );
   }
 }

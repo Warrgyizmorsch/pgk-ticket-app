@@ -2,22 +2,13 @@ import '../../../common/constant/app_imports.dart';
 import '../controllers/home_controller.dart';
 
 class RajasthanDirghaView extends GetView<HomeController> {
-  RajasthanDirghaView({super.key});
+  const RajasthanDirghaView({super.key});
 
-  // Reactive state variable to track the active image index in the carousel
-  final RxInt _currentCarouselIndex = 0.obs;
-
-  // List of images for the slider (Update with your specific Rajasthan Dirgha ImageConstants)
-  final List<String> _carouselImages = [
-    ImageConstant.mewar,
-    ImageConstant.bhaktiDham,
-    ImageConstant.mewar,
-  ];
 
   @override
   Widget build(BuildContext context) {
     Get.put(HomeController());
-    // final l10n = AppLocalizations.of(context)!; // Uncomment for localization
+    final l10n = AppLocalizations.of(context)!;
 
     return Scaffold(
       backgroundColor: const Color(0xFFFFF6F0),
@@ -30,9 +21,9 @@ class RajasthanDirghaView extends GetView<HomeController> {
           icon: const Icon(Icons.arrow_back_ios_new_rounded, color: Colors.black87),
           onPressed: () => Get.back(),
         ),
-        title: const Text(
-          'Rajasthan Dirgha',
-          style: TextStyle(
+        title: Text(
+          l10n.rajasthanDirghaTitle,
+          style: const TextStyle(
             color: Colors.black87,
             fontWeight: FontWeight.bold,
             fontSize: 18,
@@ -59,7 +50,7 @@ class RajasthanDirghaView extends GetView<HomeController> {
               alignment: Alignment.bottomLeft,
               children: [
                 Image.asset(
-                  ImageConstant.pgkFullImage,
+                  ImageConstant.rajasthanDirgha,
                   width: double.infinity,
                   height: 260,
                   fit: BoxFit.cover,
@@ -79,7 +70,7 @@ class RajasthanDirghaView extends GetView<HomeController> {
                       begin: Alignment.bottomCenter,
                       end: Alignment.topCenter,
                       colors: [
-                        Colors.black.withValues(alpha:0.85),
+                        Colors.black.withValues(alpha: 0.85),
                         Colors.transparent,
                       ],
                     ),
@@ -88,7 +79,7 @@ class RajasthanDirghaView extends GetView<HomeController> {
                 Padding(
                   padding: const EdgeInsets.all(16.0),
                   child: Text(
-                    "Rajasthan Dirgha",
+                    l10n.rajasthanDirghaTitle,
                     style: const TextStyle(
                       color: Colors.white,
                       fontSize: 22,
@@ -109,7 +100,7 @@ class RajasthanDirghaView extends GetView<HomeController> {
               child: Row(
                 children: [
                   GestureDetector(
-                    onTap: () => controller.toggleNarration('In this epic, statues of 25 selected warriors, great personalities, saints, and local deities of Rajasthan are showcased...'),
+                    onTap: () => controller.toggleNarration(l10n.rajasthanDirghaNarrationText),
                     child: Container(
                       width: 48,
                       height: 48,
@@ -148,11 +139,11 @@ class RajasthanDirghaView extends GetView<HomeController> {
                           ),
                         ),
                         const SizedBox(height: 6),
-                        const Text(
-                          'Rajasthan Dirgha Narration',
+                        Text(
+                          l10n.rajasthanDirghaNarrationLabel,
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.w600,
                             color: Colors.black87,
@@ -169,7 +160,7 @@ class RajasthanDirghaView extends GetView<HomeController> {
                       Obx(() {
                         String percentage = (controller.audioProgress.value * 100).toInt().toString();
                         return Text(
-                          controller.isPlaying.value ? '$percentage%' : 'Audio Guide',
+                          controller.isPlaying.value ? '$percentage%' : l10n.audioGuideLabel,
                           style: TextStyle(
                             fontSize: 10,
                             color: Colors.grey.shade600,
@@ -193,9 +184,9 @@ class RajasthanDirghaView extends GetView<HomeController> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    'The Great Personalities of Rajasthan',
-                    style: TextStyle(
+                  Text(
+                    l10n.greatPersonalitiesTitle,
+                    style: const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                       color: Colors.black87,
@@ -203,33 +194,29 @@ class RajasthanDirghaView extends GetView<HomeController> {
                   ),
                   const SizedBox(height: 12),
 
-                  _buildParagraph(
-                      'In this epic, breathtaking statues of 25 selected warriors, great personalities, saints, and local deities of Rajasthan are proudly showcased. The exhibit serves as a cultural archive, offering a glimpse into the diverse spiritual and martial history of the region.'
-                  ),
+                  _buildParagraph(l10n.greatPersonalitiesDesc1),
 
                   const SizedBox(height: 8),
                   const Divider(),
                   const SizedBox(height: 8),
 
-                  _buildSubHeader('Prominent Local Deities'),
-                  _buildBulletPoint('Ramdevji'),
-                  _buildBulletPoint('Tejaji'),
-                  _buildBulletPoint('Gogaji'),
+                  _buildSubHeader(l10n.prominentLocalDeitiesTitle),
+                  _buildBulletPoint(l10n.deity1),
+                  _buildBulletPoint(l10n.deity2),
+                  _buildBulletPoint(l10n.deity3),
 
                   const SizedBox(height: 12),
 
-                  _buildSubHeader('Heroic Figures & Warriors'),
-                  _buildBulletPoint('Durgadas Rathore'),
-                  _buildBulletPoint('Hamir Chauhan'),
-                  _buildBulletPoint('Rao Chandrasen'),
-                  _buildBulletPoint('Rao Shekha Ji'),
-                  _buildBulletPoint('And many more legendary figures.'),
+                  _buildSubHeader(l10n.heroicFiguresTitle),
+                  _buildBulletPoint(l10n.warrior1),
+                  _buildBulletPoint(l10n.warrior2),
+                  _buildBulletPoint(l10n.warrior3),
+                  _buildBulletPoint(l10n.warrior4),
+                  _buildBulletPoint(l10n.moreLegendaryFigures),
 
                   const SizedBox(height: 16),
 
-                  _buildParagraph(
-                      'More than just a visual display, this epic dirgha provides thoroughly documented records of the life stories, teachings, and monumental sacrifices of these local deities, saints, and warriors.'
-                  ),
+                  _buildParagraph(l10n.greatPersonalitiesDesc2),
 
                 ],
               ),
@@ -258,26 +245,7 @@ class RajasthanDirghaView extends GetView<HomeController> {
     );
   }
 
-  Widget _buildDot({required bool isActive}) {
-    return AnimatedContainer(
-      duration: const Duration(milliseconds: 200),
-      margin: const EdgeInsets.symmetric(horizontal: 4),
-      width: isActive ? 18 : 6,
-      height: 6,
-      decoration: BoxDecoration(
-        color: isActive ? const Color(0xFFF47B20) : Colors.grey.shade300,
-        borderRadius: BorderRadius.circular(3),
-      ),
-    );
-  }
 
-  Widget _placeholderImage() {
-    return Container(
-      width: double.infinity,
-      color: Colors.grey.shade200,
-      child: const Icon(Icons.image_outlined, color: Colors.grey, size: 40),
-    );
-  }
 
   Widget _buildSubHeader(String text) {
     return Padding(

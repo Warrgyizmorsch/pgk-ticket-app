@@ -68,18 +68,18 @@ class PratapHistoryView extends GetView<HomeController> {
                       begin: Alignment.bottomCenter,
                       end: Alignment.topCenter,
                       colors: [
-                        Colors.black.withValues(alpha:0.8),
+                        Colors.black.withValues(alpha: 0.8),
                         Colors.transparent,
                       ],
                     ),
                   ),
                 ),
                 // Hero Title
-                const Padding(
-                  padding: EdgeInsets.all(16.0),
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
                   child: Text(
-                    'Maharana Pratap: The Lion of\nMewar',
-                    style: TextStyle(
+                    l10n.pratapHeroTitle,
+                    style: const TextStyle(
                       color: Colors.white,
                       fontSize: 22,
                       fontWeight: FontWeight.bold,
@@ -97,7 +97,6 @@ class PratapHistoryView extends GetView<HomeController> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   // ─── 2. AUDIO PLAYER CARD (From Mockup) ───
-                  // Place this inside your build method where the audio card is located
                   Container(
                     padding: const EdgeInsets.all(16),
                     decoration: BoxDecoration(
@@ -105,7 +104,7 @@ class PratapHistoryView extends GetView<HomeController> {
                       borderRadius: BorderRadius.circular(16),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black.withValues(alpha:0.05),
+                          color: Colors.black.withValues(alpha: 0.05),
                           blurRadius: 10,
                           offset: const Offset(0, 4),
                         ),
@@ -113,9 +112,9 @@ class PratapHistoryView extends GetView<HomeController> {
                     ),
                     child: Column(
                       children: [
-                        const Text(
-                          'Narration: The Battle of Haldighati',
-                          style: TextStyle(
+                        Text(
+                          l10n.narrationBattleOfHaldighati,
+                          style: const TextStyle(
                             fontSize: 15,
                             fontWeight: FontWeight.bold,
                             color: Colors.black87,
@@ -198,7 +197,7 @@ class PratapHistoryView extends GetView<HomeController> {
                                   .toInt()
                                   .toString();
                               return Text(
-                                '$percentage% Completed',
+                                '$percentage% ${l10n.completedText}',
                                 style: TextStyle(
                                   fontSize: 12,
                                   color: Colors.grey[600],
@@ -221,8 +220,6 @@ class PratapHistoryView extends GetView<HomeController> {
 
                   const SizedBox(height: 8),
 
-
-
                   // Continuing Original Content
                   _buildParagraph(l10n.historyIntroP3),
                   _buildParagraph(l10n.historyIntroP4),
@@ -231,9 +228,9 @@ class PratapHistoryView extends GetView<HomeController> {
                   const SizedBox(height: 24),
 
                   // ─── 3. KEY EVENTS SLIDER (From Mockup) ───
-                  const Text(
-                    'Key Events',
-                    style: TextStyle(
+                  Text(
+                    l10n.keyEventsTitle,
+                    style: const TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                       color: Colors.black87,
@@ -254,16 +251,16 @@ class PratapHistoryView extends GetView<HomeController> {
                 children: [
                   _buildVideoThumbnailCard(
                     imagePath:
-                        ImageConstant.bhaktiDham, // Replace with proper image
-                    title: 'Haldighati Battle\nRecreation',
+                    ImageConstant.bhaktiDham, // Replace with proper image
+                    title: l10n.haldighatiRecreation,
                   ),
                   _buildVideoThumbnailCard(
                     imagePath: ImageConstant.mewar,
-                    title: "Chetak's Sacrifice",
+                    title: l10n.chetaksSacrifice,
                   ),
                   _buildVideoThumbnailCard(
                     imagePath: ImageConstant.pgkFullImage,
-                    title: "Pratap's Coronation",
+                    title: l10n.pratapsCoronation,
                   ),
                 ],
               ),
@@ -314,10 +311,10 @@ class PratapHistoryView extends GetView<HomeController> {
                   Container(
                     padding: const EdgeInsets.all(16),
                     decoration: BoxDecoration(
-                      color: const Color(0xFFD36526).withValues(alpha:0.1),
+                      color: const Color(0xFFD36526).withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(12),
                       border: Border.all(
-                        color: const Color(0xFFD36526).withValues(alpha:0.3),
+                        color: const Color(0xFFD36526).withValues(alpha: 0.3),
                       ),
                     ),
                     child: Text(
@@ -386,7 +383,7 @@ class PratapHistoryView extends GetView<HomeController> {
                       begin: Alignment.bottomCenter,
                       end: Alignment.topCenter,
                       colors: [
-                        Colors.black.withValues(alpha:0.8),
+                        Colors.black.withValues(alpha: 0.8),
                         Colors.transparent,
                       ],
                     ),
@@ -397,7 +394,7 @@ class PratapHistoryView extends GetView<HomeController> {
                 width: 32,
                 height: 32,
                 decoration: BoxDecoration(
-                  color: Colors.black.withValues(alpha:0.6),
+                  color: Colors.black.withValues(alpha: 0.6),
                   shape: BoxShape.circle,
                   border: Border.all(color: Colors.white, width: 1.5),
                 ),

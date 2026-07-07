@@ -15,7 +15,6 @@ Future<void> main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
-  // 2. Initialize the StorageService synchronously before the app starts
   await Get.putAsync(() => StorageService().init());
 
   runApp(

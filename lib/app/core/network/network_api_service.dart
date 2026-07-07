@@ -7,12 +7,11 @@ import 'package:http_parser/http_parser.dart';
 import 'package:intl/intl.dart';
 
 import '../../services/storage_services.dart';
-import '../constant_api/api_constant.dart';
 
 
 class ApiClient {
   static final http.Client _client = http.Client();
-  static const int _defaultTimeout = 60; // Default timeout duration in seconds
+  static const int _defaultTimeout = 60;
   static final RegExp _iso8601Regex =
   RegExp(r'^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?([+-]\d{2}:\d{2}|Z)$');
 

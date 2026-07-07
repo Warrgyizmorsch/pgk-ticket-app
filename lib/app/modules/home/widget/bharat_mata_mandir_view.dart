@@ -2,22 +2,12 @@ import '../../../common/constant/app_imports.dart';
 import '../controllers/home_controller.dart';
 
 class BharatMataMandirView extends GetView<HomeController> {
-  BharatMataMandirView({super.key});
-
-  // Reactive state variable to track the active image index in the carousel
-  final RxInt _currentCarouselIndex = 0.obs;
-
-  // List of images for the slider (Update with your specific Bharat Mata ImageConstants)
-  final List<String> _carouselImages = [
-    ImageConstant.mewar,
-    ImageConstant.bhaktiDham,
-    ImageConstant.mewar,
-  ];
+  const BharatMataMandirView({super.key});
 
   @override
   Widget build(BuildContext context) {
     Get.put(HomeController());
-    // final l10n = AppLocalizations.of(context)!; // Uncomment for localization
+    final l10n = AppLocalizations.of(context)!;
 
     return Scaffold(
       backgroundColor: const Color(0xFFFFF6F0),
@@ -30,9 +20,9 @@ class BharatMataMandirView extends GetView<HomeController> {
           icon: const Icon(Icons.arrow_back_ios_new_rounded, color: Colors.black87),
           onPressed: () => Get.back(),
         ),
-        title: const Text(
-          'Bharat Mata Mandir',
-          style: TextStyle(
+        title: Text(
+          l10n.bharatMataMandirTitle,
+          style: const TextStyle(
             color: Colors.black87,
             fontWeight: FontWeight.bold,
             fontSize: 18,
@@ -58,7 +48,7 @@ class BharatMataMandirView extends GetView<HomeController> {
               alignment: Alignment.bottomLeft,
               children: [
                 Image.asset(
-                  ImageConstant.pgkFullImage,
+                  ImageConstant.bharatMataMandir,
                   width: double.infinity,
                   height: 260,
                   fit: BoxFit.cover,
@@ -78,7 +68,7 @@ class BharatMataMandirView extends GetView<HomeController> {
                       begin: Alignment.bottomCenter,
                       end: Alignment.topCenter,
                       colors: [
-                        Colors.black.withValues(alpha:0.85),
+                        Colors.black.withValues(alpha: 0.85),
                         Colors.transparent,
                       ],
                     ),
@@ -87,7 +77,7 @@ class BharatMataMandirView extends GetView<HomeController> {
                 Padding(
                   padding: const EdgeInsets.all(16.0),
                   child: Text(
-                    "Bharat Mata Mandir",
+                    l10n.bharatMataMandirTitle,
                     style: const TextStyle(
                       color: Colors.white,
                       fontSize: 22,
@@ -108,7 +98,7 @@ class BharatMataMandirView extends GetView<HomeController> {
               child: Row(
                 children: [
                   GestureDetector(
-                    onTap: () => controller.toggleNarration('In India, the tradition of worshiping Gram Devi, Sthan Dev, and Matru Devi has been ancient. In Mewar, Jagadamba is worshiped as Rashtra Shyamala, and a temple dedicated to her is located on the way to Kailashpuri...'),
+                    onTap: () => controller.toggleNarration(l10n.bharatMataNarrationText),
                     child: Container(
                       width: 48,
                       height: 48,
@@ -147,11 +137,11 @@ class BharatMataMandirView extends GetView<HomeController> {
                           ),
                         ),
                         const SizedBox(height: 6),
-                        const Text(
-                          'Bharat Mata Mandir Narration',
+                        Text(
+                          l10n.bharatMataNarrationLabel,
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.w600,
                             color: Colors.black87,
@@ -168,7 +158,7 @@ class BharatMataMandirView extends GetView<HomeController> {
                       Obx(() {
                         String percentage = (controller.audioProgress.value * 100).toInt().toString();
                         return Text(
-                          controller.isPlaying.value ? '$percentage%' : 'Audio Guide',
+                          controller.isPlaying.value ? '$percentage%' : l10n.audioGuideLabel,
                           style: TextStyle(
                             fontSize: 10,
                             color: Colors.grey.shade600,
@@ -192,9 +182,9 @@ class BharatMataMandirView extends GetView<HomeController> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    'Worshiping the Rashtra Devi',
-                    style: TextStyle(
+                  Text(
+                    l10n.worshipingRashtraDeviTitle,
+                    style: const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                       color: Colors.black87,
@@ -202,31 +192,25 @@ class BharatMataMandirView extends GetView<HomeController> {
                   ),
                   const SizedBox(height: 12),
 
-                  _buildParagraph(
-                      'In India, the tradition of worshiping Gram Devi, Sthan Dev, and Matru Devi (Mother Goddess) has been ancient. In Mewar, Jagadamba is worshiped as Rashtra Shyamala, and a temple dedicated to her is located on the way to Kailashpuri near Udaipur. In local tradition, she is referred to as Rathasena Mata.'
-                  ),
+                  _buildParagraph(l10n.bharatMataDesc1),
 
-                  _buildParagraph(
-                      'This is possibly the oldest temple dedicated to the Rashtra Devi (Mother of India) in the country. During the struggle for independence, Bankim Chandra Chattopadhyay, in his novel "Anandamath," first called for the worship of Bharat Mata and presented an image of the Rashtra Devi, with the anthem "Vande Mataram" taking the form of the national song.'
-                  ),
+                  _buildParagraph(l10n.bharatMataDesc2),
 
                   const SizedBox(height: 8),
                   const Divider(),
                   const SizedBox(height: 8),
 
-                  _buildSubHeader('Appearance & Architecture'),
+                  _buildSubHeader(l10n.appearanceArchitectureTitle),
 
-                  _buildBulletPoint('Adorned in an orange-colored sari, holding a saffron flag in her hand.'),
-                  _buildBulletPoint('Installed majestically on her vehicle, a lion.'),
-                  _buildBulletPoint('The temple’s sanctum sanctorum is uniquely octagonal and situated at an elevation.'),
-                  _buildBulletPoint('Visitors must climb 71 stairs to reach the temple, symbolizing the ascent to national glory and instilling a deep sense of pride.'),
+                  _buildBulletPoint(l10n.bharatMataBullet1),
+                  _buildBulletPoint(l10n.bharatMataBullet2),
+                  _buildBulletPoint(l10n.bharatMataBullet3),
+                  _buildBulletPoint(l10n.bharatMataBullet4),
 
                   const SizedBox(height: 16),
 
-                  _buildSubHeader('Meditation Room'),
-                  _buildParagraph(
-                      'Just below the temple, a serene meditation room has been set up. After exploring the Pratap Gaurav Kendra, visitors can meditate and contemplate in this beautiful blue-white space, experiencing otherworldly and spiritual bliss.'
-                  ),
+                  _buildSubHeader(l10n.meditationRoomTitle),
+                  _buildParagraph(l10n.meditationRoomDesc),
 
                 ],
               ),
@@ -255,26 +239,6 @@ class BharatMataMandirView extends GetView<HomeController> {
     );
   }
 
-  Widget _buildDot({required bool isActive}) {
-    return AnimatedContainer(
-      duration: const Duration(milliseconds: 200),
-      margin: const EdgeInsets.symmetric(horizontal: 4),
-      width: isActive ? 18 : 6,
-      height: 6,
-      decoration: BoxDecoration(
-        color: isActive ? const Color(0xFFF47B20) : Colors.grey.shade300,
-        borderRadius: BorderRadius.circular(3),
-      ),
-    );
-  }
-
-  Widget _placeholderImage() {
-    return Container(
-      width: double.infinity,
-      color: Colors.grey.shade200,
-      child: const Icon(Icons.image_outlined, color: Colors.grey, size: 40),
-    );
-  }
 
   Widget _buildSubHeader(String text) {
     return Padding(

@@ -1,14 +1,9 @@
 import 'package:get/get.dart';
-
 import '../../profile/controllers/profile_controller.dart';
 import '../../scanner/controllers/scanner_controller.dart';
 import '../../tickets/controllers/tickets_controller.dart';
 import '../controllers/nav_bar_controller.dart';
-import 'package:get/get.dart';
 
-import '../../scanner/controllers/scanner_controller.dart';
-import '../../tickets/controllers/tickets_controller.dart';
-import '../controllers/nav_bar_controller.dart';
 
 class NavBarBinding extends Bindings {
   @override

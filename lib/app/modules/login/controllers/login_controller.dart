@@ -2,18 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:firebase_messaging/firebase_messaging.dart'; // Ensure you have this in pubspec.yaml
+
 import '../../../core/utils/api/login_api/app_otp_api.dart';
 import '../../../routes/app_pages.dart';
 import '../../../services/storage_services.dart';
 
 class LoginController extends GetxController {
   final selectedDialCode = '+91'.obs;
-
   final isLoading = false.obs;
 
   late TextEditingController phoneController;
-
   final loginFormKey = GlobalKey<FormState>();
+
+  // Initialize instances for cleaner calls
+  final GoogleSignIn _googleSignIn = GoogleSignIn();
+  final FirebaseAuth _auth = FirebaseAuth.instance;
 
   @override
   void onInit() {
@@ -75,9 +79,8 @@ class LoginController extends GetxController {
       isLoading.value = true;
 
       final fullPhoneNumber = '${selectedDialCode.value}$phone';
-
       final requestData = {'mobile': phone};
-      //
+
       await AppLogin.requestPhoneOtp(data: requestData);
 
       Get.snackbar(
@@ -102,92 +105,110 @@ class LoginController extends GetxController {
     }
   }
 
-
-
+  /// -------------------------------------------------------------------
+  /// UPDATED GOOGLE SIGN IN LOGIC
+  /// -------------------------------------------------------------------
   Future<void> loginWithGoogle() async {
+    // Prevent multiple rapid clicks
+    if (isLoading.value) return;
+
     try {
       isLoading.value = true;
+      debugPrint("========== GOOGLE SIGN IN START ==========");
 
-      final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+      // 1. Clear previous session to open the Google account picker
+      await _googleSignIn.signOut();
+      debugPrint("OLD GOOGLE SESSION CLEARED");
+
+      // 2. Open Google Account Picker
+      final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
 
       if (googleUser == null) {
+        debugPrint("USER CANCELLED LOGIN");
         isLoading.value = false;
         return;
       }
 
+      debugPrint("SELECTED EMAIL : ${googleUser.email}");
+
+      // 3. Authenticate with Google
       final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
-      final AuthCredential credential = GoogleAuthProvider.credential(
+      final String idToken = googleAuth.idToken ?? "";
+
+      if (idToken.isEmpty) {
+        Get.snackbar("Error", "Google ID Token not found");
+        isLoading.value = false;
+        return;
+      }
+
+      // 4. Create Firebase Credential
+      final credential = GoogleAuthProvider.credential(
         accessToken: googleAuth.accessToken,
-        idToken: googleAuth.idToken,
+        idToken: idToken,
       );
 
-      final UserCredential userCredential = await FirebaseAuth.instance.signInWithCredential(credential);
-      final user = userCredential.user;
+      // 5. Sign in to Firebase
+      final UserCredential userCredential = await _auth.signInWithCredential(credential);
+      final User? user = userCredential.user;
 
-      if (user == null) {
-        throw Exception('Failed to retrieve user from Firebase.');
-      }
+      if (user != null) {
+        final bool isNewUser = userCredential.additionalUserInfo?.isNewUser ?? false;
 
-      // 1. Check if the user is brand new or returning
-      final bool isNewUser = userCredential.additionalUserInfo?.isNewUser ?? false;
-
-      // 2. Get the FIREBASE ID Token
-      final String? firebaseIdToken = await user.getIdToken();
-
-      if (firebaseIdToken == null) {
-        throw Exception('Failed to retrieve Firebase ID Token.');
-      }
-
-      // 3. Branch your logic based on user status
-      if (isNewUser) {
-        // ---------------------------------------------------------
-        // SCENARIO A: NEW USER
-        // ---------------------------------------------------------
-        // The user just created their account right now via Google.
-        // You can navigate them to an onboarding/registration screen
-        // and pass the token so you can save it later.
-
-        Get.offAllNamed(Routes.HOME, arguments: {
-          'id_token': firebaseIdToken,
-          'email': user.email,
-          'name': user.displayName,
-        });
-
-        /* * OR, if your backend handles registration directly via an API call,
-       * you would call your AppLogin.googleRegister() endpoint here instead.
-       */
-
-      } else {
-        // ---------------------------------------------------------
-        // SCENARIO B: EXISTING USER (Just get the token and login)
-        // ---------------------------------------------------------
-        final requestData = {
-          'id_token': firebaseIdToken,
-        };
-
-        final authResponse = await AppLogin.googleLogin(data: requestData);
-
-        if (authResponse.success == true && authResponse.token != null) {
-          await StorageService.to.saveToken(authResponse.token);
-
-          if (authResponse.user != null) {
-            await StorageService.to.saveUser(authResponse.user);
-          }
-
-          await Future.delayed(const Duration(seconds: 2));
-          Get.offAllNamed(Routes.HOME);
+        if (isNewUser) {
+          // ---------------------------------------------------------
+          // SCENARIO A: NEW USER
+          // ---------------------------------------------------------
+          // Note: If you have a specific registration route now (like AppRoutes.registerAccountScreen),
+          // update Routes.HOME to that route name.
+          Get.offAllNamed(Routes.HOME, arguments: {
+            'id_token': idToken,
+            'email': googleUser.email,
+            'name': googleUser.displayName ?? "",
+            'phone': user.phoneNumber ?? "", // Usually empty on Google Login
+          });
 
         } else {
-          Get.snackbar(
-            'Login Failed',
-            'Failed to authenticate with our servers.',
-            snackPosition: SnackPosition.BOTTOM,
-            backgroundColor: Colors.redAccent,
-            colorText: Colors.white,
-          );
-        }
-      }
+          // ---------------------------------------------------------
+          // SCENARIO B: EXISTING USER
+          // ---------------------------------------------------------
+          // Fetch FCM Token (Requires firebase_messaging package)
+          final fcmToken = await FirebaseMessaging.instance.getToken();
 
+          final requestData = {
+            'id_token': idToken, // using idToken instead of firebaseIdToken for consistency
+            'fcm_token': fcmToken,
+          };
+
+          final authResponse = await AppLogin.googleLogin(data: requestData);
+
+          if (authResponse.success == true && authResponse.token != null) {
+
+            // Save Session
+            await StorageService.to.saveToken(authResponse.token);
+            if (authResponse.user != null) {
+              await StorageService.to.saveUser(authResponse.user);
+            }
+
+            debugPrint("API LOGIN SUCCESS");
+            Get.offAllNamed(Routes.HOME);
+
+          } else {
+            // Optional: Logout of Firebase/Google if your API login fails
+            await _auth.signOut();
+            await _googleSignIn.signOut();
+
+            Get.snackbar(
+              'Login Failed',
+              'Failed to authenticate with our servers.',
+              snackPosition: SnackPosition.BOTTOM,
+              backgroundColor: Colors.redAccent,
+              colorText: Colors.white,
+            );
+          }
+        }
+      } else {
+        Get.snackbar("Error", "Firebase user not found");
+      }
     } on FirebaseAuthException catch (e) {
       Get.snackbar(
         'Authentication Failed',
@@ -197,15 +218,29 @@ class LoginController extends GetxController {
         colorText: Colors.white,
       );
     } catch (e) {
+      debugPrint("GOOGLE LOGIN ERROR : $e");
       Get.snackbar(
         'Error',
-        'Google login encountered an internal issue. $e',
+        'Google Sign-In failed.',
         snackPosition: SnackPosition.BOTTOM,
         backgroundColor: Colors.redAccent,
         colorText: Colors.white,
       );
     } finally {
       isLoading.value = false;
+    }
+  }
+
+  /// -------------------------------------------------------------------
+  /// LOGOUT LOGIC (Optional helper method)
+  /// -------------------------------------------------------------------
+  Future<void> signOutGoogle() async {
+    try {
+      await _googleSignIn.signOut();
+      await _auth.signOut();
+      debugPrint("LOGOUT SUCCESS");
+    } catch (e) {
+      debugPrint("LOGOUT ERROR : $e");
     }
   }
 }

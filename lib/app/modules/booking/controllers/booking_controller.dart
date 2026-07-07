@@ -8,12 +8,9 @@ import '../../../routes/app_pages.dart';
 import '../../../services/storage_services.dart';
 
 class BookingController extends GetxController {
-  // GetX Observables
-  // 0: Pratap Gourav Kendra
-  // 1: Water Laser Show Only
-  // 2: Pratap Gourav Kendra + Water Laser Show Combo
+
   var selectedAttraction = 0.obs;
-  var isWaterShowAdded = false.obs; // YES/NO toggle state
+  var isWaterShowAdded = false.obs;
 
   var isIndian = true.obs;
   var selectedDate = DateTime.now().obs;
@@ -22,12 +19,10 @@ class BookingController extends GetxController {
   var childCount = 0.obs;
   var adultCount = 0.obs;
 
-  // Form Field Controllers
   final nameController = TextEditingController();
   final emailController = TextEditingController();
   final phoneController = TextEditingController();
 
-  // ValueNotifiers specifically for your CustomDropdown widget
   final infantNotifier = ValueNotifier<int?>(0);
   final childNotifier = ValueNotifier<int?>(0);
   final adultNotifier = ValueNotifier<int?>(0);
@@ -36,30 +31,28 @@ class BookingController extends GetxController {
   void onInit() {
     super.onInit();
 
-    // Sync CustomDropdown ValueNotifiers with GetX state for calculations
     infantNotifier.addListener(() => infantCount.value = infantNotifier.value ?? 0);
     childNotifier.addListener(() => childCount.value = childNotifier.value ?? 0);
     adultNotifier.addListener(() => adultCount.value = adultNotifier.value ?? 0);
   }
 
-  // Dynamic Price Getters handling BOTH Combo Card and YES/NO Toggle
   double get currentAdultPrice {
     if (selectedAttraction.value == 2 || (selectedAttraction.value == 0 && isWaterShowAdded.value)) {
-      return 200.0; // Combo Pricing
+      return 200.0;
     } else if (selectedAttraction.value == 0) {
-      return isIndian.value ? 160.0 : 460.0; // PGK Only
+      return isIndian.value ? 160.0 : 460.0;
     } else {
-      return 100.0; // Water Laser Show Only
+      return 100.0;
     }
   }
 
   double get currentChildPrice {
     if (selectedAttraction.value == 2 || (selectedAttraction.value == 0 && isWaterShowAdded.value)) {
-      return 150.0; // Combo Pricing
+      return 150.0;
     } else if (selectedAttraction.value == 0) {
-      return isIndian.value ? 110.0 : 260.0; // PGK Only
+      return isIndian.value ? 110.0 : 260.0;
     } else {
-      return 50.0; // Water Laser Show Only
+      return 50.0;
     }
   }
 
@@ -87,7 +80,6 @@ class BookingController extends GetxController {
       },
     );
 
-    // 2. If a date was selected, proceed to pick the Time
     if (pickedDate != null) {
       TimeOfDay? pickedTime = await showTimePicker(
         context: context,
@@ -104,7 +96,6 @@ class BookingController extends GetxController {
         },
       );
 
-      // 3. If a time was also selected, combine them and update your state
       if (pickedTime != null) {
         selectedDate.value = DateTime(
           pickedDate.year,
@@ -122,7 +113,6 @@ class BookingController extends GetxController {
     List<Map<String, dynamic>> tickets = [];
     String prefix = '';
 
-    // Determine the prefix based on attraction selection
     if (selectedAttraction.value == 2 || (selectedAttraction.value == 0 && isWaterShowAdded.value)) {
       prefix = 'Combo';
     } else if (selectedAttraction.value == 0) {
@@ -188,7 +178,6 @@ class BookingController extends GetxController {
     try {
       final userData = StorageService.to.getUser();
       debugPrint('User Data: $userData');
-     ;
 
       TicketBookingModel bookingPayload = TicketBookingModel(
         userId: userData?.id??0,

@@ -5,11 +5,11 @@ class RefundPolicyView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+
     return Scaffold(
       backgroundColor: AppColors.background,
-      appBar: const CustomAppBar(
-        title: 'Refund & Returns',
-      ),
+      appBar: CustomAppBar(title: l10n.refundReturnsTitle),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(20.0),
         child: Container(
@@ -29,74 +29,72 @@ class RefundPolicyView extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-
               // ─── Main Policy Overview ───
-              const Text(
-                'Refund and Returns Policy',
-                style: AppTextStyles.titleLarge,
-              ),
+              Text(l10n.refundPolicyHeader, style: AppTextStyles.titleLarge),
               const SizedBox(height: 12),
-              _buildParagraph('Our refund and returns policy lasts 30 days. If 30 days have passed since your purchase, we can’t offer you a full refund or exchange.'),
-              _buildParagraph('To be eligible for a return, your item must be unused and in the same condition that you received it. It must also be in the original packaging.'),
-              _buildParagraph('Several types of goods are exempt from being returned. Perishable goods such as food, flowers, newspapers or magazines cannot be returned. We also do not accept products that are intimate or sanitary goods, hazardous materials, or flammable liquids or gases.'),
+              _buildParagraph(l10n.refundPolicyP1),
+              _buildParagraph(l10n.refundPolicyP2),
+              _buildParagraph(l10n.refundPolicyP3),
 
               const SizedBox(height: 16),
-              _buildSectionSubTitle('Additional non-returnable items:'),
+              _buildSectionSubTitle(l10n.nonReturnableItemsHeader),
               const SizedBox(height: 8),
-              _buildBulletPoint('Gift cards'),
-              _buildBulletPoint('Downloadable software products'),
-              _buildBulletPoint('Some health and personal care items'),
+              _buildBulletPoint(l10n.nonReturnable1),
+              _buildBulletPoint(l10n.nonReturnable2),
+              _buildBulletPoint(l10n.nonReturnable3),
 
               const SizedBox(height: 16),
-              _buildParagraph('To complete your return, we require a receipt or proof of purchase. Please do not send your purchase back to the manufacturer.'),
+              _buildParagraph(l10n.proofOfPurchaseText),
 
               const SizedBox(height: 16),
-              _buildSectionSubTitle('There are certain situations where only partial refunds are granted:'),
+              _buildSectionSubTitle(l10n.partialRefundsHeader),
               const SizedBox(height: 8),
-              _buildBulletPoint('Book with obvious signs of use.'),
-              _buildBulletPoint('CD, DVD, VHS tape, software, video game, cassette tape, or vinyl record that has been opened.'),
-              _buildBulletPoint('Any item not in its original condition, is damaged or missing parts for reasons not due to our error.'),
-              _buildBulletPoint('Any item that is returned more than 30 days after delivery.'),
+              _buildBulletPoint(l10n.partialRefund1),
+              _buildBulletPoint(l10n.partialRefund2),
+              _buildBulletPoint(l10n.partialRefund3),
+              _buildBulletPoint(l10n.partialRefund4),
 
               const Divider(height: 40, color: AppColors.lightDivider),
 
               // ─── Refunds Section ───
-              const Text('Refunds', style: AppTextStyles.titleLarge),
+              Text(l10n.refundsHeader, style: AppTextStyles.titleLarge),
               const SizedBox(height: 12),
-              _buildParagraph('Once your return is received and inspected, we will send you an email to notify you that we have received your returned item. We will also notify you of the approval or rejection of your refund.'),
-              _buildParagraph('If you are approved, then your refund will be processed, and a credit will automatically be applied to your credit card or original method of payment, within a certain amount of days.'),
+              _buildParagraph(l10n.refundsP1),
+              _buildParagraph(l10n.refundsP2),
 
               const SizedBox(height: 24),
 
               // ─── Late or Missing Refunds ───
-              const Text('Late or missing refunds', style: AppTextStyles.titleLarge),
+              Text(
+                l10n.lateMissingRefundsHeader,
+                style: AppTextStyles.titleLarge,
+              ),
               const SizedBox(height: 12),
-              _buildBulletPoint('If you haven’t received a refund yet, first check your bank account again.'),
-              _buildBulletPoint('Then contact your credit card company, it may take some time before your refund is officially posted.'),
-              _buildBulletPoint('Next contact your bank. There is often some processing time before a refund is posted.'),
-              _buildParagraph('If you’ve done all of this and you still have not received your refund yet, please contact us at support@pratapgauravkendra.org.'),
+              _buildBulletPoint(l10n.lateRefund1),
+              _buildBulletPoint(l10n.lateRefund2),
+              _buildBulletPoint(l10n.lateRefund3),
+              _buildParagraph(l10n.lateRefund4),
 
               const Divider(height: 40, color: AppColors.lightDivider),
 
               // ─── Sale Items ───
-              const Text('Sale items', style: AppTextStyles.titleLarge),
+              Text(l10n.saleItemsHeader, style: AppTextStyles.titleLarge),
               const SizedBox(height: 12),
-              _buildParagraph('Only regular priced items may be refunded. Sale items cannot be refunded.'),
+              _buildParagraph(l10n.saleItemsText),
 
               const SizedBox(height: 24),
 
               // ─── Exchanges ───
-              const Text('Exchanges', style: AppTextStyles.titleLarge),
+              Text(l10n.exchangesHeader, style: AppTextStyles.titleLarge),
               const SizedBox(height: 12),
-              _buildParagraph('We only replace items if they are defective or damaged. If you need to exchange it for the same item, send us an email at support@pratapgauravkendra.org and send your item to: Pratap Gaurav Kendra, Udaipur, Rajasthan.'),
+              _buildParagraph(l10n.exchangesText),
 
               const Divider(height: 40, color: AppColors.lightDivider),
 
               // ─── Need Help ───
-              const Text('Need help?', style: AppTextStyles.titleLarge),
+              Text(l10n.needHelpHeader, style: AppTextStyles.titleLarge),
               const SizedBox(height: 12),
-              _buildParagraph('Contact us at support@pratapgauravkendra.org for questions related to refunds and returns.'),
-
+              _buildParagraph(l10n.needHelpText),
             ],
           ),
         ),

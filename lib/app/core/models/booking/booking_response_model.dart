@@ -38,10 +38,6 @@ class TicketBookingResponseModel {
   }
 }
 
-// ---------------------------------------------------------
-// Nested Data Model
-// ---------------------------------------------------------
-
 class BookedTicketDataModel {
   final int userId;
   final String ticketType;

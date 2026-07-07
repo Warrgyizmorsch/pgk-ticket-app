@@ -1,6 +1,5 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
 
-
 import '../../constant/app_imports.dart';
 
 class CustomDropdown<T> extends StatelessWidget {
@@ -26,8 +25,7 @@ class CustomDropdown<T> extends StatelessWidget {
     this.maxDropdownHeight = 250,
     this.backgroundColor,
     this.borderColor,
-    this.contentPadding =
-    const EdgeInsets.symmetric(horizontal: 12),
+    this.contentPadding = const EdgeInsets.symmetric(horizontal: 12),
   });
 
   final ValueNotifier<T?> valueListenable;
@@ -62,10 +60,9 @@ class CustomDropdown<T> extends StatelessWidget {
   Widget build(BuildContext context) {
     final Color bgColor = backgroundColor ?? AppColors.white;
 
-    final Color borderClr = borderColor ??
-        (showBorder
-            ? AppColors.lightDivider
-            : Colors.transparent);
+    final Color borderClr =
+        borderColor ??
+        (showBorder ? AppColors.lightDivider : Colors.transparent);
 
     return DropdownButtonHideUnderline(
       child: DropdownButton2<T>(
@@ -80,11 +77,7 @@ class CustomDropdown<T> extends StatelessWidget {
               prefixIcon!,
               const SizedBox(width: 8),
             ] else if (leadingIcon != null) ...[
-              Icon(
-                leadingIcon,
-                size: 18,
-                color: AppColors.textSecondary,
-              ),
+              Icon(leadingIcon, size: 18, color: AppColors.textSecondary),
               const SizedBox(width: 8),
             ],
             Flexible(
@@ -110,29 +103,24 @@ class CustomDropdown<T> extends StatelessWidget {
             child: itemBuilder != null
                 ? itemBuilder!(item)
                 : Row(
-              children: [
-                if (itemIcon != null) ...[
-                  Icon(
-                    itemIcon,
-                    size: 18,
-                    color: itemColor,
+                    children: [
+                      if (itemIcon != null) ...[
+                        Icon(itemIcon, size: 18, color: itemColor),
+                        const SizedBox(width: 8),
+                      ],
+                      Expanded(
+                        child: Text(
+                          label(item),
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontFamily: FontFamily.regular,
+                            color: itemColor ?? AppColors.textPrimary,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
-                  const SizedBox(width: 8),
-                ],
-                Expanded(
-                  child: Text(
-                    label(item),
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontFamily: FontFamily.regular,
-                      color: itemColor ??
-                          AppColors.textPrimary,
-                    ),
-                  ),
-                ),
-              ],
-            ),
           );
         }).toList(),
 
@@ -148,18 +136,10 @@ class CustomDropdown<T> extends StatelessWidget {
             return Row(
               children: [
                 if (itemIcon != null) ...[
-                  Icon(
-                    itemIcon,
-                    size: 16,
-                    color: itemColor,
-                  ),
+                  Icon(itemIcon, size: 16, color: itemColor),
                   const SizedBox(width: 8),
                 ] else if (leadingIcon != null) ...[
-                  Icon(
-                    leadingIcon,
-                    size: 16,
-                    color: AppColors.primary,
-                  ),
+                  Icon(leadingIcon, size: 16, color: AppColors.primary),
                   const SizedBox(width: 8),
                 ],
                 Expanded(
@@ -170,8 +150,7 @@ class CustomDropdown<T> extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 14,
                       fontFamily: FontFamily.regular,
-                      color: itemColor ??
-                          AppColors.textPrimary,
+                      color: itemColor ?? AppColors.textPrimary,
                     ),
                   ),
                 ),
@@ -190,14 +169,8 @@ class CustomDropdown<T> extends StatelessWidget {
           padding: contentPadding,
           decoration: BoxDecoration(
             color: bgColor,
-            borderRadius:
-            BorderRadius.circular(borderRadius),
-            border: showBorder
-                ? Border.all(
-              color: borderClr,
-              width: 1,
-            )
-                : null,
+            borderRadius: BorderRadius.circular(borderRadius),
+            border: showBorder ? Border.all(color: borderClr, width: 1) : null,
           ),
         ),
 
@@ -215,19 +188,12 @@ class CustomDropdown<T> extends StatelessWidget {
           decoration: BoxDecoration(
             color: bgColor,
             borderRadius: BorderRadius.circular(12),
-            border: showBorder
-                ? Border.all(
-              color: borderClr,
-              width: 1,
-            )
-                : null,
+            border: showBorder ? Border.all(color: borderClr, width: 1) : null,
           ),
         ),
 
         menuItemStyleData: MenuItemStyleData(
-          overlayColor: WidgetStateProperty.all(
-            Colors.black12,
-          ),
+          overlayColor: WidgetStateProperty.all(Colors.black12),
         ),
       ),
     );

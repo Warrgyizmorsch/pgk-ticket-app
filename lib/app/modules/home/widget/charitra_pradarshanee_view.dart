@@ -2,22 +2,12 @@ import '../../../common/constant/app_imports.dart';
 import '../controllers/home_controller.dart';
 
 class CharitraPradarshaneeView extends GetView<HomeController> {
-  CharitraPradarshaneeView({super.key});
-
-  // Reactive state variable to track the active image index in the carousel
-  final RxInt _currentCarouselIndex = 0.obs;
-
-  // List of images for the slider (Update with your specific Charitra Pradarshanee ImageConstants)
-  final List<String> _carouselImages = [
-    ImageConstant.mewar,
-    ImageConstant.bhaktiDham,
-    ImageConstant.mewar,
-  ];
+  const CharitraPradarshaneeView({super.key});
 
   @override
   Widget build(BuildContext context) {
     Get.put(HomeController());
-    // final l10n = AppLocalizations.of(context)!; // Uncomment for localization
+    final l10n = AppLocalizations.of(context)!;
 
     return Scaffold(
       backgroundColor: const Color(0xFFFFF6F0),
@@ -30,9 +20,9 @@ class CharitraPradarshaneeView extends GetView<HomeController> {
           icon: const Icon(Icons.arrow_back_ios_new_rounded, color: Colors.black87),
           onPressed: () => Get.back(),
         ),
-        title: const Text(
-          'Maharana Pratap Charitra Pradarshanee',
-          style: TextStyle(
+        title: Text(
+          l10n.charitraPradarshaneeTitle,
+          style: const TextStyle(
             color: Colors.black87,
             fontWeight: FontWeight.bold,
             fontSize: 16, // Slightly smaller to fit the long title
@@ -59,7 +49,7 @@ class CharitraPradarshaneeView extends GetView<HomeController> {
               alignment: Alignment.bottomLeft,
               children: [
                 Image.asset(
-                  ImageConstant.pgkFullImage,
+                  ImageConstant.charitraPradarshanee,
                   width: double.infinity,
                   height: 260,
                   fit: BoxFit.cover,
@@ -79,7 +69,7 @@ class CharitraPradarshaneeView extends GetView<HomeController> {
                       begin: Alignment.bottomCenter,
                       end: Alignment.topCenter,
                       colors: [
-                        Colors.black.withValues(alpha:0.85),
+                        Colors.black.withValues(alpha: 0.85),
                         Colors.transparent,
                       ],
                     ),
@@ -88,7 +78,7 @@ class CharitraPradarshaneeView extends GetView<HomeController> {
                 Padding(
                   padding: const EdgeInsets.all(16.0),
                   child: Text(
-                    "Maharana Pratap Charitra Pradarshanee",
+                    l10n.charitraPradarshaneeTitle,
                     style: const TextStyle(
                       color: Colors.white,
                       fontSize: 22,
@@ -109,7 +99,7 @@ class CharitraPradarshaneeView extends GetView<HomeController> {
               child: Row(
                 children: [
                   GestureDetector(
-                    onTap: () => controller.toggleNarration('The life story of Maharana Pratap from birth to death is displayed through paintings in five rooms. Whether it is the birthplace of Pratap...'),
+                    onTap: () => controller.toggleNarration(l10n.charitraNarrationText1),
                     child: Container(
                       width: 48,
                       height: 48,
@@ -148,11 +138,11 @@ class CharitraPradarshaneeView extends GetView<HomeController> {
                           ),
                         ),
                         const SizedBox(height: 6),
-                        const Text(
-                          'Charitra Pradarshanee Narration',
+                        Text(
+                          l10n.charitraNarrationLabel,
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.w600,
                             color: Colors.black87,
@@ -169,7 +159,7 @@ class CharitraPradarshaneeView extends GetView<HomeController> {
                       Obx(() {
                         String percentage = (controller.audioProgress.value * 100).toInt().toString();
                         return Text(
-                          controller.isPlaying.value ? '$percentage%' : 'Audio Guide',
+                          controller.isPlaying.value ? '$percentage%' : l10n.audioGuideLabel,
                           style: TextStyle(
                             fontSize: 10,
                             color: Colors.grey.shade600,
@@ -193,9 +183,9 @@ class CharitraPradarshaneeView extends GetView<HomeController> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    'A Journey Through a Legend’s Life',
-                    style: TextStyle(
+                  Text(
+                    l10n.journeyThroughLegendTitle,
+                    style: const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                       color: Colors.black87,
@@ -203,51 +193,45 @@ class CharitraPradarshaneeView extends GetView<HomeController> {
                   ),
                   const SizedBox(height: 12),
 
-                  _buildParagraph(
-                      'The life story of Maharana Pratap from birth to death is displayed through paintings in five rooms. Whether it is the birthplace of Pratap in Kumbhalgarh or scenes depicting Pratap freeing Abdul Rahim Khan-Khana’s family or the sacrifice of his loyal horse Chetak, these scenes provide a vivid portrayal through paintings, offering viewers an immersive experience.'
-                  ),
+                  _buildParagraph(l10n.charitraDesc1),
 
-                  _buildParagraph(
-                      'A striking highlight is the Maharana Pratap statue that stands tall, symbolizing his unwavering spirit and bravery. The Charitra Pradarshanee offers a visually captivating and educational experience that brings the legendary Rajput warrior’s life to light.'
-                  ),
+                  _buildParagraph(l10n.charitraDesc2),
 
                   const SizedBox(height: 8),
                   const Divider(),
                   const SizedBox(height: 8),
 
-                  _buildSubHeader('The Grand Maharana Pratap Statue'),
-                  _buildParagraph('Standing tall inside the Pradarshanee, this magnificent statue depicts Maharana Pratap mounted on his loyal horse, Chetak. It is a true tribute to the indomitable Rajput spirit.'),
-                  _buildBulletPoint('Represents courage, sacrifice, and honor.'),
-                  _buildBulletPoint('Serves as an inspiration for future generations.'),
-                  _buildBulletPoint('A landmark that draws visitors from across India.'),
+                  _buildSubHeader(l10n.grandStatueTitle),
+                  _buildParagraph(l10n.grandStatueDesc),
+                  _buildBulletPoint(l10n.statueBullet1),
+                  _buildBulletPoint(l10n.statueBullet2),
+                  _buildBulletPoint(l10n.statueBullet3),
 
                   const SizedBox(height: 16),
 
-                  _buildSubHeader('Key Highlights'),
-                  _buildBulletPoint('Battle Dioramas: Life-like displays narrating the Battle of Haldighati and other decisive moments.'),
-                  _buildBulletPoint('Weapons and Artifacts: Replicas of the swords, shields, and armors used by Rajput warriors.'),
-                  _buildBulletPoint('Cultural Galleries: Exhibits showcasing Rajputana lifestyle, costumes, and traditions.'),
-                  _buildBulletPoint('Freedom Fighters Section: Honoring India’s heroes who followed Maharana Pratap’s path of courage.'),
+                  _buildSubHeader(l10n.keyHighlightsTitle),
+                  _buildBulletPoint(l10n.charitraHighlight1),
+                  _buildBulletPoint(l10n.charitraHighlight2),
+                  _buildBulletPoint(l10n.charitraHighlight3),
+                  _buildBulletPoint(l10n.charitraHighlight4),
 
                   const SizedBox(height: 16),
 
-                  _buildSubHeader('Why Visit During Your Udaipur Trip?'),
-                  _buildBulletPoint('Establish a deeper connection with Rajasthan’s history.'),
-                  _buildBulletPoint('A chance to learn about Maharana Pratap’s unmatched spirit of freedom.'),
-                  _buildBulletPoint('An inspiring cultural experience unlike any other tourist site.'),
+                  _buildSubHeader(l10n.whyVisitUdaipurTitle),
+                  _buildBulletPoint(l10n.visitBullet1),
+                  _buildBulletPoint(l10n.visitBullet2),
+                  _buildBulletPoint(l10n.visitBullet3),
 
                   const SizedBox(height: 12),
-                  _buildParagraph(
-                      'More than a museum, the Maharana Pratap Charitra Pradarshanee is a place of inspiration. The exhibits and the statue ignite a sense of patriotism and pride in every visitor. It is a reminder that true leadership lies in selflessness, resilience, and honor.'
-                  ),
+                  _buildParagraph(l10n.charitraConclusion),
 
                   const SizedBox(height: 16),
                   const Divider(),
                   const SizedBox(height: 8),
 
-                  const Text(
-                    'Frequently Asked Questions',
-                    style: TextStyle(
+                  Text(
+                    l10n.faqTitleStandard,
+                    style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
                       color: Colors.black87,
@@ -256,24 +240,24 @@ class CharitraPradarshaneeView extends GetView<HomeController> {
                   const SizedBox(height: 12),
 
                   _buildFaqTile(
-                      question: 'What is the Charitra Pradarshanee famous for?',
-                      answer: 'It is famous for its magnificent Maharana Pratap statue and detailed galleries that bring to life the legacy of Maharana Pratap and the history of Mewar.'
+                      question: l10n.faqCharitraQ1,
+                      answer: l10n.faqCharitraA1
                   ),
                   _buildFaqTile(
-                      question: 'Where is the Maharana Pratap Statue located?',
-                      answer: 'The grand Maharana Pratap statue is located at the Charitra Pradarshanee inside Pratap Gaurav Kendra, Udaipur.'
+                      question: l10n.faqCharitraQ2,
+                      answer: l10n.faqCharitraA2
                   ),
                   _buildFaqTile(
-                      question: 'How long does it take to explore?',
-                      answer: 'Visitors usually spend 2–3 hours exploring the museum, statue, and exhibits in detail.'
+                      question: l10n.faqCharitraQ3,
+                      answer: l10n.faqCharitraA3
                   ),
                   _buildFaqTile(
-                      question: 'Is it suitable for families and children?',
-                      answer: 'Yes, the museum is family-friendly and offers a wonderful educational experience for children and adults alike.'
+                      question: l10n.faqCharitraQ4,
+                      answer: l10n.faqCharitraA4
                   ),
                   _buildFaqTile(
-                      question: 'Why is the Maharana Pratap Statue important?',
-                      answer: 'It is a cultural landmark that symbolizes bravery and sacrifice, keeping alive the story of Maharana Pratap for generations.'
+                      question: l10n.faqCharitraQ5,
+                      answer: l10n.faqCharitraA5
                   ),
                 ],
               ),
@@ -302,26 +286,7 @@ class CharitraPradarshaneeView extends GetView<HomeController> {
     );
   }
 
-  Widget _buildDot({required bool isActive}) {
-    return AnimatedContainer(
-      duration: const Duration(milliseconds: 200),
-      margin: const EdgeInsets.symmetric(horizontal: 4),
-      width: isActive ? 18 : 6,
-      height: 6,
-      decoration: BoxDecoration(
-        color: isActive ? const Color(0xFFF47B20) : Colors.grey.shade300,
-        borderRadius: BorderRadius.circular(3),
-      ),
-    );
-  }
 
-  Widget _placeholderImage() {
-    return Container(
-      width: double.infinity,
-      color: Colors.grey.shade200,
-      child: const Icon(Icons.image_outlined, color: Colors.grey, size: 40),
-    );
-  }
 
   Widget _buildSubHeader(String text) {
     return Padding(

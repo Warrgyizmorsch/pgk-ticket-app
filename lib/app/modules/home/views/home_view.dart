@@ -1,11 +1,13 @@
-import 'package:pgk_ticket_app/app/modules/otp/widget/language_selection.dart';
+import 'package:pgk_ticket_app/app/modules/show_view/widget/water_show_view.dart';
+
 import '../../../common/constant/app_imports.dart';
-import '../../otp/controllers/otp_controller.dart';
 import '../../show_view/widget/light_sound_show_view.dart';
 import '../controllers/home_controller.dart';
 import '../widget/bharat_mata_mandir_view.dart';
 import '../widget/charitra_pradarshanee_view.dart';
-import '../widget/haldighati _vijay_yudh_view.dart';
+import '../widget/diver_mahotsav_view.dart';
+import '../widget/event_detail_view.dart';
+import '../widget/haldighati_vijay_yudh_view.dart';
 import '../widget/krantikari_dirgha_view.dart';
 import '../widget/mewad_ratan_dirgha_view.dart';
 import '../widget/rajasthan_dirgha_view.dart';
@@ -15,6 +17,7 @@ class HomeView extends GetView<HomeController> {
 
   @override
   Widget build(BuildContext context) {
+    // Initialize AppLocalizations
     final l10n = AppLocalizations.of(context)!;
     final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -22,27 +25,7 @@ class HomeView extends GetView<HomeController> {
       key: scaffoldKey,
       backgroundColor: AppColors.background,
 
-      // ─── Left Side Navigation Drawer ───
-      // drawer: _buildAppDrawer(context, l10n),
-
-      // ─── AppBar Section ───
-      appBar: CustomAppBar(
-        title: l10n.museumDashboard,
-        showBackButton: false,
-        // leading: IconButton(
-        //   icon: const Icon(Icons.menu_rounded, color: AppColors.white),
-        //   onPressed: () => scaffoldKey.currentState?.openDrawer(),
-        // ),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.account_circle_outlined, color: AppColors.white, size: 28),
-            onPressed: () {
-              // Get.toNamed(Routes.PROFILE);
-            },
-          ),
-          const SizedBox(width: 8),
-        ],
-      ),
+      appBar: CustomAppBar(title: l10n.museumDashboard, showBackButton: false),
 
       // ─── Main Content Body ───
       body: SingleChildScrollView(
@@ -68,13 +51,22 @@ class HomeView extends GetView<HomeController> {
                       width: double.infinity,
                       height: 240,
                       color: AppColors.lightDisabled,
-                      child: const Icon(Icons.account_balance, size: 64, color: Colors.white70),
+                      child: const Icon(
+                        Icons.account_balance,
+                        size: 64,
+                        color: Colors.white70,
+                      ),
                     ),
                   ),
                   // Sleek Gradient Overlay
                   Container(
                     width: double.infinity,
-                    padding: const EdgeInsets.only(top: 60, bottom: 20, left: 20, right: 20),
+                    padding: const EdgeInsets.only(
+                      top: 60,
+                      bottom: 20,
+                      left: 20,
+                      right: 20,
+                    ),
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
                         begin: Alignment.bottomCenter,
@@ -100,7 +92,9 @@ class HomeView extends GetView<HomeController> {
             ),
 
             Padding(
-              padding: const EdgeInsets.all(20.0), // Increased edge padding to 20 for breathing room
+              padding: const EdgeInsets.all(
+                20.0,
+              ), // Increased edge padding to 20 for breathing room
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -112,14 +106,14 @@ class HomeView extends GetView<HomeController> {
                     readMoreText: l10n.readMore,
                     onReadMore: () => Get.toNamed(Routes.ABOUTPGK),
                   ),
-                  const SizedBox(height: 24),
+                  const SizedBox(height: 16),
 
                   _buildFullTextHighlightCard(
                     imageUrl: ImageConstant.otp,
                     title: l10n.statueOfPride,
                     description: l10n.statueOfPrideDesc,
                   ),
-                  const SizedBox(height: 24),
+                  const SizedBox(height: 16),
 
                   _buildSectionTitle(l10n.historyOfPratap),
                   const SizedBox(height: 16),
@@ -132,67 +126,65 @@ class HomeView extends GetView<HomeController> {
                     onReadMore: () => Get.toNamed(Routes.PRATAPHISTORY),
                   ),
 
-                  const SizedBox(height: 32),
+                  const SizedBox(height: 16),
 
-                  // ─── Section: Popular Exhibits ───
                   _buildSectionTitle(l10n.majorAttractions),
                   const SizedBox(height: 16),
                   SizedBox(
-                    height: 160,
+                    height: 200,
                     child: ListView(
                       scrollDirection: Axis.horizontal,
                       clipBehavior: Clip.none,
                       physics: const BouncingScrollPhysics(),
                       children: [
                         _buildExhibitCard(
-                          imageUrl: ImageConstant.bhaktiDham,
+                          imageUrl: ImageConstant.bhaktiDhamIntro,
                           title: l10n.bhaktiDham,
                           onTap: () => Get.toNamed(Routes.BHAKTIDHAM),
                         ),
                         _buildExhibitCard(
-                          imageUrl: ImageConstant.bhaktiDham, // Update image if needed
+                          imageUrl: ImageConstant.waterShow,
                           title: l10n.waterLaserShow,
-                          onTap: () => Get.to(() => const LightSoundShowView()),
+                          onTap: () => Get.to(() => const WaterShowView()),
                         ),
                         _buildExhibitCard(
-                          imageUrl: ImageConstant.bhaktiDham, // Update image if needed
-                          title: "Haldighati Vijay Yudh Dirgha",
-                          onTap: () => Get.to(() => HaldighatiView()), // 👈 Linked
+                          imageUrl: ImageConstant.haldighatiDirgha,
+                          title: l10n.haldighatiDirghaTitle, // Localized
+                          onTap: () => Get.to(() => HaldighatiView()),
                         ),
                         _buildExhibitCard(
-                          imageUrl: ImageConstant.bhaktiDham, // Update image if needed
-                          title: "Bharat Mata Mandir",
+                          imageUrl: ImageConstant.bharatMataMandir,
+                          title: l10n.bharatMataMandirTitle, // Localized
                           onTap: () {
-                            Get.to(() =>  BharatMataMandirView());
+                            Get.to(() => BharatMataMandirView());
                           },
                         ),
                         _buildExhibitCard(
-                          imageUrl: ImageConstant.bhaktiDham, // Update image if needed
-                          title: "Mewad Ratan Dirgha",
-                          onTap: () => Get.to(() => MewadRatanDirghaView()), // 👈 Linked
+                          imageUrl: ImageConstant.mewadRatanDirgha,
+                          title: l10n.mewadRatanDirghaTitle, // Localized
+                          onTap: () => Get.to(() => MewadRatanDirghaView()),
                         ),
                         _buildExhibitCard(
-                          imageUrl: ImageConstant.bhaktiDham, // Update image if needed
-                          title: "Krantikari Dirgha",
-                          onTap: () => Get.to(() => KrantikariDirghaView()), // 👈 Linked
+                          imageUrl: ImageConstant.krantikariDirgha,
+                          title: l10n.krantikariDirghaTitle, // Localized
+                          onTap: () => Get.to(() => KrantikariDirghaView()),
                         ),
                         _buildExhibitCard(
-                          imageUrl: ImageConstant.bhaktiDham, // Update image if needed
-                          title: "Maharana Pratap Charitra Pradarshanee",
-                          onTap: () => Get.to(() => CharitraPradarshaneeView()), // 👈 Linked
+                          imageUrl: ImageConstant.charitraPradarshanee,
+                          title: l10n.charitraPradarshaneeTitle, // Localized
+                          onTap: () => Get.to(() => CharitraPradarshaneeView()),
                         ),
                         _buildExhibitCard(
-                          imageUrl: ImageConstant.bhaktiDham, // Update image if needed
-                          title: "Rajasthan Dirgha",
-                          onTap: () => Get.to(() => RajasthanDirghaView()), // 👈 Linked
+                          imageUrl: ImageConstant.rajasthanDirgha,
+                          title: l10n.rajasthanDirghaTitle, // Localized
+                          onTap: () => Get.to(() => RajasthanDirghaView()),
                         ),
                       ],
                     ),
                   ),
 
-                  const SizedBox(height: 32),
+                  const SizedBox(height: 16),
 
-                  // ─── Section: Museum News ───
                   _buildSectionTitle(l10n.museumNews),
                   const SizedBox(height: 16),
                   SizedBox(
@@ -205,6 +197,7 @@ class HomeView extends GetView<HomeController> {
                         _buildNewsEventCard(
                           title: l10n.newsLightSoundShow,
                           hasBackgroundImage: false,
+                          onTap: ()=>Get.to(() => const LightSoundShowView()),
                         ),
                         _buildNewsEventCard(
                           title: l10n.newsSpecialExhibition,
@@ -214,7 +207,7 @@ class HomeView extends GetView<HomeController> {
                     ),
                   ),
 
-                  const SizedBox(height: 32),
+                  const SizedBox(height: 16),
 
                   // ─── Section: Upcoming Events ───
                   _buildSectionTitle(l10n.events),
@@ -228,7 +221,17 @@ class HomeView extends GetView<HomeController> {
                       children: [
                         _buildNewsEventCard(
                           title: l10n.eventPratapJayanti,
-                          hasBackgroundImage: false,
+                          hasBackgroundImage: true,
+                          onTap: () {
+                            Get.to(() => EventDetailView());
+                          },
+                        ),
+                        _buildNewsEventCard(
+                          title: l10n.diverMahotsavTitle,
+                          hasBackgroundImage: true,
+                          onTap: () {
+                            Get.to(() => DiverMahotsavView());
+                          },
                         ),
                         _buildNewsEventCard(
                           title: l10n.eventKidsWorkshop,
@@ -237,7 +240,7 @@ class HomeView extends GetView<HomeController> {
                       ],
                     ),
                   ),
-                  const SizedBox(height: 100),
+                  const SizedBox(height: 24),
                 ],
               ),
             ),
@@ -247,132 +250,9 @@ class HomeView extends GetView<HomeController> {
     );
   }
 
-  // ─── Drawer Builder Helper ───
-  Widget _buildAppDrawer(BuildContext context, AppLocalizations l10n) {
-    return Drawer(
-      backgroundColor: AppColors.white,
-      child: Column(
-        children: [
-          UserAccountsDrawerHeader(
-            decoration: const BoxDecoration(color: AppColors.primary),
-            currentAccountPicture: Container(
-              decoration: const BoxDecoration(
-                color: AppColors.white,
-                shape: BoxShape.circle,
-              ),
-              child: const Icon(Icons.person, size: 45, color: AppColors.primary),
-            ),
-            accountName: Text('Guest User', style: AppTextStyles.titleLarge.copyWith(color: AppColors.white, fontSize: 16)),
-            accountEmail: Text('welcome@pratapgauravkendra.org', style: AppTextStyles.bodyMedium.copyWith(color: Colors.white70, fontSize: 12)),
-          ),
-          Expanded(
-            child: ListView(
-              padding: EdgeInsets.zero,
-              children: [
-                _buildDrawerItem(
-                  icon: Icons.person_outline,
-                  title: 'Profile',
-                  onTap: () {
-                    Get.back();
-                    Get.toNamed(Routes.PROFILE);
-                  },
-                ),
-                _buildDrawerItem(
-                  icon: Icons.language_outlined,
-                  title: 'Change Language',
-                  onTap: () {
-                    Get.back();
-                    Get.lazyPut(() => OtpController());
-                    Get.to(() => const LanguageSelectionView());
-                  },
-                ),
-                _buildDrawerItem(
-                  icon: Icons.bluetooth_searching_outlined,
-                  title: 'Bluetooth Connectivity',
-                  subtitle: 'Connect audio guides',
-                  onTap: () {},
-                ),
-                const Padding(
-                  padding: EdgeInsets.symmetric(vertical: 8.0),
-                  child: Divider(height: 1, thickness: 1, color: AppColors.lightDivider),
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(bottom: 24.0),
-            child: _buildDrawerItem(
-              icon: Icons.logout_rounded,
-              title: 'Logout',
-              iconColor: AppColors.error,
-              textColor: AppColors.error,
-              onTap: () {
-                Get.back();
-                _showLogoutConfirmation();
-              },
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildDrawerItem({
-    required IconData icon,
-    required String title,
-    String? subtitle,
-    required VoidCallback onTap,
-    Color iconColor = AppColors.primary,
-    Color textColor = AppColors.textPrimary,
-  }) {
-    return ListTile(
-      leading: Icon(icon, color: iconColor, size: 24),
-      title: Text(
-        title,
-        style: AppTextStyles.subtitle.copyWith(color: textColor, fontWeight: FontWeight.w600),
-      ),
-      subtitle: subtitle != null
-          ? Text(subtitle, style: AppTextStyles.caption)
-          : null,
-      trailing: const Icon(Icons.chevron_right_rounded, color: AppColors.lightTextDisabled, size: 20),
-      onTap: onTap,
-    );
-  }
-
-  // ─── Dialog Implementations ───
-  void _showLogoutConfirmation() {
-    Get.dialog(
-      AlertDialog(
-        backgroundColor: AppColors.white,
-        title: Text('Logout', style: AppTextStyles.titleLarge),
-        content: Text('Are you sure you want to log out of the application?', style: AppTextStyles.bodyMedium),
-        actions: [
-          TextButton(
-            onPressed: () => Get.back(),
-            child: Text('Cancel', style: AppTextStyles.subtitle),
-          ),
-          ElevatedButton(
-            onPressed: () {
-              Get.back();
-              Get.offAllNamed(Routes.LOGIN);
-            },
-            style: ElevatedButton.styleFrom(
-              backgroundColor: AppColors.error,
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-            ),
-            child: const Text('Logout', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
-          ),
-        ],
-      ),
-    );
-  }
-
   // ─── Layout Builder Helpers ───
   Widget _buildSectionTitle(String title) {
-    return Text(
-      title,
-      style: AppTextStyles.headline.copyWith(fontSize: 20),
-    );
+    return Text(title, style: AppTextStyles.headline.copyWith(fontSize: 20));
   }
 
   Widget _buildFullTextHighlightCard({
@@ -409,7 +289,11 @@ class HomeView extends GetView<HomeController> {
                   width: double.infinity,
                   height: 220,
                   color: AppColors.lightDisabled,
-                  child: const Icon(Icons.account_balance, size: 48, color: Colors.white),
+                  child: const Icon(
+                    Icons.account_balance,
+                    size: 48,
+                    color: Colors.white,
+                  ),
                 ),
               ),
             ),
@@ -418,7 +302,10 @@ class HomeView extends GetView<HomeController> {
             const SizedBox(height: 12),
             Text(
               description,
-              style: AppTextStyles.bodyMedium.copyWith(color: AppColors.textSecondary, height: 1.6),
+              style: AppTextStyles.bodyMedium.copyWith(
+                color: AppColors.textSecondary,
+                fontSize: AppFontSize.s12,
+              ),
               textAlign: TextAlign.justify,
             ),
           ],
@@ -458,7 +345,8 @@ class HomeView extends GetView<HomeController> {
               imageUrl,
               width: 140,
               height: 160,
-              fit: BoxFit.cover, // Changed to cover so it fills the edge perfectly
+              fit: BoxFit
+                  .cover, // Changed to cover so it fills the edge perfectly
               errorBuilder: (context, error, stackTrace) => Container(
                 width: 140,
                 height: 160,
@@ -484,7 +372,10 @@ class HomeView extends GetView<HomeController> {
                     description,
                     maxLines: 4,
                     overflow: TextOverflow.ellipsis,
-                    style: AppTextStyles.bodySmall.copyWith(color: AppColors.textSecondary, height: 1.4),
+                    style: AppTextStyles.bodySmall.copyWith(
+                      color: AppColors.textSecondary,
+                      height: 1.4,
+                    ),
                   ),
                   if (onReadMore != null) ...[
                     const SizedBox(height: 12),
@@ -496,10 +387,16 @@ class HomeView extends GetView<HomeController> {
                         children: [
                           Text(
                             readMoreText ?? 'Read More',
-                            style: AppTextStyles.button.copyWith(color: AppColors.primary),
+                            style: AppTextStyles.button.copyWith(
+                              color: AppColors.primary,
+                            ),
                           ),
                           const SizedBox(width: 4),
-                          const Icon(Icons.arrow_forward_rounded, size: 16, color: AppColors.primary),
+                          const Icon(
+                            Icons.arrow_forward_rounded,
+                            size: 16,
+                            color: AppColors.primary,
+                          ),
                         ],
                       ),
                     ),
@@ -513,7 +410,11 @@ class HomeView extends GetView<HomeController> {
     );
   }
 
-  Widget _buildExhibitCard({required String imageUrl, required String title, required onTap}) {
+  Widget _buildExhibitCard({
+    required String imageUrl,
+    required String title,
+    required onTap,
+  }) {
     return GestureDetector(
       onTap: onTap,
       child: Container(
@@ -534,10 +435,12 @@ class HomeView extends GetView<HomeController> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             ClipRRect(
-              borderRadius: const BorderRadius.vertical(top: Radius.circular(16)),
+              borderRadius: const BorderRadius.vertical(
+                top: Radius.circular(16),
+              ),
               child: Image.asset(
                 imageUrl,
-                height: 100,
+                height: 140,
                 width: double.infinity,
                 fit: BoxFit.cover,
                 errorBuilder: (context, error, stackTrace) => Container(
@@ -563,68 +466,77 @@ class HomeView extends GetView<HomeController> {
     );
   }
 
-  Widget _buildNewsEventCard({required String title, required bool hasBackgroundImage}) {
-    return Container(
-      width: 260,
-      margin: const EdgeInsets.only(right: 16),
-      decoration: BoxDecoration(
-        color: const Color(0xFF2C1C16), // Used your textPrimary as a dark slate theme
-        borderRadius: BorderRadius.circular(16),
-        image: hasBackgroundImage
-            ? DecorationImage(
-          image: const AssetImage(ImageConstant.bhaktiDham),
-          fit: BoxFit.cover,
-          colorFilter: ColorFilter.mode(
-            Colors.black.withValues(alpha: 0.7),
-            BlendMode.darken,
-          ),
-        )
-            : null,
-        boxShadow: const [
-          BoxShadow(
-            color: AppColors.lightShadow,
-            blurRadius: 8,
-            offset: Offset(0, 4),
-          ),
-        ],
-      ),
-      child: Stack(
-        children: [
-          Positioned(
-            left: 16,
-            top: 20,
-            bottom: 20,
-            child: Container(
-              width: 4,
-              decoration: BoxDecoration(
-                color: AppColors.primary,
-                borderRadius: BorderRadius.circular(4),
-              ),
+  Widget _buildNewsEventCard({
+    required String title,
+    required bool hasBackgroundImage,
+    VoidCallback? onTap,
+  }) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        width: 260,
+        margin: const EdgeInsets.only(right: 16),
+        decoration: BoxDecoration(
+          color: const Color(
+            0xFF2C1C16,
+          ), // Used your textPrimary as a dark slate theme
+          borderRadius: BorderRadius.circular(16),
+          image: hasBackgroundImage
+              ? DecorationImage(
+                  image: const AssetImage(ImageConstant.bhaktiDham),
+                  fit: BoxFit.cover,
+                  colorFilter: ColorFilter.mode(
+                    Colors.black.withValues(alpha: 0.7),
+                    BlendMode.darken,
+                  ),
+                )
+              : null,
+          boxShadow: const [
+            BoxShadow(
+              color: AppColors.lightShadow,
+              blurRadius: 8,
+              offset: Offset(0, 4),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 32, top: 16, right: 16, bottom: 16),
-            child: Align(
-              alignment: Alignment.centerLeft,
-              child: Text(
-                title,
-                style: AppTextStyles.subtitle.copyWith(
-                  color: AppColors.white,
-                  height: 1.5,
+          ],
+        ),
+        child: Stack(
+          children: [
+            Positioned(
+              left: 16,
+              top: 20,
+              bottom: 20,
+              child: Container(
+                width: 4,
+                decoration: BoxDecoration(
+                  color: AppColors.primary,
+                  borderRadius: BorderRadius.circular(4),
                 ),
               ),
             ),
-          ),
-        ],
+            Padding(
+              padding: const EdgeInsets.only(
+                left: 32,
+                top: 16,
+                right: 16,
+                bottom: 16,
+              ),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  title,
+                  style: AppTextStyles.subtitle.copyWith(
+                    color: AppColors.white,
+                    height: 1.5,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
 }
-
-
-
-
-
 
 // import 'package:pgk_ticket_app/app/modules/otp/widget/language_selection.dart';
 //

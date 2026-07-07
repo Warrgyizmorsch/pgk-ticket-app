@@ -1,5 +1,3 @@
-
-
 import 'package:country_code_picker/country_code_picker.dart';
 import '../../../common/constant/app_imports.dart';
 import '../controllers/login_controller.dart';
@@ -11,16 +9,14 @@ class LoginView extends GetView<LoginController> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.background,
-      // ─── FIX: Use CustomScrollView and SliverFillRemaining ───
       body: CustomScrollView(
         slivers: [
           SliverFillRemaining(
-            hasScrollBody: false, // Tells it to allow the Column to expand or scroll as needed
+            hasScrollBody: false,
             child: Form(
               key: controller.loginFormKey,
               child: Column(
                 children: [
-                  // ─── Header Section with Bottom Curve & Brand Logo ───
                   Stack(
                     alignment: Alignment.center,
                     children: [
@@ -59,7 +55,6 @@ class LoginView extends GetView<LoginController> {
                     ],
                   ),
 
-                  // ─── Login Form Section ───
                   Expanded(
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 32.0),
@@ -74,7 +69,6 @@ class LoginView extends GetView<LoginController> {
                           ),
                           const SizedBox(height: 32),
 
-                          // Custom Combined Text Form Layout Field
                           TextFormFieldCustom(
                             showTitle: false,
                             method: TextFieldCustom(
@@ -103,7 +97,6 @@ class LoginView extends GetView<LoginController> {
                                   showDropDownButton: true,
                                   showCountryOnly: false,
 
-                                  // ─── THE MAGIC FIX: Custom Builder ───
                                   builder: (countryCode) {
                                     return Row(
                                       mainAxisSize: MainAxisSize.min,
@@ -132,14 +125,13 @@ class LoginView extends GetView<LoginController> {
                                           color: AppColors.textSecondary,
                                           size: 20,
                                         ),
-                                        const SizedBox(width: 4), // Right margin before divider
-                                        // Divider line (Optional, looks good)
+                                        const SizedBox(width: 4),
                                         Container(
                                           height: 20,
                                           width: 1,
                                           color: AppColors.lightDivider,
                                         ),
-                                        const SizedBox(width: 8), // Space between divider and text field
+                                        const SizedBox(width: 8),
                                       ],
                                     );
                                   },
@@ -148,7 +140,6 @@ class LoginView extends GetView<LoginController> {
                           ),
                           const SizedBox(height: 24),
 
-                          // Get OTP Action Button utilizing AppButton widget component
                           Obx(
                                 () => controller.isLoading.value
                                 ? const SizedBox(
@@ -167,7 +158,6 @@ class LoginView extends GetView<LoginController> {
                           ),
                           const SizedBox(height: 32),
 
-                          // Text Separator Layout Structure
                           const Row(
                             children: [
                               Expanded(child: Divider(color: AppColors.lightDivider, thickness: 1)),
@@ -183,7 +173,6 @@ class LoginView extends GetView<LoginController> {
                           ),
                           const SizedBox(height: 32),
 
-                          // Google Native Sign In Option
                           OutlinedButton(
                             onPressed: () => controller.loginWithGoogle(),
                             style: OutlinedButton.styleFrom(

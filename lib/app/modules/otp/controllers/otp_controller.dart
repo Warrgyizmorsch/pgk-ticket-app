@@ -4,7 +4,7 @@ import '../../../core/models/language/language_model.dart';
 import '../../../core/utils/api/login_api/app_otp_api.dart';
 import '../../../routes/app_pages.dart';
 import '../../../services/storage_services.dart';
-import '../widget/language_selection.dart'; // Adjust path based on your directory structure
+import '../widget/language_selection.dart';
 
 class OtpController extends GetxController {
   final isLoading = false.obs;
@@ -29,7 +29,18 @@ class OtpController extends GetxController {
     }
     super.onClose();
   }
-
+  Future<void> _restoreSavedLanguage() async {
+    final savedCode = StorageService.to.getLanguage();
+    if (savedCode != null && savedCode.isNotEmpty) {
+      final match = supportedLanguages.firstWhereOrNull(
+            (lang) => lang.languageCode == savedCode,
+      );
+      if (match != null) {
+        selectedLanguageId.value = match.id;
+        Get.updateLocale(Locale(match.languageCode));
+      }
+    }
+  }
   void handleOtpInput(String value, int index) {
     if (value.length == 1 && index < 4) {
       otpFocusNodes[index + 1].requestFocus();
@@ -43,6 +54,7 @@ class OtpController extends GetxController {
     if (Get.arguments != null) {
       mobileNumber = Get.arguments as String;
     }
+    _restoreSavedLanguage();
   }
   Future<void> verifyOtp() async {
     String absoluteCode = otpControllers.map((c) => c.text).join();
@@ -66,30 +78,25 @@ class OtpController extends GetxController {
 
         await StorageService.to.saveToken(response.token!);
 
-        // Save the user data if it exists
         if (response.user != null) {
           await StorageService.to.saveUser(response.user);
         }
 
         _showSnackbar('Verified', response.message, const Color(0xFF22C55E));
 
-        // Clear navigation stack and go to Language Selection
         Get.to(LanguageSelectionView());
 
       } else {
-        // The API returned success: false, show the backend's error message
         _showSnackbar('Verification Failed', response.message, const Color(0xFFEF4444));
       }
 
     } catch (e) {
-      // Handle network drops or 500 server errors
       _showSnackbar('Error', 'Network error. Please try again.', const Color(0xFFEF4444));
     } finally {
       isLoading.value = false;
     }
   }
 
-// Re-using the helper method from earlier
   void _showSnackbar(String title, String message, Color bgColor) {
     Get.snackbar(
       title,
@@ -101,23 +108,25 @@ class OtpController extends GetxController {
     );
   }
 
-  // ─── Integrated Language Methods ───────────────────────────────────────────
-  /// Updates the active choice selection code reactive state
   void selectLanguage(String languageId, String languageCode) {
     selectedLanguageId.value = languageId;
     Get.updateLocale(Locale(languageCode));
   }
 
-  /// Consolidates global user adjustments and transitions downstream views
   Future<void> confirmLanguageSelection() async {
+    isLoading.value = true;
+
     try {
-      isLoading.value = true;
-      final selectedLang = supportedLanguages.firstWhere((lang) => lang.id == selectedLanguageId.value);
+      final selectedLang = supportedLanguages.firstWhere(
+              (lang) => lang.id == selectedLanguageId.value
+      );
 
+      await StorageService.to.saveLanguage(selectedLang.languageCode);
       Get.updateLocale(Locale(selectedLang.languageCode));
+      Get.offAllNamed(Routes.NAV_BAR);
 
-      await Future.delayed(const Duration(milliseconds: 500));
-      Get.toNamed(Routes.NAV_BAR);
+    } catch (e) {
+      debugPrint("ERROR : $e");
     } finally {
       isLoading.value = false;
     }

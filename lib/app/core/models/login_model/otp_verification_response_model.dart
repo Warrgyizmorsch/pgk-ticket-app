@@ -27,7 +27,7 @@ class OtpVerificationResponseModel {
       'success': success,
       'message': message,
       'token': token,
-      'user': user?.toJson(),
+      'user': user.toJson(),
     };
   }
 }

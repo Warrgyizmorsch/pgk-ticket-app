@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import '../../../common/constant/app_imports.dart';
 
 class TicketDetailView extends StatelessWidget {
@@ -7,13 +5,15 @@ class TicketDetailView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Initialize AppLocalizations
+    final l10n = AppLocalizations.of(context)!;
     final Map<String, dynamic> ticket = Get.arguments ?? {};
 
     return Scaffold(
       backgroundColor: AppColors.background,
       // Your CustomAppBar automatically handles the back button here
-      appBar: const CustomAppBar(
-        title: 'Ticket Detail',
+      appBar: CustomAppBar(
+        title: l10n.ticketDetailTitle,
         showBackButton: true,
       ),
       body: SingleChildScrollView(
@@ -42,7 +42,7 @@ class TicketDetailView extends StatelessWidget {
                     child: Column(
                       children: [
                         Text(
-                          ticket['attractionName'] ?? 'Attraction Name',
+                          ticket['attractionName'] ?? l10n.attractionNameFallback,
                           textAlign: TextAlign.center,
                           style: AppTextStyles.h1.copyWith(fontSize: 20, color: AppColors.primary),
                         ),
@@ -59,12 +59,13 @@ class TicketDetailView extends StatelessWidget {
                           child: Icon(
                             Icons.qr_code_2,
                             size: 150,
+                            // Note: if ticket status is localized by backend, you may need to adjust this logic check
                             color: ticket['status'] == 'Upcoming' ? AppColors.textPrimary : Colors.grey,
                           ),
                         ),
                         const SizedBox(height: 12),
                         Text(
-                          ticket['orderId'] ?? 'N/A',
+                          ticket['orderId'] ?? l10n.notAvailableFallback,
                           style: AppTextStyles.bodyMedium.copyWith(fontWeight: FontWeight.bold, letterSpacing: 1.5),
                         ),
                       ],
@@ -105,32 +106,32 @@ class TicketDetailView extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            _buildInfoColumn('Name', ticket['customerName'] ?? 'N/A'),
-                            _buildInfoColumn('Status', ticket['status'] ?? 'N/A', alignment: CrossAxisAlignment.end),
+                            _buildInfoColumn(l10n.nameLabel, ticket['customerName'] ?? l10n.notAvailableFallback),
+                            _buildInfoColumn(l10n.statusLabel, ticket['status'] ?? l10n.notAvailableFallback, alignment: CrossAxisAlignment.end),
                           ],
                         ),
                         const SizedBox(height: 20),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            _buildInfoColumn('Email', ticket['email'] ?? 'N/A'),
-                            _buildInfoColumn('Phone', ticket['phone'] ?? 'N/A', alignment: CrossAxisAlignment.end),
+                            _buildInfoColumn(l10n.emailLabel, ticket['email'] ?? l10n.notAvailableFallback),
+                            _buildInfoColumn(l10n.phoneLabel, ticket['phone'] ?? l10n.notAvailableFallback, alignment: CrossAxisAlignment.end),
                           ],
                         ),
                         const SizedBox(height: 20),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            _buildInfoColumn('Booking Date', ticket['bookingDate'] ?? 'N/A'),
-                            _buildInfoColumn('Visit Date', ticket['visitDate'] ?? 'N/A', alignment: CrossAxisAlignment.end),
+                            _buildInfoColumn(l10n.bookingDateLabel, ticket['bookingDate'] ?? l10n.notAvailableFallback),
+                            _buildInfoColumn(l10n.visitDateLabel, ticket['visitDate'] ?? l10n.notAvailableFallback, alignment: CrossAxisAlignment.end),
                           ],
                         ),
                         const SizedBox(height: 20),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            _buildInfoColumn('Nationality', ticket['nationality'] ?? 'N/A'),
-                            _buildInfoColumn('Total Paid', '₹${ticket['totalAmount'] ?? 0.0}', alignment: CrossAxisAlignment.end),
+                            _buildInfoColumn(l10n.nationalityLabel, ticket['nationality'] ?? l10n.notAvailableFallback),
+                            _buildInfoColumn(l10n.totalPaidLabel, '₹${ticket['totalAmount'] ?? 0.0}', alignment: CrossAxisAlignment.end),
                           ],
                         ),
                         const SizedBox(height: 20),
@@ -139,16 +140,19 @@ class TicketDetailView extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text('Tickets Breakup (${ticket['ticketCount']} Total)', style: AppTextStyles.caption.copyWith(color: AppColors.textSecondary, fontWeight: FontWeight.bold)),
+                            Text(
+                                '${l10n.ticketsBreakupLabel} (${ticket['ticketCount']} ${l10n.totalWord})',
+                                style: AppTextStyles.caption.copyWith(color: AppColors.textSecondary, fontWeight: FontWeight.bold)
+                            ),
                           ],
                         ),
                         const SizedBox(height: 12),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            _buildBreakdownItem('Adults', ticket['adultCount']?.toString() ?? '0'),
-                            _buildBreakdownItem('Kids', ticket['childCount']?.toString() ?? '0'),
-                            _buildBreakdownItem('Infants', ticket['infantCount']?.toString() ?? '0'),
+                            _buildBreakdownItem(l10n.adultsLabel, ticket['adultCount']?.toString() ?? '0'),
+                            _buildBreakdownItem(l10n.kidsLabel, ticket['childCount']?.toString() ?? '0'),
+                            _buildBreakdownItem(l10n.infantsLabel, ticket['infantCount']?.toString() ?? '0'),
                           ],
                         ),
                       ],

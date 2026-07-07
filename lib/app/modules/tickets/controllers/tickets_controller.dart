@@ -1,55 +1,61 @@
-import 'package:get/get.dart';
+import '../../../common/constant/app_imports.dart';
+import '../../../core/models/booking/booking_list_response.dart';
+import '../../../core/models/login_model/otp_verification_response_model.dart';
+import '../../../core/utils/api/booking_api/ticket_booking_api.dart';
+import '../../../services/storage_services.dart';
 
 class TicketsController extends GetxController {
-  // Static dummy data with added nationality, contact details, and ticket breakdown
-  final RxList<Map<String, dynamic>> myTickets = <Map<String, dynamic>>[
-    {
-      'orderId': 'ORD_10098273',
-      'bookingDate': '2024-05-12',
-      'visitDate': '2024-05-15',
-      'attractionName': 'Pratap Gourav Kendra',
-      'totalAmount': 920.00,
-      'ticketCount': 4,
-      'status': 'Upcoming',
-      'customerName': 'xyz',
-      'email': 'xyz@example.com',
-      'phone': '+91 747589035',
-      'nationality': 'Indian',
-      'adultCount': 2,
-      'childCount': 1,
-      'infantCount': 1,
-    },
-    {
-      'orderId': 'ORD_10098200',
-      'bookingDate': '2024-02-16',
-      'visitDate': '2024-02-18',
-      'attractionName': 'Combo (P.G.K. + Water Show)',
-      'totalAmount': 1240.00,
-      'ticketCount': 5,
-      'status': 'Visited',
-      'customerName': 'Test User',
-      'email': 'test.user@example.com',
-      'phone': '+91 983410008',
-      'nationality': 'Indian',
-      'adultCount': 3,
-      'childCount': 2,
-      'infantCount': 0,
-    },
-    {
-      'orderId': 'ORD_10098155',
-      'bookingDate': '2023-12-05',
-      'visitDate': '2023-12-10',
-      'attractionName': 'Water Laser Show Only',
-      'totalAmount': 320.00,
-      'ticketCount': 2,
-      'status': 'Visited',
-      'customerName': 'John Doe',
-      'email': 'john.doe@example.com',
-      'phone': '+1 415-555-0198',
-      'nationality': 'Foreigner',
-      'adultCount': 2,
-      'childCount': 0,
-      'infantCount': 0,
-    },
-  ].obs;
+
+
+  // 1. Set up your reactive variables at the top of your controller
+  final RxBool isLoading = true.obs;
+  final RxList<BookingItem> bookingData = <BookingItem>[].obs;
+// 2. Your updated method
+  Future<void> bookingList() async {
+    try {
+      isLoading.value = true;
+
+      final UserModel? user = StorageService.to.getUser();
+      final int userId = user?.id ?? 0;
+
+      if (userId == 0) {
+        Get.snackbar(
+            'Error',
+            'User not found. Please log in again.',
+            snackPosition: SnackPosition.BOTTOM
+        );
+        return;
+      }
+
+      final response = await TicketBooking.ticketBookingList(
+        paymentStatus: 'success',
+        perPage: 10,
+      );
+
+      if (response.success) {
+        bookingData.value = response.data;
+      } else {
+        Get.snackbar(
+          'Error',
+          response.message ,
+          snackPosition: SnackPosition.BOTTOM,
+        );
+      }
+    } catch (e) {
+      debugPrint('Booking Error: $e');
+      Get.snackbar(
+        'Error',
+        'Something went wrong while fetching your bookings.',
+        snackPosition: SnackPosition.BOTTOM,
+      );
+    } finally {
+      isLoading.value = false; // Stop loading whether it succeeded or failed
+    }
+  }
+  @override
+  void onInit() {
+    super.onInit();
+    // This triggers the API call automatically when the controller is loaded
+    bookingList();
+  }
 }

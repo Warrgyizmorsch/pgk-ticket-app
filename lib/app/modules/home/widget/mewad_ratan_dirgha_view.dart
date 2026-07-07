@@ -2,22 +2,13 @@ import '../../../common/constant/app_imports.dart';
 import '../controllers/home_controller.dart';
 
 class MewadRatanDirghaView extends GetView<HomeController> {
-  MewadRatanDirghaView({super.key});
+  const MewadRatanDirghaView({super.key});
 
-  // Reactive state variable to track the active image index in the carousel
-  final RxInt _currentCarouselIndex = 0.obs;
-
-  // List of images for the slider (Update with your specific Mewad Ratan ImageConstants)
-  final List<String> _carouselImages = [
-    ImageConstant.mewar,
-    ImageConstant.bhaktiDham,
-    ImageConstant.mewar,
-  ];
 
   @override
   Widget build(BuildContext context) {
     Get.put(HomeController());
-    // final l10n = AppLocalizations.of(context)!; // Uncomment for localization
+    final l10n = AppLocalizations.of(context)!;
 
     return Scaffold(
       backgroundColor: const Color(0xFFFFF6F0),
@@ -30,9 +21,9 @@ class MewadRatanDirghaView extends GetView<HomeController> {
           icon: const Icon(Icons.arrow_back_ios_new_rounded, color: Colors.black87),
           onPressed: () => Get.back(),
         ),
-        title: const Text(
-          'Mewad Ratan Dirgha',
-          style: TextStyle(
+        title: Text(
+          l10n.mewadRatanDirghaTitle,
+          style: const TextStyle(
             color: Colors.black87,
             fontWeight: FontWeight.bold,
             fontSize: 18,
@@ -60,7 +51,7 @@ class MewadRatanDirghaView extends GetView<HomeController> {
               alignment: Alignment.bottomLeft,
               children: [
                 Image.asset(
-                  ImageConstant.pgkFullImage,
+                  ImageConstant.mewadRatanDirgha,
                   width: double.infinity,
                   height: 260,
                   fit: BoxFit.cover,
@@ -80,7 +71,7 @@ class MewadRatanDirghaView extends GetView<HomeController> {
                       begin: Alignment.bottomCenter,
                       end: Alignment.topCenter,
                       colors: [
-                        Colors.black.withValues(alpha:0.85),
+                        Colors.black.withValues(alpha: 0.85),
                         Colors.transparent,
                       ],
                     ),
@@ -89,7 +80,7 @@ class MewadRatanDirghaView extends GetView<HomeController> {
                 Padding(
                   padding: const EdgeInsets.all(16.0),
                   child: Text(
-                    "Mewad Ratan Dirgha",
+                    l10n.mewadRatanDirghaTitle,
                     style: const TextStyle(
                       color: Colors.white,
                       fontSize: 22,
@@ -110,7 +101,7 @@ class MewadRatanDirghaView extends GetView<HomeController> {
               child: Row(
                 children: [
                   GestureDetector(
-                    onTap: () => controller.toggleNarration('The major warriors and heroic women of Mewar are displayed in this epic. Starting with Bappa Rawal, it extends to the warriors, saints, and heroic women...'),
+                    onTap: () => controller.toggleNarration(l10n.mewadRatanNarrationText),
                     child: Container(
                       width: 48,
                       height: 48,
@@ -149,11 +140,11 @@ class MewadRatanDirghaView extends GetView<HomeController> {
                           ),
                         ),
                         const SizedBox(height: 6),
-                        const Text(
-                          'Mewad Ratan Dirgha Narration',
+                        Text(
+                          l10n.mewadRatanNarrationLabel,
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.w600,
                             color: Colors.black87,
@@ -170,7 +161,7 @@ class MewadRatanDirghaView extends GetView<HomeController> {
                       Obx(() {
                         String percentage = (controller.audioProgress.value * 100).toInt().toString();
                         return Text(
-                          controller.isPlaying.value ? '$percentage%' : 'Audio Guide',
+                          controller.isPlaying.value ? '$percentage%' : l10n.audioGuideLabel,
                           style: TextStyle(
                             fontSize: 10,
                             color: Colors.grey.shade600,
@@ -194,9 +185,9 @@ class MewadRatanDirghaView extends GetView<HomeController> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    'The Pride of Mewar',
-                    style: TextStyle(
+                  Text(
+                    l10n.prideOfMewarTitle,
+                    style: const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                       color: Colors.black87,
@@ -204,38 +195,33 @@ class MewadRatanDirghaView extends GetView<HomeController> {
                   ),
                   const SizedBox(height: 12),
 
-                  _buildParagraph(
-                      'The major warriors and heroic women of Mewar are displayed in this epic exhibit. Starting with Bappa Rawal, it extends to the warriors, saints, and heroic women during the reign of Maharana Raj Singh. The epic showcases the military valor and spiritual inclinations of Mewar’s army.'
-                  ),
-
-                  _buildParagraph(
-                      'It provides concise information about the history and culture of the Guhilots’ kingdom in Mewar from its inception to the 18th century.'
-                  ),
+                  _buildParagraph(l10n.prideOfMewarDesc1),
+                  _buildParagraph(l10n.prideOfMewarDesc2),
 
                   const SizedBox(height: 8),
                   const Divider(),
                   const SizedBox(height: 8),
 
-                  _buildSubHeader('Significant Figures Displayed'),
-                  _buildParagraph('The dirgha includes majestic statues and depictions of the following historical icons:'),
+                  _buildSubHeader(l10n.significantFiguresTitle),
+                  _buildParagraph(l10n.significantFiguresDesc),
 
                   const SizedBox(height: 8),
 
                   // Formatted the list of names into clean bullet points for better UI readability
-                  _buildBulletPoint('Bappa Rawal & Harit Rashi'),
-                  _buildBulletPoint('Padmavati, Gaura & Badal'),
-                  _buildBulletPoint('Satyavrat Chunda'),
-                  _buildBulletPoint('Maharana Kumbhakarna (Rana Kumbha)'),
-                  _buildBulletPoint('Maharana Sangram Singh I (Rana Sanga)'),
-                  _buildBulletPoint('Panna Dhay'),
-                  _buildBulletPoint('Jaymal Medtia & Patta Sisodia'),
-                  _buildBulletPoint('Kalla Rathore'),
-                  _buildBulletPoint('Meera Bai'),
-                  _buildBulletPoint('Maharana Uday Singh II'),
-                  _buildBulletPoint('Bhamashah & Rana Punja'),
-                  _buildBulletPoint('Hakeem Khan Sur'),
-                  _buildBulletPoint('Maharana Amar Singh & Maharana Raj Singh'),
-                  _buildBulletPoint('Hadi Rani'),
+                  _buildBulletPoint(l10n.mewadFigure1),
+                  _buildBulletPoint(l10n.mewadFigure2),
+                  _buildBulletPoint(l10n.mewadFigure3),
+                  _buildBulletPoint(l10n.mewadFigure4),
+                  _buildBulletPoint(l10n.mewadFigure5),
+                  _buildBulletPoint(l10n.mewadFigure6),
+                  _buildBulletPoint(l10n.mewadFigure7),
+                  _buildBulletPoint(l10n.mewadFigure8),
+                  _buildBulletPoint(l10n.mewadFigure9),
+                  _buildBulletPoint(l10n.mewadFigure10),
+                  _buildBulletPoint(l10n.mewadFigure11),
+                  _buildBulletPoint(l10n.mewadFigure12),
+                  _buildBulletPoint(l10n.mewadFigure13),
+                  _buildBulletPoint(l10n.mewadFigure14),
 
                 ],
               ),
@@ -264,26 +250,7 @@ class MewadRatanDirghaView extends GetView<HomeController> {
     );
   }
 
-  Widget _buildDot({required bool isActive}) {
-    return AnimatedContainer(
-      duration: const Duration(milliseconds: 200),
-      margin: const EdgeInsets.symmetric(horizontal: 4),
-      width: isActive ? 18 : 6,
-      height: 6,
-      decoration: BoxDecoration(
-        color: isActive ? const Color(0xFFF47B20) : Colors.grey.shade300,
-        borderRadius: BorderRadius.circular(3),
-      ),
-    );
-  }
 
-  Widget _placeholderImage() {
-    return Container(
-      width: double.infinity,
-      color: Colors.grey.shade200,
-      child: const Icon(Icons.image_outlined, color: Colors.grey, size: 40),
-    );
-  }
 
   Widget _buildSubHeader(String text) {
     return Padding(

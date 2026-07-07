@@ -114,7 +114,7 @@ class RoboticShowView extends GetView<ShowViewController> {
           ClipRRect(
             borderRadius: BorderRadius.circular(12),
             child: Image.asset(
-              ImageConstant.lightSound, // Ensure you have this in your ImageConstant
+              ImageConstant.documentation, // Ensure you have this in your ImageConstant
               width: double.infinity,
               height: double.infinity,
               fit: BoxFit.cover,
@@ -126,33 +126,33 @@ class RoboticShowView extends GetView<ShowViewController> {
               },
             ),
           ),
-          Container(
-            decoration: BoxDecoration(
-              color: Colors.black.withValues(alpha: 0.2),
-              borderRadius: BorderRadius.circular(12),
-            ),
-          ),
-          GestureDetector(
-            onTap: () {
-              // controller.playVideo();
-            },
-            child: Container(
-              width: 56,
-              height: 56,
-              decoration: BoxDecoration(
-                color: Colors.white.withValues(alpha: 0.3),
-                shape: BoxShape.circle,
-                border: Border.all(color: Colors.white, width: 2),
-              ),
-              child: const Center(
-                child: Icon(
-                  Icons.play_arrow_rounded,
-                  color: Colors.white,
-                  size: 36,
-                ),
-              ),
-            ),
-          ),
+          // Container(
+          //   decoration: BoxDecoration(
+          //     color: Colors.black.withValues(alpha: 0.2),
+          //     borderRadius: BorderRadius.circular(12),
+          //   ),
+          // ),
+          // GestureDetector(
+          //   onTap: () {
+          //     // controller.playVideo();
+          //   },
+          //   child: Container(
+          //     width: 56,
+          //     height: 56,
+          //     decoration: BoxDecoration(
+          //       color: Colors.white.withValues(alpha: 0.3),
+          //       shape: BoxShape.circle,
+          //       border: Border.all(color: Colors.white, width: 2),
+          //     ),
+          //     child: const Center(
+          //       child: Icon(
+          //         Icons.play_arrow_rounded,
+          //         color: Colors.white,
+          //         size: 36,
+          //       ),
+          //     ),
+          //   ),
+          // ),
         ],
       ),
     );
@@ -207,74 +207,6 @@ class RoboticShowView extends GetView<ShowViewController> {
     );
   }
 
-  Widget _buildBulletPoint(String text) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 8.0, left: 4.0),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Padding(
-            padding: EdgeInsets.only(top: 6.0, right: 8.0),
-            child: Icon(Icons.circle, size: 6, color: AppColors.primary),
-          ),
-          Expanded(
-            child: Text(
-              text,
-              style: const TextStyle(
-                fontSize: 14,
-                color: AppColors.textSecondary,
-                height: 1.4,
-                fontFamily: FontFamily.regular,
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildFaqTile({required String question, required String answer}) {
-    return Theme(
-      data: Theme.of(Get.context!).copyWith(dividerColor: Colors.transparent),
-      child: Container(
-        margin: const EdgeInsets.only(bottom: 12.0),
-        decoration: BoxDecoration(
-          color: AppColors.white,
-          borderRadius: BorderRadius.circular(8),
-          border: Border.all(color: AppColors.lightDivider),
-        ),
-        child: ExpansionTile(
-          tilePadding: const EdgeInsets.symmetric(horizontal: 16.0),
-          title: Text(
-            question,
-            style: const TextStyle(
-              fontSize: 14.0,
-              fontWeight: FontWeight.w600,
-              color: AppColors.primary,
-              fontFamily: FontFamily.medium,
-            ),
-          ),
-          iconColor: AppColors.primary,
-          collapsedIconColor: AppColors.textSecondary,
-          childrenPadding: const EdgeInsets.only(left: 16.0, right: 16.0, bottom: 16.0),
-          children: [
-            Align(
-              alignment: Alignment.centerLeft,
-              child: Text(
-                answer,
-                style: const TextStyle(
-                  fontSize: 13.0,
-                  color: AppColors.textPrimary,
-                  height: 1.5,
-                  fontFamily: FontFamily.regular,
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
 
   Widget _buildBottomBookButton(String buttonText) {
     return Container(

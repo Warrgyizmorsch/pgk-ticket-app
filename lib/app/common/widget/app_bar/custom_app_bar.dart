@@ -1,9 +1,6 @@
-
 import '../../constant/app_imports.dart';
 
-
-class CustomAppBar extends StatelessWidget
-    implements PreferredSizeWidget {
+class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({
     super.key,
     required this.title,
@@ -31,19 +28,19 @@ class CustomAppBar extends StatelessWidget
 
       // If leading provided -> show it
       // Else -> show default back button
-      leading: leading ??
+      leading:
+          leading ??
           (showBackButton
               ? IconButton(
-            onPressed: Get.back,
-            icon: const Icon(Icons.arrow_back_ios_new,color: AppColors.white,),
-          )
+                  onPressed: Get.back,
+                  icon: const Icon(
+                    Icons.arrow_back_ios_new,
+                    color: AppColors.white,
+                  ),
+                )
               : null),
 
-      title: Text(
-        title,
-        style: AppTextStyles.appBarTitle,
-      ),
-
+      title: Text(title, style: AppTextStyles.appBarTitle),
       actions: actions,
     );
   }

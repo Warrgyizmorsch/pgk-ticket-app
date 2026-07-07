@@ -25,7 +25,7 @@ class AuthResponseModel {
     return {
       'success': success,
       'token': token,
-      'user': user?.toJson(),
+      'user': user.toJson(),
     };
   }
 }

@@ -1,13 +1,14 @@
 import '../../../common/constant/app_imports.dart';
 import '../controllers/show_view_controller.dart';
-// import 'package:flutter_gen/gen_l10n/app_localizations.dart'; // Uncomment when ready for l10n
+// import 'package:flutter_gen/gen_l10n/app_localizations.dart'; // Ensure this is imported
 
 class WaterShowView extends GetView<ShowViewController> {
   const WaterShowView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // final l10n = AppLocalizations.of(context)!; // Uncomment when ready for l10n
+    // Initialize AppLocalizations
+    final l10n = AppLocalizations.of(context)!;
 
     return Scaffold(
       backgroundColor: AppColors.background,
@@ -20,9 +21,9 @@ class WaterShowView extends GetView<ShowViewController> {
           icon: const Icon(Icons.arrow_back, color: AppColors.white),
           onPressed: () => Get.back(),
         ),
-        title: const Text(
-          'Show Details', // Replace with l10n.showDetails
-          style: TextStyle(
+        title: Text(
+          l10n.showDetailsTitle,
+          style: const TextStyle(
             color: AppColors.white,
             fontWeight: FontWeight.w600,
             fontSize: 18,
@@ -53,9 +54,9 @@ class WaterShowView extends GetView<ShowViewController> {
                   const SizedBox(height: 24),
 
                   // 2. Title
-                  const Text(
-                    'Water Laser Show', // Replace with l10n.waterLaserShow
-                    style: TextStyle(
+                  Text(
+                    l10n.waterShowTitle,
+                    style: const TextStyle(
                       fontSize: 22,
                       fontWeight: FontWeight.bold,
                       color: AppColors.black,
@@ -67,9 +68,9 @@ class WaterShowView extends GetView<ShowViewController> {
                   // 3. Info Row (Duration & Timing)
                   Row(
                     children: [
-                      _buildInfoChip(Icons.access_time, 'Approx. 30 Minutes'),
+                      _buildInfoChip(Icons.access_time, l10n.waterShowDuration),
                       const SizedBox(width: 24),
-                      _buildInfoChip(Icons.calendar_today_outlined, 'Starts at 7:30 PM'),
+                      _buildInfoChip(Icons.calendar_today_outlined, l10n.waterShowTiming),
                     ],
                   ),
 
@@ -78,20 +79,20 @@ class WaterShowView extends GetView<ShowViewController> {
                   const SizedBox(height: 16),
 
                   // 4. Detailed Content Sections
-                  _buildSectionTitle('Experience the Legend'),
-                  _buildParagraph('Experience the legendary tale of Maharana Pratap brought to life through an advanced laser projection show on water screens. Witness the heroic moments of Mewar’s history, including Panna’s sacrifice and the Battle of Diwer.'),
-                  _buildParagraph('Immerse yourself in the glorious past of Mewar as the Maharana Pratap story in Hindi unfolds before your eyes, blending history and technology seamlessly. The show uses cutting-edge visuals and sound to depict the courage and valor of one of India’s greatest warriors. Don’t miss this stunning tribute to the legendary king!'),
+                  _buildSectionTitle(l10n.waterShowS1Title),
+                  _buildParagraph(l10n.waterShowS1P1),
+                  _buildParagraph(l10n.waterShowS1P2),
 
-                  _buildSectionTitle('Relive Maharana Pratap’s Story'),
-                  _buildParagraph('Pratap Gaurav Kendra Udaipur presents the Water Laser Show, a unique experience where history is displayed through lights, water, and sound. The program highlights the Maharana Pratap Story in Hindi, allowing visitors to connect with the life, bravery, and legacy of the great warrior. With advanced laser projections, traditional music, and powerful narration, the show combines entertainment with cultural learning, making it one of the most engaging evening attractions in Udaipur.'),
+                  _buildSectionTitle(l10n.waterShowS2Title),
+                  _buildParagraph(l10n.waterShowS2P1),
 
-                  _buildSectionTitle('One Show That Tourists Shouldn’t Miss'),
-                  _buildParagraph('The Water Laser Show is designed to take audiences on a journey through Mewar’s history. Each scene showcases important episodes from the Maharana Pratap Story in Hindi, including his struggle for freedom and his dedication to the people of Mewar.'),
+                  _buildSectionTitle(l10n.waterShowS3Title),
+                  _buildParagraph(l10n.waterShowS3P1),
 
                   const SizedBox(height: 8),
-                  const Text(
-                    'Highlights of the Show',
-                    style: TextStyle(
+                  Text(
+                    l10n.waterShowHighlightsTitle,
+                    style: const TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.w600,
                       color: AppColors.black,
@@ -99,17 +100,17 @@ class WaterShowView extends GetView<ShowViewController> {
                     ),
                   ),
                   const SizedBox(height: 8),
-                  _buildBulletPoint('Laser lights and water projections creating dynamic visuals'),
-                  _buildBulletPoint('Clear narration in Hindi for cultural connection'),
-                  _buildBulletPoint('Music inspired by Rajasthan’s heritage'),
-                  _buildBulletPoint('A meaningful experience for visitors of all ages'),
+                  _buildBulletPoint(l10n.waterShowHighlight1),
+                  _buildBulletPoint(l10n.waterShowHighlight2),
+                  _buildBulletPoint(l10n.waterShowHighlight3),
+                  _buildBulletPoint(l10n.waterShowHighlight4),
 
                   const SizedBox(height: 16),
-                  _buildSectionTitle('Reliving the Legacy of Maharana Pratap'),
+                  _buildSectionTitle(l10n.waterShowS4Title),
 
-                  const Text(
-                    'The Warrior’s Journey',
-                    style: TextStyle(
+                  Text(
+                    l10n.waterShowS4Sub1,
+                    style: const TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.w600,
                       color: AppColors.primary,
@@ -117,11 +118,11 @@ class WaterShowView extends GetView<ShowViewController> {
                     ),
                   ),
                   const SizedBox(height: 4),
-                  _buildParagraph('The show reflects the courage of Maharana Pratap during the Mughal conflicts and his determination to protect Mewar’s independence. Episodes like the Battle of Haldighati are recreated with light and sound to engage the audience.'),
+                  _buildParagraph(l10n.waterShowS4P1),
 
-                  const Text(
-                    'A Blend of Learning and Entertainment',
-                    style: TextStyle(
+                  Text(
+                    l10n.waterShowS4Sub2,
+                    style: const TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.w600,
                       color: AppColors.primary,
@@ -129,43 +130,43 @@ class WaterShowView extends GetView<ShowViewController> {
                     ),
                   ),
                   const SizedBox(height: 4),
-                  _buildParagraph('This performance not only entertains but also educates. By presenting the Maharana Pratap Story in Hindi, the Water Laser Show makes history accessible and easy to understand for everyone.'),
+                  _buildParagraph(l10n.waterShowS4P2),
 
-                  _buildSectionTitle('Why Choose Pratap Gaurav Kendra?'),
-                  _buildBulletPoint('Dedicated to Maharana Pratap’s life and Mewar’s history'),
-                  _buildBulletPoint('Use of modern technology to present traditional stories'),
-                  _buildBulletPoint('Convenient location for travelers in Udaipur'),
-                  _buildBulletPoint('Ideal evening activity after sightseeing'),
-                  _buildBulletPoint('Suitable for students, families, and history lovers'),
+                  _buildSectionTitle(l10n.waterShowS5Title),
+                  _buildBulletPoint(l10n.waterShowS5Point1),
+                  _buildBulletPoint(l10n.waterShowS5Point2),
+                  _buildBulletPoint(l10n.waterShowS5Point3),
+                  _buildBulletPoint(l10n.waterShowS5Point4),
+                  _buildBulletPoint(l10n.waterShowS5Point5),
 
                   const SizedBox(height: 16),
                   const Divider(color: AppColors.lightDivider, thickness: 1),
                   const SizedBox(height: 16),
 
-                  _buildSectionTitle('Plan Your Visit'),
-                  _buildParagraph('The Water Laser Show at Pratap Gaurav Kendra is an inspiring way to explore Rajasthan’s cultural and historical heritage. By combining modern visuals with the Maharana Pratap Story in Hindi, the show connects audiences with the legacy of one of India’s greatest warriors.\n\nBook your visit today and experience the story of Maharana Pratap through lights, music, and water in Udaipur.'),
+                  _buildSectionTitle(l10n.waterShowS6Title),
+                  _buildParagraph(l10n.waterShowS6P1),
 
                   const SizedBox(height: 16),
                   const Divider(color: AppColors.lightDivider, thickness: 1),
                   const SizedBox(height: 8),
 
-                  _buildSectionTitle('Frequently Asked Questions'),
+                  _buildSectionTitle(l10n.faqTitleStandard), // Using the standard FAQ title from earlier translations
                   const SizedBox(height: 8),
                   _buildFaqTile(
-                      question: 'What story does the Water Laser Show present?',
-                      answer: 'It presents the Maharana Pratap Story in Hindi, highlighting his bravery and legacy.'),
+                      question: l10n.faqWaterQ1,
+                      answer: l10n.faqWaterA1),
                   _buildFaqTile(
-                      question: 'Is the show suitable for children?',
-                      answer: 'Yes, the visuals and narration are simple and engaging for children.'),
+                      question: l10n.faqWaterQ2,
+                      answer: l10n.faqWaterA2),
                   _buildFaqTile(
-                      question: 'How long does the show last?',
-                      answer: 'The show runs for about 30–40 minutes.'),
+                      question: l10n.faqWaterQ3,
+                      answer: l10n.faqWaterA3),
                   _buildFaqTile(
-                      question: 'Can non-Hindi speakers enjoy the show?',
-                      answer: 'Yes, the visuals, music, and effects ensure that the story is understandable even without Hindi knowledge.'),
+                      question: l10n.faqWaterQ4,
+                      answer: l10n.faqWaterA4),
                   _buildFaqTile(
-                      question: 'Where is the Water Laser Show hosted?',
-                      answer: 'The show is hosted at Pratap Gaurav Kendra, Udaipur.'),
+                      question: l10n.faqWaterQ5,
+                      answer: l10n.faqWaterA5),
 
                   const SizedBox(height: 24),
                 ],
@@ -174,7 +175,7 @@ class WaterShowView extends GetView<ShowViewController> {
           ),
 
           // 5. Fixed Bottom "Book Ticket" Button
-          _buildBottomBookButton('Book Ticket'),
+          _buildBottomBookButton(l10n.bookTicketBtn),
         ],
       ),
     );
@@ -202,7 +203,7 @@ class WaterShowView extends GetView<ShowViewController> {
           ClipRRect(
             borderRadius: BorderRadius.circular(12),
             child: Image.asset(
-              ImageConstant.lightSound,
+              ImageConstant.waterShow,
               width: double.infinity,
               height: double.infinity,
               fit: BoxFit.cover,
@@ -214,33 +215,33 @@ class WaterShowView extends GetView<ShowViewController> {
               },
             ),
           ),
-          Container(
-            decoration: BoxDecoration(
-              color: Colors.black.withValues(alpha: 0.2),
-              borderRadius: BorderRadius.circular(12),
-            ),
-          ),
-          GestureDetector(
-            onTap: () {
-              // controller.playVideo();
-            },
-            child: Container(
-              width: 56,
-              height: 56,
-              decoration: BoxDecoration(
-                color: Colors.white.withValues(alpha: 0.3),
-                shape: BoxShape.circle,
-                border: Border.all(color: Colors.white, width: 2),
-              ),
-              child: const Center(
-                child: Icon(
-                  Icons.play_arrow_rounded,
-                  color: Colors.white,
-                  size: 36,
-                ),
-              ),
-            ),
-          ),
+          // Container(
+          //   decoration: BoxDecoration(
+          //     color: Colors.black.withValues(alpha: 0.2),
+          //     borderRadius: BorderRadius.circular(12),
+          //   ),
+          // ),
+          // GestureDetector(
+          //   onTap: () {
+          //     // controller.playVideo();
+          //   },
+          //   child: Container(
+          //     width: 56,
+          //     height: 56,
+          //     decoration: BoxDecoration(
+          //       color: Colors.white.withValues(alpha: 0.3),
+          //       shape: BoxShape.circle,
+          //       border: Border.all(color: Colors.white, width: 2),
+          //     ),
+          //     child: const Center(
+          //       child: Icon(
+          //         Icons.play_arrow_rounded,
+          //         color: Colors.white,
+          //         size: 36,
+          //       ),
+          //     ),
+          //   ),
+          // ),
         ],
       ),
     );

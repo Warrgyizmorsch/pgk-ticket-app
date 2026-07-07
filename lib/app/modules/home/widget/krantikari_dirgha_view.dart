@@ -2,22 +2,12 @@ import '../../../common/constant/app_imports.dart';
 import '../controllers/home_controller.dart';
 
 class KrantikariDirghaView extends GetView<HomeController> {
-  KrantikariDirghaView({super.key});
-
-  // Reactive state variable to track the active image index in the carousel
-  final RxInt _currentCarouselIndex = 0.obs;
-
-  // List of images for the slider (Update with your specific Krantikari Dirgha ImageConstants)
-  final List<String> _carouselImages = [
-    ImageConstant.mewar,
-    ImageConstant.bhaktiDham,
-    ImageConstant.mewar,
-  ];
+  const KrantikariDirghaView({super.key});
 
   @override
   Widget build(BuildContext context) {
     Get.put(HomeController());
-    // final l10n = AppLocalizations.of(context)!; // Uncomment for localization
+    final l10n = AppLocalizations.of(context)!;
 
     return Scaffold(
       backgroundColor: const Color(0xFFFFF6F0),
@@ -30,9 +20,9 @@ class KrantikariDirghaView extends GetView<HomeController> {
           icon: const Icon(Icons.arrow_back_ios_new_rounded, color: Colors.black87),
           onPressed: () => Get.back(),
         ),
-        title: const Text(
-          'Krantikari Dirgha',
-          style: TextStyle(
+        title: Text(
+          l10n.krantikariDirghaTitle,
+          style: const TextStyle(
             color: Colors.black87,
             fontWeight: FontWeight.bold,
             fontSize: 18,
@@ -58,7 +48,7 @@ class KrantikariDirghaView extends GetView<HomeController> {
               alignment: Alignment.bottomLeft,
               children: [
                 Image.asset(
-                  ImageConstant.pgkFullImage,
+                  ImageConstant.krantikariDirgha,
                   width: double.infinity,
                   height: 260,
                   fit: BoxFit.cover,
@@ -78,7 +68,7 @@ class KrantikariDirghaView extends GetView<HomeController> {
                       begin: Alignment.bottomCenter,
                       end: Alignment.topCenter,
                       colors: [
-                        Colors.black.withValues(alpha:0.85),
+                        Colors.black.withValues(alpha: 0.85),
                         Colors.transparent,
                       ],
                     ),
@@ -87,7 +77,7 @@ class KrantikariDirghaView extends GetView<HomeController> {
                 Padding(
                   padding: const EdgeInsets.all(16.0),
                   child: Text(
-                    "Krantikari Dirgha",
+                    l10n.krantikariDirghaTitle,
                     style: const TextStyle(
                       color: Colors.white,
                       fontSize: 22,
@@ -108,7 +98,7 @@ class KrantikariDirghaView extends GetView<HomeController> {
               child: Row(
                 children: [
                   GestureDetector(
-                    onTap: () => controller.toggleNarration('This epic, located in the center of the Pratap Gaurav Kendra, showcases the stories of brave warriors from the Indian independence struggle...'),
+                    onTap: () => controller.toggleNarration(l10n.krantikariNarrationText),
                     child: Container(
                       width: 48,
                       height: 48,
@@ -147,11 +137,11 @@ class KrantikariDirghaView extends GetView<HomeController> {
                           ),
                         ),
                         const SizedBox(height: 6),
-                        const Text(
-                          'Krantikari Dirgha Narration',
+                        Text(
+                          l10n.krantikariNarrationLabel,
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.w600,
                             color: Colors.black87,
@@ -168,7 +158,7 @@ class KrantikariDirghaView extends GetView<HomeController> {
                       Obx(() {
                         String percentage = (controller.audioProgress.value * 100).toInt().toString();
                         return Text(
-                          controller.isPlaying.value ? '$percentage%' : 'Audio Guide',
+                          controller.isPlaying.value ? '$percentage%' : l10n.audioGuideLabel,
                           style: TextStyle(
                             fontSize: 10,
                             color: Colors.grey.shade600,
@@ -192,9 +182,9 @@ class KrantikariDirghaView extends GetView<HomeController> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    'Heroes of the Independence Struggle',
-                    style: TextStyle(
+                  Text(
+                    l10n.heroesOfIndependenceTitle,
+                    style: const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                       color: Colors.black87,
@@ -202,24 +192,20 @@ class KrantikariDirghaView extends GetView<HomeController> {
                   ),
                   const SizedBox(height: 12),
 
-                  _buildParagraph(
-                      'Located in the center of the Pratap Gaurav Kendra, this epic exhibit showcases the stories of brave warriors from the Indian independence struggle using magnificent statues.'
-                  ),
+                  _buildParagraph(l10n.heroesOfIndependenceDesc1),
 
-                  _buildParagraph(
-                      'The epic covers the crucial period from 1857 to 1947, presenting the timeless tales of valor and sacrifice through stunning sculptural representations.'
-                  ),
+                  _buildParagraph(l10n.heroesOfIndependenceDesc2),
 
                   const SizedBox(height: 8),
                   const Divider(),
                   const SizedBox(height: 8),
 
-                  _buildSubHeader('Key Highlights'),
+                  _buildSubHeader(l10n.keyHighlightsTitle),
 
-                  _buildBulletPoint('Central Location: Situated prominently at the heart of the Kendra.'),
-                  _buildBulletPoint('Historical Timeline: Covers the monumental era from the First War of Independence (1857) to India\'s Freedom (1947).'),
-                  _buildBulletPoint('Sculptural Storytelling: Tales of valor brought to life through incredibly detailed, lifelike statues.'),
-                  _buildBulletPoint('Tribute to Martyrs: Dedicated entirely to the brave revolutionaries who fought against colonial rule.'),
+                  _buildBulletPoint(l10n.krantikariHighlight1),
+                  _buildBulletPoint(l10n.krantikariHighlight2),
+                  _buildBulletPoint(l10n.krantikariHighlight3),
+                  _buildBulletPoint(l10n.krantikariHighlight4),
 
                 ],
               ),
@@ -248,26 +234,6 @@ class KrantikariDirghaView extends GetView<HomeController> {
     );
   }
 
-  Widget _buildDot({required bool isActive}) {
-    return AnimatedContainer(
-      duration: const Duration(milliseconds: 200),
-      margin: const EdgeInsets.symmetric(horizontal: 4),
-      width: isActive ? 18 : 6,
-      height: 6,
-      decoration: BoxDecoration(
-        color: isActive ? const Color(0xFFF47B20) : Colors.grey.shade300,
-        borderRadius: BorderRadius.circular(3),
-      ),
-    );
-  }
-
-  Widget _placeholderImage() {
-    return Container(
-      width: double.infinity,
-      color: Colors.grey.shade200,
-      child: const Icon(Icons.image_outlined, color: Colors.grey, size: 40),
-    );
-  }
 
   Widget _buildSubHeader(String text) {
     return Padding(
