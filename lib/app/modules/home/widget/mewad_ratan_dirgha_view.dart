@@ -1,5 +1,4 @@
 import '../../../common/constant/app_imports.dart';
-import '../controllers/home_controller.dart';
 
 class MewadRatanDirghaView extends GetView<HomeController> {
   const MewadRatanDirghaView({super.key});
@@ -11,31 +10,10 @@ class MewadRatanDirghaView extends GetView<HomeController> {
     final l10n = AppLocalizations.of(context)!;
 
     return Scaffold(
-      backgroundColor: const Color(0xFFFFF6F0),
-
-      // ─── 1. APP BAR ───
-      appBar: AppBar(
-        backgroundColor: const Color(0xFFFFF6F0),
-        elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios_new_rounded, color: Colors.black87),
-          onPressed: () => Get.back(),
-        ),
-        title: Text(
-          l10n.mewadRatanDirghaTitle,
-          style: const TextStyle(
-            color: Colors.black87,
-            fontWeight: FontWeight.bold,
-            fontSize: 18,
-          ),
-        ),
-        centerTitle: true,
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.ios_share_rounded, color: Colors.black87),
-            onPressed: () {},
-          ),
-        ],
+      backgroundColor: AppColors.background,
+      appBar: CustomAppBar(
+        title: l10n.mewadRatanDirghaTitle,
+        showBackButton: true, // This is true by default in your custom widget
       ),
 
       // ─── 2. MAIN SCROLLABLE CONTENT ───

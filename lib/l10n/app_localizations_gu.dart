@@ -2339,4 +2339,29 @@ class AppLocalizationsGu extends AppLocalizations {
   @override
   String get faqBharatA3 =>
       'હા, તે કુટુંબ માટે અનુકૂળ છે અને તમામ વય જૂથો માટે શૈક્ષણિક છે.';
+
+  @override
+  String get tabSuccess => 'સફળ';
+
+  @override
+  String get tabPending => 'પેન્ડિંગ';
+
+  @override
+  String get qrScanTitle => 'QR સ્કેન';
+
+  @override
+  String get scanYourQrSubtitle => 'તમારો QR કોડ અહીં સ્કેન કરો';
+
+  @override
+  String get verifyingWifi => 'Wi-Fi નેટવર્કની ચકાસણી થઈ રહી છે...';
+
+  @override
+  String get accessDenied => 'પ્રવેશ નામંજૂર';
+
+  @override
+  String get connectToAuthorizedWifi =>
+      'કૃપા કરીને સ્કેનરનો ઉપયોગ કરવા માટે અધિકૃત Wi-Fi નેટવર્કથી કનેક્ટ થાઓ.';
+
+  @override
+  String get retryConnectionCheck => 'કનેક્શન તપાસનો ફરી પ્રયાસ કરો';
 }

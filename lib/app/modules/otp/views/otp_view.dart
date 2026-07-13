@@ -1,5 +1,6 @@
 import '../../../common/constant/app_imports.dart';
-import '../controllers/otp_controller.dart';
+
+
 
 class OtpView extends GetView<OtpController> {
   const OtpView({super.key});
@@ -66,41 +67,23 @@ class OtpView extends GetView<OtpController> {
                       (index) => SizedBox(
                     width: fieldSize,
                     height: fieldSize * 1.1,
-                    child: TextFormField(
+                    child: OtpTextFieldCustom(
                       controller: controller.otpControllers[index],
                       focusNode: controller.otpFocusNodes[index],
-                      onChanged: (value) => controller.handleOtpInput(value, index),
-                      keyboardType: TextInputType.number,
-                      textAlign: TextAlign.center,
+                      onChanged: (value) {
+                        controller.handleOtpInput(value??"", index);
+                        return null;
+                      },
+                      textInputType: TextInputType.number,
                       maxLength: 1,
-                      style: const TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                        color: AppColors.primary,
-                      ),
                       inputFormatters: [
                         FilteringTextInputFormatter.digitsOnly,
                       ],
-                      decoration: InputDecoration(
-                        counterText: '',
-                        contentPadding: EdgeInsets.zero,
-                        filled: true,
-                        fillColor: AppColors.white,
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(14),
-                          borderSide: const BorderSide(
-                            color: AppColors.lightDivider,
-                            width: 2,
-                          ),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(14),
-                          borderSide: const BorderSide(
-                            color: AppColors.primary,
-                            width: 2,
-                          ),
-                        ),
-                      ),
+                      contentPadding: EdgeInsets.zero,
+                      backgroundColor: AppColors.white,
+                      borderColor: AppColors.lightDivider,
+                      borderWidth: 2,
+                      hintTextSize: 24, // Used to control the input text size in your custom widget
                     ),
                   ),
                 ),
@@ -120,7 +103,7 @@ class OtpView extends GetView<OtpController> {
                 )
                     : AppButton(
                   title: 'Verify OTP',
-                  onTap: () => controller.verifyOtp(),
+                  onTap: () => controller.verifyOtp(context),
                 ),
               ),
               const SizedBox(height: 24),

@@ -1,21 +1,100 @@
 import '../../../common/constant/app_imports.dart';
+import '../../../core/models/booking/booking_list_response.dart';
 
-class TicketDetailView extends StatelessWidget {
+class TicketDetailView extends GetView<TicketsController> {
   const TicketDetailView({super.key});
 
   @override
   Widget build(BuildContext context) {
     // Initialize AppLocalizations
     final l10n = AppLocalizations.of(context)!;
-    final Map<String, dynamic> ticket = Get.arguments ?? {};
+
+    final BookedTicketDataModel ticket = Get.arguments;
+
+    // Derived values for the UI
+    final String rawStatus = ticket.paymentStatus.value.toLowerCase();
+    final bool isSuccess = rawStatus == 'success';
+    final bool isPending = rawStatus == 'pending';
+
+    // Format the status text to show exactly what it is (e.g., "Success", "Pending")
+    final String statusText = ticket.paymentStatus.value.replaceAll('_', ' ').capitalizeFirst ?? ticket.paymentStatus.value;
+
+    // Determine color based on status
+    Color statusColor;
+    if (isSuccess) {
+      statusColor = AppColors.success;
+    } else if (isPending) {
+      statusColor = Colors.orange;
+    } else if (rawStatus == 'failed') {
+      statusColor = Colors.red;
+    } else {
+      statusColor = Colors.grey.shade600;
+    }
+
+    final String attractionName = '${ticket.ticketType.capitalizeFirst ?? l10n.generalWord} ${l10n.ticketWord}';
+    final String orderId = ticket.payment.referenceId;
+    final int totalTickets = ticket.adultsCount + ticket.kidsCount + ticket.infantsCount;
+
+    final String bookingDate = ticket.createdAt.contains('T')
+        ? ticket.createdAt.split('T')[0]
+        : ticket.createdAt;
 
     return Scaffold(
       backgroundColor: AppColors.background,
-      // Your CustomAppBar automatically handles the back button here
       appBar: CustomAppBar(
         title: l10n.ticketDetailTitle,
         showBackButton: true,
       ),
+
+      // --- Sticky Bottom Button for Pending Payments ---
+      bottomNavigationBar: isPending
+          ? SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: ElevatedButton(
+            onPressed: () {
+              final paymentLink = ticket.paymentUrl ;
+
+              if (paymentLink != null && paymentLink.isNotEmpty) {
+                Get.toNamed(
+                  Routes.PAYMENT,
+                  arguments: {
+                    'paymentUrl': paymentLink,
+                    'bookingId': ticket.bookingId,
+                    'bookingModel': ticket,
+                    'amount': ticket.totalRs,
+                    'customerName': ticket.user.name,
+                    'customerEmail': ticket.user.email ,
+                    'customerPhone': ticket.user.mobile,
+                    'bookingDate': ticket.date,
+                    'tickets':ticket.priceBreakdown,
+                  },
+                );
+              }
+            },
+            style: ElevatedButton.styleFrom(
+              backgroundColor: AppColors.primary,
+              padding: const EdgeInsets.symmetric(vertical: 16),
+              elevation: 0,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
+            ),
+            child: const Text(
+              'Pay Now',
+              style: TextStyle(
+                fontSize: 16,
+             fontWeight: FontWeight.w600,
+                fontFamily: FontFamily.regular,
+                color: AppColors.white,
+              ),
+            ),
+          ),
+        ),
+      )
+          : null,
+      // -------------------------------------------------
+
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(20.0),
         child: Column(
@@ -32,7 +111,7 @@ class TicketDetailView extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  // Top section (Attraction Name & QR)
+                  // Top section (Attraction Name & Image)
                   Container(
                     padding: const EdgeInsets.all(24.0),
                     decoration: const BoxDecoration(
@@ -42,13 +121,13 @@ class TicketDetailView extends StatelessWidget {
                     child: Column(
                       children: [
                         Text(
-                          ticket['attractionName'] ?? l10n.attractionNameFallback,
+                          attractionName,
                           textAlign: TextAlign.center,
-                          style: AppTextStyles.h1.copyWith(fontSize: 20, color: AppColors.primary),
+                          style: AppTextStyles.h1.copyWith(fontSize: 18, color: AppColors.primary),
                         ),
                         const SizedBox(height: 24),
 
-                        // Placeholder QR Code Box
+                        // UPDATED: OTP Image replacing the QR Code
                         Container(
                           padding: const EdgeInsets.all(12),
                           decoration: BoxDecoration(
@@ -56,17 +135,18 @@ class TicketDetailView extends StatelessWidget {
                             borderRadius: BorderRadius.circular(12),
                             border: Border.all(color: AppColors.lightDivider),
                           ),
-                          child: Icon(
-                            Icons.qr_code_2,
-                            size: 150,
-                            // Note: if ticket status is localized by backend, you may need to adjust this logic check
-                            color: ticket['status'] == 'Upcoming' ? AppColors.textPrimary : Colors.grey,
+                          child: Image.asset(
+                            ImageConstant.otp, // Ensure ImageConstant is properly imported
+                            height: 150,
+                            width: 150,
+                            fit: BoxFit.contain,
                           ),
                         ),
                         const SizedBox(height: 12),
                         Text(
-                          ticket['orderId'] ?? l10n.notAvailableFallback,
-                          style: AppTextStyles.bodyMedium.copyWith(fontWeight: FontWeight.bold, letterSpacing: 1.5),
+                          orderId,
+                          style: AppTextStyles.bodyMedium.copyWith( fontWeight: FontWeight.w600,
+         letterSpacing: 1.5),
                         ),
                       ],
                     ),
@@ -105,44 +185,56 @@ class TicketDetailView extends StatelessWidget {
                       children: [
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            _buildInfoColumn(l10n.nameLabel, ticket['customerName'] ?? l10n.notAvailableFallback),
-                            _buildInfoColumn(l10n.statusLabel, ticket['status'] ?? l10n.notAvailableFallback, alignment: CrossAxisAlignment.end),
+                            _buildInfoColumn(l10n.nameLabel, ticket.user.name ),
+                            _buildInfoColumn(
+                              l10n.statusLabel,
+                              statusText,
+                              alignment: CrossAxisAlignment.end,
+                              valueColor: statusColor,
+                            ),
                           ],
                         ),
                         const SizedBox(height: 20),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            _buildInfoColumn(l10n.emailLabel, ticket['email'] ?? l10n.notAvailableFallback),
-                            _buildInfoColumn(l10n.phoneLabel, ticket['phone'] ?? l10n.notAvailableFallback, alignment: CrossAxisAlignment.end),
+                            _buildInfoColumn(l10n.emailLabel, ticket.user.email ),
+                            _buildInfoColumn(l10n.phoneLabel, ticket.user.mobile , alignment: CrossAxisAlignment.end),
                           ],
                         ),
                         const SizedBox(height: 20),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            _buildInfoColumn(l10n.bookingDateLabel, ticket['bookingDate'] ?? l10n.notAvailableFallback),
-                            _buildInfoColumn(l10n.visitDateLabel, ticket['visitDate'] ?? l10n.notAvailableFallback, alignment: CrossAxisAlignment.end),
+                            _buildInfoColumn(l10n.nationalityLabel, ticket.nationality.isNotEmpty ? ticket.nationality : l10n.notAvailableFallback),
+
+                            _buildInfoColumn(l10n.bookingDateLabel, bookingDate, alignment: CrossAxisAlignment.end),
                           ],
                         ),
                         const SizedBox(height: 20),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+
                           children: [
-                            _buildInfoColumn(l10n.nationalityLabel, ticket['nationality'] ?? l10n.notAvailableFallback),
-                            _buildInfoColumn(l10n.totalPaidLabel, '₹${ticket['totalAmount'] ?? 0.0}', alignment: CrossAxisAlignment.end),
+                            _buildInfoColumn(l10n.visitDateLabel, '${ticket.date} (${ticket.time})'),
+
+                            _buildInfoColumn(l10n.totalPaidLabel, '₹${ticket.totalRs.toStringAsFixed(0)}', alignment: CrossAxisAlignment.end),
                           ],
                         ),
-                        const SizedBox(height: 20),
+                        const SizedBox(height: 12),
                         const Divider(color: AppColors.lightDivider),
                         const SizedBox(height: 12),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                                '${l10n.ticketsBreakupLabel} (${ticket['ticketCount']} ${l10n.totalWord})',
-                                style: AppTextStyles.caption.copyWith(color: AppColors.textSecondary, fontWeight: FontWeight.bold)
+                                '${l10n.ticketsBreakupLabel} ($totalTickets ${l10n.totalWord})',
+                                style: AppTextStyles.caption.copyWith(color: AppColors.textSecondary, fontWeight: FontWeight.w600)
                             ),
                           ],
                         ),
@@ -150,9 +242,9 @@ class TicketDetailView extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            _buildBreakdownItem(l10n.adultsLabel, ticket['adultCount']?.toString() ?? '0'),
-                            _buildBreakdownItem(l10n.kidsLabel, ticket['childCount']?.toString() ?? '0'),
-                            _buildBreakdownItem(l10n.infantsLabel, ticket['infantCount']?.toString() ?? '0'),
+                            _buildBreakdownItem(l10n.adultsLabel, ticket.adultsCount.toString()),
+                            _buildBreakdownItem(l10n.kidsLabel, ticket.kidsCount.toString()),
+                            _buildBreakdownItem(l10n.infantsLabel, ticket.infantsCount.toString()),
                           ],
                         ),
                       ],
@@ -167,7 +259,7 @@ class TicketDetailView extends StatelessWidget {
     );
   }
 
-  Widget _buildInfoColumn(String label, String value, {CrossAxisAlignment alignment = CrossAxisAlignment.start}) {
+  Widget _buildInfoColumn(String label, String value, {CrossAxisAlignment alignment = CrossAxisAlignment.start, Color? valueColor}) {
     return Expanded(
       child: Column(
         crossAxisAlignment: alignment,
@@ -176,8 +268,13 @@ class TicketDetailView extends StatelessWidget {
           const SizedBox(height: 4),
           Text(
             value,
-            style: AppTextStyles.bodyMedium.copyWith(fontWeight: FontWeight.bold),
-            maxLines: 1,
+            style: AppTextStyles.bodyMedium.copyWith(
+           fontWeight: FontWeight.w500,
+                fontSize: 13,
+                fontFamily: FontFamily.regular,
+              color: valueColor,
+            ),
+            maxLines: 2,
             overflow: TextOverflow.ellipsis,
           ),
         ],

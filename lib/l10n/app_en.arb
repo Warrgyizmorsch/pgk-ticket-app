@@ -694,6 +694,14 @@
   "faqBharatQ2": "How long is the show?",
   "faqBharatA2": "The show runs for approximately 18 minutes.",
   "faqBharatQ3": "Is it suitable for children?",
-  "faqBharatA3": "Yes, it’s family-friendly and educational for all age groups."
+  "faqBharatA3": "Yes, it’s family-friendly and educational for all age groups.",
+  "tabSuccess": "Success",
+  "tabPending": "Pending",
+  "qrScanTitle": "QR Scan",
+  "scanYourQrSubtitle": "Scan Your Qr Code Here",
+  "verifyingWifi": "Verifying Wi-Fi Network...",
+  "accessDenied": "Access Denied",
+  "connectToAuthorizedWifi": "Please connect to the authorized Wi-Fi network\nto use the scanner.",
+  "retryConnectionCheck": "Retry Connection Check"
 
 }

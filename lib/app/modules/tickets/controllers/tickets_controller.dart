@@ -2,60 +2,98 @@ import '../../../common/constant/app_imports.dart';
 import '../../../core/models/booking/booking_list_response.dart';
 import '../../../core/models/login_model/otp_verification_response_model.dart';
 import '../../../core/utils/api/booking_api/ticket_booking_api.dart';
-import '../../../services/storage_services.dart';
 
 class TicketsController extends GetxController {
+  final RxBool isLoadingSuccess = true.obs;
+  final RxBool isLoadMoreSuccess = false.obs;
+  final RxList<BookedTicketDataModel> successData = <BookedTicketDataModel>[].obs;
+  int perPageSuccess = 10;
+  int totalSuccessItems = 0;
 
+  // --- PENDING TAB STATE ---
+  final RxBool isLoadingPending = true.obs;
+  final RxBool isLoadMorePending = false.obs;
+  final RxList<BookedTicketDataModel> pendingData = <BookedTicketDataModel>[].obs;
+  int perPagePending = 10;
+  int totalPendingItems = 0;
 
-  // 1. Set up your reactive variables at the top of your controller
-  final RxBool isLoading = true.obs;
-  final RxList<BookingItem> bookingData = <BookingItem>[].obs;
-// 2. Your updated method
-  Future<void> bookingList() async {
+  @override
+  void onInit() {
+    super.onInit();
+    fetchTickets('success', isRefresh: true);
+    fetchTickets('pending', isRefresh: true);
+  }
+
+  Future<void> fetchTickets(String status, {bool isRefresh = false}) async {
+    bool isSuccessTab = status == 'success';
+
+    if (isRefresh) {
+      if (isSuccessTab) {
+        perPageSuccess = 10;
+        if (successData.isEmpty) isLoadingSuccess.value = true;
+      } else {
+        perPagePending = 10;
+        if (pendingData.isEmpty) isLoadingPending.value = true;
+      }
+    } else {
+      if (isSuccessTab) {
+        if (successData.length >= totalSuccessItems || isLoadMoreSuccess.value) return;
+        isLoadMoreSuccess.value = true;
+        perPageSuccess += 20;
+      } else {
+        if (pendingData.length >= totalPendingItems || isLoadMorePending.value) return;
+        isLoadMorePending.value = true;
+        perPagePending += 20;
+      }
+    }
+
     try {
-      isLoading.value = true;
-
       final UserModel? user = StorageService.to.getUser();
-      final int userId = user?.id ?? 0;
-
-      if (userId == 0) {
-        Get.snackbar(
-            'Error',
-            'User not found. Please log in again.',
-            snackPosition: SnackPosition.BOTTOM
-        );
+      if (user?.id == null || user?.id == 0) {
+        Get.snackbar('Error', 'User not found. Please log in again.', snackPosition: SnackPosition.BOTTOM);
         return;
       }
 
       final response = await TicketBooking.ticketBookingList(
-        paymentStatus: 'success',
-        perPage: 10,
+        paymentStatus: status,
+        perPage: isSuccessTab ? perPageSuccess : perPagePending,
       );
 
       if (response.success) {
-        bookingData.value = response.data;
+        if (isSuccessTab) {
+          successData.value = response.data;
+          totalSuccessItems = response.pagination!.total;
+        } else {
+          pendingData.value = response.data;
+          totalPendingItems = response.pagination!.total;
+        }
       } else {
-        Get.snackbar(
-          'Error',
-          response.message ,
-          snackPosition: SnackPosition.BOTTOM,
-        );
+        Get.snackbar('Error', response.message, snackPosition: SnackPosition.BOTTOM);
+        _revertPagination(isSuccessTab, isRefresh);
       }
     } catch (e) {
-      debugPrint('Booking Error: $e');
-      Get.snackbar(
-        'Error',
-        'Something went wrong while fetching your bookings.',
-        snackPosition: SnackPosition.BOTTOM,
-      );
+      debugPrint('Booking Error ($status): $e');
+      Get.snackbar('Error', 'Something went wrong while fetching your bookings.', snackPosition: SnackPosition.BOTTOM);
+      _revertPagination(isSuccessTab, isRefresh);
     } finally {
-      isLoading.value = false; // Stop loading whether it succeeded or failed
+      // 4. Reset Loaders
+      if (isSuccessTab) {
+        isLoadingSuccess.value = false;
+        isLoadMoreSuccess.value = false;
+      } else {
+        isLoadingPending.value = false;
+        isLoadMorePending.value = false;
+      }
     }
   }
-  @override
-  void onInit() {
-    super.onInit();
-    // This triggers the API call automatically when the controller is loaded
-    bookingList();
+
+  void _revertPagination(bool isSuccessTab, bool isRefresh) {
+    if (!isRefresh) {
+      if (isSuccessTab) {
+        perPageSuccess -= 20;
+      } else {
+        perPagePending -= 20;
+      }
+    }
   }
 }

@@ -25,7 +25,7 @@ class AppTextStyles {
   static final TextStyle h1 = TextStyle(
     fontFamily: FontFamily.regular,
     fontSize: AppFontSize.s20,
-    fontWeight: FontWeight.w700,
+    fontWeight: FontWeight.w600,
     color: AppColors.textPrimary,
   );
 

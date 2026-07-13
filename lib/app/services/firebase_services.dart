@@ -1,10 +1,4 @@
-// ignore_for_file: unused_local_variable
-
-import 'package:firebase_messaging/firebase_messaging.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
-import '../modules/home/controllers/home_controller.dart';
+import '../common/constant/app_imports.dart';
 
 class NotificationService {
   final FirebaseMessaging _firebaseMessaging = FirebaseMessaging.instance;

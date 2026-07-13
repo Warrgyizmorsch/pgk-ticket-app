@@ -4227,6 +4227,54 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Yes, it’s family-friendly and educational for all age groups.'**
   String get faqBharatA3;
+
+  /// No description provided for @tabSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Success'**
+  String get tabSuccess;
+
+  /// No description provided for @tabPending.
+  ///
+  /// In en, this message translates to:
+  /// **'Pending'**
+  String get tabPending;
+
+  /// No description provided for @qrScanTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'QR Scan'**
+  String get qrScanTitle;
+
+  /// No description provided for @scanYourQrSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Scan Your Qr Code Here'**
+  String get scanYourQrSubtitle;
+
+  /// No description provided for @verifyingWifi.
+  ///
+  /// In en, this message translates to:
+  /// **'Verifying Wi-Fi Network...'**
+  String get verifyingWifi;
+
+  /// No description provided for @accessDenied.
+  ///
+  /// In en, this message translates to:
+  /// **'Access Denied'**
+  String get accessDenied;
+
+  /// No description provided for @connectToAuthorizedWifi.
+  ///
+  /// In en, this message translates to:
+  /// **'Please connect to the authorized Wi-Fi network\nto use the scanner.'**
+  String get connectToAuthorizedWifi;
+
+  /// No description provided for @retryConnectionCheck.
+  ///
+  /// In en, this message translates to:
+  /// **'Retry Connection Check'**
+  String get retryConnectionCheck;
 }
 
 class _AppLocalizationsDelegate

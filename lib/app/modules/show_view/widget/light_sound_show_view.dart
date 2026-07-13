@@ -1,7 +1,4 @@
 import '../../../common/constant/app_imports.dart';
-import '../controllers/show_view_controller.dart';
-// Make sure to import your generated AppLocalizations file
-// import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class LightSoundShowView extends GetView<ShowViewController> {
   const LightSoundShowView({super.key});

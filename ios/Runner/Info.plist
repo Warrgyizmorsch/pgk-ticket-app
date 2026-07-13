@@ -66,5 +66,14 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSCameraUsageDescription</key><string>This app needs camera access to scan QR codes for tickets.</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>This app needs access to your gallery to upload profile pictures.</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>This app needs microphone access for video features.</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>This app needs location access to show you events near your current city.</string>
+    <key>NSBluetoothAlwaysUsageDescription</key>
+    <string>This app uses bluetooth to verify tickets at the gate.</string>
 </dict>
 </plist>

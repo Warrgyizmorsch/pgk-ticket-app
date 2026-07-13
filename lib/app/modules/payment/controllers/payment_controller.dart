@@ -1,246 +1,197 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:url_launcher/url_launcher.dart';
-import 'package:share_plus/share_plus.dart'; // <-- ADDED THIS IMPORT
 
-import '../widget/payment_succes_view.dart';
+import '../../../common/constant/app_imports.dart';
+import '../../../core/models/booking/booking_list_response.dart';
+import '../../../core/utils/api/booking_api/ticket_booking_api.dart';
+
+
 
 class PaymentController extends GetxController {
-  // ─── Core Payment State ───
-  final RxDouble totalAmount = 0.0.obs;
-  final RxString selectedPaymentMethod = ''.obs;
-  final RxString selectedBank = ''.obs;
-  final RxString selectedWallet = ''.obs;
-  final RxBool isProcessing = false.obs;
+  late final WebViewController webViewController;
+  final RxBool isLoading = true.obs;
 
-  // ─── Reactive Receipt Data Fields ───
+  final RxBool isVerifyingPayment = false.obs;
+  final RxString paymentUrl = ''.obs;
+
+  // --- Receipt Data Fields ---
+  final RxDouble totalAmount = 0.0.obs;
   final RxString orderId = ''.obs;
   final RxString bookingDate = ''.obs;
   final RxString customerName = ''.obs;
-  final RxString customerEmail = ''.obs;
   final RxString customerPhone = ''.obs;
-  final RxList<Map<String, dynamic>> tickets = <Map<String, dynamic>>[].obs;
 
-  // ─── Dummy Data for Intent Testing ───
-  final String dummyUpiId = "testmerchant@upi";
-  final String dummyMerchantName = "Test Booking Merchant";
+  // 👉 CHANGED to PriceBreakdownModel
+  final Rx<PriceBreakdownModel?> priceBreakdown = Rx<PriceBreakdownModel?>(null);
 
   @override
   void onInit() {
     super.onInit();
 
-    // Extract packaged data from BookingController arguments
+    // Extract packaged data from previous screen
     if (Get.arguments != null) {
       final Map<String, dynamic> data = Get.arguments;
 
-      totalAmount.value = data['amount'] ?? 1.00;
+      paymentUrl.value = data['paymentUrl'] ?? '';
+      totalAmount.value = (data['amount'] ?? 0.0).toDouble();
       customerName.value = data['customerName'] ?? 'Unknown';
-      customerEmail.value = data['customerEmail'] ?? 'N/A';
       customerPhone.value = data['customerPhone'] ?? 'N/A';
       bookingDate.value = data['bookingDate'] ?? '';
+      orderId.value = data['bookingId']?.toString() ?? 'Order_${DateTime.now().millisecondsSinceEpoch.toString().substring(6)}';
 
-      // Generate a unique dummy Order ID for presentation
-      orderId.value = 'Order_${DateTime.now().millisecondsSinceEpoch.toString().substring(6)}';
-
+      // 👉 Map the new PriceBreakdownModel
       if (data['tickets'] != null) {
-        tickets.assignAll(List<Map<String, dynamic>>.from(data['tickets']));
+        if (data['tickets'] is PriceBreakdownModel) {
+          priceBreakdown.value = data['tickets'];
+        }
       }
+    }
+
+    _initializeWebView();
+  }
+
+  void _initializeWebView() {
+    webViewController = WebViewController()
+      ..setJavaScriptMode(JavaScriptMode.unrestricted)
+      ..setBackgroundColor(const Color(0x00000000))
+      ..setNavigationDelegate(
+        NavigationDelegate(
+          onPageStarted: (String url) {
+            isLoading.value = true;
+            debugPrint("WebView Started Loading: $url");
+          },
+          onPageFinished: (String url) {
+            isLoading.value = false;
+            debugPrint("WebView Finished Loading: $url");
+          },
+          onNavigationRequest: (NavigationRequest request) {
+            debugPrint("Navigating to: ${request.url}");
+
+            // --- INTERCEPT SUCCESS/FAILURE CALLBACKS ---
+            if (request.url.contains('api/payment/callback') || request.url.contains('success')) {
+              _verifyPaymentStatus();
+              return NavigationDecision.prevent;
+
+            } else if (request.url.contains('failed') || request.url.contains('cancel')) {
+              Get.snackbar(
+                'Payment Failed',
+                'Your transaction was cancelled or failed.',
+                snackPosition: SnackPosition.BOTTOM,
+                backgroundColor: Colors.redAccent,
+                colorText: Colors.white,
+              );
+              Get.back(); // Take them back to the booking screen
+              return NavigationDecision.prevent;
+            }
+
+            return NavigationDecision.navigate;
+          },
+        ),
+      );
+
+    if (paymentUrl.value.isNotEmpty) {
+      webViewController.loadRequest(Uri.parse(paymentUrl.value));
     } else {
-      totalAmount.value = 1.00; // Fallback
+      Get.snackbar('Error', 'Payment URL is missing.', snackPosition: SnackPosition.BOTTOM);
     }
   }
-
-  // ─── Grand Total Getter ───
-  double get grandTotal {
-    return tickets.fold(0.0, (sum, item) => sum + (item['total'] as num).toDouble());
-  }
-
-  void selectPaymentMethod(String method) {
-    selectedPaymentMethod.value = method;
-    if (method != 'NET_BANKING') selectedBank.value = '';
-    if (method != 'WALLET') selectedWallet.value = '';
-  }
-
-  void selectBank(String bank) {
-    selectedBank.value = bank;
-  }
-
-  void selectWallet(String wallet) {
-    selectedWallet.value = wallet;
-  }
-
-  // ─── Payment Execution Router ───
-  Future<void> processPayment() async {
-    if (selectedPaymentMethod.value.isEmpty) {
-      Get.snackbar('Action Required', 'Please select a payment method.', snackPosition: SnackPosition.BOTTOM);
-      return;
-    }
-
-    if (totalAmount.value <= 0) {
-      Get.snackbar('Error', 'Invalid payment amount.', snackPosition: SnackPosition.BOTTOM);
-      return;
-    }
-
-    if (selectedPaymentMethod.value == 'NET_BANKING' && selectedBank.value.isEmpty) {
-      Get.snackbar('Action Required', 'Please select a bank to proceed.', snackPosition: SnackPosition.BOTTOM);
-      return;
-    }
-
-    if (selectedPaymentMethod.value == 'WALLET' && selectedWallet.value.isEmpty) {
-      Get.snackbar('Action Required', 'Please select a wallet to proceed.', snackPosition: SnackPosition.BOTTOM);
-      return;
-    }
-
-    if (selectedPaymentMethod.value == 'UPI') {
-      await _launchUpiIntent();
-    } else if (selectedPaymentMethod.value == 'NET_BANKING') {
-      await _processNetBankingPayment();
-    } else if (selectedPaymentMethod.value == 'WALLET') {
-      await _processWalletPayment();
-    } else {
-      await _processStandardPayment();
-    }
-  }
-
-  Future<void> _launchUpiIntent() async {
-    final String amountString = totalAmount.value.toStringAsFixed(2);
-    final Uri upiUri = Uri.parse(
-        'upi://pay?pa=$dummyUpiId&pn=${Uri.encodeComponent(dummyMerchantName)}&am=$amountString&cu=INR&tn=Ticket Booking'
-    );
-
-    isProcessing.value = true;
-
+  Future<void> _verifyPaymentStatus() async {
     try {
-      bool launched = await launchUrl(upiUri, mode: LaunchMode.externalApplication);
-      if (!launched) {
-        Get.snackbar(
-          'No UPI App Found',
-          'Please install a UPI app like GPay or PhonePe to proceed.',
-          snackPosition: SnackPosition.BOTTOM,
+      isVerifyingPayment.value = true;
+
+      await Future.delayed(const Duration(seconds: 3));
+
+      // Fetch the latest bookings
+      final response = await TicketBooking.ticketBookingList(
+        perPage: 50,
+      );
+
+      if (response.success) {
+        final currentBookingIdStr = orderId.value;
+
+        final matches = response.data.where(
+              (booking) => booking.bookingId.toString() == currentBookingIdStr,
         );
+
+        final currentBooking = matches.isNotEmpty ? matches.first : null;
+
+        if (currentBooking != null) {
+          final String status = currentBooking.paymentStatus.value.toLowerCase();
+
+          if (status == 'success') {
+            // Payment verified! Route to success view
+            Get.off(() => const PaymentSuccessView(), arguments: Get.arguments);
+          } else {
+            // Payment is still pending or failed
+            Get.snackbar(
+              'Payment Status Pending',
+              'Your payment is being processed. Please check your tickets shortly.',
+              snackPosition: SnackPosition.BOTTOM,
+              duration: const Duration(seconds: 4),
+            );
+            Get.back();
+          }
+        } else {
+          Get.snackbar('Notice', 'Payment processed. Refresh your tickets to see the update.');
+          Get.back();
+        }
       } else {
-        await Future.delayed(const Duration(seconds: 2));
-        _navigateToSuccessScreen();
+        Get.snackbar('Verification Error', response.message);
+        Get.back();
       }
     } catch (e) {
-      Get.snackbar('Error', 'Failed to open UPI app.');
+      debugPrint('Verification Error: $e');
+      Get.snackbar(
+        'Notice',
+        'Please check your My Tickets tab for updated status.',
+        snackPosition: SnackPosition.BOTTOM,
+      );
+      Get.back();
     } finally {
-      isProcessing.value = false;
+      isVerifyingPayment.value = false;
     }
   }
-
-  Future<void> _processNetBankingPayment() async {
-    isProcessing.value = true;
-    try {
-      _showLoadingDialog('Connecting to ${selectedBank.value}...');
-      await Future.delayed(const Duration(seconds: 3));
-      if (Get.isDialogOpen ?? false) Get.back();
-
-      _navigateToSuccessScreen();
-    } catch (e) {
-      if (Get.isDialogOpen ?? false) Get.back();
-      Get.snackbar('Failed', 'Transaction interrupted.', snackPosition: SnackPosition.BOTTOM);
-    } finally {
-      isProcessing.value = false;
-    }
-  }
-
-  Future<void> _processWalletPayment() async {
-    isProcessing.value = true;
-    try {
-      _showLoadingDialog('Connecting to ${selectedWallet.value}...');
-      await Future.delayed(const Duration(seconds: 3));
-      if (Get.isDialogOpen ?? false) Get.back();
-
-      _navigateToSuccessScreen();
-    } catch (e) {
-      if (Get.isDialogOpen ?? false) Get.back();
-      Get.snackbar('Failed', 'Transaction interrupted.', snackPosition: SnackPosition.BOTTOM);
-    } finally {
-      isProcessing.value = false;
-    }
-  }
-
-  Future<void> _processStandardPayment() async {
-    isProcessing.value = true;
-    try {
-      await Future.delayed(const Duration(seconds: 2));
-      _navigateToSuccessScreen();
-    } catch (e) {
-      Get.snackbar('Failed', 'Payment failed.', snackPosition: SnackPosition.BOTTOM);
-    } finally {
-      isProcessing.value = false;
-    }
-  }
-
-  void _navigateToSuccessScreen() {
-    // Navigates directly to the success view while keeping the pre-loaded controller arguments alive
-    Get.to(() => const PaymentSuccessView(), arguments: Get.arguments);
-  }
-
-  void printReceipt() {
-    Get.snackbar('Print Status', 'Connecting to available print services...', snackPosition: SnackPosition.BOTTOM);
-  }
-
-  // ─── ADDED: Share Receipt Logic ───
   Future<void> shareReceipt() async {
     try {
-      // Build a clean, formatted text string of the receipt details
       final StringBuffer receiptText = StringBuffer();
-
       receiptText.writeln('🎟️ Payment Receipt 🎟️');
-      receiptText.writeln('Maharana Pratap Gorurav Kendra');
+      receiptText.writeln('Maharana Pratap Gaurav Kendra');
       receiptText.writeln('-----------------------------------');
       receiptText.writeln('Order ID: ${orderId.value}');
       receiptText.writeln('Date: ${bookingDate.value}');
       receiptText.writeln('Name: ${customerName.value}');
-      if (customerPhone.value != 'N/A') {
+
+      if (customerPhone.value != 'N/A' && customerPhone.value.isNotEmpty) {
         receiptText.writeln('Phone: ${customerPhone.value}');
       }
+
       receiptText.writeln('-----------------------------------');
 
-      // Add Ticket Details
-      for (var item in tickets) {
-        receiptText.writeln('${item['qty']}x ${item['name']} - ₹${item['total'].toStringAsFixed(2)}');
+      // 👉 UPDATED: Read quantities from the PriceBreakdownModel
+      final breakdown = priceBreakdown.value;
+      if (breakdown != null) {
+        if (breakdown.adults != null && breakdown.adults!.count > 0) {
+          receiptText.writeln('${breakdown.adults!.count} x Adults');
+        }
+        if (breakdown.kids != null && breakdown.kids!.count > 0) {
+          receiptText.writeln('${breakdown.kids!.count} x Kids');
+        }
+        if (breakdown.infants != null && breakdown.infants!.count > 0) {
+          receiptText.writeln('${breakdown.infants!.count} x Infants');
+        }
       }
 
       receiptText.writeln('-----------------------------------');
-      receiptText.writeln('Grand Total: ₹${grandTotal.toStringAsFixed(2)}');
+      receiptText.writeln('Grand Total: ₹${totalAmount.value.toStringAsFixed(2)}');
       receiptText.writeln('-----------------------------------');
       receiptText.writeln('Thank you for your visit!');
 
-      // Trigger the native share sheet
       await SharePlus.instance.share(
         ShareParams(
           text: receiptText.toString(),
           subject: 'Payment Receipt - ${orderId.value}',
         ),
       );
-
     } catch (e) {
-      Get.snackbar('Error', 'Failed to share receipt.', snackPosition: SnackPosition.BOTTOM);
+      Get.snackbar('Error', 'Failed to share receipt: $e', snackPosition: SnackPosition.BOTTOM);
     }
-  }
-
-  void _showLoadingDialog(String message) {
-    Get.dialog(
-      Dialog(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-        child: Padding(
-          padding: const EdgeInsets.all(24.0),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              const CircularProgressIndicator(),
-              const SizedBox(height: 20),
-              Text(message, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600), textAlign: TextAlign.center),
-              const SizedBox(height: 8),
-              const Text('Please do not close the app.', style: TextStyle(fontSize: 12, color: Colors.grey)),
-            ],
-          ),
-        ),
-      ),
-      barrierDismissible: false,
-    );
   }
 }

@@ -8,7 +8,7 @@ import '../../../core/utils/api/booking_api/payment_api.dart';
 class HistoryController extends GetxController {
   final RxBool isLoading = false.obs;
   final RxString errorMessage = ''.obs;
-  final Rxn<PaymentResponseModel> paymentResponse = Rxn<PaymentResponseModel>();
+  final Rxn<PaymentHistoryResponse> paymentResponse = Rxn<PaymentHistoryResponse>();
 
   // --- Filter States ---
   final TextEditingController searchController = TextEditingController();

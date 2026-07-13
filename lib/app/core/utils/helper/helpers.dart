@@ -1,36 +1,7 @@
-
 import 'dart:developer';
-
-import 'package:fluttertoast/fluttertoast.dart';
-
 import '../../../common/constant/app_imports.dart';
 
-class UDeviceHelper {
-  // uDeviceHelper._();
-
-  //----------TOAST------------//
-  static Future<bool?> showToast(BuildContext context, String msg,
-      {ToastGravity gravity = ToastGravity.BOTTOM}) {
-    return Fluttertoast.showToast(
-      msg: msg,
-      toastLength: Toast.LENGTH_SHORT,
-      gravity: gravity,
-      backgroundColor: AppColors.primary,
-      textColor: AppColors.white,
-      fontSize: 15,
-    );
-  }
-  static Future<bool?> showErrorToast(BuildContext context, String msg,
-      {ToastGravity gravity = ToastGravity.BOTTOM}) {
-    return Fluttertoast.showToast(
-      msg: msg,
-      toastLength: Toast.LENGTH_SHORT,
-      gravity: gravity,
-      backgroundColor: AppColors.error,
-      textColor: AppColors.white,
-      fontSize: 15,
-    );
-  }
+class UHelper {
 
   static void printLog(String tag, String str) {
     log("$tag -->> $str");

@@ -2343,4 +2343,29 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get faqBharatA3 =>
       'Yes, it’s family-friendly and educational for all age groups.';
+
+  @override
+  String get tabSuccess => 'Success';
+
+  @override
+  String get tabPending => 'Pending';
+
+  @override
+  String get qrScanTitle => 'QR Scan';
+
+  @override
+  String get scanYourQrSubtitle => 'Scan Your Qr Code Here';
+
+  @override
+  String get verifyingWifi => 'Verifying Wi-Fi Network...';
+
+  @override
+  String get accessDenied => 'Access Denied';
+
+  @override
+  String get connectToAuthorizedWifi =>
+      'Please connect to the authorized Wi-Fi network\nto use the scanner.';
+
+  @override
+  String get retryConnectionCheck => 'Retry Connection Check';
 }

@@ -1,5 +1,5 @@
 import '../../../common/constant/app_imports.dart';
-import '../controllers/home_controller.dart';
+
 
 class AboutPgkView extends GetView<HomeController> {
   const AboutPgkView({super.key});
@@ -10,30 +10,12 @@ class AboutPgkView extends GetView<HomeController> {
     final l10n = AppLocalizations.of(context)!;
 
     return Scaffold(
-      backgroundColor: const Color(0xFFF8F5EC),
-      appBar: AppBar(
-        title: Text(
-          l10n.aboutPgkTitle, // LOCALIZED
-          style: const TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 18,
-            fontFamily: FontFamily.regular,
-          ),
-        ),
-        backgroundColor: const Color(0xFFD36526),
-        foregroundColor: Colors.white,
-        elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white),
-          onPressed: () => Get.back(),
-        ),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.share, color: Colors.white),
-            onPressed: () {},
-          ),
-        ],
+      backgroundColor: AppColors.background,
+      appBar: CustomAppBar(
+        title: l10n.aboutPgkTitle,
+        showBackButton: true, // This is true by default in your custom widget
       ),
+
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

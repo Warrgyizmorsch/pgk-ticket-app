@@ -1,10 +1,9 @@
-import 'package:image_picker/image_picker.dart';
-import 'package:url_launcher/url_launcher.dart';
+
+
 import '../../../common/constant/app_imports.dart';
 import '../../../core/models/login_model/otp_verification_response_model.dart';
 import '../../../core/models/profile/profile_update_payload.dart';
 import '../../../core/utils/api/profile_api/profile_details_api.dart';
-import '../../../services/storage_services.dart';
 
 class ProfileController extends GetxController {
   final formKey = GlobalKey<FormState>();

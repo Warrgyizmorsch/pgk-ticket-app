@@ -1,13 +1,5 @@
 import 'dart:io';
-import 'package:pgk_ticket_app/app/modules/profile/widget/edit_profile_view.dart';
-import 'package:pgk_ticket_app/app/services/storage_services.dart';
 import '../../../common/constant/app_imports.dart';
-import '../../otp/controllers/otp_controller.dart';
-import '../../otp/widget/language_selection.dart';
-import '../controllers/profile_controller.dart';
-import '../widget/cancellation_policy_view.dart';
-import '../widget/refund_policy_view.dart';
-import '../widget/visitor_info_view.dart';
 
 class ProfileView extends GetView<ProfileController> {
   const ProfileView({super.key});
@@ -278,7 +270,7 @@ class ProfileView extends GetView<ProfileController> {
                     Get.offAllNamed(Routes.LOGIN);
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.error,
+                    backgroundColor: AppColors.primary,
                   ),
                   child: Text(l10n.logout, style: AppTextStyles.button),
                 ),
@@ -287,17 +279,17 @@ class ProfileView extends GetView<ProfileController> {
           );
         },
         style: ElevatedButton.styleFrom(
-          backgroundColor: AppColors.error.withValues(alpha: 0.1),
+          backgroundColor: AppColors.primary.withValues(alpha: 0.1),
           elevation: 0,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16),
-            side: const BorderSide(color: AppColors.error),
+            side: const BorderSide(color: AppColors.primary),
           ),
         ),
         child: Text(
           l10n.logout,
           style: AppTextStyles.button.copyWith(
-            color: AppColors.error,
+            color: AppColors.primary,
           ),
         ),
       ),

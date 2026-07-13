@@ -1,7 +1,5 @@
 
-
 import '../../../core/models/booking/booking_payment_response.dart';
-import '../controllers/history_controller.dart';
 import '../../../common/constant/app_imports.dart';
 
 class HistoryView extends GetView<HistoryController> {
@@ -30,29 +28,32 @@ class HistoryView extends GetView<HistoryController> {
       ),
       body: Column(
         children: [
-          _buildSearchSection(), // Only Search Bar remains here
+          // _buildSearchSection(), // Only Search Bar remains here
           Expanded(
             child: Obx(() {
               if (controller.isLoading.value) {
-                return const Center(child: CircularProgressIndicator());
+                return const Center(child: CustomAppLoader());
               }
 
               if (controller.errorMessage.value.isNotEmpty) {
                 return Center(child: Text(controller.errorMessage.value));
               }
 
-              final paymentData = controller.paymentResponse.value;
+              final response = controller.paymentResponse.value;
 
-              if (paymentData == null) {
+              // Check if the response or its data list is empty
+              if (response == null || response.data == null || response.data!.isEmpty) {
                 return const Center(child: Text('No payment history found.'));
               }
 
+              final payments = response.data!;
+
               return ListView.separated(
                 padding: const EdgeInsets.only(left: 16, right: 16, top: 8, bottom: 100),
-                itemCount: 1, // Change to your list length
+                itemCount: payments.length,
                 separatorBuilder: (context, index) => const SizedBox(height: 12),
                 itemBuilder: (context, index) {
-                  return _buildHistoryCard(paymentData);
+                  return _buildHistoryCard(payments[index]);
                 },
               );
             }),
@@ -62,44 +63,12 @@ class HistoryView extends GetView<HistoryController> {
     );
   }
 
-  // --- Main Page Search Bar ---
-  Widget _buildSearchSection() {
-    return Container(
-      padding: const EdgeInsets.all(16),
-      color: AppColors.white,
-      child: TextField(
-        controller: controller.searchController,
-        keyboardType: TextInputType.number,
-        decoration: InputDecoration(
-          hintText: 'Search by Booking ID',
-          prefixIcon: const Icon(Icons.search, color: AppColors.textSecondary),
-          suffixIcon: IconButton(
-            icon: const Icon(Icons.clear, size: 20),
-            onPressed: () {
-              controller.searchController.clear();
-              controller.applyFilters();
-            },
-          ),
-          contentPadding: const EdgeInsets.symmetric(horizontal: 16),
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(12),
-            borderSide: const BorderSide(color: AppColors.lightShadow),
-          ),
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(12),
-            borderSide: const BorderSide(color: AppColors.lightShadow),
-          ),
-        ),
-        onSubmitted: (_) => controller.applyFilters(),
-      ),
-    );
-  }
 
   // --- Filter Dialog ---
   void _showFilterDialog(BuildContext context) {
     Get.dialog(
       Dialog(
-          backgroundColor: AppColors.background,
+        backgroundColor: AppColors.background,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
         child: Padding(
           padding: const EdgeInsets.all(12),
@@ -212,10 +181,9 @@ class HistoryView extends GetView<HistoryController> {
               // 3. Action Buttons
               Row(
                 children: [
-                  // Secondary Action: Keep as outlined so it doesn't clash with your gradient AppButton
                   Expanded(
                     child: SizedBox(
-                      height: 48, // Matched height with your AppButton
+                      height: 48,
                       child: OutlinedButton(
                         onPressed: () {
                           controller.clearFilters();
@@ -231,7 +199,6 @@ class HistoryView extends GetView<HistoryController> {
                   ),
                   const SizedBox(width: 12),
 
-                  // Primary Action: Your Custom AppButton
                   Expanded(
                     child: AppButton(
                       title: 'Apply',
@@ -248,9 +215,10 @@ class HistoryView extends GetView<HistoryController> {
   }
 
   // --- History Card Component ---
-  Widget _buildHistoryCard(PaymentResponseModel payment) {
-    // ... (Your existing card code remains exactly the same)
-    final bool isSuccess = payment.status.value == 'success';
+  // Now accepts PaymentData instead of PaymentHistoryResponse
+  Widget _buildHistoryCard(PaymentData payment) {
+    // Utilize the new PaymentStatus enum for checking status safely
+    final bool isSuccess = payment.status == PaymentStatus.success;
 
     return Container(
       padding: const EdgeInsets.all(12),
@@ -278,7 +246,7 @@ class HistoryView extends GetView<HistoryController> {
             ),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Image.asset(ImageConstant.otp),
+              child: Image.asset(ImageConstant.otp), // Update asset if necessary
             ),
           ),
           const SizedBox(width: 12),
@@ -312,7 +280,7 @@ class HistoryView extends GetView<HistoryController> {
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Text(
-                '₹ ${payment.amount ?? 0}',
+                '₹ ${payment.amount ?? "0.00"}', // Amount is a String based on the new model
                 style: AppTextStyles.priceValue.copyWith(
                   color: isSuccess ? AppColors.success : AppColors.textPrimary,
                   fontSize: 16,

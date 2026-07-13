@@ -1,9 +1,7 @@
 import 'package:pgk_ticket_app/app/common/constant/app_imports.dart';
-import '../controllers/show_view_controller.dart';
 import '../widget/documentary_show_view.dart';
-import '../widget/light_sound_show_view.dart';
 import '../widget/robotic_show_view.dart';
-import '../widget/water_show_view.dart';
+
 
 class ShowView extends GetView<ShowViewController> {
   const ShowView({super.key});

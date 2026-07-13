@@ -6,7 +6,7 @@ import '../../../models/login_model/otp_verification_response_model.dart';
 import '../../../network/network_api_service.dart';
 
 class BookingPayment{
-  static Future<PaymentResponseModel> makePayment({
+  static Future<PaymentHistoryResponse> makePayment({
     required PaymentModel data,
   }) async {
     try {
@@ -19,12 +19,12 @@ class BookingPayment{
         body: data,
       );
 
-      return PaymentResponseModel.fromJson(response);
+      return PaymentHistoryResponse.fromJson(response);
     } catch (e) {
       throw Exception('Payment Failed: $e');
     }
   }
-  static Future<PaymentResponseModel> getPaymentById({
+  static Future<PaymentHistoryResponse> getPaymentById({
     required int paymentId,
   }) async {
     try {
@@ -36,12 +36,12 @@ class BookingPayment{
         url,
       );
 
-      return PaymentResponseModel.fromJson(response);
+      return PaymentHistoryResponse.fromJson(response);
     } catch (e) {
       throw Exception('Payment Failed: $e');
     }
   }
-  static Future<PaymentResponseModel> paymentHistory({
+  static Future<PaymentHistoryResponse> paymentHistory({
     String? status,
     String? perPage,
     int? bookingId,
@@ -90,7 +90,7 @@ class BookingPayment{
         url,
       );
 
-      return PaymentResponseModel.fromJson(response);
+      return PaymentHistoryResponse.fromJson(response);
     } catch (e) {
       throw Exception('Payment Failed: $e');
     }

@@ -1,13 +1,10 @@
 import '../../../common/constant/app_imports.dart';
-import '../controllers/show_view_controller.dart';
-// import 'package:flutter_gen/gen_l10n/app_localizations.dart'; // Ensure this is imported
 
 class WaterShowView extends GetView<ShowViewController> {
   const WaterShowView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // Initialize AppLocalizations
     final l10n = AppLocalizations.of(context)!;
 
     return Scaffold(

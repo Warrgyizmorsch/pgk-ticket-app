@@ -1,16 +1,7 @@
-import 'package:pgk_ticket_app/app/modules/show_view/widget/water_show_view.dart';
+
 
 import '../../../common/constant/app_imports.dart';
-import '../../show_view/widget/light_sound_show_view.dart';
-import '../controllers/home_controller.dart';
-import '../widget/bharat_mata_mandir_view.dart';
-import '../widget/charitra_pradarshanee_view.dart';
-import '../widget/diver_mahotsav_view.dart';
-import '../widget/event_detail_view.dart';
-import '../widget/haldighati_vijay_yudh_view.dart';
-import '../widget/krantikari_dirgha_view.dart';
-import '../widget/mewad_ratan_dirgha_view.dart';
-import '../widget/rajasthan_dirgha_view.dart';
+
 
 class HomeView extends GetView<HomeController> {
   const HomeView({super.key});

@@ -1,7 +1,5 @@
 import 'package:pgk_ticket_app/app/core/models/login_model/otp_verification_response_model.dart';
-
 import '../../../common/constant/app_imports.dart';
-import '../../../services/storage_services.dart';
 
 
 class SplashController extends GetxController {

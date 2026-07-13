@@ -1,5 +1,5 @@
 import '../../../common/constant/app_imports.dart';
-import '../controllers/show_view_controller.dart';
+
 
 class RoboticShowView extends GetView<ShowViewController> {
   const RoboticShowView({super.key});

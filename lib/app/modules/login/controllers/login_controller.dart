@@ -1,12 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:google_sign_in/google_sign_in.dart';
-import 'package:firebase_messaging/firebase_messaging.dart'; // Ensure you have this in pubspec.yaml
-
+import '../../../common/constant/app_imports.dart';
 import '../../../core/utils/api/login_api/app_otp_api.dart';
-import '../../../routes/app_pages.dart';
-import '../../../services/storage_services.dart';
+
 
 class LoginController extends GetxController {
   final selectedDialCode = '+91'.obs;
@@ -54,23 +48,19 @@ class LoginController extends GetxController {
     final phone = phoneController.text.trim();
 
     if (phone.isEmpty) {
-      Get.snackbar(
+      CustomSnackbar.showSnackbar(
         'Required Field',
         'Please enter your mobile phone number to proceed.',
-        snackPosition: SnackPosition.BOTTOM,
-        backgroundColor: Colors.redAccent,
-        colorText: Colors.white,
+        AppColors.error,
       );
       return;
     }
 
     if (phone.length < 10) {
-      Get.snackbar(
+      CustomSnackbar.showSnackbar(
         'Invalid Input',
         'Please enter a valid 10-digit phone number.',
-        snackPosition: SnackPosition.TOP,
-        backgroundColor: Colors.redAccent,
-        colorText: Colors.white,
+        AppColors.error,
       );
       return;
     }
@@ -81,24 +71,28 @@ class LoginController extends GetxController {
       final fullPhoneNumber = '${selectedDialCode.value}$phone';
       final requestData = {'mobile': phone};
 
-      await AppLogin.requestPhoneOtp(data: requestData);
+      final response = await AppLogin.requestPhoneOtp(data: requestData);
 
-      Get.snackbar(
-        'Success',
-        'OTP code sent successfully to $fullPhoneNumber',
-        snackPosition: SnackPosition.BOTTOM,
-        backgroundColor: Colors.green,
-        colorText: Colors.white,
-      );
+      if (response.success == true) {
+        CustomSnackbar.showSnackbar(
+          'Success',
+          '${response.message} to $fullPhoneNumber',
+          Colors.green,
+        );
 
-      Get.toNamed(Routes.OTP, arguments: phone);
+        Get.toNamed(Routes.OTP, arguments: phone);
+      } else {
+        CustomSnackbar.showSnackbar(
+          'Failed',
+          response.message ?? 'Failed to request verification code.',
+          AppColors.error,
+        );
+      }
     } catch (e) {
-      Get.snackbar(
+      CustomSnackbar.showSnackbar(
         'Error',
         'Failed to request verification code. Please try again.',
-        snackPosition: SnackPosition.BOTTOM,
-        backgroundColor: Colors.redAccent,
-        colorText: Colors.white,
+        AppColors.error,
       );
     } finally {
       isLoading.value = false;
@@ -132,11 +126,17 @@ class LoginController extends GetxController {
       debugPrint("SELECTED EMAIL : ${googleUser.email}");
 
       // 3. Authenticate with Google
-      final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
+      final GoogleSignInAuthentication googleAuth =
+          await googleUser.authentication;
       final String idToken = googleAuth.idToken ?? "";
 
       if (idToken.isEmpty) {
-        Get.snackbar("Error", "Google ID Token not found");
+        CustomSnackbar.showSnackbar(
+          'Error',
+          'Google ID Token not found',
+          AppColors.error,
+        );
+
         isLoading.value = false;
         return;
       }
@@ -148,11 +148,14 @@ class LoginController extends GetxController {
       );
 
       // 5. Sign in to Firebase
-      final UserCredential userCredential = await _auth.signInWithCredential(credential);
+      final UserCredential userCredential = await _auth.signInWithCredential(
+        credential,
+      );
       final User? user = userCredential.user;
 
       if (user != null) {
-        final bool isNewUser = userCredential.additionalUserInfo?.isNewUser ?? false;
+        final bool isNewUser =
+            userCredential.additionalUserInfo?.isNewUser ?? false;
 
         if (isNewUser) {
           // ---------------------------------------------------------
@@ -160,13 +163,15 @@ class LoginController extends GetxController {
           // ---------------------------------------------------------
           // Note: If you have a specific registration route now (like AppRoutes.registerAccountScreen),
           // update Routes.HOME to that route name.
-          Get.offAllNamed(Routes.HOME, arguments: {
-            'id_token': idToken,
-            'email': googleUser.email,
-            'name': googleUser.displayName ?? "",
-            'phone': user.phoneNumber ?? "", // Usually empty on Google Login
-          });
-
+          Get.offAllNamed(
+            Routes.HOME,
+            arguments: {
+              'id_token': idToken,
+              'email': googleUser.email,
+              'name': googleUser.displayName ?? "",
+              'phone': user.phoneNumber ?? "", // Usually empty on Google Login
+            },
+          );
         } else {
           // ---------------------------------------------------------
           // SCENARIO B: EXISTING USER
@@ -175,14 +180,14 @@ class LoginController extends GetxController {
           final fcmToken = await FirebaseMessaging.instance.getToken();
 
           final requestData = {
-            'id_token': idToken, // using idToken instead of firebaseIdToken for consistency
+            'id_token':
+                idToken, // using idToken instead of firebaseIdToken for consistency
             'fcm_token': fcmToken,
           };
 
           final authResponse = await AppLogin.googleLogin(data: requestData);
 
           if (authResponse.success == true && authResponse.token != null) {
-
             // Save Session
             await StorageService.to.saveToken(authResponse.token);
             if (authResponse.user != null) {
@@ -191,40 +196,38 @@ class LoginController extends GetxController {
 
             debugPrint("API LOGIN SUCCESS");
             Get.offAllNamed(Routes.HOME);
-
           } else {
             // Optional: Logout of Firebase/Google if your API login fails
             await _auth.signOut();
             await _googleSignIn.signOut();
 
-            Get.snackbar(
+            CustomSnackbar.showSnackbar(
               'Login Failed',
               'Failed to authenticate with our servers.',
-              snackPosition: SnackPosition.BOTTOM,
-              backgroundColor: Colors.redAccent,
-              colorText: Colors.white,
+              AppColors.error,
             );
           }
         }
       } else {
-        Get.snackbar("Error", "Firebase user not found");
+        CustomSnackbar.showSnackbar(
+          'Error',
+          'Firebase user not found',
+          AppColors.error,
+        );
       }
     } on FirebaseAuthException catch (e) {
-      Get.snackbar(
+
+      CustomSnackbar.showSnackbar(
         'Authentication Failed',
         e.message ?? 'An unknown Firebase error occurred.',
-        snackPosition: SnackPosition.BOTTOM,
-        backgroundColor: Colors.redAccent,
-        colorText: Colors.white,
+          AppColors.error,
       );
     } catch (e) {
       debugPrint("GOOGLE LOGIN ERROR : $e");
-      Get.snackbar(
+      CustomSnackbar.showSnackbar(
         'Error',
         'Google Sign-In failed.',
-        snackPosition: SnackPosition.BOTTOM,
-        backgroundColor: Colors.redAccent,
-        colorText: Colors.white,
+        AppColors.error,
       );
     } finally {
       isLoading.value = false;

@@ -14,8 +14,9 @@ class VisitorInfoView extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: AppColors.primary,
           elevation: 0,
+          centerTitle: true,
           leading: IconButton(
-            icon: const Icon(Icons.arrow_back_rounded, color: Colors.white),
+            icon: const Icon(Icons.arrow_back_ios_new, color: Colors.white),
             onPressed: () => Get.back(),
           ),
           title: Text(
@@ -27,14 +28,12 @@ class VisitorInfoView extends StatelessWidget {
             ),
           ),
           bottom: TabBar(
-            indicatorColor: Colors.white,
-            indicatorWeight: 3,
-            labelColor: Colors.white,
+            labelColor: AppColors.white,
             unselectedLabelColor: Colors.white70,
-            labelStyle: const TextStyle(
-              fontWeight: FontWeight.w600,
-              fontSize: 14,
-            ),
+            indicatorColor: AppColors.background,
+            indicatorWeight: 5,
+            indicatorSize: TabBarIndicatorSize.tab,
+            labelStyle: AppTextStyles.bodyMedium.copyWith(fontWeight: FontWeight.w600),
             tabs: [
               Tab(text: l10n.tabInstructions),
               Tab(text: l10n.tabFacilities),

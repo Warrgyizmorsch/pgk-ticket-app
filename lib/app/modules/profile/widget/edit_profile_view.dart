@@ -1,6 +1,6 @@
 import 'dart:io';
 import '../../../common/constant/app_imports.dart';
-import '../controllers/profile_controller.dart';
+
 
 class EditProfileView extends GetView<ProfileController> {
   const EditProfileView({super.key});

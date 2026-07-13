@@ -345,20 +345,33 @@ class BookingView extends GetView<BookingController> {
   Widget _buildTotalAndSubmit(AppLocalizations l10n) {
     return SizedBox(
       width: double.infinity,
-      child: ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          backgroundColor: AppColors.primary,
-          foregroundColor: AppColors.white,
-          elevation: 2,
-          padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 8),
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-        ),
-        onPressed: controller.submitBooking,
-        child: Text(l10n.bookNowBtn, style: AppTextStyles.button),
-      ),
+      child: Obx(() {
+        final isLoading = controller.isLoaded.value;
+
+        return ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: AppColors.primary,
+            foregroundColor: AppColors.white,
+            elevation: 2,
+            padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 8),
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+          ),
+          onPressed: isLoading ? null : controller.submitBooking,
+
+          child: isLoading
+              ? const SizedBox(
+            height: 24,
+            width: 24,
+            child: CircularProgressIndicator(
+              color: Colors.white,
+              strokeWidth: 2.5,
+            ),
+          )
+              : Text(l10n.bookNowBtn, style: AppTextStyles.button),
+        );
+      }),
     );
   }
-
   Widget _buildRulesSection(AppLocalizations l10n) {
     return Container(
       decoration: BoxDecoration(

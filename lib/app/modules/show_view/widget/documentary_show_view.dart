@@ -1,5 +1,4 @@
 import '../../../common/constant/app_imports.dart';
-import '../controllers/show_view_controller.dart';
 
 class DocumentationShowView extends GetView<ShowViewController> {
   const DocumentationShowView({super.key});

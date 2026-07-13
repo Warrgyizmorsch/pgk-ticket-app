@@ -1,5 +1,4 @@
 import '../../../common/constant/app_imports.dart';
-import '../controllers/home_controller.dart';
 
 class PratapHistoryView extends GetView<HomeController> {
   const PratapHistoryView({super.key});
@@ -10,30 +9,12 @@ class PratapHistoryView extends GetView<HomeController> {
     final l10n = AppLocalizations.of(context)!;
 
     return Scaffold(
-      backgroundColor: const Color(
-        0xFFF8F5EC,
-      ), // Off-white/cream background from mockup
-      appBar: AppBar(
-        title: Text(
-          l10n.historyOfPratap,
-          style: const TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 16,
-            fontFamily: FontFamily.regular,
-          ),
-        ),
-        backgroundColor: const Color(0xFFD36526),
-        foregroundColor: Colors.white,
-        elevation: 0,
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.share, color: Colors.white),
-            onPressed: () {
-              // Share action
-            },
-          ),
-        ],
+      backgroundColor: AppColors.background,
+      appBar: CustomAppBar(
+        title: l10n.historyOfPratap,
+        showBackButton: true, // This is true by default in your custom widget
       ),
+
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

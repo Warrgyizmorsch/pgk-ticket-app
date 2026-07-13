@@ -1,10 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import '../../../common/constant/app_imports.dart';
 import '../../../core/models/language/language_model.dart';
 import '../../../core/utils/api/login_api/app_otp_api.dart';
-import '../../../routes/app_pages.dart';
-import '../../../services/storage_services.dart';
-import '../widget/language_selection.dart';
 
 class OtpController extends GetxController {
   final isLoading = false.obs;
@@ -56,11 +52,11 @@ class OtpController extends GetxController {
     }
     _restoreSavedLanguage();
   }
-  Future<void> verifyOtp() async {
+  Future<void> verifyOtp(BuildContext context) async {
     String absoluteCode = otpControllers.map((c) => c.text).join();
 
     if (absoluteCode.length < 5) {
-      _showSnackbar('Incomplete Code', 'Please enter the full 5-digit verification code.', const Color(0xFFEF4444));
+      CustomSnackbar.showSnackbar('Incomplete Code', 'Please enter the full 5-digit verification code.', const Color(0xFFEF4444));
       return;
     }
 
@@ -82,31 +78,22 @@ class OtpController extends GetxController {
           await StorageService.to.saveUser(response.user);
         }
 
-        _showSnackbar('Verified', response.message, const Color(0xFF22C55E));
+        CustomSnackbar.showToast(context, 'Verified : ${response.message}',);
 
         Get.to(LanguageSelectionView());
 
       } else {
-        _showSnackbar('Verification Failed', response.message, const Color(0xFFEF4444));
+        CustomSnackbar.showSnackbar('Verification Failed', response.message, const Color(0xFFEF4444));
       }
 
     } catch (e) {
-      _showSnackbar('Error', 'Network error. Please try again.', const Color(0xFFEF4444));
+      CustomSnackbar.showSnackbar('Error', 'Network error. Please try again.', const Color(0xFFEF4444));
     } finally {
       isLoading.value = false;
     }
   }
 
-  void _showSnackbar(String title, String message, Color bgColor) {
-    Get.snackbar(
-      title,
-      message,
-      snackPosition: SnackPosition.BOTTOM,
-      backgroundColor: bgColor,
-      colorText: Colors.white,
-      margin: const EdgeInsets.all(10),
-    );
-  }
+
 
   void selectLanguage(String languageId, String languageCode) {
     selectedLanguageId.value = languageId;

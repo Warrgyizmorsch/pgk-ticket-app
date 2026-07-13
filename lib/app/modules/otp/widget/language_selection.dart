@@ -1,5 +1,4 @@
 import '../../../common/constant/app_imports.dart';
-import '../controllers/otp_controller.dart';
 
 class LanguageSelectionView extends GetView<OtpController> {
   const LanguageSelectionView({super.key});

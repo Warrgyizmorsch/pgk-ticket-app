@@ -1,6 +1,4 @@
 import '../../../common/constant/app_imports.dart';
-import '../controllers/nav_bar_controller.dart';
-
 
 class NavBarView extends GetView<NavBarController> {
   const NavBarView({super.key});

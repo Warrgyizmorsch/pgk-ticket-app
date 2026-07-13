@@ -4,10 +4,27 @@ import '../../../constant_api/api_constant.dart';
 import '../../../models/booking/booking_list_response.dart';
 import '../../../models/booking/booking_payload_model.dart';
 import '../../../models/booking/booking_response_model.dart';
+import '../../../models/booking/ticket_prices_master_response.dart';
 import '../../../models/login_model/otp_verification_response_model.dart';
 import '../../../network/network_api_service.dart';
 
 class TicketBooking {
+  static Future<TicketPricingResponse> ticketPriceMaster() async {
+    try {
+      final url = Uri.parse(
+        '${ApiConstant.BASE_URL}${ApiConstant.ticketPriceMaster}',
+      );
+
+      final response = await ApiClient.get(
+        url,
+      );
+
+      return TicketPricingResponse.fromJson(response);
+    } catch (e) {
+      throw Exception('Login Failed: $e');
+    }
+  }
+
   static Future<TicketBookingResponseModel> ticketBooking({
     required TicketBookingModel data,
   }) async {
@@ -43,7 +60,7 @@ class TicketBooking {
       final url = Uri.parse(baseUrl).replace(
         queryParameters: {
           'user_id': userId.toString(),
-          'payment_status': paymentStatus,
+          // 'payment_status': paymentStatus,
           'per_page': perPage.toString(),
         },
       );
@@ -52,11 +69,9 @@ class TicketBooking {
         url,
       );
 
-      // 3. Parse using the BookingListResponse model we created
       return BookingListResponse.fromJson(response);
 
     } catch (e) {
-      // Updated exception message to make debugging booking errors precise
       throw Exception('Failed to fetch booking list: $e');
     }
   }

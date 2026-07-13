@@ -1,11 +1,7 @@
-import 'dart:convert';
-import 'package:get/get.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-
+import '../common/constant/app_imports.dart';
 import '../core/models/login_model/otp_verification_response_model.dart';
 
 class StorageService extends GetxService {
-  // Enables the `StorageService.to.methodName()` syntax used in ApiClient
   static StorageService get to => Get.find<StorageService>();
 
   late SharedPreferences _prefs;

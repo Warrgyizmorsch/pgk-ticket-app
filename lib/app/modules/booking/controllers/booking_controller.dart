@@ -1,17 +1,14 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:pgk_ticket_app/app/core/utils/api/booking_api/ticket_booking_api.dart';
-
+import '../../../common/constant/app_imports.dart';
 import '../../../core/models/booking/booking_payload_model.dart';
-import '../../../routes/app_pages.dart';
-import '../../../services/storage_services.dart';
+import '../../../core/models/booking/ticket_prices_master_response.dart';
+
 
 class BookingController extends GetxController {
-
   var selectedAttraction = 0.obs;
   var isWaterShowAdded = false.obs;
-
+  RxBool isLoaded = false.obs;
   var isIndian = true.obs;
   var selectedDate = DateTime.now().obs;
 
@@ -27,6 +24,10 @@ class BookingController extends GetxController {
   final childNotifier = ValueNotifier<int?>(0);
   final adultNotifier = ValueNotifier<int?>(0);
 
+  // --- NEW: Dynamic Pricing State ---
+  var ticketPrices = <TicketPricing>[].obs;
+  var isLoadingPrices = false.obs;
+
   @override
   void onInit() {
     super.onInit();
@@ -34,26 +35,57 @@ class BookingController extends GetxController {
     infantNotifier.addListener(() => infantCount.value = infantNotifier.value ?? 0);
     childNotifier.addListener(() => childCount.value = childNotifier.value ?? 0);
     adultNotifier.addListener(() => adultCount.value = adultNotifier.value ?? 0);
+
+    // Fetch prices as soon as the controller initializes
+    fetchTicketPrices();
   }
 
-  double get currentAdultPrice {
-    if (selectedAttraction.value == 2 || (selectedAttraction.value == 0 && isWaterShowAdded.value)) {
-      return 200.0;
-    } else if (selectedAttraction.value == 0) {
-      return isIndian.value ? 160.0 : 460.0;
-    } else {
-      return 100.0;
+  // --- NEW: Fetch Prices from API ---
+  Future<void> fetchTicketPrices() async {
+    try {
+      isLoadingPrices.value = true;
+      final response = await TicketBooking.ticketPriceMaster();
+
+      if (response.success) {
+        ticketPrices.value = response.data;
+      } else {
+        debugPrint('Failed to fetch prices: ${response.message}');
+      }
+    } catch (e) {
+      debugPrint('Error fetching prices: $e');
+    } finally {
+      isLoadingPrices.value = false;
     }
+  }
+
+  // --- NEW: Helpers to map UI selection to API strings ---
+  String get _selectedTicketType {
+    if (selectedAttraction.value == 2 || (selectedAttraction.value == 0 && isWaterShowAdded.value)) {
+      return "combo";
+    } else if (selectedAttraction.value == 0) {
+      return "pratap gaurav kendra";
+    } else {
+      return "water laser show";
+    }
+  }
+
+  String get _selectedNationality => isIndian.value ? "Indian" : "Foreigner";
+
+  // Finds the specific pricing rule based on current selections
+  TicketPricing? get _currentPricingRule {
+    return ticketPrices.firstWhereOrNull((price) =>
+    price.ticketType == _selectedTicketType &&
+        price.nationality == _selectedNationality
+    );
+  }
+
+  // --- UPDATED: Dynamic Price Getters ---
+  double get currentAdultPrice {
+    return _currentPricingRule?.adultRate.toDouble() ?? 0.0;
   }
 
   double get currentChildPrice {
-    if (selectedAttraction.value == 2 || (selectedAttraction.value == 0 && isWaterShowAdded.value)) {
-      return 150.0;
-    } else if (selectedAttraction.value == 0) {
-      return isIndian.value ? 110.0 : 260.0;
-    } else {
-      return 50.0;
-    }
+    return _currentPricingRule?.kidRate.toDouble() ?? 0.0;
   }
 
   // Total Calculation
@@ -108,66 +140,18 @@ class BookingController extends GetxController {
     }
   }
 
-  /// Helper method to create the ticket list for the receipt
-  List<Map<String, dynamic>> _generateTicketBreakdown() {
-    List<Map<String, dynamic>> tickets = [];
-    String prefix = '';
-
-    if (selectedAttraction.value == 2 || (selectedAttraction.value == 0 && isWaterShowAdded.value)) {
-      prefix = 'Combo';
-    } else if (selectedAttraction.value == 0) {
-      prefix = 'P.G.K.';
-    } else {
-      prefix = 'L.S.W.';
-    }
-
-    // Add Adult Tickets if > 0
-    if (adultCount.value > 0) {
-      tickets.add({
-        'name': '$prefix Adult',
-        'price': currentAdultPrice,
-        'qty': adultCount.value,
-        'total': currentAdultPrice * adultCount.value,
-      });
-    }
-
-    // Add Child Tickets if > 0
-    if (childCount.value > 0) {
-      tickets.add({
-        'name': '$prefix Kids',
-        'price': currentChildPrice,
-        'qty': childCount.value,
-        'total': currentChildPrice * childCount.value,
-      });
-    }
-
-    // Add Infant Tickets if > 0 (Free)
-    if (infantCount.value > 0) {
-      tickets.add({
-        'name': '$prefix Infant',
-        'price': 0.00,
-        'qty': infantCount.value,
-        'total': 0.00,
-      });
-    }
-
-    return tickets;
-  }
-
   Future<void> submitBooking() async {
     // 1. Validate if tickets are selected
     if (totalAmount == 0) {
-      Get.snackbar(
+      CustomSnackbar.showSnackbar(
         'Action Required',
         'Please select at least one ticket to proceed.',
-        backgroundColor: Colors.redAccent,
-        colorText: Colors.white,
-        snackPosition: SnackPosition.BOTTOM,
+        AppColors.error,
       );
       return;
     }
 
-    // Determine the ticket type string
+    // 2. Determine the ticket type string for the booking payload
     String ticketTypeString = 'P.G.K.';
     if (selectedAttraction.value == 2 || (selectedAttraction.value == 0 && isWaterShowAdded.value)) {
       ticketTypeString = 'Combo';
@@ -178,42 +162,53 @@ class BookingController extends GetxController {
     try {
       final userData = StorageService.to.getUser();
       debugPrint('User Data: $userData');
-
+      isLoaded.value = true;
+      // 3. Prepare payload
       TicketBookingModel bookingPayload = TicketBookingModel(
-        userId: userData?.id??0,
+        userId: userData?.id ?? 0,
         ticketType: ticketTypeString,
         time: DateFormat('h:mm a').format(selectedDate.value),
         date: DateFormat('yyyy-MM-dd').format(selectedDate.value),
-        nationality: isIndian.value ? "Indian" : "Foreigner",
+        nationality: _selectedNationality,
         adultsCount: adultCount.value,
         kidsCount: childCount.value,
         infantsCount: infantCount.value,
         totalRs: totalAmount,
       );
 
-
+      // 4. Call API
       final rawResponse = await TicketBooking.ticketBooking(data: bookingPayload);
-      if (rawResponse.success) {
-        // 5. Package all data and send it to the Payment Screen
+
+      // 5. Check success and navigate using the paymentUrl
+      if (rawResponse.success && rawResponse.paymentUrl.isNotEmpty) {
         Get.toNamed(
           Routes.PAYMENT,
           arguments: {
+            'paymentUrl': rawResponse.paymentUrl,
+            'bookingId': rawResponse.bookingId,
             'amount': totalAmount,
             'customerName': userData?.name ?? "",
             'customerEmail': emailController.text.trim(),
             'customerPhone': userData?.mobile ?? "",
             'bookingDate': selectedDate.value.toString().split(' ')[0],
-            'tickets': _generateTicketBreakdown(),
+            'tickets': rawResponse.data.priceBreakdown,
           },
+        );
+      } else {
+        isLoaded.value = false;
+        CustomSnackbar.showSnackbar(
+          'Booking Failed Error',
+          rawResponse.message,
+          AppColors.error,
         );
       }
     } catch (e) {
-      Get.snackbar(
+      debugPrint('Booking Error: $e');
+      isLoaded.value = false;
+      CustomSnackbar.showSnackbar(
         'Booking Failed',
         'Could not process your booking. Please try again.',
-        backgroundColor: Colors.redAccent,
-        colorText: Colors.white,
-        snackPosition: SnackPosition.BOTTOM,
+        AppColors.error,
       );
     }
   }

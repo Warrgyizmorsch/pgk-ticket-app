@@ -2338,4 +2338,29 @@ class AppLocalizationsHi extends AppLocalizations {
   @override
   String get faqBharatA3 =>
       'हां, यह परिवार के अनुकूल है और सभी आयु समूहों के लिए शैक्षिक है।';
+
+  @override
+  String get tabSuccess => 'सफल';
+
+  @override
+  String get tabPending => 'लंबित';
+
+  @override
+  String get qrScanTitle => 'QR स्कैन';
+
+  @override
+  String get scanYourQrSubtitle => 'अपना QR कोड यहां स्कैन करें';
+
+  @override
+  String get verifyingWifi => 'वाई-फाई नेटवर्क की पुष्टि हो रही है...';
+
+  @override
+  String get accessDenied => 'पहुंच अस्वीकृत';
+
+  @override
+  String get connectToAuthorizedWifi =>
+      'कृपया स्कैनर का उपयोग करने के लिए अधिकृत वाई-फाई नेटवर्क से कनेक्ट करें।';
+
+  @override
+  String get retryConnectionCheck => 'कनेक्शन जांच का पुनः प्रयास करें';
 }
