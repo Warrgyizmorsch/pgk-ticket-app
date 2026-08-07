@@ -1,6 +1,8 @@
 import 'dart:async'; // ⬅️ NEW: Required for the Timer
 import 'package:network_info_plus/network_info_plus.dart';
 import '../../../common/constant/app_imports.dart';
+import '../../../core/models/network_model/network_list_response.dart';
+import '../../../core/utils/api/network_api/network_list_api.dart';
 import '../../../core/utils/api/scanner_api/get_scanner_api.dart';
 import '../widget/visitor_web_view_screen.dart';
 
@@ -15,6 +17,8 @@ class ScannerController extends GetxController {
 
   var isCheckingNetwork = true.obs;
   var isAuthorizedNetwork = false.obs;
+
+  final Set<String> _allowedIps = {};
 
   // ⬅️ NEW: Timer to continuously monitor network changes
   Timer? _networkMonitorTimer;
@@ -42,14 +46,39 @@ class ScannerController extends GetxController {
 
   // ─── Network Methods ───
 
+  Future<void> fetchAllowedNetworks() async {
+    try {
+      final NetworkListResponseModel response = await NetworkApiService.getNetworkList();
+      final activeNetworks = response.data?.where((item) => item.status == true).toList() ?? [];
+      _allowedIps.clear();
+      for (var item in activeNetworks) {
+        if (item.publicIp != null && item.publicIp!.trim().isNotEmpty) {
+          _allowedIps.add(item.publicIp!.trim());
+        }
+        if (item.privateIp != null && item.privateIp!.trim().isNotEmpty) {
+          _allowedIps.add(item.privateIp!.trim());
+        }
+      }
+      debugPrint("Allowed IPs loaded: $_allowedIps");
+    } catch (e) {
+      debugPrint("Failed to fetch allowed networks: $e");
+    }
+  }
+
+  bool _isIpAuthorized(String? wifiIP) {
+    if (wifiIP == null || wifiIP.isEmpty) return false;
+    return _allowedIps.any((allowedIp) => wifiIP == allowedIp || wifiIP.startsWith(allowedIp));
+  }
+
   Future<void> verifyWifiConnection() async {
     isCheckingNetwork.value = true;
     try {
+      await fetchAllowedNetworks();
       final info = NetworkInfo();
       final wifiIP = await info.getWifiIP();
       debugPrint("Initial Wifi Ip: $wifiIP");
 
-      if (wifiIP != null && wifiIP.startsWith('192.168.29.209')) {
+      if (_isIpAuthorized(wifiIP)) {
         isAuthorizedNetwork.value = true;
       } else {
         isAuthorizedNetwork.value = false;
@@ -63,13 +92,21 @@ class ScannerController extends GetxController {
 
   // ⬅️ NEW: Silent background monitoring
   void _startNetworkMonitoring() {
+    int counter = 0;
     // Checks the IP address every 3 seconds.
     _networkMonitorTimer = Timer.periodic(const Duration(seconds: 3), (timer) async {
       try {
+        counter++;
+        // Refresh network list every 30 seconds (10 ticks of 3s)
+        if (counter >= 10 || _allowedIps.isEmpty) {
+          counter = 0;
+          await fetchAllowedNetworks();
+        }
+
         final info = NetworkInfo();
         final wifiIP = await info.getWifiIP();
 
-        if (wifiIP != null && wifiIP.startsWith('192.168.29.209')) {
+        if (_isIpAuthorized(wifiIP)) {
           if (!isAuthorizedNetwork.value) {
             isAuthorizedNetwork.value = true;
             scannerController.start(); // Restart camera if connection is restored

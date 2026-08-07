@@ -33,6 +33,7 @@ class ApiConstant {
   static const String profileUpdate = "profile/update";
   static const String payment = "/payment";
   static const String paymentHistory = "payment-history";
+  static const String networkList = "network-list";
 
 }
 
