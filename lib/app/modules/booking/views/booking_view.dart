@@ -13,7 +13,6 @@ class BookingView extends GetView<BookingController> {
       backgroundColor: AppColors.background,
       appBar: CustomAppBar(
         title: l10n.bookTicket,
-
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -47,7 +46,6 @@ class BookingView extends GetView<BookingController> {
                       Text(l10n.attractionDetails, style: AppTextStyles.sectionHeading),
                       const SizedBox(height: 16),
 
-                      // All 3 Options
                       _buildAttractionOptions(l10n),
 
                       const Divider(color: AppColors.lightDivider, height: 32, thickness: 1),
@@ -60,8 +58,16 @@ class BookingView extends GetView<BookingController> {
 
                       Text(l10n.selectTickets, style: AppTextStyles.sectionHeading),
                       const SizedBox(height: 8),
+
+                      // Base Counters (PGK)
                       _buildCounters(l10n),
+
+                      // Add Water Show Toggle
                       _buildAddWaterShowToggle(l10n),
+
+                      // Secondary Counters (Appears only if "YES" is clicked)
+                      _buildWaterShowCounters(l10n),
+
                       const SizedBox(height: 12),
                       Container(
                         width: double.infinity,
@@ -83,9 +89,6 @@ class BookingView extends GetView<BookingController> {
                           ],
                         ),
                       ),
-                      // const Divider(color: AppColors.lightDivider, height: 20, thickness: 1),
-                      //
-                      // _buildContactForm(l10n),
 
                       const SizedBox(height: 12),
 
@@ -121,7 +124,6 @@ class BookingView extends GetView<BookingController> {
       return GestureDetector(
         onTap: () {
           controller.selectedAttraction.value = index;
-          // Reset toggle if they click something else
           if (index != 0) controller.isWaterShowAdded.value = false;
         },
         child: AnimatedContainer(
@@ -175,7 +177,6 @@ class BookingView extends GetView<BookingController> {
 
   Widget _buildAddWaterShowToggle(AppLocalizations l10n) {
     return Obx(() {
-      // Show ONLY if the user selected the first option (index 0)
       if (controller.selectedAttraction.value != 0) return const SizedBox.shrink();
 
       return Container(
@@ -198,7 +199,17 @@ class BookingView extends GetView<BookingController> {
             const SizedBox(width: 8),
             ToggleButtons(
               isSelected: [!controller.isWaterShowAdded.value, controller.isWaterShowAdded.value],
-              onPressed: (index) => controller.isWaterShowAdded.value = (index == 1),
+              onPressed: (index) {
+                // Simply toggle visibility, NO auto-sync.
+                controller.isWaterShowAdded.value = (index == 1);
+
+                // If they click 'NO', reset the hidden water show counters back to 0
+                if (index == 0) {
+                  controller.wsInfantNotifier.value = 0;
+                  controller.wsChildNotifier.value = 0;
+                  controller.wsAdultNotifier.value = 0;
+                }
+              },
               borderRadius: BorderRadius.circular(6),
               selectedColor: AppColors.white,
               fillColor: AppColors.primary,
@@ -301,6 +312,44 @@ class BookingView extends GetView<BookingController> {
     ));
   }
 
+  Widget _buildWaterShowCounters(AppLocalizations l10n) {
+    final List<int> countItems = List.generate(21, (index) => index);
+
+    return Obx(() {
+      if (controller.selectedAttraction.value == 0 && controller.isWaterShowAdded.value) {
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const SizedBox(height: 12),
+            const Divider(color: AppColors.lightDivider, height: 1, thickness: 1),
+            const SizedBox(height: 12),
+            Text("${l10n.selectTickets} (Water Show)", style: AppTextStyles.sectionHeading),
+            const SizedBox(height: 8),
+            _personDropdownRow(
+              l10n.infantLabel,
+              l10n.free,
+              controller.wsInfantNotifier,
+              countItems,
+            ),
+            _personDropdownRow(
+              l10n.kidsLabel,
+              '₹${controller.waterShowChildPrice.toStringAsFixed(2)}',
+              controller.wsChildNotifier,
+              countItems,
+            ),
+            _personDropdownRow(
+              l10n.adultLabel,
+              '₹${controller.waterShowAdultPrice.toStringAsFixed(2)}',
+              controller.wsAdultNotifier,
+              countItems,
+            ),
+          ],
+        );
+      }
+      return const SizedBox.shrink();
+    });
+  }
+
   Widget _personDropdownRow(String label, String priceText, ValueNotifier<int?> notifier, List<int> items) {
     return Container(
       margin: const EdgeInsets.only(bottom: 12.0),
@@ -341,7 +390,6 @@ class BookingView extends GetView<BookingController> {
     );
   }
 
-
   Widget _buildTotalAndSubmit(AppLocalizations l10n) {
     return SizedBox(
       width: double.infinity,
@@ -357,7 +405,6 @@ class BookingView extends GetView<BookingController> {
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
           ),
           onPressed: isLoading ? null : controller.submitBooking,
-
           child: isLoading
               ? const SizedBox(
             height: 24,
@@ -372,6 +419,7 @@ class BookingView extends GetView<BookingController> {
       }),
     );
   }
+
   Widget _buildRulesSection(AppLocalizations l10n) {
     return Container(
       decoration: BoxDecoration(

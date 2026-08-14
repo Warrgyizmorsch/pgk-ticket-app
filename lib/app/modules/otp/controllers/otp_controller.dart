@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_null_comparison
+
 import '../../../common/constant/app_imports.dart';
 import '../../../core/models/language/language_model.dart';
 import '../../../core/utils/api/login_api/app_otp_api.dart';
@@ -78,6 +80,7 @@ class OtpController extends GetxController {
           await StorageService.to.saveUser(response.user);
         }
 
+        if (!context.mounted) return;
         CustomSnackbar.showToast(context, 'Verified : ${response.message}',);
 
         Get.to(LanguageSelectionView());

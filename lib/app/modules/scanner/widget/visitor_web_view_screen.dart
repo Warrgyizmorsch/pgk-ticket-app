@@ -4,6 +4,7 @@ class VisitorWebViewScreen extends StatefulWidget {
   final String? title;
   final String? thumbnailUrl;
   final String? videoUrl;
+  final String? audioUrl;
   final List<dynamic>? faqs; // If you imported your model, this can be List<FaqModel>?
 
   const VisitorWebViewScreen({
@@ -12,6 +13,7 @@ class VisitorWebViewScreen extends StatefulWidget {
     this.thumbnailUrl,
     this.videoUrl,
     this.faqs,
+    this.audioUrl,
   });
 
   @override
@@ -19,10 +21,8 @@ class VisitorWebViewScreen extends StatefulWidget {
 }
 
 class _VisitorWebViewScreenState extends State<VisitorWebViewScreen> {
-  // Get the existing controller
   final ScannerController controller = Get.find<ScannerController>();
 
-  // Create a variable for our GetX listener
   late Worker _networkWorker;
 
   @override
@@ -65,12 +65,17 @@ class _VisitorWebViewScreenState extends State<VisitorWebViewScreen> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
 
-            // ─── 1. HERO MEDIA SECTION ───
             ClipRRect(
               borderRadius: BorderRadius.circular(16),
               child: _buildMediaSection(controller),
             ),
             const SizedBox(height: 16),
+
+            // ─── NEW: AUDIO PLAYER CARD ───
+            // if (widget.audioUrl != null && widget.audioUrl!.isNotEmpty) ...[
+            //   _buildAudioPlayerCard(),
+            //   const SizedBox(height: 16),
+            // ],
 
             // ─── 2. WEB VIEW CONTENT CARD ───
             Obx(() => Container(
@@ -123,7 +128,69 @@ class _VisitorWebViewScreenState extends State<VisitorWebViewScreen> {
     );
   }
 
-  // ─── UI Helper Methods ───
+  // ─── NEW: AUDIO PLAYER UI METHOD ───
+  // Widget _buildAudioPlayerCard() {
+  //   return Container(
+  //     padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+  //     decoration: BoxDecoration(
+  //       color: Colors.white,
+  //       borderRadius: BorderRadius.circular(16),
+  //       boxShadow: [
+  //         BoxShadow(
+  //           color: Colors.black.withValues(alpha: 0.04),
+  //           blurRadius: 10,
+  //           offset: const Offset(0, 4),
+  //         ),
+  //       ],
+  //     ),
+  //     child: Row(
+  //       children: [
+  //         const Icon(Icons.audiotrack_rounded, color: Color(0xFFF47B20), size: 32),
+  //         const SizedBox(width: 12),
+  //         const Expanded(
+  //           child: Text(
+  //             'Listen to Audio Guide',
+  //             style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.black87),
+  //           ),
+  //         ),
+  //         Obx(() {
+  //           final isPlaying = controller.isNetworkAudioPlaying.value;
+  //           return Row(
+  //             children: [
+  //               // Play/Pause Button
+  //               IconButton(
+  //                 onPressed: () {
+  //                   if (isPlaying) {
+  //                     controller.pauseAudio();
+  //                   } else {
+  //                     controller.playAudio(widget.audioUrl!);
+  //                   }
+  //                 },
+  //                 icon: Icon(
+  //                   isPlaying ? Icons.pause_circle_filled : Icons.play_circle_fill,
+  //                   color: const Color(0xFFF47B20),
+  //                   size: 40,
+  //                 ),
+  //               ),
+  //               // Stop Button
+  //               if (isPlaying)
+  //                 IconButton(
+  //                   onPressed: () {
+  //                     controller.stopAudio(); // ⬅️ Manually Stops the Audio
+  //                   },
+  //                   icon: const Icon(
+  //                     Icons.stop_circle_rounded,
+  //                     color: Colors.redAccent,
+  //                     size: 40,
+  //                   ),
+  //                 ),
+  //             ],
+  //           );
+  //         }),
+  //       ],
+  //     ),
+  //   );
+  // }
 
   BoxDecoration _cardDecoration() {
     return BoxDecoration(
@@ -184,7 +251,7 @@ class _VisitorWebViewScreenState extends State<VisitorWebViewScreen> {
 
   Widget _buildMediaSection(ScannerController controller) {
     return Obx(() {
-      // ─── ACTIVE VIDEO PLAYER STATE ───
+
       if (controller.isVideoPlaying.value && controller.videoController != null) {
         return Container(
           height: 260,

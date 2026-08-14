@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
 class ApiConstant {
   static const BASE_URL = "https://pgk.londonstreetstore.com/api/";
   static const Webview_URL = "https://www.assignnmentinneed.com/PrivacyPolicy";

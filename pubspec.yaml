@@ -39,7 +39,8 @@ dependencies:
   webview_flutter: ^4.7.0
   video_player: ^2.8.0
   network_info_plus: ^8.2.0
-
+  connectivity_plus: ^6.0.5
+  audioplayers: ^6.1.0
 
 
 dev_dependencies:

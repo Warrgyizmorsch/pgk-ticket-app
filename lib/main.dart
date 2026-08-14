@@ -2,19 +2,15 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import 'app/common/widget/no_internet/no_internet_widget.dart';
 import 'app/routes/app_pages.dart';
 import 'app/services/storage_services.dart';
 import 'firebase_options.dart';
 import 'package:pgk_ticket_app/l10n/app_localizations.dart';
 
-
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
-
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await Get.putAsync(() => StorageService().init());
 
   runApp(
@@ -30,7 +26,7 @@ Future<void> main() async {
       builder: (context, child) {
         return SafeArea(
           top: false,
-          child: child ?? const SizedBox(),
+          child: NoInternetWidget(child: child ?? const SizedBox()),
         );
       },
     ),

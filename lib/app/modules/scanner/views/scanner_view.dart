@@ -49,12 +49,12 @@ class ScannerView extends GetView<ScannerController> {
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 24),
-                ElevatedButton.icon(
-                  onPressed: controller.verifyWifiConnection,
-                  style: const ButtonStyle(backgroundColor: WidgetStatePropertyAll(AppColors.primary)),
-                  icon: const Icon(Icons.refresh, color: AppColors.white),
-                  label: Text(l10n.retryConnectionCheck, style: AppTextStyles.button),
-                ),
+                // ElevatedButton.icon(
+                //   onPressed: controller.verifyWifiConnection,
+                //   style: const ButtonStyle(backgroundColor: WidgetStatePropertyAll(AppColors.primary)),
+                //   icon: const Icon(Icons.refresh, color: AppColors.white),
+                //   label: Text(l10n.retryConnectionCheck, style: AppTextStyles.button),
+                // ),
               ],
             ),
           );

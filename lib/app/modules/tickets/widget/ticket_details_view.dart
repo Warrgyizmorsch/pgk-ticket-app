@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_null_comparison
+
 import '../../../common/constant/app_imports.dart';
 import '../../../core/models/booking/booking_list_response.dart';
 

@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_null_comparison
+
 import '../../../common/constant/app_imports.dart';
 import '../../../core/utils/api/login_api/app_otp_api.dart';
 

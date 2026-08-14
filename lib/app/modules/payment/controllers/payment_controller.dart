@@ -115,10 +115,9 @@ class PaymentController extends GetxController {
 
         if (currentBooking != null) {
           final String status = currentBooking.paymentStatus.value.toLowerCase();
-
+          debugPrint("Status: $status");
           if (status == 'success') {
-            // Payment verified! Route to success view
-            Get.off(() => const PaymentSuccessView(), arguments: Get.arguments);
+            Get.to(() => const PaymentSuccessView(), arguments: Get.arguments);
           } else {
             // Payment is still pending or failed
             Get.snackbar(
@@ -127,7 +126,8 @@ class PaymentController extends GetxController {
               snackPosition: SnackPosition.BOTTOM,
               duration: const Duration(seconds: 4),
             );
-            Get.back();
+            Get.until((route) => route.settings.name == Routes.NAV_BAR);
+            Get.find<NavBarController>().changeTab(5);
           }
         } else {
           Get.snackbar('Notice', 'Payment processed. Refresh your tickets to see the update.');

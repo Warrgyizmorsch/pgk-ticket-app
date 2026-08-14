@@ -13,7 +13,6 @@ class NotificationService {
 
     }
 
-    final controller = Get.find<HomeController>();
 
     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
 

@@ -12,7 +12,7 @@ class PaymentSuccessView extends GetView<PaymentController> {
   Widget build(BuildContext context) {
     return PopScope(
       canPop: false,
-      onPopInvoked: (didPop) {
+      onPopInvokedWithResult: (didPop, result) {
         if (didPop) return;
         _returnToNavBar();
       },
@@ -264,10 +264,10 @@ class PaymentSuccessView extends GetView<PaymentController> {
             flex: 1,
             child: Text(qty.toString(), textAlign: TextAlign.right, style: AppTextStyles.bodySmall),
           ),
-          Expanded(
-            flex: 1,
-            child: Text(price.toString(), textAlign: TextAlign.right, style: AppTextStyles.bodySmall),
-          ),
+          // Expanded(
+          //   flex: 1,
+          //   child: Text(price.toString(), textAlign: TextAlign.right, style: AppTextStyles.bodySmall),
+          // ),
         ],
       ),
     );
