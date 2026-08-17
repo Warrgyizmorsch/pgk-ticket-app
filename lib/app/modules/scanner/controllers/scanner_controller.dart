@@ -1,11 +1,11 @@
-import 'dart:async'; // ⬅️ NEW: Required for the Timer
+import 'dart:async';
 import 'package:network_info_plus/network_info_plus.dart';
 import '../../../common/constant/app_imports.dart';
 import '../../../core/models/network_model/network_list_response.dart';
 import '../../../core/utils/api/network_api/network_list_api.dart';
 import '../../../core/utils/api/scanner_api/get_scanner_api.dart';
 import '../widget/visitor_web_view_screen.dart';
-
+import 'dart:io' show Platform;
 class ScannerController extends GetxController {
   // ─── Scanner & Gallery Variables ───
   final MobileScannerController scannerController = MobileScannerController(
@@ -41,7 +41,7 @@ class ScannerController extends GetxController {
   void onInit() {
     super.onInit();
     verifyWifiConnection();     // Initial check with loading UI
-    _startNetworkMonitoring();  // ⬅️ NEW: Start continuous background check
+    _startNetworkMonitoring();
   }
 
   // ─── Network Methods ───

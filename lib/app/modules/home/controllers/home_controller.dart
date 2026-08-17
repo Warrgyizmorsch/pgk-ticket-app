@@ -1,8 +1,8 @@
+import 'dart:io' show Platform;
 import 'package:get/get.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 
 class HomeController extends GetxController {
-  // ─── TTS State Variables ───
   final FlutterTts flutterTts = FlutterTts();
   final RxBool isPlaying = false.obs;
   final RxDouble audioProgress = 0.0.obs;
@@ -13,27 +13,44 @@ class HomeController extends GetxController {
     _initTts();
   }
 
-  void _initTts() {
-    // Reset state when audio finishes
+  Future<void> _initTts() async {
+    // 1. Required for iOS: Bypasses the physical silent switch and configures audio routing
+    if (Platform.isIOS) {
+      await flutterTts.setSharedInstance(true);
+      await flutterTts.setIosAudioCategory(
+        IosTextToSpeechAudioCategory.playback,
+        [
+          IosTextToSpeechAudioCategoryOptions.allowBluetooth,
+          IosTextToSpeechAudioCategoryOptions.allowBluetoothA2DP,
+          IosTextToSpeechAudioCategoryOptions.mixWithOthers,
+        ],
+        IosTextToSpeechAudioMode.defaultMode,
+      );
+    }
+
+    // 2. Reset state when audio finishes
     flutterTts.setCompletionHandler(() {
       isPlaying.value = false;
       audioProgress.value = 1.0;
       Future.delayed(const Duration(seconds: 1), () => audioProgress.value = 0.0);
     });
 
-    // Track which word is currently being spoken to update the slider
+    // 3. Track which word is currently being spoken to update the slider
     flutterTts.setProgressHandler((String text, int startOffset, int endOffset, String word) {
-      audioProgress.value = endOffset / text.length;
+      // Prevent division by zero just in case
+      if (text.isNotEmpty) {
+        audioProgress.value = endOffset / text.length;
+      }
     });
   }
 
-  /// Toggles the audio playback and automatically sets the correct language
   Future<void> toggleNarration(String textToRead) async {
     if (isPlaying.value) {
+      // Note: pause() on iOS can sometimes be finicky depending on the OS version.
+      // If pause() doesn't resume correctly later, change this to flutterTts.stop()
       await flutterTts.pause();
       isPlaying.value = false;
     } else {
-      // 1. Detect current app language and configure TTS voice
       String currentLang = Get.locale?.languageCode ?? 'en';
 
       if (currentLang == 'hi') {
@@ -44,10 +61,8 @@ class HomeController extends GetxController {
         await flutterTts.setLanguage("en-US");
       }
 
-      // Optional: Adjust speech rate (0.0 to 1.0)
       await flutterTts.setSpeechRate(0.5);
 
-      // 2. Start playing
       isPlaying.value = true;
       await flutterTts.speak(textToRead);
     }
@@ -55,7 +70,7 @@ class HomeController extends GetxController {
 
   @override
   void onClose() {
-    flutterTts.stop(); // Stop audio if the user leaves the screen
+    flutterTts.stop();
     super.onClose();
   }
 }

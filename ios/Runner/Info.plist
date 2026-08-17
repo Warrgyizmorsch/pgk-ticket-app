@@ -26,6 +26,16 @@
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>This app uses bluetooth to verify tickets at the gate.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>This app needs camera access to scan QR codes for tickets.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This app needs location access to show you events near your current city.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>This app needs microphone access for video features.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This app needs access to your gallery to upload profile pictures.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -66,14 +76,14 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSCameraUsageDescription</key><string>This app needs camera access to scan QR codes for tickets.</string>
-    <key>NSPhotoLibraryUsageDescription</key>
-    <string>This app needs access to your gallery to upload profile pictures.</string>
-    <key>NSMicrophoneUsageDescription</key>
-    <string>This app needs microphone access for video features.</string>
-    <key>NSLocationWhenInUseUsageDescription</key>
-    <string>This app needs location access to show you events near your current city.</string>
-    <key>NSBluetoothAlwaysUsageDescription</key>
+    <key>NSBluetoothPeripheralUsageDescription</key>
     <string>This app uses bluetooth to verify tickets at the gate.</string>
+
+    <key>UIBackgroundModes</key>
+    <array>
+        <string>audio</string>
+        <string>bluetooth-central</string>
+        <string>bluetooth-peripheral</string>
+    </array>
 </dict>
 </plist>
